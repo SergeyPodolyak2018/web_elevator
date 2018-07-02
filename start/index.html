@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="/static/fontawesome/on-server/css/fontawesome-all.css">
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+
+<script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/fontawesome/on-server/js/all.js" defer></script>
+
+<title>Вход</title>
+    <script type="text/javascript" language="JavaScript">
+        var baseUrl = '';
+        $(function(){
+            if (window!=window.top) {
+                window.parent.sendNotify("Время сессии истекло.<br>Необходимо авторизоваться.<br>Страница будет перезагружена", "error");
+                setTimeout(function(){var hh = window.parent.location.href;var hhh = hh.split('#')[0];window.parent.location.href = hhh;}, 1000);
+            } else {
+                /* страница загружена в основное окно браузера */
+            }
+
+            $('.login_form').submit(function() {
+                $.post(baseUrl + '/login/', $('.login_form').serialize(), function(re) {
+                    if (re) {
+                        $(".login_form_wrap").html("Авторизация прошла успешно.<br><br>Подождите, страница загружается...");
+                        //return;
+                        window.location.href = '/';
+                        return false;
+                        //window.location.href = '/';
+                    } else {
+                        $(".msg").html('Неверный логин или пароль');
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body id="login_page">
+<div class="main_container_page">
+    <div id="header">
+        <a href="#" class="button_with_SVG2" id="logotip_linkc" >
+            <object type="image/svg+xml" data="/static/images/logotip.svg" id="logotip"
+                    class="menu_button_typ1">
+                Your browser does not support SVG
+            </object></a>
+    </div>
+
+    <div class="content_page" >
+        <div class="authorization_box">
+
+            <div id="login_logo" style="">
+                <img src="static/images/login-logo.png" style="" alt=""/>
+            </div>
+
+            <div class="login_form_wrap">
+                <form class="login_form">
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"> <i class="far fa-user ico"></i> </span>
+                        <input type="text" class="form-control" name="login" placeholder="Логин" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon2"> <i class="fas fa-key ico"></i> </span>
+                        <input type="password" class="form-control" placeholder="Пароль" name="password" aria-describedby="basic-addon2">
+                    </div>
+                    <input class="but" type="submit" value="Войти">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

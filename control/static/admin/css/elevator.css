@@ -1,0 +1,1400 @@
+svg text {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;        
+                       
+-webkit-text-size-adjust: none;             
+-webkit-user-select: none;   
+-webkit-touch-callout: none !important; 
+}
+svg text::selection {
+    background: none;
+}
+
+
+html, body { width: 100%; height: 100%; padding: 0; margin: 0; -webkit-touch-callout: none !important;  -webkit-user-select: none !important; }
+        html { overflow:  hidden; }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            /*float: left;*/
+            background-color: #282828;
+            border:1px solid #000000;
+            color: #ccc;
+            overflow: hidden;
+        }
+        /*класс для хедера*/
+        .gorizontal {
+            width: 100%;
+            height: 56px;
+            float: left;
+            background-color: #000000;
+            /*border:2px solid #000000;
+            color: Black;
+            */
+             position: absolute; left: 0; top: 0;
+            border-bottom: 1px solid #494949;
+        }
+        .vertical a object{
+            width: 12%;
+            border:none;
+            border-radius: 0px;
+            z-index: 9999999!important;
+
+            /*min-height: 57px!important;*/
+
+           /* width: 10%;
+            height: auto;
+            float: left;
+            background-color: rgba(0, 0, 0, 0);
+
+             position: absolute; left: 0; top: 0;
+            margin-top: 10px;
+            margin-left: 10px;*/
+        }
+#servis{
+    z-index:9999999;
+}
+#archiv{
+    z-index:9999999;
+}
+#configuration{
+    z-index:9999999;
+}
+#kulture{
+    z-index:9999999;
+}
+        #zoomInOut{width: 5%;height: 10%;}
+
+        @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+            #servis{
+                margin-top:4px;
+            }
+            #archiv{
+                margin-top:4px;
+            }
+        }
+
+
+        .vertical{
+            z-index: 9999999!important;
+            background: black;
+            border:1px solid #494949;
+
+        }
+        #wrapper{
+            width: 100%;
+            height: 97%;
+            float: left;
+            /*background-color: #dadada;!*more yellow before this we use (dadada) grey ckolour*!*/
+            color: #ccc;
+            overflow: hidden;
+            background: url('/static/admin/img/pattern.png');
+            /*background-color:#0f0f0f;*/
+            background-color:#212121;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #footer{
+            display:block;
+            bottom:0;
+            position:fixed;
+            width: calc(100% - 4px);
+            height: calc(3% - 1px);
+            float: left;
+            /*background-color: #dadada;*/
+            border:1px solid #282828;
+            /*color: Black;*/
+        }
+/*#zadvijka_kontrol_menu_content_state table tbody tr td{
+    color:#000;
+}*/
+#zadvijka_kontrol_menu_content_state table tbody tr td input{
+    color:#cccccc;
+    background: #131313;;
+}
+#zadvijka_kontrol_menu_content_calibration tbody tr td input{
+    color:#cccccc;
+    background: #131313;;
+}
+#zadvijka_kontrol_menu_content_control tbody tr td input{
+    color:#cccccc;
+    background: #131313;;
+}
+
+   /* p { margin: 0; padding: 0}*/
+
+        /*-------------------------------------------------------------------------------*/
+        /*меню датчики*/
+                        .datchiki_kontrol_konteiner_show{
+
+                        height: 100vw;
+                        width: 100vh;
+                        /*visibility: visible;*/
+                        z-index: 900;
+                        background: green;
+                        }
+                        .datchiki_kontrol_konteiner_hide{
+
+                        height: 50%;
+                        width: 50%;
+                        /*visibility: hidden;*/
+                        }
+
+                        /*Спрятанное меню датчиков*/
+                        .hiden_datchiki{
+                        display: none;
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+
+                        }
+
+                        /*показанное меню датчиков*/
+                        .visible_datchiki{
+                        /*visibility: visible;*/
+                        display: inline;
+                        position: absolute;
+                        height: auto;
+                        z-index: 910;
+                        top:40%;
+                        left:40%;
+                        background-color: #e9e9e9;
+                        border:1px solid #808080;
+                        border-radius: 2px;
+                        color: #e9e9e9;
+                        }
+                         /*див с датчиками*/
+                         #datchiki_kontrol_header{
+                            width: 98%;
+                            height: 15%;
+                            /*float: left;*/
+                            background-color: silver;
+                            border-radius: 5px;
+                            color: Black;
+                            margin: 1%;
+                            padding-top: 3px;
+                            padding-bottom:3px;
+
+                        }
+                        /*див с датчиками*/
+                         #datchiki{
+                            /*width: calc(50%-4px);*/
+                           /* height: 70%;*/
+                            float: left;
+                            /*background-color: #e9e9e9;
+                            color: Black;*/
+                        }
+                        /*див с контролом*/
+                            #control{
+                            width: calc(50%-4px);
+                            height: 70%;
+                            float: left;
+                            background-color: #e9e9e9;
+                            color: Black;
+                        }
+                        #datchiki_kontrol_footer{
+                           /* width: 98%;
+                            height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                           /* border-radius: 5px;*/
+                           /* color: Black;*/
+                          /*  margin: 2px;*/
+                           /* padding-top: 3px;
+                            padding-bottom:3px;*/
+                        }
+                        .dat_cont{
+                            width:100px;
+
+                        }
+                        .remont_button {
+                         /* width:40px;
+                          height:16px;
+                          display: inline-block;
+                          background: silver;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 13px;
+                          !*font-weight: #323232;*!
+                          color: black;
+                          text-decoration: none;
+                          user-select: none;
+                          padding: .1em 0.8em;
+                          outline: none;
+                          border: 1px solid rgba(0,0,0,.1);
+                          border-radius: 2px;*/
+                          /*background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);*/
+                          /*transition: all .218s ease 0s;*/
+                           /* background: #000!important;*/
+                            text-decoration: none;
+                            margin:-4px!important;
+                            padding-top: 2px!important;
+                            padding-bottom: 3px!important;
+                            padding-right: 11px!important;
+                            padding-left:11px!important;
+                            font-size:14px!important;
+                            color:#ccc;
+                            border-radius: 20px;
+                            border:1px solid #494949;
+                        }
+                        .remont_button:active {
+                            background: #00e6e6 /*linear-gradient(#f4f4f4, #f1f1f1)*/;
+
+                          /*  color: rgb(51,51,51);
+                            border: 1px solid rgb(204,204,204);*/
+                            /*background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));*/
+                            box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+                        }
+                        /*-----------------------------------------------------*/
+        .remont_button:hover {
+            color:#efcd1f;
+            box-shadow: 0 0 10px #efcd1f;
+            border:1px solid #efcd1f;
+        }
+        #table_control td{
+            padding-right: 2px;
+            padding-left: 2px;
+            min-width: 85px;
+        }
+        .hiden{
+        visibility: hidden;
+        display: none;
+        position: absolute;
+        height: auto;
+        width: 150px;
+        }
+
+
+        .visible{
+        visibility: visible;
+        display: inline;
+        position: absolute;
+        height: auto;
+        width: 170px;
+        top: 35px;
+            background-color: #0e0e0e;
+            border:2px solid #494949;
+            border-top: none;
+        color: Black;
+        }
+
+        .hiden_menu{
+        visibility: hidden;
+        display: none;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        float: left;
+
+        }
+
+        .visible_menu{
+        visibility: visible;
+        display: inline;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        float: left;
+        }
+
+   /*      #datchiki_kontrol{
+            visibility: visible;
+            width:  100%;
+            height: 100%;
+            background-color: wight;
+            border:2px solid wight;
+
+        }
+        */
+
+#datchiki_kontrol{
+    min-width: 297px!important;
+}
+
+
+        .selected {
+        background: #FFF8DC;
+        color: #000000;
+        }
+        /*Объекты SVG*/
+                #nor{
+                width: 100%;
+                height: 100%;
+                }
+
+                .menu_button_typ1_gorizont{
+                width: 12%;
+                height: 100%;
+                margin-left: 5px;
+                }
+
+                .menu_button_typ2_gorizontal{
+                width: 10%;
+                height: 100%;
+                }
+                .menu_button_typ1_vertical{
+                width: 100%;
+                height: 12%;
+                border-radius: 100px;
+                border: solid 1px #EFCD1F;
+                }
+                .menu_button_typ2_vertical{
+                width: 78%;
+                height: 12%;
+                border-radius: 100px;
+                border: solid 1px #EFCD1F;
+                }
+
+                .set_disabled{
+                pointer-events: none;
+                }
+               /* a.button_with_SVG2:hover {
+                  color: rgb(24,24,24);
+                  border: 1px solid rgb(198,198,198);
+                  background: #323232 linear-gradient(#222222, #303030);
+                  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+                    }*/
+                  /*  a.button_with_SVG:hover {
+                  color: rgb(24,24,24);
+                  border: 1px solid rgb(198,198,198);
+                  background: #323232 linear-gradient(#222222, #303030);
+                  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+                    }*/
+
+
+
+         /*div для объектов SVG*/
+                .main_menu_button{
+                    width: 9%;
+                    height: 100%;
+                    float: left;
+                    background-color: #dadada;
+                    color: Black;
+                    overflow: hidden;
+                }
+
+        .img1{
+        width: 9%;
+        height: 100%;
+        }
+
+        .img2{
+        width: 9%;
+        height:100%;
+        }
+
+        .img3{
+       width: 9%;
+       height:100%;
+
+        }
+        a {margin: 0 -2px;}
+
+        .button_menu{
+        margin:5px;
+
+        }
+        .button_menu button{
+            color:#ccc!important;
+        }
+        a.menu_button {
+          width:140px;
+          display: inline-block;
+          font-family: 'Roboto', sans-serif;
+          font-size: 14px;
+          /*font-weight: #323232;*/
+          color: #bcbcbc;
+          text-decoration: none;
+          user-select: none;
+          padding: .2em 1.2em;
+          outline: none;
+          border: 1px solid #272727;
+          border-radius: 2px;
+          /*background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);*/
+          transition: all .218s ease 0s;
+        }
+        a.menu_button:hover {
+          /*color: rgb(24,24,24);*/
+         /* border: 1px solid rgb(198,198,198);*/
+          background: #323232 linear-gradient(#222222, #303030);
+          box-shadow: 0 1px 2px rgba(0,0,0,.1);
+        }
+        a.menu_button:active {
+          color: rgb(51,51,51);
+         /* border: 1px solid rgb(204,204,204);*/
+          background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+          box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+        }
+
+.zoom:hover { zoom: 3; }
+
+
+/*Меню выбора маршрутов*/
+
+                        #rout{
+                            /*visibility: visible;*/
+                            display: none;
+                            /*width: 400px;*/
+                            /*height: 400px;*/
+                            /*min-width: 176px*/
+                            position: absolute;
+                            height: auto;
+                            /*z-index: 910;*/
+                            top:40%;
+                            left:40%;
+                            /*background-color: #e9e9e9;*/
+                            /*border:1px solid #808080;*/
+                            /*border-radius: 2px;*/
+                            /*color: #e9e9e9;*/
+                        }
+                         /*див с датчиками*/
+                         #rout_variant_header{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+                        /*див с культурой*/
+                         #rout_kultura{
+                            width: calc(100%-4px);
+                            height: 20%;
+                            float: left;
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+
+                        }
+                        /*див с вариантами*/
+                         #rout_variant{
+                            width: calc(100%-4px);
+                            height: 40%;
+                            float: left;
+                            /*background-color: #e9e9e9;*/
+                            color: Black;
+                        }
+
+                        #rout_variant #table_rout_variant button{
+                            background: #4b4b4b;
+                            border: 1px solid #494949;
+                            border-radius: 6px;
+                        }
+
+                        #rout_variant_footer{
+                            width: 98%;
+                            height: 15%;
+                            float: left;
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            margin: 2px;
+                            padding-top: 3px;
+                            padding-bottom:3px;
+                        }
+                        .button_rout {
+
+                          display: inline-block;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 20px;
+                          margin: 2px;
+                          /*font-weight: #323232;*/
+                          /*color: #bcbcbc;*/
+                          text-decoration: none;
+                          user-select: none;
+                          padding: 0.7em 1em;
+                          color:#efcd1f;
+                          outline: none;
+                          border: 1px solid rgba(0,0,0,.1);
+                          border-radius: 2px;
+                          /*background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);*/
+                          transition: all .218s ease 0s;
+                        }
+
+                        .button_rout:hover {
+                            background: #00ffff /*linear-gradient(#f4f4f4, #f1f1f1)*/;
+                          /*background: rgb(24,24,24);*/
+                          /*color: rgb(24,24,24);*/
+                          color: black;
+                          border: 1px solid rgb(198,198,198);
+                          /*background: #323232 linear-gradient(#222222, #303030);*/
+                          box-shadow: 0 1px 2px rgba(0,0,0,.1);
+                        }
+                        .button_rout:active {
+                            background: #00e6e6 /*linear-gradient(#f4f4f4, #f1f1f1)*/;
+
+                            color: rgb(51,51,51);
+                            border: 1px solid rgb(204,204,204);
+                            /*background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));*/
+                            box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+                        }
+
+
+
+#confirm_mixin_kylt_rout_content p{
+    padding:5px;
+}
+
+/*Меню выбора маршрутов, Меню останова маршрутов, Меню перезапуска маршрутов, Меню авария запуска маршрута*/
+
+                        #rout_confirmation, #stop_rout_confirmation, #restart_rout_confirmation,#alarm_rout,#confirm_mixin_kylt_rout,#alarm_plc_connection{
+                            /*visibility: visible;*/
+                            display: none;
+                            width: 420px;
+                            height: 400px;
+
+                            position: absolute;
+                            height: auto;
+                            /*z-index: 910;*/
+                            top:40%;
+                            left:40%;
+                            /*background-color: #e9e9e9;*/
+                            /*border:1px solid #808080;*/
+                            /*border-radius: 2px;*/
+                            /*color: #e9e9e9;*/
+                        }
+                         /*див с шапкой*/
+                         #rout_confirmation_header, #stop_rout_confirmation_header, #restart_rout_confirmation_header, #alarm_rout_header,#confirm_mixin_kylt_rout_header{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+
+                        /*див с содержанием*/
+                         #rout_confirmation_content, #stop_rout_confirmation_content, #restart_rout_confirmation_content, #alarm_rout_content,#confirm_mixin_kylt_rout_content{
+                            /*width: 98%;*/
+                            /*height: 70%;*/
+                            /*float: left;*/
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+                        }
+
+
+                        /*див с подвалом*/
+                        #rout_confirmation_footer, #stop_rout_confirmation_footer, #restart_rout_confirmation_footer, #alarm_rout_footer,#confirm_mixin_kylt_rout_footer{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 2px;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+                        }
+
+
+
+/*Таблици аварий, маршрутов, устройств */
+
+                        #archiv_message,  #archiv_device{
+
+                            font-family: 'Roboto', sans-serif;
+                            display: none;
+                            min-widht: 400px;
+                            max-width: 720px;
+                            height: auto;
+                            position: absolute;
+                            top:40%;
+                            left:40%;
+                            /*background-color: #e9e9e9;*/
+                            /*border:1px solid #808080;*/
+                            /*border-radius: 2px;*/
+                            /*color: #e9e9e9;*/
+
+                        }
+#archiv_message{
+    color:black;
+}
+#archiv_rout{
+    font-family: 'Roboto', sans-serif;
+    display: none;
+    min-widht: 400px;
+    max-width: 900px;
+    height: auto;
+    position: absolute;
+    top:40%;
+    left:40%;
+}
+#alarm_message{
+    font-family: 'Roboto', sans-serif;
+    display: none;
+    min-widht: 400px;
+    max-width: 850px;
+    height: auto;
+    position: absolute;
+    top:40%;
+    left:40%;
+}
+                         /*див с шапкой*/
+                         #archiv_message_header,#archiv_rout_header, #alarm_message_header, #archiv_device_header{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+                         #archiv_message_filter, #archiv_rout_filter, #archiv_device_filter{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+
+
+                        /*див с содержанием*/
+                         #archiv_message_content, #archiv_rout_content, #alarm_message_content, #archiv_device_content{
+                            /*width: 98%;*/
+                            max-height: 300px;
+                            /*float: left;*/
+                            overflow:auto;
+                            /*overflow-y: hidden;*/
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                             margin-bottom: 10px;
+                             margin-top:10px;
+
+                        }
+                        #archiv_rout_content{
+                            margin-right: 5px;
+                            margin-left: 5px;
+                           /* border:1px solid #494949;*/
+                            border-radius:10px;
+                            overflow-y: hidden;
+                        }
+
+
+                        #table_head_rchiv_message, #table_body_alarm_message, #table_rchiv_rout, #table_rchiv_device{
+                            /*width: 99%;*/
+                            /*border-collapse: collapse;                            */
+                            /*background-color: #e9e9e9;*/
+                            /*margin-left: 2px;*/
+
+                        }
+
+                        #table_body_alarm_message thead, #table_rchiv_rout thead, #table_rchiv_device thead {
+                            /*background-color: silver;*/
+                            /*position: fixed;*/
+                            /*width: 100%;   */
+
+                        }
+
+                        #table_rchiv_message, #table_rchiv_rout,#table_rchiv_device{
+                          display: block;
+
+                          overflow-y: auto;
+                            -webkit-overflow-scrolling: touch!important;
+
+                          max-height: 275px;
+                          border-collapse: collapse;
+                        }
+
+                        #table_rchiv_message td{
+                            border: 1px solid #494949;
+                            padding:5px;
+                        }
+
+                        #table_rchiv_message{
+                            margin-left: 5px;
+                            margin-right: 5px;
+                        }
+                        #oll_route_statuses{
+                            cursor: default;
+                        }
+
+                        #table_rchiv_rout td,#table_rchiv_device td{
+                             border: 1px solid #494949;
+                        }
+
+                        #table_head_rchiv_message,#table_head_rchiv_rout,#table_head_rchiv_device{
+
+                            /*border-left: 1px solid #000000;*/
+                            /*width: 100%;*/
+                            /*background-color: silver;*/
+                        }
+                        #table_head_rchiv_message div,#table_head_rchiv_rout div,#table_head_rchiv_device div{
+                            /*border-top: 1px solid #000000;                            */
+                            /*border-right: 1px solid #000000;*/
+                            /*float: left;*/
+                            /*background-color: #c0c0c0;                            */
+                        }
+                        #table_head_rchiv_message div:nth-child(1),#table_head_rchiv_rout div:nth-child(1),#table_head_rchiv_device div:nth-child(1){
+
+                            /*border-left: 1px solid #000000;*/
+
+                        }
+
+                        /*див с подвалом*/
+                        #archiv_message_footer, #archiv_rout_footer, #alarm_message_footer, #archiv_device_footer{
+                             /*text-align: right;*/
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+                        }
+
+
+/*график токов*/
+
+                        #archive_current{
+                            font-family:'Roboto', sans-serif;
+                            display: none;
+                            width: 900px;
+                            height: auto;
+                            position: absolute;
+                            top:10%;
+                            left:10%;
+                            /*background-color: #e9e9e9;*/
+                            /*border:1px solid #808080;*/
+                            /*border-radius: 2px;*/
+                            /*color: #e9e9e9;*/
+                        }
+                         /*див с шапкой*/
+                         #archive_current_header{
+
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+                         #archive_current_filter{
+                            width: 98%;
+                            height: 15%;
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+
+                          #archive_current_slider{
+                          width: 5%;
+                            height: 600px;
+                            float: left;
+                            margin-top: 2%;
+
+                          }
+                          #current_scale_slider{
+                                width: 10px;
+                                height: 571px;
+                                margin-left: 27px;
+                              -webkit-appearance: slider-vertical;
+                              data-show-value:true;
+                          }
+                        /*див с содержанием*/
+                         #archive_current_content{
+                            /*width: 98%;*/
+                            /*height: 55%;*/
+                            /*float: left;*/
+                            overflow:auto;
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+
+                        }
+                        #current_svg{
+                            width: 100%;
+                            height: 100%;
+
+                        }
+
+                        /*див с подвалом*/
+                        #archive_current_footer{
+                            /*text-align: right;*/
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+                        }
+
+
+/*Окно задвижка открыть закрыть*/
+#zadvijka_kontrol_menu{
+    width: 430px;
+    font-family: 'Roboto', sans-serif;
+    height: auto;
+    position: absolute;
+    top:20%;
+    left:30%;
+    display: none;
+}
+#settings_noriya{
+    left: 362px;
+    top: 49px;
+}
+select{
+    min-width:30px;
+}
+
+
+#settings_separator{
+    max-width: 260px;
+}
+/*select {
+    -ms-appearance: none;
+    appearance: none !important;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}*/
+
+
+#settings_kylt{
+
+    padding-right: 0px;
+
+}
+#table_settings_kylt_global{
+    width: 98%;
+}
+#settings_kylt_content{
+    width: 100%;
+}
+#settings_kylt_global{
+    width: 100%;
+}
+
+
+
+                         /*див с шапкой*/
+                         #zadvijka_kontrol_menu_header{
+
+
+
+
+                             /*font-size: 14px;*/
+
+                            padding-bottom:0px;
+
+                        }
+                        /*#zadvijka_kontrol_menu_header td{
+                             padding-left: 5px;
+                        }*/
+
+
+                         #zadvijka_kontrol_menu_header td h2{
+                             float: right;
+                             display: none;
+                             height: 100%;
+
+                             margin-bottom: 0;
+                             margin-top: -7px;
+                             margin-right: 0!important;
+
+
+                             font-weight: 100!important;
+                             cursor: pointer;
+                         }
+                        #zadvijka_kontrol_menu_header td h2:hover{
+                            border:1px solid #454545
+                        }
+
+
+                         #zadvijka_kontrol_menu_content_state td{
+                             border-bottom:1px solid #494949;
+                             padding-top:2px; ;
+                             padding-bottom: 7px;
+
+                         }
+                        #zadvijka_kontrol_menu_content_state {
+
+
+                        }
+
+                         .modal_menu{
+                            padding: 5px;
+                            margin-right: -3px;
+                            border-radius: 25px;
+                         }
+                         .modal_menu:hover{
+                             background:#000000 ;
+                         }
+
+
+
+                        /*див с содержанием*/
+                         #zadvijka_kontrol_menu_content{
+                            /*width: 100%;*/
+                            /* padding-right:5px!important;*/
+                            /*float: left;*/
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+
+                        }
+                        /*Разделы управления завижкой*/
+                        #zadvijka_kontrol_menu_content_state, #zadvijka_kontrol_menu_content_calibration, #zadvijka_kontrol_menu_content_control {
+                            width: 98%;
+                            height: 30%;
+                            float: left;
+                            overflow:auto;
+                            color: #ccc;
+                            overflow: hidden;
+
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+
+                        }
+                        #zadvijka_kontrol_menu_content_state_control1, #zadvijka_kontrol_menu_content_state_control2{
+                          border:1px solid #454545!important;
+                        }
+                        #zadvijka_kontrol_menu_content_state table, #zadvijka_kontrol_menu_content_calibration table, #zadvijka_kontrol_menu_content_control table{
+                            width: 100%;
+                            /*border-collapse: collapse;*/
+                            border: 0px solid #000000;
+
+                        }
+
+                        #zadvijka_kontrol_menu_content_state thead, #zadvijka_kontrol_menu_content_calibration thead, #zadvijka_kontrol_menu_content_control thead{
+                             /*background-color: yellow;*/
+                        }
+                        #zadvijka_kontrol_menu_content_state td, #zadvijka_kontrol_menu_content_calibration td, #zadvijka_kontrol_menu_content_control td{
+                        border: 0px solid #0e0e0e;
+                        /*font-family: sans-serif;*/
+                            /*font-size:10pt;*/
+                        }
+                        #zadvijka_kontrol_menu_content_state_control1, #zadvijka_kontrol_menu_content_state_control2{
+                        /*border: 1px solid #000000;*/
+                        }
+
+                        /*див с подвалом*/
+                        #zadvijka_kontrol_menu_footer{
+                            text-align: right;
+                            width: 98%;
+                            height: 15%;
+                            float: left;
+
+                            border-radius: 5px;
+                            color: Black;
+                            margin: 1%;
+                            padding-top: 3px;
+                            padding-bottom:3px;
+                        }
+                       /* #zadvijka_kontrol_menu button,#settings_kylt_footer button, #settings_bell_footer button{
+
+                            background-color: #000;
+                            border-radius: 25px;
+                            border: 1px solid grey!important;
+                            color: white;
+                        }
+                        #zadvijka_kontrol_menu button:hover, #settings_kylt_footer button:hover, #settings_bell_footer button:hover{
+                            box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+                            color:#efcd1f;
+
+                        }*/
+.circul{
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 22px;
+    height: 22px;
+}
+.oval{
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    border:1px solid #454545;
+    padding: 5px!important;
+}
+.new_but{
+
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 100;
+    color:#ccc;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+   /* padding: .5em 1em;*/
+    outline: none;
+    padding: 0;
+    margin: 0;
+
+
+    background: #0e0e0e;
+    box-shadow:
+            0 1px rgba(255,255,255,.2) inset,
+            0 3px 5px rgba(0,1,6,.5),
+            0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+    border:1px solid #454545;
+
+}
+.new_but:hover:not(:active){
+    border:1px solid #efcd1f;
+    box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+    color:#efcd1f;
+}
+.new_but:active {
+    top: 1px;
+    background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.1)) rgba(0,0,0,.5);
+    box-shadow:
+            0 0 1px rgba(0,0,0,.5) inset,
+            0 2px 3px rgba(0,0,0,.5) inset,
+            0 1px 1px rgba(255,255,255,.1);
+}
+
+
+.ui-widget-content{
+                            background-color: #252525;
+
+                        }
+                        .ui-widget.ui-widget-content {
+                            border:1px solid #494949;
+                            background-color: #0e0e0e;
+                            border-radius: 15px;
+                        }
+                        .ui-widget-header{
+                            background-color: #0e0e0e;
+                            border: none;
+                            border-radius: 50px;
+                        }
+
+                        .ui-button-icon-only .ui-icon .ui-icon-closethick{
+                            color:#252525!important;
+                        }
+                        .ui-button, .button_menu button{
+                            background-color: #000;
+                            border: 1px solid #494949;
+                            right: -3px!important;
+                            /*color:#ccc!important;*/
+                            border-radius: 25px;
+                            outline: none;
+                        }
+                        .ui-button:hover, .button_menu button:hover {
+                            background-color: #252525;
+                            box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+                            color:#efcd1f!important;
+
+                        }
+                        .button_menu button:focus{
+                            /*border:none!important;
+                            outline:1px solid grey;*/
+                        }
+
+
+                        .disabeledField{
+                        pointer-events: none;
+                        background-color: rgb(255, 255, 255);
+                        }
+
+
+                         #zadvijka_kontrol_menu_button_calibrate {
+                             /* display: inline-block;
+
+                              font-size: 10pt;
+                              border:1px solid grey;
+                             border-radius: 25px; ;
+
+                              color: white;
+                              text-decoration: none;
+                              user-select: none;*/
+                              /*padding: .2em 1.2em;*/
+                               /* margin-left: 2px;
+                              width:100px;
+                              text-align: center;
+                              outline: none;*//*background: linear-gradient(#f4f4f4, #f1f1f1);*/
+                              /*transition: all .218s ease 0s;
+                              margin: 0;*/
+                            }
+                            #zadvijka_kontrol_menu_button_calibrate:hover {
+                              /*  box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+                                color:#efcd1f;*/
+                            }
+                            #zadvijka_kontrol_menu_button_calibrate:active {
+                              /*color: rgb(51,51,51);
+                              border: 1px solid rgb(204,204,204);*/
+                              /*background: linear-gradient(rgb(238,238,238), rgb(224,224,224));*/
+                              /*box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;*/
+                            }
+
+
+ /*_______________________________________________________________Таблици настроек _______________________________________________________________________________________*/
+
+                        #settings_noriya, #settings_konveyer, #settings_zadvijka,#settings_Pzadvijka, #settings_zadvijkaGroup,  #settings_silos,
+                        #settings_klapan, #settings_ventilyator, #settings_gate, #settings_separator, #settings_tube, #add_equipment,
+                        #change_row_link, #change_row_culture, #change_row_device_settings, #settings_bell, #settings_current, #settings_analog_dat, #settings_kylt, #kylt_set_confirmation_window,
+                        #position_pt_confirmation_window,#settings_enable{
+
+                            /*font-family: sans-serif;*/
+                            /*display: none;*/
+                            display:none; /*NONE*/
+                            /*width: px;*/
+                            height: auto;
+                            position: absolute;
+                            top:5%;
+                            left:10%;
+
+                            /*background-color: #252525;*/
+                            /*border:1px solid #efcd1f;*/
+                            /*border-radius: 25px*/
+                            /*color: #e9e9e9;*/
+                            /*font-family: 'Roboto', sans-serif!important;*/
+
+                        }
+
+                        #oll_mex_confirmation_window{
+                            display:none;
+                            /*width: px;*/
+                            height: auto;
+                            position: absolute;
+                            top:45%;
+                            left:45%;
+                        }
+                        #refit_route_window{
+                            display:none;
+                            /*width: px;*/
+                            height: auto;
+                            position: absolute;
+                            top:45%;
+                            left:45%;
+                            min-width: 300px
+                        }
+
+
+                        #position_pt_confirmation_window,#oll_mex_confirmation_window {
+                           /* width: 320px;*/
+                        }
+                        /*
+                        #settings_klapan{
+                            width: 400px;
+                        }
+                        #settings_zadvijka, #settings_noriya{
+                            width: 450px;
+                        }
+                        #settings_silos, #settings_konveyer, #settings_ventilyator{
+                            width: 470px;
+                        }
+                        */
+                         /*див с шапкой*/
+                         #settings_noriya_header,#settings_konveyer_header,
+                         #settings_zadvijka_header,#settings_Pzadvijka_header, #settings_zadvijkaGroup_header, #settings_silos_header,#settings_klapan_header,
+                         #settings_ventilyator_header,#settings_gate_header,#settings_separator_header,#settings_enable_header,
+                         #settings_tube_header,#add_equipment_header,#change_row_link_header, #change_row_culture_header, #change_row_device_settings_header, #settings_bell_header,
+                         #settings_current_header, #settings_analog_dat_header,#settings_kylt_header,#kylt_set_confirmation_window_header,#position_pt_confirmation_window_header,#oll_mex_confirmation_window_header{
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: #252525;*/
+                            /*border-bottom:1px solid #efcd1f;*/
+                            /*color: #efcd1f;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+
+
+
+                        /*див с содержанием*/
+                         #settings_noriya_content, #settings_konveyer_content,
+                         #settings_zadvijka_content,#settings_Pzadvijka_content, #settings_zadvijkaGroup_content, #settings_silos_content,#settings_klapan_content,
+                         #settings_ventilyator_content,#settings_gate_content,#settings_separator_content,#settings_enable_content,
+                         #settings_tube_content,#add_equipment_content,#change_row_link_content,
+                         #change_row_culture_content, #change_row_device_settings_content, #settings_bell_content, #settings_current_content, #settings_analog_dat_content, #settings_kylt_content,#kylt_set_confirmation_window_content,
+                         #position_pt_confirmation_window_content,#oll_mex_confirmation_window_content, #refit_route_window_content{
+                            /*width: 99%;*/
+                            /*height: auto;*/
+                            float: left;
+                            /*background-color: #252525;*/
+                            /*border-bottom:1px solid grey;*/
+                            /*color: white;*/
+                            /*margin: 1%;*/
+
+                        }
+                        /*див с окошками настроек*/
+                         #settings_noriya_global, #settings_noriya_aditional,
+                         #settings_konveyer_global, #settings_konveyer_aditional,
+                         #settings_zadvijka_global,#settings_Pzadvijka_global, #settings_zadvijkaGroup_global,  #settings_zadvijka_aditional, #settings_Pzadvijka_aditional, settings_zadvijkaGroup_aditional, #settings_zadvijkaGroup_aditional_indexesOfGroup,
+                         #settings_silos_global, #settings_silos_aditional,
+                         #settings_klapan_global, #settings_klapan_aditional,
+                         #settings_ventilyator_global, #settings_ventilyator_aditional,
+                         #settings_gate_global,#settings_separator_global,#settings_tube_global,#settings_enable_global,
+                         #settings_gate_aditional,#settings_separator_aditional,#settings_tube_aditional,#settings_bell_global,#settings_enable_aditional,
+                         #settings_bell_aditional,#settings_current_global, #settings_analog_dat_global,#settings_kylt_global,#kylt_set_confirmation_window_global,
+                         #kposition_pt_confirmation_window_global,#oll_mex_confirmation_window_global, #refit_route_window_global{
+                            height: auto;
+                            float: left;
+                            /*background-color: #252525;*/
+                            /*color: #efcd1f;*/
+                            /*margin: 1%;*/
+
+                        }
+
+
+                            #settings_noriya_sensors,
+                            #settings_konveyer_sensors,
+                            #settings_zadvijka_sensors,
+                            #settings_Pzadvijka_sensors,
+                            #settings_zadvijkaGroup_sensors,
+
+                            #settings_silos_sensors,
+                            #settings_klapan_sensors,
+                            #settings_gate_sensors,#settings_separator_sensors,#settings_enable_sensors,
+                            #settings_tube_sensors,
+                            #settings_bell_sensors{
+                            /*width: 100%;*/
+                            /*float:left;*/
+                        }
+
+
+                            #table_settings_noriya_sensors td,
+                            #table_settings_konveyer_sensors td,
+                            #table_settings_zadvijka_sensors td,
+                            #table_settings_Pzadvijka_sensors td,
+                            #table_settings_silos_sensors td,
+                            #table_settings_klapan_sensors td,
+                            #table_settings_ventilyator_sensors td,
+                            #table_settings_gate_sensors td,#table_settings_enable_sensors td,
+                            #table_settings_tube_sensors td
+                            {
+                            /*width: auto;*/
+                            /*border:0;*/
+
+                            /*width: 100%;*/
+                            /*border-collapse: collapse;*/
+                            /*border: 1px solid #000000;*/
+                        }
+
+
+                        /*див с подвалом*/
+                       #settings_noriya_footer,#settings_konveyer_footer,#settings_zadvijka_footer,#settings_Pzadvijka_footer, #settings_zadvijkaGroup_footer,
+                       #settings_silos_footer,#settings_klapan_footer,#settings_ventilyator_footer,
+                       #settings_gate_footer,#settings_separator_footer,#settings_tube_footer,#settings_enable_footer,
+                       #add_equipment_footer,#change_row_link_footer,#change_row_culture_footer,#change_row_device_settings_footer,
+                       #settings_bell_footer, #settings_current_footer, #settings_analog_dat_footer, #settings_kylt_footer,#kylt_set_confirmation_window_footer,#position_pt_confirmation_window_footer,
+                       #oll_mex_confirmation_window_footer, #refit_route_window_footer{
+                            padding-bottom: 5px;
+                            margin-right: 5px;
+                            margin-left:  5px;
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: #252525;*/
+                            /*border-radius: 5px;*/
+                            /*color: white;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+                        }
+
+/*Таблици линков  и культур*/
+
+                        #linck_settings, #culture_settings, #device_settings{
+
+                            /*font-family: sans-serif;*/
+                            display: none;
+                            width: 500px;
+                            height: auto;
+                            position: absolute;
+                            top:40%;
+                            left:40%;
+                            /*background-color: #e9e9e9;*/
+                            /*border:1px solid #808080;*/
+                            /*border-radius: 2px;*/
+                            /**color: #e9e9e9;*/
+
+                        }
+                         /*див с шапкой*/
+                         #linck_settings_header,#culture_settings_header,#device_settings_header{
+                            width: 98%;
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+
+                        }
+
+
+
+                        /*див с содержанием*/
+                         #linck_settings_content,#culture_settings_content,#device_settings_content {
+                            width: 98%;
+                            height: 300px;
+
+
+                            /*background-color: #e9e9e9;*/
+                            /*color: Black;*/
+                            margin: 1%;
+
+                        }
+
+
+                            #linck_settings_content_information tr:hover,#culture_settings_content_information tr:hover,#device_settings_content_information tr:hover
+                            {
+                            background-color: #ffed00;
+                            color:black;
+                            }
+
+                            #table_linck_settings td, #table_culture_settings td,#table_device_settings td
+                            {
+
+                            border-collapse: collapse;
+                            border: 1px solid #494949;
+
+                        }
+                        #table_linck_settings, #table_culture_settings,#table_device_settings
+                            {
+                            width: 98%;
+                            border-collapse: collapse;
+                            border: 1px solid #000000;
+
+                        }
+
+                        /*див с подвалом*/
+                       #linck_settings_footer, #culture_settings_footer,#device_settings_footer{
+
+                            /*width: 98%;*/
+                            /*height: 15%;*/
+                            /*float: left;*/
+                            /*background-color: silver;*/
+                            /*border-radius: 5px;*/
+                            /*color: Black;*/
+                            /*margin: 1%;*/
+                            /*padding-top: 3px;*/
+                            /*padding-bottom:3px;*/
+                        }

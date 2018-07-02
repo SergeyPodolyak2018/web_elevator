@@ -1,0 +1,87 @@
+body{
+    background     : url('../images/pattern.png')#1f1f1f!important;
+}
+
+#header{
+    height         : 58px;
+    background     : #000;
+    padding-top    : 3px;
+    border-bottom  : 1px solid #494949;
+}
+
+#header img{
+    height         : 50px;
+    margin         : 3px 0 3px 20px;
+}
+
+.authorization_box{
+    width          : 400px;
+    margin         : 150px auto auto auto;
+    display        : block;
+}
+
+#login_logo{
+    width          : 200px;
+    border         : 1px solid #444;
+    height         : 200px;
+    margin         : 0 auto 40px auto;
+    padding        : 20px;
+    display        : block;
+    background     : #191919;
+    text-align     : center;
+    border-radius  : 100px;
+}
+
+#login_logo img{
+    margin         : 0 auto;
+    display        : block;
+}
+
+.input-group span{
+    min-width      : 44px;
+    background     : #191919;
+    border-bottom  : 1px solid #494949;
+    border-radius  : 5px 0px 0px 5px;
+}
+.input-group{
+    margin         : 15px 0px 0px 0px;
+}
+.input-group input{
+    height         : 44px;
+    border         : none;
+    min-width      : 44px;
+    background     : #1f1f1f;
+    border-radius  : 0px 5px 5px 0px;
+    border-bottom  : 1px solid #494949;
+}
+
+.input-group input:focus{
+    border         : 1px solid #efcd1f;
+    background     : #222;
+    box-shadow     : 0 0 10px rgba(239, 205, 31, 1);
+}
+
+.input-group-addon{
+    padding        : 15px 0 0 0;
+}
+
+.ico{
+    color          : #ccc;
+    margin         : 0 auto;
+    padding        : 0px 0px 0px 15px;
+    display        : block;
+    vertical-align : middle;
+
+}
+
+.but{
+    width          : 75px;
+    color          : #000;
+    border         : 1px solid #ffd842;
+    margin         : 15px auto auto auto;
+    padding        : 6px 16px;
+    display        : block;
+    background     : #ffd842;
+    border-radius  : 20px;
+    vertical-align : middle;
+}

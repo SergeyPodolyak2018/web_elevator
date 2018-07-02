@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="20mm" height="15mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2000 1500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#5B5B5B;stroke-width:7.62}
+    .str0 {stroke:#5B5B5B;stroke-width:7.62;stroke-linecap:round;stroke-linejoin:round}
+    .fil1 {fill:#00CCFF}
+    .fil0 {fill:#1AA3FF}
+    .fil3 {fill:#434343}
+    .fil2 {fill:#878787}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="menu_zadvijka fil0 str0" points="489,424 489,908 966,618 966,148 "/>
+  <polygon class="menu_zadvijka fil1 str0" points="489,770 489,908 1166,1299 1166,1160 "/>
+  <polygon class="menu_zadvijka fil0 str0" points="968,203 968,617 1643,1004 1643,539 1380,440 "/>
+  <g class="shiber">
+   <polygon class="fil2 str0" points="495,633 493,773 970,498 970,360 "/>
+   <polygon class="fil2 str0" points="1648,885 1647,749 970,360 970,498 "/>
+   <polygon class="fil2 str0" points="1173,1158 1172,1022 495,633 495,771 "/>
+   <polygon class="fil2 str0" points="1170,1021 1170,1155 1647,880 1647,742 "/>
+   <polygon class="fil2 str1" points="495,633 970,360 1647,742 1172,1022 "/>
+  </g>
+  <path class="fil3 str0" d="M585 424l381 -220 582 335 -381 220 -154 -88 -428 -247zm381 -276l-477 276 524 302 154 89 476 -276 -265 -153 -412 -238z"/>
+  <polygon class="menu_zadvijka fil1 str0" points="489,424 489,562 1167,953 1167,815 "/>
+  <polygon class="menu_zadvijka fil1 str1" points="1165,1156 1643,882 1643,1004 1166,1299 "/>
+  <polygon class="menu_zadvijka fil1 str1" points="1167,815 1643,539 1643,661 1167,953 "/>
+ </g>
+</svg>
