@@ -26,7 +26,7 @@ function clic_on_source(){
          $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -147,7 +147,7 @@ function send_rout_data(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -242,7 +242,7 @@ function show_rout_variant(i,element){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -269,7 +269,7 @@ function start_chek_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -333,7 +333,7 @@ function exit_rout_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -364,7 +364,7 @@ function start_rout_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
                 hide_source_receiver();
             }},
@@ -426,7 +426,7 @@ function stop_rout_variant(source_index){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
                 hide_source_receiver();
             }},
@@ -449,7 +449,7 @@ function rebild_rout_variant(source_index){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -505,7 +505,7 @@ function send_comand(url_string){
 	$.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -523,7 +523,7 @@ function refit_route_command(index){
     $.ajax({
             url: url_string,
             data: {},
-            timeout:3000,
+            timeout:5000,
             statusCode:{404:function(){alert('Функция не реализована');            
             }},
             success: function( result ) {refit_route_close()},
