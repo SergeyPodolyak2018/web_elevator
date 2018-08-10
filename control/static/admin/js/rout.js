@@ -26,9 +26,10 @@ function clic_on_source(){
          $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
+            hidePreloader ();
             }},
             success: function( result ) {
             	 var  status_source=JSON.parse(result);
@@ -37,14 +38,18 @@ function clic_on_source(){
             	 }else{
             	 	restart_rout_variant_confirm(source_index_internal);
             	 }
+
+                 hidePreloader ();
             },
             error: function (jqXHR, exception) {
             console.log(exception);
             alert('Сервер не отвечает');
             hide_source_receiver();
+            hidePreloader ();
             }
         });
 
+         showPreloader ();
 
      })
 }
@@ -147,9 +152,10 @@ function send_rout_data(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
+            hidePreloader ();
             }},
             success: function( result ) {
 
@@ -167,14 +173,16 @@ function send_rout_data(){
 	            	$('#alarm_rout').show();
             	}
 
-
+                hidePreloader ();
             },
             error: function (jqXHR, exception) {
             console.log(exception);
             alert('Сервер не отвечает');
             hide_source_receiver();
+            hidePreloader ();
             }
         });
+        showPreloader ();
 	}else{
 		hide_source_receiver();
 	}
@@ -242,20 +250,23 @@ function show_rout_variant(i,element){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
+            hidePreloader ();
             }},
             success: function( result ) {
-
+                hidePreloader ();
 
             },
             error: function (jqXHR, exception) {
             console.log(exception);
             alert('Сервер не отвечает');
             hide_source_receiver();
+            hidePreloader ();
             }
         });
+        showPreloader ();
 
 
 }
@@ -269,9 +280,10 @@ function start_chek_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
+            hidePreloader ();
             }},
             success: function( result ) {
 
@@ -304,16 +316,17 @@ function start_chek_variant(){
 	            	$('#alarm_rout').show();
             	}
 
-
+                hidePreloader ();
 
             },
             error: function (jqXHR, exception) {
-            console.log(exception);
-            alert('Сервер не отвечает');
-            hide_source_receiver();
+                console.log(exception);
+                alert('Сервер не отвечает');
+                hide_source_receiver();
+                hidePreloader ();
             }
         });
-
+        showPreloader ();
 
 }
 
@@ -333,25 +346,28 @@ function exit_rout_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
-            statusCode:{404:function(){alert('Функция не реализована');
-            hide_source_receiver();
+            timeout:10000,
+            statusCode:{404:function(){
+                alert('Функция не реализована');
+                hide_source_receiver();
+                hidePreloader ()
             }},
             success: function( result ) {
             	$('#rout').hide();
             	hide_source_receiver();
             	$('#rout_confirmation').hide();
                 $('#confirm_mixin_kylt_rout').hide();
-
+                hidePreloader ();
             },
             error: function (jqXHR, exception) {
-            console.log(exception);
-            alert('Сервер не отвечает');
-            hide_source_receiver();
+                console.log(exception);
+                alert('Сервер не отвечает');
+                hide_source_receiver();
+                hidePreloader ();
             }
         });
         //hide_source_receiver();
-
+        showPreloader ();
         
 }
 
@@ -364,24 +380,27 @@ function start_rout_variant(){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
                 hide_source_receiver();
+                hidePreloader ();
             }},
             success: function( result ) {
             	$('#rout').hide();
             	hide_source_receiver();
             	$('#rout_confirmation').hide();
                 $('#confirm_mixin_kylt_rout').hide();
+                hidePreloader ();
             },
             error: function (jqXHR, exception) {
                 console.log(exception);
                 alert('Сервер не отвечает');
                 hide_source_receiver();
+                hidePreloader ();
             }
         });
         //hide_source_receiver();
-
+        showPreloader ()
 
 }
 
@@ -426,21 +445,25 @@ function stop_rout_variant(source_index){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
                 hide_source_receiver();
+                hidePreloader ();
             }},
             success: function( result ) {
             	$('#stop_rout_confirmation').hide();
             	hide_source_receiver();
+                hidePreloader ();
             },
             error: function (jqXHR, exception) {
                 console.log(exception);
                 alert('Сервер не отвечает');
                 hide_source_receiver();
+                hidePreloader ();
             }
         });
         //hide_source_receiver();
+        showPreloader ();
 }
 
 //престройка маршрута
@@ -449,21 +472,26 @@ function rebild_rout_variant(source_index){
         $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
-            statusCode:{404:function(){alert('Функция не реализована');
-            hide_source_receiver();
+            timeout:10000,
+            statusCode:{404:function(){
+                alert('Функция не реализована');
+                hide_source_receiver();
+                hidePreloader ();
             }},
             success: function( result ) {
             	$('#stop_rout_confirmation').hide();
             	hide_source_receiver();
+                hidePreloader ();
             },
             error: function (jqXHR, exception) {
-            console.log(exception);
-            alert('Сервер не отвечает');
-            hide_source_receiver();
+                console.log(exception);
+                alert('Сервер не отвечает');
+                hide_source_receiver();
+                hidePreloader ();
             }
         });
         //hide_source_receiver();
+        showPreloader ();
 }
 
 //выход из меню стоп маршрут
@@ -505,7 +533,7 @@ function send_comand(url_string){
 	$.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');
             hide_source_receiver();
             }},
@@ -523,7 +551,7 @@ function refit_route_command(index){
     $.ajax({
             url: url_string,
             data: {},
-            timeout:5000,
+            timeout:10000,
             statusCode:{404:function(){alert('Функция не реализована');            
             }},
             success: function( result ) {refit_route_close()},

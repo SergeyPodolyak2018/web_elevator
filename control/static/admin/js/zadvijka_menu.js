@@ -22,13 +22,12 @@ function zadvijka_command(command,p1,p2,index,type){
                     statusCode:{404:function(){alert('Функция не реализована');
                     
                     }},
-                    success: function( result ) {
-                        zadvijka_chek_command_rezult(number);
+                        success: function( result ) {
+                            zadvijka_chek_command_rezult(number);
                     },
-                    error: function (jqXHR, exception) {
-                    console.log(exception);
-                    alert('Сервер не отвечает');
-                    
+                        error: function (jqXHR, exception) {
+                        console.log(exception);
+                        alert('Сервер не отвечает');                    
                     }
             });
         }

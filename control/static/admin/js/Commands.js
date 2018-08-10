@@ -5,9 +5,14 @@
         objectMenuManager.hide();
         $.ajax({
             url: url_string,
+            timeout:3000,
             data: {},
-            success: function( result ) {}
-            });
+            success: function( result ) {},
+            error: function (jqXHR, exception) {
+              console.log(exception);
+              alert('Сервер не отвечает');                    
+            }            
+        });
     }
 
 //Фукция закытия меню датчиков
@@ -162,7 +167,7 @@ function dat_status(number) {
                       $(indikator_datchiki).css('-webkit-box-shadow','0 0 25px #00FF00');
                     }else{
                       var indikator_datchiki = document.getElementById('dat'+k.substr(1)+'_status');
-                      /*$(indikator_datchiki).css('background','#E5E5E6');//серый*/
+                      $(indikator_datchiki).css('background','#E5E5E6');//серый
                     }
 
                     if (dat_cont[k].remont == 1) {

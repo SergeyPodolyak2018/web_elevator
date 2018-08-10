@@ -190,7 +190,7 @@ $(window).load(function () {
         //Функция зумирования
          initialize();     
 
-		
+		hidePreloader ();
 
 });
 
@@ -256,6 +256,21 @@ function setEventOnElement(userType){
                     refit_route_open(lineIndex);
                     return false;                           
                 });
+
+                $(svgdom.getElementsByClassName("line")).hover(
+                        function () { 
+                            $(this).css({
+                                    'stroke-width': '250px',
+                                    'stroke-dasharray':'600px'
+                                });
+                        },
+                        function () {
+                             $(this).css({
+                                    'stroke-width': '75px',
+                                    'stroke-dasharray':'0px'
+                                });
+                         }
+                    );
 
                 //механизмы
                 ////////////////////////////////////////////////////////////////////////

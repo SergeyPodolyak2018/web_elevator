@@ -1,0 +1,106 @@
+.universal_window *{
+	box-sizing:border-box;
+}
+
+.universal_window{
+	background-color: #191919;
+    border: 1px solid #494949;    
+    border-radius: 10px;   
+    padding: 0px 0px 10px 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ccc;
+    position:absolute;
+	cursor: default!important;
+	display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction:column;
+}
+
+.universal_window_header .btn-back{
+	top:-5px;
+}
+.universal_window_header{
+	background-color: #0e0e0e;
+    height: 33px;
+    width: 100%;    
+    border-radius: 15px;    
+    border-bottom: 1px solid #494949;
+    color: #ffa200;
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 3px;
+    padding:0 10px 0 10px; 
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+       
+}
+
+.universal_window_content{
+	padding:10px;
+	width:100%
+}
+.universal_window_content .text_cover{
+	width:20%;
+}
+.universal_window_footer{
+	width:100%;
+	padding:10px;
+	display:flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.universal_button{
+	color: #ccc;
+    background-color: #0e0e0e;    
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    touch-action: manipulation;    
+    border: 1px solid #494949;
+    transition: all .218s ease 0s;
+    min-width: 70px;
+    padding:5px 15px 5px 15px;
+}
+
+
+.universal_button:hover:not(:active){
+    border:1px solid #efcd1f;
+    box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+    color:#efcd1f;
+}
+.universal_button:active {
+    /*border: none; !important;*/
+    top: 1px;
+    background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.1)) rgba(0,0,0,.5);
+    box-shadow:
+            0 0 1px rgba(0,0,0,.5) inset,
+            0 2px 3px rgba(0,0,0,.5) inset,
+            0 1px 1px rgba(255,255,255,.1);
+}
+
+.universal_button:focus{
+    outline: none;
+}
+
+
+/*-------------Окно статистики---------------------*/
+#statistic_window{
+	width:370px;
+	top:30%;
+	left:30%;
+	
+		
+}
+#statistic_window_content div{
+	display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
