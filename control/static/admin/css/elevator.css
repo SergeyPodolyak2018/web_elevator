@@ -1151,7 +1151,7 @@ select{
 
  /*_______________________________________________________________Таблици настроек _______________________________________________________________________________________*/
 
-                        #settings_noriya, #settings_konveyer, #settings_zadvijka,#settings_Pzadvijka, #settings_zadvijkaGroup,  #settings_silos,
+                        #settings_noriya, #settings_konveyer, #settings_zadvijka,#settings_Pzadvijka, #settings_zadvijkaGroup,  #settings_silos,#settings_dryer,
                         #settings_klapan, #settings_ventilyator, #settings_gate, #settings_separator, #settings_tube, #add_equipment,
                         #change_row_link, #change_row_culture, #change_row_device_settings, #settings_bell, #settings_current, #settings_analog_dat, #settings_kylt, #kylt_set_confirmation_window,
                         #position_pt_confirmation_window,#settings_enable{
@@ -1208,7 +1208,7 @@ select{
                         */
                          /*див с шапкой*/
                          #settings_noriya_header,#settings_konveyer_header,
-                         #settings_zadvijka_header,#settings_Pzadvijka_header, #settings_zadvijkaGroup_header, #settings_silos_header,#settings_klapan_header,
+                         #settings_zadvijka_header,#settings_Pzadvijka_header, #settings_zadvijkaGroup_header, #settings_silos_header,#settings_dryer_header,#settings_klapan_header,
                          #settings_ventilyator_header,#settings_gate_header,#settings_separator_header,#settings_enable_header,
                          #settings_tube_header,#add_equipment_header,#change_row_link_header, #change_row_culture_header, #change_row_device_settings_header, #settings_bell_header,
                          #settings_current_header, #settings_analog_dat_header,#settings_kylt_header,#kylt_set_confirmation_window_header,#position_pt_confirmation_window_header,#oll_mex_confirmation_window_header{
@@ -1228,7 +1228,7 @@ select{
 
                         /*див с содержанием*/
                          #settings_noriya_content, #settings_konveyer_content,
-                         #settings_zadvijka_content,#settings_Pzadvijka_content, #settings_zadvijkaGroup_content, #settings_silos_content,#settings_klapan_content,
+                         #settings_zadvijka_content,#settings_Pzadvijka_content, #settings_zadvijkaGroup_content, #settings_silos_content,#settings_dryer_content,#settings_klapan_content,
                          #settings_ventilyator_content,#settings_gate_content,#settings_separator_content,#settings_enable_content,
                          #settings_tube_content,#add_equipment_content,#change_row_link_content,
                          #change_row_culture_content, #change_row_device_settings_content, #settings_bell_content, #settings_current_content, #settings_analog_dat_content, #settings_kylt_content,#kylt_set_confirmation_window_content,
@@ -1247,6 +1247,7 @@ select{
                          #settings_konveyer_global, #settings_konveyer_aditional,
                          #settings_zadvijka_global,#settings_Pzadvijka_global, #settings_zadvijkaGroup_global,  #settings_zadvijka_aditional, #settings_Pzadvijka_aditional, settings_zadvijkaGroup_aditional, #settings_zadvijkaGroup_aditional_indexesOfGroup,
                          #settings_silos_global, #settings_silos_aditional,
+                         #settings_dryer_global, #settings_dryer_aditional,
                          #settings_klapan_global, #settings_klapan_aditional,
                          #settings_ventilyator_global, #settings_ventilyator_aditional,
                          #settings_gate_global,#settings_separator_global,#settings_tube_global,#settings_enable_global,
@@ -1268,7 +1269,7 @@ select{
                             #settings_Pzadvijka_sensors,
                             #settings_zadvijkaGroup_sensors,
 
-                            #settings_silos_sensors,
+                            #settings_silos_sensors,#settings_dryer_sensors,
                             #settings_klapan_sensors,
                             #settings_gate_sensors,#settings_separator_sensors,#settings_enable_sensors,
                             #settings_tube_sensors,
@@ -1283,6 +1284,7 @@ select{
                             #table_settings_zadvijka_sensors td,
                             #table_settings_Pzadvijka_sensors td,
                             #table_settings_silos_sensors td,
+                            #table_settings_dryer_sensors td,
                             #table_settings_klapan_sensors td,
                             #table_settings_ventilyator_sensors td,
                             #table_settings_gate_sensors td,#table_settings_enable_sensors td,
@@ -1299,7 +1301,7 @@ select{
 
                         /*див с подвалом*/
                        #settings_noriya_footer,#settings_konveyer_footer,#settings_zadvijka_footer,#settings_Pzadvijka_footer, #settings_zadvijkaGroup_footer,
-                       #settings_silos_footer,#settings_klapan_footer,#settings_ventilyator_footer,
+                       #settings_silos_footer,#settings_dryer_footer,#settings_klapan_footer,#settings_ventilyator_footer,
                        #settings_gate_footer,#settings_separator_footer,#settings_tube_footer,#settings_enable_footer,
                        #add_equipment_footer,#change_row_link_footer,#change_row_culture_footer,#change_row_device_settings_footer,
                        #settings_bell_footer, #settings_current_footer, #settings_analog_dat_footer, #settings_kylt_footer,#kylt_set_confirmation_window_footer,#position_pt_confirmation_window_footer,

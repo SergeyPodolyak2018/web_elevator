@@ -61,6 +61,9 @@ switch(type){
             case 14:
                 var device_type='silos';
                 break;
+            case 16:
+                var device_type='dryer';
+                break;
             case 17:
                 var device_type='separator';
                 break;
@@ -119,6 +122,9 @@ function setings_universal_save(type) {
                 break;
             case 14:
                 var device_type='silos';
+                break;
+            case 16:
+                var device_type='dryer';
                 break;
             case 17:
                 var device_type='separator';
@@ -212,6 +218,9 @@ function settings_equipment_open(p1,p2,p3,index,type){
                 break;
             case 14:
                 device_type='silos';
+                break;
+            case 16:
+                var device_type='dryer';
                 break;
             case 17:
                 device_type='separator';

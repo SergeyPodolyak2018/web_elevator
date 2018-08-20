@@ -521,7 +521,7 @@ function change(oll_mex_status) {
                     }
                   }
                   //Статус силоса
-                  if (type==14){
+                  if (type==14 || type==16){
                    // console.log('xer')
                     //$(SVG.getElementsByClassName('kylt'+k)).text(''+oll_mex_status[k][4]);
 
