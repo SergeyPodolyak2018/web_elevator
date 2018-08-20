@@ -8,10 +8,11 @@
     <title>Элеватор</title>
     <link href="/static/admin/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="/static/admin/js/jquery-ui-1.12.1/jquery-ui.css">
-    <link rel="stylesheet" href="/static/admin/css/elevator.css">
+    <!-- <link rel="stylesheet" href="/static/admin/css/elevator.css">
     <link rel="stylesheet" href="/static/admin/css/elevator_windows.css">
     <link rel="stylesheet" href="/static/admin/css/style.css">
-    <link rel="stylesheet" href="/static/admin/css/fountain_animation.css">
+    <link rel="stylesheet" href="/static/admin/css/fountain_animation.css"> -->
+    <link rel="stylesheet" href="/static/admin/cssTemp/style.css">
     <link rel="stylesheet" href="/static/admin/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.css">
 
 
@@ -19,16 +20,13 @@
     <script src="/static/admin/js/jquery-1.12.4/jquery-1.12.4.js"></script>
     <script src="/static/admin/js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </head>
-<style>
-    *{
-        font-family: 'Roboto', sans-serif!important;
 
-    }
-
-</style>
 <body>
 
-     <div id="container" style="position: fixed;" >
+    <!-- ==============Основной контейнер================== -->
+    <div id="container" class="main_container">
+
+        <!-- ==============Начало Прелоудер================== -->
         <div id="container_fountainG">
             <div id="fountainG">
                 <div id="fountainG_1" class="fountainG"></div>
@@ -41,10 +39,11 @@
                 <div id="fountainG_8" class="fountainG"></div>
             </div>
         </div>
+        <!-- _____________Окончание Прелоудер________________ -->
 
             <div id="header"  class="gorizontal">
 
-       <!-- Логотип зерновая столица-->
+    <!-- Логотип зерновая столица-->
 
                    <a href="#" class="button_with_SVG2" id="logotip_linkc" > <object type="image/svg+xml" data="/static/admin/img/logotip.svg" id="logotip" class="menu_button_typ1">
                           Your browser does not support SVG
@@ -98,36 +97,34 @@
           <!-- Подвал сайта -->
             <div id="footer">
                 <table width="100%" height="100%">
-                               <tr>
-                                   <td id="Name_devise" style="font-size: 100%; border: 1px solid #ababab; width:1.8%"></td>
-                                   <td id="footer_help"
-                                       style="font-size: 100%; border: 1px solid #ababab; width:15%"></td>
-                                   <td id="footer_message"  style="font-size: 100%; border: 1px solid #ababab;
-                                   width:53%;"></td>
-                                   <td id="footer_login"  style="font-size: 100%; border: 1px solid #ababab; width:6%;"></td>
-                                   <td id="footer_control"  style="font-size: 100%; border: 1px solid #ababab; width:5%;"></td>
-                                   <td id="footer_plc_status"  style="font-size: 100%; border: 1px solid #ababab; width:3%;">PLC</td>
-                                   <td id="Timer"  style="font-size: 100%; border: 1px solid #ababab; width:8%"></td>
-                                   <td id="Date"  style="font-size: 100%; border: 1px solid #ababab; width:5%"></td>
-                                   <td id="Time"  style="font-size: 100%; border: 1px solid #ababab; width:3%"></td>
-                              </tr>
-                          </table>
+                    <tr>
+                        <td id="Name_devise" style="font-size: 100%; border: 1px solid #ababab; width:1.8%"></td>
+                        <td id="footer_help"
+                           style="font-size: 100%; border: 1px solid #ababab; width:15%"></td>
+                        <td id="footer_message"  style="font-size: 100%; border: 1px solid #ababab;
+                        width:53%;"></td>
+                        <td id="footer_login"  style="font-size: 100%; border: 1px solid #ababab; width:6%;"></td>
+                        <td id="footer_control"  style="font-size: 100%; border: 1px solid #ababab; width:5%;"></td>
+                        <td id="footer_plc_status"  style="font-size: 100%; border: 1px solid #ababab; width:3%;">PLC</td>
+                        <td id="Timer"  style="font-size: 100%; border: 1px solid #ababab; width:8%"></td>
+                        <td id="Date"  style="font-size: 100%; border: 1px solid #ababab; width:5%"></td>
+                        <td id="Time"  style="font-size: 100%; border: 1px solid #ababab; width:3%"></td>
+                    </tr>
+                </table>
             </div>
 
         <!-- Див с выбором вирианта маршрута -->
-         <div id="rout" class="draggable modal_box" >
+         <!-- <div id="rout" class="draggable modal_box" >
              <div id="rout_variant_header" class="modal_box_header">
                  <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                      <tr>
                          <td width="90%">Варианты маршрутов<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
                              <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                         </div> &nbsp;<!--&nbsp;&nbsp;&nbsp;&nbsp;<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                             <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                         </div>--></td></tr>
+                         </div> &nbsp;</td></tr>
                  </table>
              </div>
 
-             <!--<div class="modal_box_body border" style="margin-bottom: 0px!important;">-->
+             
                  <div id="rout_kultura" style="width:100%;">
                      <table style="width:100%;">
                          <tr>
@@ -140,7 +137,7 @@
 
 
                  </div>
-                <!--<div style="clear: both;"></div>-->
+                
                 <div id="rout_variant" style="min-width: 175px; margin-top:5px;">
                      <table style="text-align:center; width: 100%;">
                          <tbody id="table_rout_variant" style="text-align:center; width:100%;">
@@ -152,7 +149,7 @@
                          </tbody>
                      </table>
                  </div>
-             <!--</div>-->
+             
 
              <div id="rout_variant_footer" >
                  <table width="100%" cellspacing="2" cellpadding="1" border="0">
@@ -165,10 +162,10 @@
 
                  </table>
              </div>
-         </div>
+         </div> -->
 
       <!-- Див с подтверждение запуска маршрута-->
-         <div id="rout_confirmation" class="draggable modal_box" style="width: 460px;">
+         <!-- <div id="rout_confirmation" class="draggable modal_box" style="width: 460px;">
              <div id="rout_confirmation_header" class="modal_box_header">
                  <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                      <tr>
@@ -194,8 +191,6 @@
 
              <div id="rout_confirmation_footer" >
                  <table width="98%" cellspacing="2" cellpadding="1" border="0">
-
-
                      <tr>
                          <td width="60%">
                             &nbsp
@@ -208,16 +203,12 @@
                             <button class="modal_box_btn" style="width: 85px;" onclick="exit_rout_variant(event)">Отмена</button>
                          </td>
                      </tr>
-
-                 </table>
-
-                <!-- <button style="float: right;" onclick="exit_rout_variant()" class="modal_box_btn btn_push_right">Отмена</button>
-                 <button style="float: right;" onclick="start_rout_variant()" class="modal_box_btn">Запуск</button>-->
+                 </table>                
              </div>
-         </div>
+         </div> -->
 
     <!-- Див с подтверждение остановки маршрута-->
-        <div id="stop_rout_confirmation" class="draggable modal_box">
+        <!-- <div id="stop_rout_confirmation" class="draggable modal_box">
             <div id="stop_rout_confirmation_header" class="modal_box_header">
                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                     <tr>
@@ -239,10 +230,10 @@
                      </table>
             </div>
 
-        </div>
+        </div> -->
 
   <!-- Див с подтверждение перезапуска маршрута-->
-         <div id="restart_rout_confirmation" class="draggable modal_box">
+         <!-- <div id="restart_rout_confirmation" class="draggable modal_box">
              <div id="restart_rout_confirmation_header" class="modal_box_header">
                  <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                      <tr>
@@ -264,9 +255,9 @@
                      </table>
              </div>
         </div>
-
+ -->
 <!-- Див с сообщением о аварии на маршруте-->
-         <div id="alarm_rout" class="draggable modal_box">
+         <!-- <div id="alarm_rout" class="draggable modal_box">
              <div id="alarm_rout_header" class="modal_box_header">
                  <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                      <tr>
@@ -277,7 +268,7 @@
                  </table>
              </div>
 
-             <!--<div id="alarm_rout_content" style="background-color:#f2ff00">-->
+             
              <div id="alarm_rout_content" class="" style="background-color:#f2ff00; color:#000; padding:5px; margin:5px; border-radius:10px; color:#000;">
                  <p id="alarm_rout_message" style="font-size: 14px!important; padding:5px;
                  margin:5px;border-radius:10px;">
@@ -299,9 +290,9 @@
                      </tbody>
                  </table>
              </div>
-         </div>
+         </div> -->
 <!-- Див с сообщением о отсутствии связи с ПЛК-->
-         <div id="alarm_plc_connection" class="draggable modal_box">
+         <!-- <div id="alarm_plc_connection" class="draggable modal_box">
              <div class="modal_box_header">
                  <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
                      <tr>
@@ -312,7 +303,7 @@
                  </table>
              </div>
 
-             <!--<div id="alarm_rout_content" style="background-color:#f2ff00">-->
+             
              <div style="background-color:red; color:#000; padding:5px; margin:5px; border-radius:10px; color:#000;">
                  <p style="font-size: 14px!important; padding:5px;
                  margin:5px;border-radius:10px;">Связь с ПЛК отсутствует</p>
@@ -331,25 +322,24 @@
                      </tbody>
                  </table>
              </div>
-         </div>
+         </div> -->
 <!-- Выпадающее меню архив-->
-         <div id="archiv" class="hiden" style="width:170px!important;">
+         <!-- <div id="archiv" class="hiden" style="width:170px!important;">
              <a href="#" class="menu_button" onclick="archiv_alarm()">Сообщения</a>
              <a href="#" class="menu_button" onclick="archiv_rout()">Маршруты</a>
              <a href="#" class="menu_button" onclick="archiv_devices()">Журнал действий</a>
              <a href="#" class="menu_button" onclick="archive_current_open(2)">Графики токов</a>
              <a href="#" class="menu_button" onclick="archive_current_open(1)">Текущие графики токов</a>
-
-         </div>
+         </div> -->
 <!-- Выпадающее меню сервис-->
-         <div id="servis" class="hiden">
+         <!-- <div id="servis" class="hiden">
              <a href="#" class="menu_button" onclick="showmenu2(this,1)">Конфигурация        <span style="float: right;margin-right:-12px;">&#9658;</span></a>
              <a href="#" class="menu_button" onclick="showmenu2(this,2)">Культура            <span style="float: right;margin-right:-12px;">&#9658;</span></a>
              <a href="#" class="menu_button" onclick="showmenu2(this,3)">Настройки видимости <span style="float: right;margin-right:-12px;">&#9658;</span></a>
              <a href="#" class="menu_button">О программе</a>
-         </div>
+         </div> -->
  <!-- Выпадающее меню настройки-->
-         <div id="configuration" class="hiden">
+        <!--  <div id="configuration" class="hiden">
              <a href="#" id="menu_button_setings_bell_open" class="menu_button">Настройки звонка</a>
              <a href="#" id="menu_button_device_settings" class="menu_button">БД устройств</a>
              <a href="#" id="menu_button_linck_open" class="menu_button">БД связей</a>
@@ -358,27 +348,28 @@
              <a href="#" class="menu_button">БД типы работ</a>
              <a href="#" class="menu_button">БД моточасы</a>
              <a href="#" class="menu_button">БД пользователей</a>
-         </div>
+         </div> -->
          <!-- Выпадающее меню культура-->
-         <div id="kulture" class="hiden">
+         <!-- <div id="kulture" class="hiden">
              <a href="#" id="menu_button_culture_open" class="menu_button">Справочник культур</a>
              <a href="#" class="menu_button">Карта культур</a>
-         </div>
+         </div> -->
         <!-- Выпадающее меню настройки видимости-->
-         <div id="visiblSettings" class="hiden">
+         <!-- <div id="visiblSettings" class="hiden">
              <a href="#" class="menu_button" onclick="showHideKylt()">Скрыть/Показать культ.</a>
              <a href="#" class="menu_button" onclick="showHideCurrent()">Скрыть/Показать токи</a>
              <a href="#" class="menu_button" onclick="showNamesOfKlapan()">Скрыть/Показать имена</a>
-         </div>
+         </div> -->
 
-
-         <div id="menu">
+        <!-- ======Начало Див с меню============  -->
+         <!-- <div id="menu"> -->
             <!-- there will be buttons -->
-         </div>
+         <!-- </div> -->
+        <!--_______Окончание див с меню___________ -->
 
 
          <!--окно архив сообщений-->
-            <div id="archiv_message" class="draggable modal_box" >
+            <!-- <div id="archiv_message" class="draggable modal_box" >
                  <div id="archiv_message_header" class="modal_box_header">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 5px;">
                          <tr> <td width="90%">Архив сообщений</td></tr>
@@ -447,10 +438,10 @@
 
                      </table>
                  </div>
-            </div>
+            </div> -->
 
           <!--окно архив маршрутов-->
-            <div id="archiv_rout" class="draggable modal_box">
+            <!-- <div id="archiv_rout" class="draggable modal_box">
                  <div id="archiv_rout_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
                          <tr>
@@ -509,10 +500,10 @@
                  <div id="archiv_rout_footer" >
                      <button onclick="archiv_rout_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                  </div>
-             </div>
+             </div> -->
 
     <!--окно архив устройств-->
-            <div id="archiv_device" class="draggable modal_box">
+            <!-- <div id="archiv_device" class="draggable modal_box">
                  <div id="archiv_device_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
                          <tr>
@@ -568,14 +559,14 @@
                  <div id="archiv_device_footer" >
                      <button  onclick="archiv_device_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                  </div>
-             </div>
+             </div> -->
 
 
 
 
 
              <!--окно текущее аварийное сообщение-->
-            <div id="alarm_message" class="draggable modal_box">
+            <!-- <div id="alarm_message" class="draggable modal_box">
                  <div id="alarm_message_header" class="modal_box_header">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 5px;">
                          <tr><td width="90%" style="padding-left:5px;">Аварийные сообщения
@@ -589,7 +580,7 @@
                      <table id="table_body_alarm_message" class="table">
                          <thead >
                             <tr>
-                                <!-- <td style="border: 1px solid #0e0e0e;">ID</td>-->
+                                
                                  <td style="padding-top:5px;padding-bottom:5px;">Дата</td>
                                  <td style="padding-top:5px;padding-bottom:5px;">Время</td>
                                  <td style="padding-top:5px;padding-bottom:5px;width: 120px;">Название</td>
@@ -645,9 +636,9 @@
                      </tbody>
                  </table>
              </div>
-         </div>
+         </div> -->
          <!--окно графики токов-->
-            <div id="archive_current" class="draggable modal_box">
+            <!-- <div id="archive_current" class="draggable modal_box">
                  <div id="archive_current_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
                                    <tr><td width="90%" style="padding-top:7px;">Графики токов<div class="header-wrap" style="float:right;
@@ -698,22 +689,14 @@
 
 
                  <div id="archive_current_footer" >
-                     <button onclick="archive_current_close()" class="modal_box_btn btn_push_right">Закрыть</button>
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                         <!--<tr>-->
-                             <!--<td width="80%">&nbsp</td>-->
-                             <!--<td>-->
-                                 <!--<button onclick="archive_current_close()">Закрыть</button>-->
-                             <!--</td>-->
-                         <!--</tr>-->
-                     <!--</table>-->
+                     <button onclick="archive_current_close()" class="modal_box_btn btn_push_right">Закрыть</button>                     
                  </div>
 
-             </div>
+             </div> -->
 
     <!--Меню управления для задвижки под зилосом-->
 
-            <div id="zadvijka_kontrol_menu"  class="draggable modal_box" style="background-color: #191919; ">
+            <!-- <div id="zadvijka_kontrol_menu"  class="draggable modal_box" style="background-color: #191919; ">
                  <div id="zadvijka_kontrol_menu_header" class="modal_box_header" style="background-color: #0e0e0e;">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0">
                                    <tr>
@@ -739,8 +722,7 @@
                                     <tr>
                                         <td colspan="3">
                                             <span style="border:none;">Состояние задвижки</span>
-                                            <!--<span class="modal_menu">Калибровка</span>
-                                            <span class="modal_menu">Управление задвижкой</span>-->
+                                            
                                         </td>
                                     </tr>
                                 </thead>
@@ -771,7 +753,7 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <td colspan="4"> <!--Калибровка-->
+                                        <td colspan="4"> 
                                             <span >Калибровка</span>
                                         </td>
                                     </tr>
@@ -798,7 +780,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <!--<td><button id="zadvijka_kontrol_menu_button_calibrate" onclick="show_zadvijka_state()">Калибровка</button></td>-->
+                                    
                                     <td style="width: 215px;">
 
                                         <a class="modal_box_btn" style="text-decoration: none; width: 170px;padding-right: 0px;padding-left: 0px; padding-top:0px; padding-bottom: 0px;" href="#" id="zadvijka_kontrol_menu_button_calibrate" onclick="zadvijka_send_comand_from_button(5,0,0)"> Калибровка</a>
@@ -819,9 +801,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                   <!-- <td style="w">
-                                        <input type="radio" name="control" value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
-                                    </td>-->
+                                   
                                     <td style="width: 215px;">
                                         <input style="text-align: center" type="radio" name="control"  value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
                                         Длительность откр/закр, мс
@@ -839,9 +819,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                   <!-- <td>
-                                        <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
-                                    </td>-->
+                                   
                                     <td style="width:215px"> <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
                                         Пропорциональное откр/закр, %
                                     </td>
@@ -892,10 +870,10 @@
 
 
                  </div>
-            </div>
+            </div> -->
 
     <!--__Настройки нории___-->
-            <div id="settings_noriya" class="draggable modal_box">
+            <!-- <div id="settings_noriya" class="draggable modal_box">
                 <form method="POST" id="form_noriya_settings" name="form_noriya_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_noriya_header" class="modal_box_header ">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -910,20 +888,14 @@
                                                </div>
                                            </td>
                                    </tr>
-                                       <!--<div class="header-wrap">
-                                       <a onclick="setings_universal_close(1)" href="/" type="button" class="btn btn-default btn-back"><span></span></a>
-                                   </div>-->
+                                       
 
 
 
                      </table>
 
                  </div>
-                   <!-- <div class="sub_options" style="border-bottom:1px solid #494949;">
-                        <div id="settings_noriya_total_settings" class="name_options activ_modal_sub_menu" style="float:left; margin:5px;"> Общие настройки</div>
-                        <div id="settings_noriya_spicial_settings" class="name_options" style="float:left; margin:5px;">Специальные настройки</div>
-                        <div style="clear:both;"></div>
-                    </div>-->
+                   
 
                 <div id="settings_noriya_content" class="modal_box_body" style="float:left;">
 
@@ -1085,25 +1057,19 @@
 
 
                  <div id="settings_noriya_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
                      <button style="float:right;" onclick="setings_universal_close(1)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float:right;" onclick="setings_universal_save(1)" class="modal_box_btn btn_push_right" >Сохранить</button>
 
 
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 
          <!--__Настройки конвейера___-->
 
-            <div id="settings_konveyer" class="draggable modal_box">
+            <!-- <div id="settings_konveyer" class="draggable modal_box">
                 <form method="POST" id="form_konveyer_settings" name="form_konveyer_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_konveyer_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -1317,11 +1283,11 @@
 
                  </div>
                 </form>
-             </div>
+             </div> -->
 
          <!--Настройки Задвижки-->
 
-            <div id="settings_zadvijka" class="draggable modal_box">
+            <!-- <div id="settings_zadvijka" class="draggable modal_box">
                 <form method="POST" id="form_zadvijka_settings" name="form_zadvijka_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_zadvijka_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -1448,23 +1414,15 @@
 
 
                  <div id="settings_zadvijka_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
-
                      <button style="float: right;" onclick="setings_universal_close(4)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(4)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 <!--Настройки парной Задвижки-->
 
-            <div id="settings_Pzadvijka" class="draggable modal_box">
+            <!-- <div id="settings_Pzadvijka" class="draggable modal_box">
                 <form method="POST" id="form_Pzadvijka_settings" name="form_Pzadvijka_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_Pzadvijka_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -1592,22 +1550,15 @@
 
 
                  <div id="settings_Pzadvijka_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
-
+                     
                      <button style="float: right;" onclick="setings_universal_close(5)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(5)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>             
+             </div>  -->            
 <!--___Настройки Груповой задвижки__ -->
 
-            <div id="settings_zadvijkaGroup" class="draggable modal_box">
+            <!-- <div id="settings_zadvijkaGroup" class="draggable modal_box">
                 <form method="POST" id="form_zadvijkaGroup_settings" name="form_zadvijkaGroup_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_zadvijkaGroup_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -1615,7 +1566,7 @@
                                       <span>
                                        <div id="settings_zadvijkaGroup_total_settings" class="name_options activ_modal_sub_menu" style="float:left; margin-right:5px;"> Общие настройки</div>
                                         <div id="settings_zadvijkaGroup_spicial_settings" class="name_options" style="float:left; margin-right:5px; ">Специальные настройки</div>
-                                        <!--<div id="settings_zadvijkaGroup_index_settings" class="name_options" style="float:left; ">Индексы задвижек в общей группе</div>-->
+                                        
                                    </span>
                                    </td>
                                        <td style="color:#ffa200; text-align:right; padding-right: 22px;" class="settings_header_name">Конвеер пт-27</td><td>
@@ -1676,26 +1627,6 @@
                             <tr><td style="padding-right: 54px;">Задвижка 8</td><td><input class="checkable_data_form" name="Parameter8" SIZE=2></td></tr>
                         </table>
                     </div>
-
-                    <!--<div id="settings_zadvijkaGroup_aditional_indexesOfGroup" style="display: none;">
-
-                        <table class="table" id="table_settings_zadvijkaGroup_aditional_indexesOfGroup" cellspacing="1" cellpadding="1" border="0">
-                            <tr><td colspan="4" style="background-color:#0e0e0e; color: #ccc">Индексы задвижек</td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 2</td><td><input class="checkable_data_form" name="Parameter2" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 3</td><td><input class="checkable_data_form" name="Parameter3" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 4</td><td><input class="checkable_data_form" name="Parameter4" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 5</td><td><input class="checkable_data_form" name="Parameter5" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 6</td><td><input class="checkable_data_form" name="Parameter6" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 7</td><td><input class="checkable_data_form" name="Parameter7" SIZE=6></td></tr>
-                            <tr><td style="padding-right: 15px;padding-left: 19px;">Задвижка 8</td><td><input class="checkable_data_form" name="Parameter8" SIZE=6></td></tr>
-
-
-
-                        </table>
-                    </div>-->
-
-
-
                     <div id="settings_zadvijkaGroup_sensors" style="float: left;">
                         <table class="table" id="table_settings_zadvijkaGroup_sensors" style="margin-left: 0px;">
                             <thead>
@@ -1807,24 +1738,18 @@
 
 </div>
                  <div id="settings_zadvijkaGroup_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="setings_universal_close(23)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(23)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
               <!--__Настройки Силоса___-->
 
 
-            <div id="settings_silos" class="draggable modal_box">
+            <!-- <div id="settings_silos" class="draggable modal_box">
                 <form method="POST" id="form_silos_settings" name="form_silos_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_silos_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -1920,23 +1845,17 @@
 
 
                  <div id="settings_silos_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="setings_universal_close(14)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(14)" class="modal_box_btn">Сохранить</button>
 
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 <!-- ************************************Настройки сушилки******************************** -->
-            <div id="settings_dryer" class="draggable modal_box">
+            <!-- <div id="settings_dryer" class="draggable modal_box">
                 <form method="POST" id="form_dryer_settings" name="form_dryer_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_dryer_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -2049,14 +1968,14 @@
 
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 <!-- ***********************************Конец настроек сушилки***************************** -->
 
 
          <!--___Настройки Клапана___-->
 
-            <div id="settings_klapan" class="draggable modal_box">
+            <!-- <div id="settings_klapan" class="draggable modal_box">
                 <form method="POST" id="form_klapan_settings" name="form_klapan_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_klapan_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -2179,24 +2098,16 @@
 
 
                  <div id="settings_klapan_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
-
                      <button style="float: right;" onclick="setings_universal_close(3)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(3)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 
               <!--___Настройки Вентилятора__-->
 
-            <div id="settings_ventilyator" class="draggable modal_box">
+           <!--  <div id="settings_ventilyator" class="draggable modal_box">
                 <form method="POST" id="form_ventilyator_settings" name="form_ventilyator_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_ventilyator_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -2330,23 +2241,17 @@
 
 
                  <div id="settings_ventilyator_footer">
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="setings_universal_close(6)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(6)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
          <!--___Настройки шлюзовой затвор___-->
 
-            <div id="settings_gate" class="draggable modal_box" >
+            <!-- <div id="settings_gate" class="draggable modal_box" >
                 <form method="POST" id="form_gate_settings" name="form_gate_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_gate_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -2551,23 +2456,17 @@
 
 
                  <div id="settings_gate_footer">
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="setings_universal_close(18)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(18)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
              </div>
-
+ -->
          <!--__Настройки поворотная труба___-->
 
-            <div id="settings_tube" class="draggable modal_box" width="400px" >
+            <!-- <div id="settings_tube" class="draggable modal_box" width="400px" >
                 <form method="POST" id="form_tube_settings" name="form_tube_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_tube_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -2713,23 +2612,17 @@
 
 
                  <div id="settings_tube_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="setings_universal_close(7)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="setings_universal_save(7)" class="modal_box_btn">Сохранить</button>
 
                  </div>
                 </form>
-             </div>
+             </div> -->
          <!--___Настройки сепаратор____-->
 
-            <div id="settings_separator" class="draggable modal_box" >
+            <!-- <div id="settings_separator" class="draggable modal_box" >
                 <form method="POST" id="form_separator_settings" name="form_separator_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_separator_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top:7px;">
@@ -2745,7 +2638,7 @@
 
                 <div id="settings_separator_content" class="modal_box_body" style="margin-bottom: -5px;">
 
-                    <div id="settings_separator_global"> <!-- width="45%"-->
+                    <div id="settings_separator_global"> 
 
                         <table class="table" id="table_settings_separator_global"  cellspacing="1" cellpadding="1" border="0" style="margin-bottom: -6px ;border-radius: 10px 10px 0px 0px!important;">
                             <tr><td colspan="3" style="background-color:#0e0e0e; color: #ccc">Общие настройки</td></tr>
@@ -2757,7 +2650,7 @@
                         </table>
                     </div>
                     <div style="clear:both;"></div>
-                    <div id="settings_separator_aditional" style="margin-bottom: -6px;"> <!--width="45%"-->
+                    <div id="settings_separator_aditional" style="margin-bottom: -6px;"> 
 
                         <table class="table" id="table_settings_separator_aditional"  cellspacing="1" cellpadding="1" border="0" style="border-radius: 0px;">
                              <tr><td colspan="2" style="background-color:#0e0e0e; color: #ccc">Специальные настройки</td></tr>
@@ -2816,10 +2709,10 @@
                      <button style="float: right;" onclick="setings_universal_save(17)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 <!--____Настройки меток__-->
 
-            <div id="settings_enable" class="draggable modal_box" >
+            <!-- <div id="settings_enable" class="draggable modal_box" >
                 <form method="POST" id="form_enable_settings" name="form_enable_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_enable_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -2960,13 +2853,13 @@
                      <button style="float: right;" onclick="setings_universal_save(19)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 
 
          <!--___Настройки звонка___-->
 
-         <div id="settings_bell" class="draggable modal_box" >
+         <!-- <div id="settings_bell" class="draggable modal_box" >
              <form method="POST" id="form_bell_settings" name="form_bell_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_bell_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
@@ -3113,10 +3006,10 @@
                      <button style="float: right;" onclick="setings_bell_save()" class="modal_box_btn">Сохранить</button>
                  </div>
              </form>
-         </div>
+         </div> -->
          <!--__Настройки аналоговых датчиков тока____-->
 
-            <div id="settings_current" class="draggable modal_box">
+            <!-- <div id="settings_current" class="draggable modal_box">
                 <form method="POST" id="form_current_settings" name="form_current_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_current_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -3153,9 +3046,7 @@
                                 <td>Количество циклов усреднения</td>
                                 <td><input class="checkable_data_form" name="cAverCycle" SIZE=1></td>
                             </tr>
-                           <!-- <tr>
-                                <td colspan="2">&nbsp</td>
-                            </tr>-->
+                           
                             <tr>
                                 <td colspan="2" style="background-color:#0e0e0e; color: #ccc">Калибровка</td>
                             </tr>
@@ -3163,9 +3054,7 @@
                                 <td>Уставка трансформатора тока, А</td>
                                 <td><input name="AnalogA" SIZE=1 class="checkable_data_form"></td>
                             </tr>
-                           <!-- <tr>
-                                <td colspan="2">&nbsp</td>
-                            </tr>-->
+                           
                             <tr>
                                 <td colspan="2" style="background-color:#0e0e0e; color: #ccc">Дополнительные</td>
                             </tr>
@@ -3207,10 +3096,10 @@
                      <button style="float: right;" onclick="setings_universal_save(100)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 <!--___Настройки аналоговых датчиков____-->
 
-            <div id="settings_analog_dat" class="draggable modal_box">
+            <!-- <div id="settings_analog_dat" class="draggable modal_box">
                 <form method="POST" id="form_analog_dat_settings" name="form_analog_dat_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_analog_dat_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -3250,9 +3139,7 @@
                                 <td>Индекс устройства</td>
                                 <td><input class="checkable_data_form" name="Analog_Dat_Device" SIZE=1></td>
                             </tr>
-                            <!--<tr>
-                                <td colspan="2">&nbsp</td>
-                            </tr>-->
+                            
                             <tr >
                                 <td  colspan="2" style="background-color: #0e0e0e; color: #ccc;">Калибровка</td>
                             </tr>
@@ -3260,9 +3147,7 @@
                                 <td>Действительное значение датчика, %</td>
                                 <td><input name="Analog_Dat_P" SIZE=1 class="checkable_data_form"></td>
                             </tr>
-                            <!--<tr
-                            ><td colspan="2">&nbsp</td>
-                            </tr>-->
+                            
 
                             <tr><td>Не преобразовывать</td><td><select size="1" name="Analog_Dat_Flags_bit4"><option value="0">0</option><option value="1">1</option></select>
                             <tr><td>Симулятор</td><td><select size="1" name="Analog_Dat_Flags_bit3"><option value="0">0</option><option value="1">1</option></select>
@@ -3271,20 +3156,16 @@
                     </div>
                  </div>
                  <div id="settings_analog_dat_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                           <!--<td width="50%" style="text-align: left" ></td>-->
-                                   <!--</tr>-->
-                     <!--</table>-->
+                     
                      <button onclick="setings_universal_close(102)" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button onclick="setings_universal_save(102)" class="modal_box_btn btn_push_right">Сохранить</button>
 
                  </div>
                 </form>
-             </div>
+             </div> -->
          <!--___Настройки культуры___-->
 
-            <div id="settings_kylt" class="draggable modal_box margin_box" >
+            <!-- <div id="settings_kylt" class="draggable modal_box margin_box" >
                 <form method="POST" id="form_kylt_settings" name="form_kylt_settings" action="javascript:void(null);" onsubmit="">
                  <div id="settings_kylt_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -3303,8 +3184,7 @@
                     <div id="settings_kylt_global" >
 
                         <table class="table" id="table_settings_kylt_global" cellspacing="1" cellpadding="1" border="0">
-                           <!-- <tr>
-                                <td  colspan="2" class="line_bottom" style="padding-bottom:5px; padding-top:5px;"><span class="activ_modal_sub_menu name_options">Общие настройки</span></td></tr>-->
+                           
                             <tr>
                                 <td style="width: 190px;">Индекс объекта чтения культуры</td>
                                 <td style="width: 45px"><input name="Kylt_View_Index" style="float: right;" SIZE=2 readonly></td></tr>
@@ -3321,11 +3201,11 @@
                          <button style="float: right;" onclick="setings_universal_save(101)" class="modal_box_btn">Сохранить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
          <!--_Установка культуры__-->
 
-         <div id="kylt_set_confirmation_window" class="draggable modal_box" >
+         <!-- <div id="kylt_set_confirmation_window" class="draggable modal_box" >
                  <div id="kylt_set_confirmation_window_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
                             <tr><td width="90%">Установить культуру
@@ -3357,11 +3237,11 @@
 
                  </div>
 
-         </div>
+         </div> -->
 
          <!--Настройки добавления устройств-->
 
-            <div id="add_equipment" class="draggable modal_box">
+            <!-- <div id="add_equipment" class="draggable modal_box">
                 <form method="POST" id="form_add_equipment" name="form_separator_settings" action="javascript:void(null);" onsubmit="">
                  <div id="add_equipment_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
@@ -3396,27 +3276,18 @@
 
 
                  <div id="add_equipment_footer">
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" >-->
-                                          <!---->
-                                       <!--</td>-->
-                                       <!--<td style="text-align: right">-->
-                                           <!---->
-                                       <!--</td>-->
-                                   <!--</tr>-->
-                              <!--</table>-->
+                     
 
                      <button style="float: right" onclick="add_equipment_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right" onclick="add_equipment_add()" class="modal_box_btn">Добавить</button>
                  </div>
                 </form>
-             </div>
+             </div> -->
 
 
           
 <!--окно архив связей-->
-            <div id="linck_settings" class="draggable modal_box" style="min-width:520px; ">
+            <!-- <div id="linck_settings" class="draggable modal_box" style="min-width:520px; ">
                  <div id="linck_settings_header" class="modal_box_header" style="width: 100%;">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
                          <tr>
@@ -3452,20 +3323,14 @@
 
 
                  <div id="linck_settings_footer" style="margin:5px;">
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-                              <!--</table>-->
-
+                     
                      <button style="float: right;" onclick="linck_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="linck_add_row()" class="modal_box_btn">Добавить строку</button>
                  </div>
-             </div>
+             </div> -->
 
     <!--Окошко изменения строки-->
-         <div id="change_row_link" class="draggable modal_box" >
+        <!--  <div id="change_row_link" class="draggable modal_box" >
 
                  <div id="change_row_link_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -3511,9 +3376,9 @@
                      <button style="float: right;" onclick="change_row_link_save()" class="modal_box_btn">Сохранить</button>
                  </div>
 
-             </div>
+             </div> -->
 <!--___окно архива устройств___-->
-            <div id="device_settings" class="draggable modal_box">
+            <!-- <div id="device_settings" class="draggable modal_box">
                  <div id="device_settings_header" class="modal_box_header" style="width:100%;">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" >
                                    <tr ><td width="90%" style="padding-top: 7px;">БД устройств<div class="header-wrap"
@@ -3547,18 +3412,13 @@
 
 
                  <div id="device_settings_footer">
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td><td style="text-align: right"></td>-->
-
-                                   <!--</tr>-->
-                              <!--</table>-->
+                     
                      <button  style="margin:5px;" onclick="device_settings_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                  </div>
-             </div>
+             </div> -->
 
 <!--Окошко изменения строки базы устройств-->
-         <div id="change_row_device_settings" class="draggable modal_box">
+         <!-- <div id="change_row_device_settings" class="draggable modal_box">
 
                  <div id="change_row_device_settings_header" class="modal_box_header" style="width: 100%;">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
@@ -3590,19 +3450,14 @@
                 </div>
 
                  <div id="change_row_device_settings_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-                     <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="change_row_device_settings_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="change_row_device_settings_save()" class="modal_box_btn">Сохранить</button>
                  </div>
-             </div>
+             </div> -->
          <!--__окно справочник культур__-->
-            <div id="culture_settings" class="draggable modal_box" >
+            <!-- <div id="culture_settings" class="draggable modal_box" >
                  <div id="culture_settings_header" class="modal_box_header" style="width: 100%;">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0">
                                    <tr><td width="90%" style="padding-top: 7px;">Справочник культур<div
@@ -3649,10 +3504,10 @@
                      <button style="float: right; margin-top:0px;" onclick="culture_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right; margin-top:0px;" onclick="culture_add_row()" class="modal_box_btn">Добавить строку</button>
                  </div>
-             </div>
+             </div> -->
 
           <!--Окошко изменения культуры-->
-         <div id="change_row_culture" class="draggable modal_box" >
+         <!-- <div id="change_row_culture" class="draggable modal_box" >
 
                  <div id="change_row_culture_header" class="modal_box_header">
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
@@ -3688,23 +3543,18 @@
                  </div>
 
                  <div id="change_row_culture_footer" >
-                     <!--<table width="100%" cellspacing="2" cellpadding="1" border="0">-->
-                                   <!--<tr>-->
-                                       <!--<td width="50%" style="text-align: left" ></td>-->
-
-                                   <!--</tr>-->
-                              <!--</table>-->
+                     
 
                      <button style="float: right;" onclick="change_row_culture_close()" class="modal_box_btn btn_push_right">Закрыть</button>
                      <button style="float: right;" onclick="change_row_culture_save()" class="modal_box_btn">Сохранить</button>
                  </div>
 
-             </div>
+             </div> -->
 
 
          <!--__Установка позиции поворотной трубы__-->
 
-         <div id="position_pt_confirmation_window" class="draggable modal_box" >
+         <!-- <div id="position_pt_confirmation_window" class="draggable modal_box" >
                  <div id="position_pt_confirmation_window_header" class="modal_box_header" >
                      <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
                             <tr><td width="90%">Установить позицию<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
@@ -3728,11 +3578,11 @@
                      <button onclick="close_position_pt()" class="modal_box_btn btn_push_right">Закрыть</button>
                  </div>
 
-         </div>
+         </div> -->
 
                   <!--___Окно подтверждения для многих механизмов____-->
 
-         <div id="oll_mex_confirmation_window" class="draggable modal_box" >
+         <!-- <div id="oll_mex_confirmation_window" class="draggable modal_box" >
              <div id="oll_mex_confirmation_window_header" class="modal_box_header" >
                  <table class="" width="100%" cellspacing="1" cellpadding="1" border="0">
                         <tr>
@@ -3757,9 +3607,9 @@
                     <tr id="oll_mex_buttons"></tr>
                 </table>
              </div>
-         </div>
+         </div> -->
     <!-- Окно статистики конкретного механизма -->
-        <div id="statistic_window" class="draggable universal_window" style="display: none">
+        <!-- <div id="statistic_window" class="draggable universal_window" style="display: none">
             <div id="statistic_window_header" class="universal_window_header">
                 <p class="statistic_window_header_name">Нория 5Н</p><a href="#" class="btn btn-default btn-back" onclick="statistic_close()"><span></span></a>
             </div>
@@ -3772,12 +3622,12 @@
             <div id="statistic_window_footer" class="universal_window_footer">                
                 <div class="universal_button" onclick="statistic_close()">Закрыть</div>
             </div>            
-        </div>
+        </div> -->
 
 
          <!--___Окно постановки линии в ремонт -->
 
-         <div id="refit_route_window" class="draggable modal_box" >
+         <!-- <div id="refit_route_window" class="draggable modal_box" >
                  <div id="refit_route_window_header" class="modal_box_header" >
                      <table class="" width="100%" cellspacing="1" cellpadding="1" border="0">
                             <tr>
@@ -3788,19 +3638,16 @@
                             </tr>
                      </table>
                  </div>
-            <!-- <div style="background-color:yellow; color:#000; padding:5px; margin:5px; border-radius:10px; color:#000;">
-                <p style="font-size: 14px!important; padding:5px;
-                     margin:5px;border-radius:10px;">Поставить/снять с ремонта линию?</p>
-            </div> -->
+            
             <div id="refit_route_window_footer" >
                 <button style="float: right;" onclick="refit_route_close()" class="modal_box_btn btn_push_right">Нет</button>
                 <button style="float: right;" class="modal_box_btn refit_route_command_button">Да</button>
             </div>
 
-         </div>
+         </div> -->
 
          <!--Окно всех датчиков-->
-             <div id="datchiki_kontrol" class="hiden_datchiki draggable modal_box">
+             <!-- <div id="datchiki_kontrol" class="hiden_datchiki draggable modal_box">
                  <div id="datchiki_kontrol_header" class="modal_box_header" style="background:#0e0e0e; color:#ccc;">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0">
                          <tr><td width="30%">Датчики</td><td id="fool_name_of_device" style="color:#ffa200; float:right; padding-right:30px;">название</td><div class="header-wrap" style="float:right; margin-right: -5px;">
@@ -3825,30 +3672,35 @@
                      <button class="btn_push_right modal_box_btn" onclick="close_datchiki()">Закрыть</button>
 
                  </div>
-             </div>
+             </div> -->
 
              <!--Иконки увеличения или уменьшения-->
-             <div id="zoomInOut" style="float: left;position: absolute;top:70%;display: block;">
+                <!-- <div id="zoomInOut" style="float: left;position: absolute;top:70%;display: block;"> -->
         <!-- Иконки плюс -->    
-                <div style="width: 100%;float:left;display: block;">                       
+                <!-- <div style="width: 100%;float:left;display: block;">                       
                     <object type="image/svg+xml" data="/static/admin/img/zoomPlaz.svg" id="zoomIn_svg" style="width:100%;height:100%;">
                                   Your browser does not support SVG
                     </object>
-                </div>
+                </div> -->
                 <!--Буфер-->
-                <div style="width: 100%;height: 50%;float:left;display: block;">                       
+                <!-- <div style="width: 100%;height: 50%;float:left;display: block;">                       
                     
-                </div>
+                </div> -->
         <!-- Иконки  минус--> 
-                <div style="width: 100%;float:left;display: block;">                          
+                <!-- <div style="width: 100%;float:left;display: block;">                          
                     <object type="image/svg+xml" data="/static/admin/img/zoomMinus.svg" id="zoomOut_svg" style="width: 100%;height: 100%;">
                                   Your browser does not support SVG
                     </object>
                 </div>
-            </div>
+            </div> -->
 
 
     </div>
+    <!-- _____________Окончание Основной контейнер________________ -->
+     
+
+
+
      <!--<link rel="stylesheet" href="/static/admin/js/tooltipster-master/dist/css/tooltipster.bundle.css">-->
 
         <script src="/static/admin/js/zoom_liski.js" defer></script>
