@@ -1,0 +1,32 @@
+@import "variables";
+@box:~'.modal_box';
+
+@{box}{	
+	position:absolute;
+	display:inline-block;
+	background-color: @modal-back;
+    border:1px solid @modal-border;
+    border-radius: 10px;    
+    font-size: 14px;
+    cursor:default!important;    
+    &_header{
+    	position:relative;
+	    background-color: @menu_black;
+	    height:33px;
+	    width: 100%;
+	    border-radius: 10px;    
+	    border-bottom: 1px solid @modal-border;
+	    color:@modal-hed-text;	        
+	    font-weight: 300;
+	    margin-bottom: 10px;
+	    display:flex;
+	    align-items:center;
+	    justify-content:space-between;
+	    &_text{
+	    	position:absolute;
+	    	top:50%;
+	    	transform:translateY(-50%);
+	    	left:10px;
+	    }
+	}
+}

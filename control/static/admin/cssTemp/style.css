@@ -152,11 +152,222 @@ table {
   box-sizing: border-box;
 }
 body {
-  font-family: 'ambleregular';
+  font-family: 'arial';
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+  outline: none;
 }
 .main_container {
   height: 100vh;
   background-color: #282828;
   color: #ccc;
   overflow: hidden;
+  position: relative;
+}
+.main_menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+}
+.main_menu .menu_button_typ1 {
+  height: 55px;
+}
+.main_menu .menu_button_typ2 {
+  height: 55px;
+}
+.main_menu .button_with_SVG {
+  position: relative;
+  display: block;
+}
+.svg_wrapper {
+  width: 100%;
+  height: 92%;
+  position: relative;
+}
+.svg_wrapper_project {
+  width: 100%;
+  height: 100%;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ababab;
+}
+.footer_cell {
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
+  min-width: 2%;
+  text-align: center;
+  padding: 2px 5px 2px 5px;
+  min-height: 15px;
+}
+.footer .grow {
+  flex-grow: 1;
+}
+.menu_contextual {
+  position: absolute;
+  display: none;
+  top: 100%;
+  background-color: #0e0e0e;
+  border: 2px solid #494949;
+  border-top: none;
+  z-index: 50;
+}
+.menu_contextual_internal {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 100%;
+  background-color: #0e0e0e;
+  border: 2px solid #494949;
+  border-top: none;
+  z-index: 50;
+  width: 170px;
+}
+.menu_button {
+  position: relative;
+  display: block;
+  font-size: 15px;
+  color: #bcbcbc;
+  padding: 8px 4px;
+  border: 1px solid #272727;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+.menu_button:hover {
+  background-color: #ffda22;
+  color: #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.menu_button:hover .menu_contextual_internal {
+  display: block;
+}
+.menu_button:active {
+  color: #000;
+  background-color: #bba121;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.menu_button span {
+  float: right;
+  margin-right: -2px;
+}
+.modal_box {
+  position: absolute;
+  display: inline-block;
+  background-color: #191919;
+  border: 1px solid #494949;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: default!important;
+}
+.modal_box_header {
+  position: relative;
+  background-color: #0e0e0e;
+  height: 33px;
+  width: 100%;
+  border-radius: 10px;
+  border-bottom: 1px solid #494949;
+  color: #d06868;
+  font-weight: 300;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal_box_header_text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.modal_box_btn {
+  background-color: #0e0e0e;
+  cursor: pointer;
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0px 5px 3px 5px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  border: 1px solid #494949;
+  transition: 0.2s;
+  min-width: 70px;
+}
+.modal_box_btn:hover:not(:active) {
+  border: 1px solid #efcd1f;
+  box-shadow: 0 0 10px #efcd1f;
+  color: #efcd1f;
+}
+.modal_box_btn:active {
+  top: 1px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1)) rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+.button_menu .modal_box_btn {
+  width: 150px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  left: 100%;
+  transform: translate(-150%, -70%);
+  top: 50%;
+}
+.btn-back span:before {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  content: "";
+  height: 1px;
+  transition-duration: 0.2s, 0.2s;
+  transition-delay: 0.2s, 0s;
+  top: 0;
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition-property: top, transform;
+}
+.btn-back span:after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  content: "";
+  height: 1px;
+  transition-duration: 0.2s, 0.2s;
+  transition-delay: 0.2s, 0s;
+  top: 0;
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition-property: top, transform;
+}
+.btn-back:hover span::before,
+.btn-back:hover span::after {
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }

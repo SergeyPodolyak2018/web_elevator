@@ -107,8 +107,7 @@
         } }, false);
 
         theSvgElement.addEventListener('touchend', touchendF, false);
-      }else{
-        console.log('pesda');
+      }else{        
         document.getElementById('zoomInOut').style.display='none';    
       }
       

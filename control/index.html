@@ -40,78 +40,107 @@
             </div>
         </div>
         <!-- _____________Окончание Прелоудер________________ -->
+        
 
-            <div id="header"  class="gorizontal">
+        <!-- ==========Плашка с кнопками============ -->
+        <div id="header"  class="main_menu">
 
-    <!-- Логотип зерновая столица-->
-
-                   <a href="#" class="button_with_SVG2" id="logotip_linkc" > <object type="image/svg+xml" data="/static/admin/img/logotip.svg" id="logotip" class="menu_button_typ1">
+            <!-- Логотип зерновая столица-->
+               <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/static/admin/img/logotip.svg" id="logotip" class="menu_button_typ1">
+                      Your browser does not support SVG
+               </object></div>
+            <!--Запуск маршрута-->
+                <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/static/admin/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
-                   </object></a>
-
-
-      <!--Запуск маршрута-->
-                <a href="#" class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/static/admin/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
+                </object></div>
+            <!--Штатный останов-->
+               <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/static/admin/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
-                </object></a>
-
-      <!--Штатный останов-->
-               <a href="#" class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/static/admin/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
+               </object></div>
+            <!--Экстренный останов-->
+               <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/static/admin/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
                           Your browser does not support SVG
-               </object></a>
-
-      <!--Экстренный останов-->
-               <a href="#" class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/static/admin/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
+               </object></div>
+            <!--Звонок-->
+             <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
                           Your browser does not support SVG
-               </object></a>
-
-      <!--Звонок-->
-             <a href="#" class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
+             </object></div>
+            <!--Архив-->
+            <div class="button_with_SVG" id="archiv_SVG">
+                <object type="image/svg+xml" data="/static/admin/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
                           Your browser does not support SVG
-             </object></a>
-
-      <!--Архив-->
-                <a href="#" class="button_with_SVG" id="archiv_SVG"><object type="image/svg+xml" data="/static/admin/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
-                          Your browser does not support SVG
-                </object></a>
-
-
-      <!--Сервис-->
-                <a href="#" class="button_with_SVG" id="servise_SVG"><object type="image/svg+xml" data="/static/admin/img/service_split.svg" id="service_button" class="menu_button_typ2">
-                          Your browser does not support SVG
-                </object></a>
-
-     <!-- Кнопка выхода-->
-                <a href="#" class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
-                          Your browser does not support SVG
-                </object></a>
-
+                </object>
+                <div id="archiv" class="menu_contextual hiden">
+                    <div class="menu_button" onclick="archiv_alarm()">Сообщения</div>
+                    <div class="menu_button" onclick="archiv_rout()">Маршруты</div>
+                    <div class="menu_button" onclick="archiv_devices()">Журнал действий</div>
+                    <div class="menu_button" onclick="archive_current_open(2)">Графики токов</div>
+                    <div class="menu_button" onclick="archive_current_open(1)">Текущие графики токов</div>
+                </div>
             </div>
-
-            <!-- Обертка для размещения рисунка SVG-->
-              <div id="wrapper">
-                        <object type="image/svg+xml" data="/static/admin/imgOfProject/projectSVG.svg" id="nor">
+            <!--Сервис-->
+                <div class="button_with_SVG" id="servise_SVG">
+                    <object type="image/svg+xml" data="/static/admin/img/service_split.svg" id="service_button" class="menu_button_typ2">
+                              Your browser does not support SVG
+                    </object>
+                    <div id="servis" class="menu_contextual hiden">
+                        <div class="menu_button">Конфигурация<span >&#9658;</span>
+                            <div id="configuration" class="menu_contextual_internal">
+                                <div id="menu_button_setings_bell_open" class="menu_button">Настройки звонка</div>
+                                <div id="menu_button_device_settings" class="menu_button">БД устройств</div>
+                                <div id="menu_button_linck_open" class="menu_button">БД связей</div>
+                                <div class="menu_button">БД тех. характеристик</div>
+                                <div class="menu_button">БД журнал ТО</div>
+                                <div class="menu_button">БД типы работ</div>
+                                <div class="menu_button">БД моточасы</div>
+                                <div class="menu_button">БД пользователей</div>
+                            </div>
+                        </div>
+                        <div href="#" class="menu_button">Культура<span >&#9658;</span>
+                            <div id="kulture" class="menu_contextual_internal">
+                                <div id="menu_button_culture_open" class="menu_button">Справочник культур</div>
+                                <div class="menu_button">Карта культур</div>
+                            </div>
+                        </div>
+                        <div href="#" class="menu_button">Настройки видимости<span >&#9658;</span>
+                            <div id="visiblSettings" class="menu_contextual_internal">
+                                <div class="menu_button" onclick="showHideKylt()">Скрыть/Показать культ.</div>
+                                <div class="menu_button" onclick="showHideCurrent()">Скрыть/Показать токи</div>
+                                <div class="menu_button" onclick="showNamesOfKlapan()">Скрыть/Показать имена</div>
+                            </div>
+                        </div>
+                        <div class="menu_button">О программе</div>
+                    </div>
+                </div>
+            <!-- Кнопка выхода-->
+                <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
                           Your browser does not support SVG
-                       </object>
-               </div>
-          <!-- Подвал сайта -->
-            <div id="footer">
-                <table width="100%" height="100%">
-                    <tr>
-                        <td id="Name_devise" style="font-size: 100%; border: 1px solid #ababab; width:1.8%"></td>
-                        <td id="footer_help"
-                           style="font-size: 100%; border: 1px solid #ababab; width:15%"></td>
-                        <td id="footer_message"  style="font-size: 100%; border: 1px solid #ababab;
-                        width:53%;"></td>
-                        <td id="footer_login"  style="font-size: 100%; border: 1px solid #ababab; width:6%;"></td>
-                        <td id="footer_control"  style="font-size: 100%; border: 1px solid #ababab; width:5%;"></td>
-                        <td id="footer_plc_status"  style="font-size: 100%; border: 1px solid #ababab; width:3%;">PLC</td>
-                        <td id="Timer"  style="font-size: 100%; border: 1px solid #ababab; width:8%"></td>
-                        <td id="Date"  style="font-size: 100%; border: 1px solid #ababab; width:5%"></td>
-                        <td id="Time"  style="font-size: 100%; border: 1px solid #ababab; width:3%"></td>
-                    </tr>
-                </table>
-            </div>
+                </object></div>
+        </div>
+        <!-- ___________Конец Плашка с кнопками______________ -->
+
+        <!-- =============Обертка для размещения рисунка SVG==========-->
+        <div id="wrapper" class="svg_wrapper">
+            <object type="image/svg+xml" data="/static/admin/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
+                Your browser does not support SVG
+            </object>
+        </div>
+        <!-- ________Конец Обертка для размещения рисунка SVG___________-->
+
+        <!-- ==============Начало Подвал сайта========================== -->
+        <div id="footer" class="footer">
+            <div class="footer_cell"><p id="Name_devise"></p></div>
+            <div class="footer_cell"><p id="footer_help"></p></div>
+            <div class="footer_cell grow"><p id="footer_message"></p></div>
+            <div class="footer_cell"><p id="footer_login"></p></div>
+            <div class="footer_cell"><p id="footer_control"></p></div>
+            <div id="footer_plc_status" class="footer_cell"><p>PLC</p></div>
+            <div class="footer_cell"><p id="Timer"></p></div>
+            <div class="footer_cell"><p id="Date"></p></div>
+            <div class="footer_cell"><p id="Time"></p></div>
+        </div>
+        <!-- _____________Конец Подвал сайта______________________ -->
+
 
         <!-- Див с выбором вирианта маршрута -->
          <!-- <div id="rout" class="draggable modal_box" >
@@ -323,61 +352,17 @@
                  </table>
              </div>
          </div> -->
-<!-- Выпадающее меню архив-->
-         <!-- <div id="archiv" class="hiden" style="width:170px!important;">
-             <a href="#" class="menu_button" onclick="archiv_alarm()">Сообщения</a>
-             <a href="#" class="menu_button" onclick="archiv_rout()">Маршруты</a>
-             <a href="#" class="menu_button" onclick="archiv_devices()">Журнал действий</a>
-             <a href="#" class="menu_button" onclick="archive_current_open(2)">Графики токов</a>
-             <a href="#" class="menu_button" onclick="archive_current_open(1)">Текущие графики токов</a>
-         </div> -->
-<!-- Выпадающее меню сервис-->
-         <!-- <div id="servis" class="hiden">
-             <a href="#" class="menu_button" onclick="showmenu2(this,1)">Конфигурация        <span style="float: right;margin-right:-12px;">&#9658;</span></a>
-             <a href="#" class="menu_button" onclick="showmenu2(this,2)">Культура            <span style="float: right;margin-right:-12px;">&#9658;</span></a>
-             <a href="#" class="menu_button" onclick="showmenu2(this,3)">Настройки видимости <span style="float: right;margin-right:-12px;">&#9658;</span></a>
-             <a href="#" class="menu_button">О программе</a>
-         </div> -->
- <!-- Выпадающее меню настройки-->
-        <!--  <div id="configuration" class="hiden">
-             <a href="#" id="menu_button_setings_bell_open" class="menu_button">Настройки звонка</a>
-             <a href="#" id="menu_button_device_settings" class="menu_button">БД устройств</a>
-             <a href="#" id="menu_button_linck_open" class="menu_button">БД связей</a>
-             <a href="#" class="menu_button">БД тех. характеристик</a>
-             <a href="#" class="menu_button">БД журнал ТО</a>
-             <a href="#" class="menu_button">БД типы работ</a>
-             <a href="#" class="menu_button">БД моточасы</a>
-             <a href="#" class="menu_button">БД пользователей</a>
-         </div> -->
-         <!-- Выпадающее меню культура-->
-         <!-- <div id="kulture" class="hiden">
-             <a href="#" id="menu_button_culture_open" class="menu_button">Справочник культур</a>
-             <a href="#" class="menu_button">Карта культур</a>
-         </div> -->
-        <!-- Выпадающее меню настройки видимости-->
-         <!-- <div id="visiblSettings" class="hiden">
-             <a href="#" class="menu_button" onclick="showHideKylt()">Скрыть/Показать культ.</a>
-             <a href="#" class="menu_button" onclick="showHideCurrent()">Скрыть/Показать токи</a>
-             <a href="#" class="menu_button" onclick="showNamesOfKlapan()">Скрыть/Показать имена</a>
-         </div> -->
 
-        <!-- ======Начало Див с меню============  -->
-         <!-- <div id="menu"> -->
-            <!-- there will be buttons -->
-         <!-- </div> -->
-        <!--_______Окончание див с меню___________ -->
+
+        
 
 
          <!--окно архив сообщений-->
-            <!-- <div id="archiv_message" class="draggable modal_box" >
-                 <div id="archiv_message_header" class="modal_box_header">
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 5px;">
-                         <tr> <td width="90%">Архив сообщений</td></tr>
-                         <div class="header-wrap" style="float:right;margin-top:0px; margin-right: 0px;">
-                             <a href="#"  style="margin-top: 10px;" onclick="archiv_alarm_close()" class="btn btn-default btn-back"><span></span></a>
-                         </div>
-                     </table>
-                 </div>
+            <div id="archiv_message" class="draggable modal_box" >
+                <div id="archiv_message_header" class="modal_box_header">
+                   <p class='modal_box_header_text'>Архив сообщений</p>
+                   <a href="#" onclick="archiv_alarm_close()" class="btn btn-default btn-back"><span><span></a>
+                </div>
 
                 <div id="archiv_message_filter">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0">
@@ -438,7 +423,7 @@
 
                      </table>
                  </div>
-            </div> -->
+            </div>
 
           <!--окно архив маршрутов-->
             <!-- <div id="archiv_rout" class="draggable modal_box">
@@ -3675,24 +3660,24 @@
              </div> -->
 
              <!--Иконки увеличения или уменьшения-->
-                <!-- <div id="zoomInOut" style="float: left;position: absolute;top:70%;display: block;"> -->
+                <div id="zoomInOut" style="float: left;position: absolute;top:70%;display: block;">
         <!-- Иконки плюс -->    
-                <!-- <div style="width: 100%;float:left;display: block;">                       
+                <div style="width: 100%;float:left;display: block;">                       
                     <object type="image/svg+xml" data="/static/admin/img/zoomPlaz.svg" id="zoomIn_svg" style="width:100%;height:100%;">
                                   Your browser does not support SVG
                     </object>
-                </div> -->
+                </div>
                 <!--Буфер-->
-                <!-- <div style="width: 100%;height: 50%;float:left;display: block;">                       
+                <div style="width: 100%;height: 50%;float:left;display: block;">                       
                     
-                </div> -->
+                </div>
         <!-- Иконки  минус--> 
-                <!-- <div style="width: 100%;float:left;display: block;">                          
+                <div style="width: 100%;float:left;display: block;">                          
                     <object type="image/svg+xml" data="/static/admin/img/zoomMinus.svg" id="zoomOut_svg" style="width: 100%;height: 100%;">
                                   Your browser does not support SVG
                     </object>
                 </div>
-            </div> -->
+            </div>
 
 
     </div>
@@ -3714,7 +3699,7 @@
         <script src="/static/admin/js/start.js" defer></script>
         <script src="/static/admin/js/levelbar.js" defer></script>
         <script src="/static/admin/js/current_grafic4.js" defer></script>
-        <script src="/static/admin/js/zadvijka_menu.js" defer></script>
+        <!-- <script src="/static/admin/js/zadvijka_menu.js" defer></script> -->
         <script src="/static/admin/js/settings.js" defer></script>
         <script src="/static/admin/js/alarmSound.js" defer></script>
 

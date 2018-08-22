@@ -46,9 +46,9 @@ function menu_kreator(device_index,device_string_type,posX,posY){
                           if (menu_struktura[i].enable==0) {
                             temp_string=temp_string+'<p class="button_menu"><button ' +
                                 ' class="modal_box_btn"' +
-                                ' onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="width:150px;margin:0;width:150px; color:'+menu_struktura[i].color+'!important;" disabled>'+menu_struktura[i].name+'</button></p>'
+                                ' onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important;" disabled>'+menu_struktura[i].name+'</button></p>'
                           } else {
-                            temp_string=temp_string+'<p class="button_menu"><button class="modal_box_btn" onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="width:150px;margin:0;width:150px; color:'+menu_struktura[i].color+'!important">'+menu_struktura[i].name+'</button></p>'
+                            temp_string=temp_string+'<p class="button_menu"><button class="modal_box_btn" onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important">'+menu_struktura[i].name+'</button></p>'
                           }
                     }                  
                     let div_menu = document.getElementById('menu');                    

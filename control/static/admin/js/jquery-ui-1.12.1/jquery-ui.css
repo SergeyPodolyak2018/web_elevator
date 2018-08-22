@@ -576,7 +576,7 @@ button.ui-button::-moz-focus-inner {
 	top: 0;
 }
 .ui-draggable .ui-dialog-titlebar {
-	cursor: move;
+	/*cursor: move;*/
 }
 .ui-draggable-handle {
 	-ms-touch-action: none;

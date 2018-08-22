@@ -1,0 +1,20 @@
+@import "variables";
+@footer:~'.footer';
+@{footer}{
+	width:100%;	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #ababab;
+	&_cell{
+		border-left: 1px solid #ababab;
+		border-right: 1px solid #ababab;
+		min-width:2%;
+		text-align:center;
+		padding:2px 5px 2px 5px;
+		min-height: 15px;
+	}
+	& .grow{
+		flex-grow:1;
+	}	
+}
