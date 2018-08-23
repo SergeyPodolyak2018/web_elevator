@@ -169,6 +169,27 @@ a {
   overflow: hidden;
   position: relative;
 }
+.dispNone {
+  display: none;
+}
+.archiv_message {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.archiv_rout {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.archiv_device {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
 .main_menu {
   width: 100%;
   display: flex;
@@ -261,7 +282,6 @@ a {
 }
 .modal_box {
   position: absolute;
-  display: inline-block;
   background-color: #191919;
   border: 1px solid #494949;
   border-radius: 10px;
@@ -288,6 +308,18 @@ a {
   transform: translateY(-50%);
   left: 10px;
 }
+.modal_box_footer {
+  display: flex;
+  margin: 10px 0px;
+}
+.modal_box_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
 .modal_box_btn {
   background-color: #0e0e0e;
   cursor: pointer;
@@ -302,6 +334,7 @@ a {
   border: 1px solid #494949;
   transition: 0.2s;
   min-width: 70px;
+  color: #ccc;
 }
 .modal_box_btn:hover:not(:active) {
   border: 1px solid #efcd1f;
@@ -315,6 +348,11 @@ a {
 }
 .button_menu .modal_box_btn {
   width: 150px;
+}
+.btn_right:before {
+  display: block;
+  content: '';
+  flex-grow: 1;
 }
 .btn {
   position: relative;
@@ -370,4 +408,47 @@ a {
 .btn-back:hover span::after {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
+}
+.modal_table {
+  width: 99%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  max-height: 300px;
+  position: relative;
+}
+.modal_table_header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 0px 0px;
+  border: 1px solid #494949;
+  background-color: #191919;
+}
+.modal_table_header_cell {
+  border-right: 1px solid #494949;
+  text-align: center;
+}
+.modal_table_wrapper {
+  border: 1px solid #494949;
+}
+.modal_table_content {
+  width: 100%;
+  color: #000;
+}
+.modal_table_content tr {
+  border: 1px solid #494949;
+}
+.modal_table_content td {
+  padding: 0 5px;
+}
+.mono tr:nth-child(odd) {
+  color: #000;
+  background: #cddbe5;
+}
+.mono tr:nth-child(even) {
+  color: #ccc;
+  background: #282828;
 }

@@ -1,0 +1,52 @@
+@import "variables";
+@table:~'.modal_table';
+
+@{table}{
+	width:99%;
+	margin:0 auto;
+	overflow-y: scroll;
+	max-height:300px;
+	position:relative;
+	&_header{
+		position:sticky;
+		top:0;
+		left:0;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		border-radius: 5px 5px 0px 0px;
+		border:1px solid @modal-border;
+		background-color:@modal-back;
+		
+		&_cell{
+			border-right:1px solid @modal-border;
+			text-align:center;
+		}
+	}
+	&_wrapper{		
+		border:1px solid @modal-border;
+	}
+	&_content{
+		width:100%;
+		color:@black-black;
+		& tr{
+			border:1px solid @modal-border;
+			
+		}
+		& td{
+			padding:0 5px;
+		}
+		
+	}
+
+}
+.mono{
+	& tr:nth-child(odd) {
+		color:@black-black;
+	  	background: @steel;
+	}
+	& tr:nth-child(even) {
+		color:@text_main_color;
+	  	background: @black;
+	}
+} 

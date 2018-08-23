@@ -15,6 +15,7 @@
     border: 1px solid @modal-border;
     transition: 0.2s;
     min-width:70px;
+    color:@text_main_color;
     
     &:hover:not(:active){
         border:1px solid @button_border_act;
@@ -36,4 +37,9 @@
         width:150px;
     }
     
+}
+.btn_right:before{    
+  display: block;
+  content: '';
+  flex-grow:1;
 }

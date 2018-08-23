@@ -38,8 +38,9 @@ function archiv_alarm(){
                                            '<option value="5" >Лог</option>'+
                                        '</select>';
         		var filter_selector = document.getElementById('archiv_message_filter_button');
-        		filter_selector.innerHTML = '<button class="modal_box_btn" style="float:right"' +
-                    ' onclick="archiv_alarm_sort('+number+','+0+','+2+')">Сортировать</button>';
+        		filter_selector.onclick = function(){archiv_alarm_sort(number,0,2)};
+                // '<button class="modal_box_btn" style="float:right"' +
+                //     ' onclick="archiv_alarm_sort('+number+','+0+','+2+')">Сортировать</button>';
                 
         		$('#archiv_message').show();
                 
@@ -95,7 +96,8 @@ function archiv_alarm_device(){
                                            '<option value="5" >Лог</option>'+
                                        '</select>';
         		var filter_selector = document.getElementById('archiv_message_filter_button');
-        		filter_selector.innerHTML = '<button class="modal_box_btn" onclick="archiv_alarm_sort('+number+','+0+','+2+')">Сортировать</button>';
+        		filter_selector.onclick = function(){archiv_alarm_sort(number,0,2)};
+                // filter_selector.innerHTML = '<button class="modal_box_btn" onclick="archiv_alarm_sort('+number+','+0+','+2+')">Сортировать</button>';
 
         		$('#archiv_message').show();
                  universalTableBuilder('#table_head_rchiv_message','#table_rchiv_message>tbody');
@@ -279,7 +281,8 @@ function archiv_devices(){
             	var div_menu = document.getElementById('table_rchiv_device');
         		div_menu.innerHTML = temp_string;
         		var filter_button = document.getElementById('archiv_device_filter_button');
-        		filter_button.innerHTML = '<button class="modal_box_btn" onclick="archiv_device_sort(0)">Сортировать</button>';
+        		filter_button.onclick = function(){archiv_device_sort(0)};
+                // filter_button.innerHTML = '<button class="modal_box_btn" onclick="archiv_device_sort(0)">Сортировать</button>';
 
         		$('#archiv_device').show();
                 universalTableBuilder('#table_head_rchiv_device','#table_rchiv_device>tbody');
@@ -324,7 +327,8 @@ function archiv_device(){
             	var div_menu = document.getElementById('table_rchiv_device');
         		div_menu.innerHTML = temp_string;
         		var filter_button = document.getElementById('archiv_device_filter_button');
-        		filter_button.innerHTML = '<button class="modal_box_btn" onclick="archiv_device_sort('+number+')">Сортировать</button>';
+        		filter_button.onclick = function(){archiv_device_sort(number)};
+                // filter_button.innerHTML = '<button class="modal_box_btn" onclick="archiv_device_sort('+number+')">Сортировать</button>';
 
         		$('#archiv_device').show();
                 universalTableBuilder('#table_head_rchiv_device','#table_rchiv_device>tbody');

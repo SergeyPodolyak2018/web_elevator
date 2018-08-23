@@ -351,206 +351,152 @@
                      </tbody>
                  </table>
              </div>
-         </div> -->
+        </div> -->
 
 
         
 
 
-         <!--окно архив сообщений-->
-            <div id="archiv_message" class="draggable modal_box" >
-                <div id="archiv_message_header" class="modal_box_header">
-                   <p class='modal_box_header_text'>Архив сообщений</p>
-                   <a href="#" onclick="archiv_alarm_close()" class="btn btn-default btn-back"><span><span></a>
+        <!--================Старт Окно архив сообщений===================-->
+        <div id="archiv_message" class="draggable modal_box archiv_message" >
+            <div id="archiv_message_header" class="modal_box_header archiv_message_header">
+               <p class='modal_box_header_text'>Архив сообщений</p>
+               <a href="#" onclick="archiv_alarm_close()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+
+            <div id="archiv_message_filter" class="modal_box_filter archiv_message_filter">
+                <div id='message_filter'>
+                    <select id="message_filter_select" required size = "1" width="20%" onchange="archiv_alarm_sort()">
+                        <option value="0" >Все</option>
+                        <option value="1" >Аварийные</option>
+                        <option value="2" >Предупрежнения</option>
+                        <option value="3" >Статусы</option>
+                        <option value="4" >Подсказки</option>
+                        <option value="5" >Лог</option>
+                    </select>
+                </div>
+                <p>Период с:</p>
+                <input type="text" id="datepicker_message1">                             
+                <p>по:</p>
+                <input type="text" id="datepicker_message2">
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
+                <div id='archiv_message_filter_button' class="modal_box_btn">Сортировать</div>
+            </div>
+
+            <div id="archiv_message_content" class="modal_table">
+                <div id="table_head_rchiv_message" class='modal_table_header'>
+                    <div class='modal_table_header_cell'>Дата</div>
+                    <div class='modal_table_header_cell'>Время</div>
+                    <div class='modal_table_header_cell'>Название</div>
+                    <div class='modal_table_header_cell'>Сообщение</div>
+                    <div class='modal_table_header_cell'>Ст</div>
                 </div>
 
-                <div id="archiv_message_filter">
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                         <tr>
-                             <td id="message_filter">
-                                 <select id="message_filter_select" required size = "1" width="20%" onchange="archiv_alarm_sort()">
-                                     <option value="0" >Все</option>
-                                     <option value="1" >Аварийные</option>
-                                     <option value="2" >Предупрежнения</option>
-                                     <option value="3" >Статусы</option>
-                                     <option value="4" >Подсказки</option>
-                                     <option value="5" >Лог</option>
-                                 </select>
-                             </td>
-                             <td width="150px" style="font-size: 14px; color:#ccc">
-                                 Период с:  <input type="text" id="datepicker_message1" style="width:80px;">
-                             </td>
-                             <td width="150px" style="font-size: 14px; color:#ccc">
-                                 по: <input type="text" id="datepicker_message2" style="width:80px;">
-                             </td>
-                             <td style="width:5%;"><a href="#" class="printButton"
-                                                      onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>
-                             </td>
-                             <td id="archiv_message_filter_button">
-                                 <button style="margin-right: -5px;" class="modal_box_btn">Сортировать</button>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
-
-                <div id="archiv_message_content" style="margin-bottom: 0px; ">
-                  <div id="table_head_rchiv_message" style="padding-left:6px; border-radius: 10px 10px 0px 0px;">
-                    <div style="float: left; text-align:center;border-left:1px solid #494949;border-top:1px solid #494949;border-radius:10px 0px 0px 0px">Дата</div>
-                    <div style="float: left; text-align:center;border-left:1px solid #494949;border-top:1px solid #494949;">Время</div>
-                    <div style="float: left; text-align:center;border-left:1px solid #494949;border-top:1px solid #494949;">Название</div>
-                    <div style="float: left; text-align:center;border-left:1px solid #494949;border-top:1px solid #494949;">Сообщение</div>
-                    <div style="float: left; text-align:center;border-left:1px solid #494949;border-top:1px solid #494949;border-radius:0px 0px 0px 0px">Ст</div>
-                  </div>
-
-                  <div style="width: 100%;float: left">
-                    <table id="table_rchiv_message">
+                <div class='modal_table_wrapper'>
+                    <table id="table_rchiv_message" class="modal_table_content">
                       <tbody>
                         <tr>
                           <td></td>
                         </tr>
                       </tbody>
                     </table>
-                  </div>
-
-
                 </div>
-                 <div id="archiv_message_footer" >
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                         <tr>
-                             <td>&nbsp</td><td><button class="modal_box_btn" style="float:right;" onclick="archiv_alarm_close()">Закрыть</button></td>
-
-                         </tr>
-
-                     </table>
-                 </div>
             </div>
+            <div id="archiv_message_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="archiv_alarm_close()">Закрыть</div>
+            </div>
+        </div>
+        <!--________________Конец Окно архив сообщений_______________________-->
 
-          <!--окно архив маршрутов-->
-            <!-- <div id="archiv_rout" class="draggable modal_box">
-                 <div id="archiv_rout_header" class="modal_box_header">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
-                         <tr>
-                             <td width="90%">Архив маршрутов
-                                 <div class="header-wrap" style="float:right;margin-top:0px; margin-right: -5px;">
-                                     <a href="#"  onclick="archiv_rout_close()" class="btn btn-default btn-back"><span></span></a>
-                                 </div>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
 
-                <div id="archiv_rout_filter" style="padding-left: 5px;">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0">
-                         <tr>
+        <!--================Старт Окно архив маршрутов===================-->
+          
+            <div id="archiv_rout" class="draggable modal_box archiv_rout">
+                <div id="archiv_rout_header" class="modal_box_header">
+                    <p class='modal_box_header_text'>Архив маршрутов</p>
+                    <a href="#" onclick="archiv_rout_close()" class="btn btn-default btn-back"><span><span></a>                     
+                </div>
 
-                             <td width="150px" style="font-size: 14px!important;">
-                                 Период с:  <input type="text" id="datepicker_rout1" style="width:80px;">
-                             </td>
-                             <td width="150px" style="font-size: 14px!important;">
-                                 по: <input type="text" id="datepicker_rout2" style="width:80px;">
-                             </td>
-                             <td style="width:5%;"><a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img src="/static/admin/img/printer.png"></a>
-                             </td>
-                             <td id="archiv_rout_filter_button" style="float: right;">
-                                 <button onclick="archiv_rout_sort()" class="modal_box_btn">Сортировать</button>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
-
-                <div id="archiv_rout_content" >
-                    <div id="table_head_rchiv_rout">
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid #494949;">Дата</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid #494949;">Время</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid
-                         #494949;min-width: 160px;">Начало маршрута</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid
-                         #494949;min-width: 160px;">Конец маршрута</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid #494949;">Культура</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid #494949;min-width: 110px;">Нория</div>
-                        <div style="float: left; text-align:center;border-top:1px solid #494949;border-left:1px solid #494949;border-right:1px solid #494949; border-radius: 0px 10px 0px 0px">Статус</div>
+                <div id="archiv_rout_filter" class="modal_box_filter archiv_rout_filter">                
+                    <p>Период с:</p>
+                    <input type="text" id="datepicker_rout1">                             
+                    <p>по:</p>
+                    <input type="text" id="datepicker_rout2">
+                    <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
+                    <div id='archiv_rout_filter_button' onclick="archiv_rout_sort()" class="modal_box_btn">Сортировать</div>
+                </div>                
+                <div id="archiv_rout_content" class="modal_table">
+                    <div id="table_head_rchiv_rout" class='modal_table_header'>
+                        <div class='modal_table_header_cell'>Дата</div>
+                        <div class='modal_table_header_cell'>Время</div>
+                        <div class='modal_table_header_cell'>Начало маршрута</div>
+                        <div class='modal_table_header_cell'>Конец маршрута</div>
+                        <div class='modal_table_header_cell'>Культура</div>
+                        <div class='modal_table_header_cell'>Нория</div>
+                        <div class='modal_table_header_cell'>Статус</div>
                     </div>
 
-                    <div style="width: 100%;float: left">
-                        <table id="table_rchiv_rout">
-                            <tbody>
+                    <div class='modal_table_wrapper'>
+                        <table id="table_rchiv_rout" class="modal_table_content mono">
+                          <tbody>
                             <tr>
-                                <td></td>
+                              <td></td>
                             </tr>
-                            </tbody>
+                          </tbody>
                         </table>
                     </div>
                 </div>
+                
+                <div id="archiv_message_footer" class="modal_box_footer btn_right">
+                    <div class="modal_box_btn" onclick="archiv_rout_close()">Закрыть</div>
+                </div>                 
+             </div>
+        <!--________________Конец Окно архив Маршрутов_______________________-->
 
-                 <div id="archiv_rout_footer" >
-                     <button onclick="archiv_rout_close()" class="modal_box_btn btn_push_right">Закрыть</button>
-                 </div>
-             </div> -->
+        <!--================Старт Окно архив устройств===================-->
 
-    <!--окно архив устройств-->
-            <!-- <div id="archiv_device" class="draggable modal_box">
-                 <div id="archiv_device_header" class="modal_box_header">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 5px;">
-                         <tr>
-                             <td width="90%">Журнал действий
-                                 <div class="header-wrap" style="float:right;margin-top:0px; margin-right: -5px;">
-                                     <a href="#"  onclick="archiv_device_close()" class="btn btn-default btn-back"><span></span></a>
-                                 </div>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
+        <div id="archiv_device" class="draggable modal_box archiv_device">
+            <div id="archiv_rout_header" class="modal_box_header">
+                <p class='modal_box_header_text'>Журнал действий</p>
+                <a href="#" onclick="archiv_device_close()" class="btn btn-default btn-back"><span><span></a>                    
+            </div>
+            
+            <div id="archiv_device_filter" class="modal_box_filter archiv_rout_filter">                
+                <p>Период с:</p>
+                <input type="text" id="datepicker_device1">                             
+                <p>по:</p>
+                <input type="text" id="datepicker_device2">
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
+                <div id='archiv_device_filter_button' onclick="onclick="archiv_device_sort(number)"" class="modal_box_btn">Сортировать</div>
+            </div>  
+            <div id="archiv_device_content" class="modal_table">
+                <div id="table_head_rchiv_device" class='modal_table_header'>
+                    <div class='modal_table_header_cell'>Дата</div>
+                    <div class='modal_table_header_cell'>Время</div>
+                    <div class='modal_table_header_cell'>Название</div>
+                    <div class='modal_table_header_cell'>Статус</div>                        
+                </div>
 
-                <div id="archiv_device_filter" style="padding-left: 5px;">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0">
-                         <tr>
-
-                             <td width="150px" style=" font-size: 14px;">
-                                 Период с:  <input type="text" id="datepicker_device1" style="width:75px;">
-                             </td>
-                             <td width="150px" style=" font-size: 14px;">
-                                 по: <input type="text" id="datepicker_device2" style="width:75px;">
-                             </td>
-                             <td style="width:5%;"><a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img src="/static/admin/img/printer.png"></a>
-                             </td>
-                             <td id="archiv_device_filter_button" style="float: right; ">
-                                 <button style="margin-top: 5px;" onclick="archiv_device_sort(number)" class="modal_box_btn">Сортировать</button>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
-
-                <div id="archiv_device_content" style="margin-left:5px;margin-bottom:0px;">
-
-                  <div id="table_head_rchiv_device">
-                    <div style="float:left; text-align: center;padding-top:5px; padding-bottom:5px; border-left:1px solid #494949;border-top:1px solid #494949;border-radius: 10px 0px 0px 0px; padding-left:0px;background: #0e0e0e">Дата</div>
-                    <div style="float:left; text-align: center;padding-top:5px; padding-bottom:5px; border-left:1px solid #494949;border-top:1px solid #494949;background: #0e0e0e">Время</div>
-                    <div style="float:left; text-align: center;padding-top:5px; padding-bottom:5px; border-left:1px solid #494949;border-top:1px solid #494949;background: #0e0e0e">Название</div>
-                    <div style="float:left; text-align: center;padding-top:5px; padding-bottom:5px; border-left:1px solid #494949;border-top:1px solid #494949;border-right:1px solid #494949;border-radius: 0px 10px 0px 0px;background: #0e0e0e">Статус</div>
-                  </div>
-
-                  <div style="width: 100%;float: left">
-                    <table id="table_rchiv_device">
+                <div class='modal_table_wrapper'>
+                    <table id="table_rchiv_device" class="modal_table_content mono">
                       <tbody>
                         <tr>
                           <td></td>
                         </tr>
                       </tbody>
                     </table>
-                  </div>
-
                 </div>
-
-                 <div id="archiv_device_footer" >
-                     <button  onclick="archiv_device_close()" class="modal_box_btn btn_push_right">Закрыть</button>
-                 </div>
-             </div> -->
-
-
+            </div>
+            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+                    <div class="modal_box_btn" onclick="archiv_device_close()">Закрыть</div>
+            </div>             
+        </div>
 
 
 
-             <!--окно текущее аварийное сообщение-->
+
+
+    <!--окно текущее аварийное сообщение-->
             <!-- <div id="alarm_message" class="draggable modal_box">
                  <div id="alarm_message_header" class="modal_box_header">
                      <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 5px;">
