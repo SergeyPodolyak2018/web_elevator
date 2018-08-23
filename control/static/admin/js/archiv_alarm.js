@@ -430,32 +430,20 @@ function alarm(){
             	var  message=JSON.parse(result);
             	
             	temp_string='';
-            	for (var i  in message) {
-            		//temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td>'+message[i].ack+'</td><td>'+'<button onclick="alarm_close()">Квитировать</button>'+'</td></tr><a href="#" class="printButton" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')"><img src="/static/admin/img/confirm.bmp"></a>'
+            	for (var i  in message) {            		
             	    if (i!='quantity'){
-            	        temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td style="text-align:center;">'+message[i].ack+'</td><td>'+'<button style="padding-left: 5px;padding-right: 5px;padding-top: 1px;padding-bottom: 1px;margin-bottom: 5px;" class="modal_box_btn" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')">Квитировать</button>'+'</td></tr>'
-                        //temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td>'+message[i].ack+'</td><td>'+'<a href="#" class="printButton" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')"><img src="/static/admin/img/confirm.png"></a>'+'</td></tr>'
-
+            	        temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td style="text-align:center;">'+message[i].ack+'</td><td>'+'<button class="modal_box_btn" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')">Квитировать</button>'+'</td></tr>'
                     }
             	}
             	var div_menu = document.getElementById('table_alarm_message');
         		div_menu.innerHTML = temp_string;
         		$('#alarm_message').show();
+                universalTableBuilder('#table_head_alarm_message','#table_alarm_message>tbody');
 
 
 
-        		//повесить циклический запрос на сравнение колличества аварий
-                //var huy1=functionConstrutorWithInternalId();
-
-               // global_alarm_quantity_function.huy1.getId=setInterval(function() { huy1(alarm_quantity,message.quantity) }, 1000);
-               //global_alarm_quantity_function=setInterval(function() { alarm_quantity(message.quantity) }, 1000);
-               global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);
-
-
-
-
-               console.log("Alarm")
-               console.log(global_alarm_quantity_function);
+        		//повесить циклический запрос на сравнение колличества аварий                
+               global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);              
 
             },
             error: function (jqXHR, exception) {
@@ -472,7 +460,7 @@ function alarm(){
 
 //Функция квитирования аварии
 function alarm_confirmation(button,id,number,device){
-    console.log(button);
+    
     button.disabled=true;
 var url_string = '/alarm_ack/?id='+id+'&alarm='+number+'&eqindex='+device;
 $.ajax({
