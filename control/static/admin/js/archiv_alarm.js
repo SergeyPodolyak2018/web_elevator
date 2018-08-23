@@ -523,15 +523,11 @@ function alarm_quantity(quantity){
             statusCode:{404:function(){alert('Функция не реализована');
 
             }},
-            success: function( result ) {
-                console.log("quantity="+quantityOfAlarm);
-                console.log("result="+result);    
+            success: function( result ) {                    
                 var  rez=JSON.parse(result);
                 if (rez.quantity>0){
                 	if (rez.quantity!=quantityOfAlarm){
-                        console.log("point1");
-                	    //закончить циклический запрос
-                        //clearInterval(global_alarm_quantity_function);
+                        
                         quantityOfAlarm=rez.quantity
 
                 	    table_alarm_message_rebild();
@@ -540,7 +536,7 @@ function alarm_quantity(quantity){
                 }else{
                     //alarm_message_close();
                 }
-                console.log("point2");
+               
 
             },
             error: function (jqXHR, exception) {

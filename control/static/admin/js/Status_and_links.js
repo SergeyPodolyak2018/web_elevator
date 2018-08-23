@@ -1,6 +1,6 @@
 //отображение статусов механизмов
 function change(oll_mex_status) {
-  console.log(globalObjectSatusOfUser.getUserStatus());
+  
     var remont_maska= 16777216; //двадцать четвертый бит равен единице
     var norma_maska = 268435456; //двадцать восьмой бит равен единице
   // Получаем объект SVG

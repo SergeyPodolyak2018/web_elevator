@@ -147,7 +147,7 @@ function get_route_statuses(){
               //console.log(result);
                 if(result!=404){
                     tempRouteList=JSON.parse(result);
-                    console.log(tempRouteList);
+                    
                     }
                    global_objekt_of_rout.changeStatus(tempRouteList);                    
                 }
