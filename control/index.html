@@ -142,220 +142,107 @@
         <!-- _____________Конец Подвал сайта______________________ -->
 
 
-        <!-- Див с выбором вирианта маршрута -->
-         <!-- <div id="rout" class="draggable modal_box" >
-             <div id="rout_variant_header" class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                     <tr>
-                         <td width="90%">Варианты маршрутов<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                             <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                         </div> &nbsp;</td></tr>
-                 </table>
-             </div>
-
-             
-                 <div id="rout_kultura" style="width:100%;">
-                     <table style="width:100%;">
-                         <tr>
-                             <td style="text-align:center; padding-top: 5px;"><select id="kult" required size = "1" style="min-width: 150px;">
-
-                                </select></td>
-                         </tr>
-                     </table>
-
-
-
-                 </div>
-                
-                <div id="rout_variant" style="min-width: 175px; margin-top:5px;">
-                     <table style="text-align:center; width: 100%;">
-                         <tbody id="table_rout_variant" style="text-align:center; width:100%;">
-                         <tr>
-                             <td>
-                             <td><button style="width:40px;height:40px">1</button></td>
-                             </td>
-                         </tr>
-                         </tbody>
-                     </table>
-                 </div>
-             
-
-             <div id="rout_variant_footer" >
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                     <tr>
-                         <td style="text-align: center;">
-                         <button style="width: 70px; padding-left:0px;padding-right:0px; margin-bottom: 0px;" class="modal_box_btn" onclick="start_chek_variant()">OK</button>
-                             <button class="modal_box_btn" style="padding-left: 0px; padding-right: 0px; width: 70px; margin-bottom: 0px;" onclick="exit_rout_variant(event)">Отмена</button>
-                         </td>
-                     </tr>
-
-                 </table>
-             </div>
-         </div> -->
-
-      <!-- Див с подтверждение запуска маршрута-->
-         <!-- <div id="rout_confirmation" class="draggable modal_box" style="width: 460px;">
-             <div id="rout_confirmation_header" class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                     <tr>
-                         <td width="90%">Запустить выбранный маршрут?<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                             <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                         </div></td>
-                     </tr>
-                 </table>
-
-             </div>
-             <div id="rout_confirmation_content" >
-                 <table class="table" style="width: 98%">
-                     <tbody>
-                     <tr>
-                         <td id="rout_confirmation_source" style="width:190px;border:none;float:left;padding-top: 12px; text-align:left;" align="center"></td>
-                         <td style="border:none; font-size: 20px; font-align:center;">&#8594;</td>
-                         <td id="rout_confirmation_receiver" style="width:190px;border:none;float:right;text-align:right;" align="center"></td>
-                     </tr>
-                     </tbody>
-                 </table>
-             </div>
-
-
-             <div id="rout_confirmation_footer" >
-                 <table width="98%" cellspacing="2" cellpadding="1" border="0">
-                     <tr>
-                         <td width="60%">
-                            &nbsp
-                         </td>
-                         <td >
-                            <button class="modal_box_btn" style="float:right;width: 85px; margin-right: 0px;">Запуск
-                            </button>
-                         </td>
-                         <td >
-                            <button class="modal_box_btn" style="width: 85px;" onclick="exit_rout_variant(event)">Отмена</button>
-                         </td>
-                     </tr>
-                 </table>                
-             </div>
-         </div> -->
-
-    <!-- Див с подтверждение остановки маршрута-->
-        <!-- <div id="stop_rout_confirmation" class="draggable modal_box">
-            <div id="stop_rout_confirmation_header" class="modal_box_header">
-                <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                    <tr>
-                        <td width="90%">Остановить выбранный маршрут?<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                            <a href="#"  onclick="exit_stop_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                        </div></td>
-                    </tr>
-                </table>
+        <!-- ====================Старт выбор вирианта маршрута======================= -->
+        <div id="rout" class="draggable modal_box rout_variant" >
+            <div id="rout_variant_header" class="modal_box_header rout_variant_header">
+               <p class='modal_box_header_text'>Варианты маршрутов</p>
+               <a href="#" onclick="exit_rout_variant()" class="btn btn-default btn-back"><span><span></a>
             </div>
+            <div id="rout_kultura" class='rout_variant_kult'>
+                <select id="kult" class='rout_variant_kult_select' required size = "1">
+                    <!-- данные поступают из скрипта -->
+                </select>
+            </div>
+            <div id="rout_variant" class="rout_variant_buttons">
+                <!-- данные поступают из скрипта -->
+                <!-- <a href="#" class="rout_variant_button">1</a>   -->                              
+            </div>
+            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" id="rout_confirmation_button" onclick="start_chek_variant()">OK</div>
+                <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
+            </div>
+        </div>
+        <!-- ___________________Конец выбор вирианта маршрута_______________________ -->
 
+        <!-- ====================Старт подтверждение запуска маршрута============================-->
+        <div id="rout_confirmation" class="draggable modal_box rout_confirmation">
+            <div id="rout_confirmation_header" class="modal_box_header rout_confirmation_header">
+               <p class='modal_box_header_text'>Запустить выбранный маршрут?</p>
+               <a href="#" onclick="exit_rout_variant()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div id="rout_confirmation_content" class="rout_confirmation_content flex">
+                <p id="rout_confirmation_source">Точка1</p>
+                <p>&#8594</p>
+                <p id="rout_confirmation_receiver">Точка2</p>
+            </div>
+            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" id="rout_confirmation_button">Запуск</div>
+                <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
+            </div>            
+        </div>
+        <!-- _____________________Стоп подтверждение запуска маршрута________________-->
+
+        <!-- =================Старт подтверждение остановки маршрута==================-->
+        <div id="stop_rout_confirmation" class="draggable modal_box stop_rout">
+            <div id="restart_rout_confirmation_header" class="modal_box_header stop_rout_header">
+               <p class='modal_box_header_text'>Остановить выбранный маршрут?</p>
+               <a href="#" onclick="exit_stop_rout_variant()" class="btn btn-default btn-back"><span><span></a>
+            </div>
             <div id="stop_rout_confirmation_content" >
             </div>
-
-            <div id="stop_rout_confirmation_footer" >
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                         <tbody id="stop_rout_confirmation_footer_button" style="text-align:center;">
-
-                         </tbody>
-                     </table>
+            <div id="stop_rout_confirmation_footer" class="modal_box_footer btn_betw">
+                <div id="stop_rout_confirmation_rebild" class="modal_box_btn">Перестроить</div>
+                <div id="stop_rout_confirmation_stop" class="modal_box_btn">Остановить</div>
+                <div class="modal_box_btn" onclick="exit_stop_rout_variant()">Отмена</div>
             </div>
-
-        </div> -->
-
-  <!-- Див с подтверждение перезапуска маршрута-->
-         <!-- <div id="restart_rout_confirmation" class="draggable modal_box">
-             <div id="restart_rout_confirmation_header" class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                     <tr>
-                         <td width="90%">Перезапустить выбранный маршрут?<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                             <a href="#"  onclick="" class="btn btn-default btn-back"><span></span></a>
-                         </div></td>
-                     </tr>
-                 </table>
-             </div>
-
-             <div id="restart_rout_confirmation_content" >
-             </div>
-
-             <div id="restart_rout_confirmation_footer" >
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                         <tbody id="restart_rout_confirmation_footer_button" style="text-align: center;">
-
-                         </tbody>
-                     </table>
-             </div>
         </div>
- -->
-<!-- Див с сообщением о аварии на маршруте-->
-         <!-- <div id="alarm_rout" class="draggable modal_box">
-             <div id="alarm_rout_header" class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                     <tr>
-                         <td width="90%">Cообщения<div class="header-wrap" style="float:right;margin-top:0px;margin-right: -5px;">
-                             <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a>
-                         </div>
-                        </td>
-                 </table>
-             </div>
+        <!-- _______________Конец подтверждение остановки маршрута_____________________-->
 
-             
-             <div id="alarm_rout_content" class="" style="background-color:#f2ff00; color:#000; padding:5px; margin:5px; border-radius:10px; color:#000;">
-                 <p id="alarm_rout_message" style="font-size: 14px!important; padding:5px;
-                 margin:5px;border-radius:10px;">
-
-
-                 </p>
-             </div>
-             <div id="alarm_rout_footer" >
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                     <tbody id="alarm_rout_footer_button">
-                     <tr>
-                         <td  width="20%"></td>
-                         <td >&nbsp</td>
-                         <td width="80%"><button style="float:right;" class="modal_box_btn" onclick="exit_rout_variant()">Отмена</button>
-                             <button style="float:right;" class="modal_box_btn" onclick="start_rout_variant()">Запуск</button>
-                         </td>
-
-                     </tr>
-                     </tbody>
-                 </table>
-             </div>
-         </div> -->
-<!-- Див с сообщением о отсутствии связи с ПЛК-->
-         <!-- <div id="alarm_plc_connection" class="draggable modal_box">
-             <div class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0" style="padding-top: 7px;">
-                     <tr>
-                         <td width="90%">Cообщения<div class="header-wrap" style="float:right;margin-top:0px;margin-right: -5px;">
-                             <a href="#"  onclick="close_plc_alarm()" class="btn btn-default btn-back"><span></span></a>
-                         </div>
-                        </td>
-                 </table>
-             </div>
-
-             
-             <div style="background-color:red; color:#000; padding:5px; margin:5px; border-radius:10px; color:#000;">
-                 <p style="font-size: 14px!important; padding:5px;
-                 margin:5px;border-radius:10px;">Связь с ПЛК отсутствует</p>
-             </div>
-             <div id="alarm_rout_footer" >
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                     <tbody id="alarm_rout_footer_button">
-                     <tr>
-                         <td  width="20%"></td>
-                         <td >&nbsp</td>
-                         <td width="80%"><button style="float:right;" class="modal_box_btn" onclick="close_plc_alarm()">Закрыть</button>
-                             
-                         </td>
-
-                     </tr>
-                     </tbody>
-                 </table>
-             </div>
-        </div> -->
+        <!-- ================Старт подтверждение перезапуска маршрута====================-->
+        <div id="restart_rout_confirmation" class="draggable modal_box restart_rout">
+            <div id="restart_rout_confirmation_header" class="modal_box_header restart_rout_header">
+               <p class='modal_box_header_text'>Перезапустить выбранный маршрут?</p>
+               <a href="#" onclick="exit_restart()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div id="restart_rout_confirmation_content" ></div>
+            <div id="restart_rout_confirmation_footer" class="modal_box_footer btn_betw">
+                <div id="restart_rout_confirmation_manual" class="modal_box_btn">Ручной запуск</div>
+                <div id="restart_rout_confirmation_auto" class="modal_box_btn">Авт. запуск</div>
+                <div class="modal_box_btn" onclick="exit_restart()">Отмена</div>
+            </div>
+        </div>
+        <!-- _______________Конец подтверждение перезапуска маршрута_____________________-->
 
 
-        
+        <!-- ==============Старт ошибка маршрута======================= -->
+        <div id="alarm_rout" class="draggable modal_box alarm_rout">
+            <div id="alarm_rout_header" class="modal_box_header alarm_rout_header">
+               <p class='modal_box_header_text'>Cообщения</p>
+               <a href="#" onclick="close_alarm_rout()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="alarm_rout_content">
+                <p id="alarm_rout_message">Ошибка на маршруте</p>
+            </div>
+            <div id="alarm_rout_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="close_alarm_rout()">Ok</div>                
+            </div>            
+        </div>
+        <!-- ______________Конец ошибка маршрута__________________ -->
 
+        <!-- ==============Старт связь с ПЛК======================= -->
+        <div id="alarm_plc_connection" class="draggable modal_box alarm_plc">
+            <div id="" class="modal_box_header alarm_plc_header">
+               <p class='modal_box_header_text'>Cообщения</p>
+               <a href="#" onclick="close_plc_alarm()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="alarm_plc_content">
+                <p>Связь с ПЛК отсутствует</p>
+            </div>
+            <div id="" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="close_plc_alarm()">Закрыть</div>
+            </div>            
+        </div>
+        <!-- ______________Конец связь с ПЛК__________________ -->
 
         <!--================Старт Окно архив сообщений===================-->
         <div id="archiv_message" class="draggable modal_box archiv_message" >
@@ -406,8 +293,7 @@
                 <div class="modal_box_btn" onclick="archiv_alarm_close()">Закрыть</div>
             </div>
         </div>
-        <!--________________Конец Окно архив сообщений_______________________-->
-
+        <!--________________Конец Окно архив сообщений___________________-->
 
         <!--================Старт Окно архив маршрутов===================-->
           
@@ -526,40 +412,23 @@
             </div>                 
         </div>
         <!--_________________Конец текущее аварийное сообщение_________________________-->
+        
 
-
-         <!-- <div id="confirm_mixin_kylt_rout" class="draggable modal_box"> 
-             <div id="confirm_mixin_kylt_rout_header" class="modal_box_header">
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0">
-
-                     <tr><td width="90%" style="padding-top:7px;" >Cообщения <div class="header-wrap" style="float:right;margin-top:0px;margin-right: -5px;">
-                     <a href="#"  onclick="exit_rout_variant()" class="btn btn-default btn-back"><span></span></a></div></td></tr>
-
-                 </table>
-             </div>
-             <div id="confirm_mixin_kylt_rout_content"
-                  style="background-color:#f2ff00;;margin-left:5px;margin-right:5px;
-                  margin-bottom:0px;border-radius:10px; color:black; font-size:14px; padding-left:5px;" >
-                 <p>Запустить маршрут со смешиванием культур?</p>
-             </div>
-
-             <div id="confirm_mixin_kylt_rout_footer" >
-                 <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                     <tbody id="confirm_mixin_kylt_rout_footer_button">
-                         <tr>
-                             <td width="20%"></td>
-                             <td>&nbsp</td>
-                             <td width="80%">
-                                <button class="modal_box_btn" style="float:right;margin-top:0px; "
-                                        onclick="exit_rout_variant()">Отмена</button>
-                                <button class="modal_box_btn" style="float:right; margin-top:0px;width:85px;"
-                                        onclick="start_rout_variant()">Запуск</button>
-                             </td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
-         </div> -->
+        <!--================Старт подтверждение смешивания культур===================-->
+        <div id="confirm_mixin_kylt_rout" class="draggable modal_box mixin_kylt"> 
+            <div id="confirm_mixin_kylt_rout_header" class="modal_box_header mixin_kylt_header">
+                <p class='modal_box_header_text'>Cообщения</p>
+                <a href="#" onclick="exit_rout_variant()" class="btn btn-default btn-back"><span><span></a>                    
+            </div>
+            <div class="mixin_kylt_content">
+                <p>Запустить маршрут со смешиванием культур?</p>
+            </div>
+            <div id="confirm_mixin_kylt_rout_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="start_rout_variant()">Запуск</div>
+                <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
+            </div>
+        </div>
+        <!--__________________Конец подтверждение смешивания культур_______________________-->
 
         
 

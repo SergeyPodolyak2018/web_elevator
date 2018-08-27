@@ -166,10 +166,10 @@ function send_rout_data(){
             		$('.start_rout_linck').addClass("set_disabled");
 
             	} else {
-            		$('#alarm_rout_content').text(route_variant_temp.message);
-	            	var alarm_rout_footer_button_temp = '<tr><td width="99%" align="center"><button' +
-                        ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
-	            	$('#alarm_rout_footer_button').html(alarm_rout_footer_button_temp);
+            		$('#alarm_rout_message').text(route_variant_temp.message);
+	            	// var alarm_rout_footer_button_temp = '<tr><td width="99%" align="center"><button' +
+              //           ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
+	            	// $('#alarm_rout_footer_button').html(alarm_rout_footer_button_temp);
 	            	$('#alarm_rout').show();
             	}
 
@@ -192,7 +192,7 @@ function send_rout_data(){
 function show_rout_variant_window(json_from_server){
 	var  rout_wariant=JSON.parse(json_from_server);
     console.log(rout_wariant);
-    var table_body='<tr>';
+    var table_body='';
     var selekt_kult='';
     var i=0;
     var j=0;
@@ -206,7 +206,7 @@ function show_rout_variant_window(json_from_server){
                 textColor='black';
             }
     		//table_body=table_body+'<td><button style="width:40px;height:40px;background:'+rout_wariant[k].color+'" onclick="show_rout_variant('+i+')">'+i+'</button></td>';
-    		table_body=table_body+'<td><a href="#" class="button_rout" style="background:'+rout_wariant[k].color+'; color:'+textColor+'" onclick="show_rout_variant('+i+',this)">'+i+'</a></td>'
+    		table_body=table_body+'<a href="#" class="rout_variant_button" style="background:'+rout_wariant[k].color+'; color:'+textColor+'" onclick="show_rout_variant('+i+',this)">'+i+'</a>'
 
     	}
         /*
@@ -219,19 +219,19 @@ function show_rout_variant_window(json_from_server){
         */
     }
 
-    table_body=table_body+'</tr>';
-    var div_table_rout_variant = document.getElementById('table_rout_variant');
+    // table_body=table_body+'</tr>';
+    var div_table_rout_variant = document.getElementById('rout_variant');
     var div_kult = document.getElementById('kult');
     div_table_rout_variant.innerHTML = table_body;
     //div_kult.innerHTML = selekt_kult;
     div_kult.innerHTML =global_object_oll_kylt_from_server;
-    $('#rout').show();
-    var a = $('#rout_variant').width();
-    if(a>145){
-    $('#rout').width(a+5);
-    }else{
-    $('#rout').width(145);
-    }
+    // $('#rout').show();
+    // var a = $('#rout_variant').width();
+    // if(a>145){
+    // $('#rout').width(a+5);
+    // }else{
+    // $('#rout').width(145);
+    // }
 
     //установить выбранную культуру
     $("#kult option[value='"+rout_wariant.kylt_select+"']").attr("selected", "selected");
@@ -241,9 +241,9 @@ function show_rout_variant_window(json_from_server){
 
 //показать конкретный вариант маршрута
 function show_rout_variant(i,element){
-    $('.button_rout').css('background','');
+    $('.rout_variant_button').css('background','');
     //$('.button_rout').css('color','#efcd1f');
-    $('.button_rout').css('color','');
+    $('.rout_variant_button').css('color','');
     $(element).css('background','#00ff00');
     $(element).css('color','black');
 	var url_string = '/route/?source='+0+'&receive='+0+'&command='+2+'&index='+i+'&kylt='+0;
@@ -291,28 +291,31 @@ function start_chek_variant(){
             	console.log(rout_source_receiver);
             	$('#rout').hide();
             	if (rout_source_receiver.status ==8) {
-                    let selector_for_test='#rout_confirmation_footer td button'
-                    let buttonTarget=document.querySelectorAll(selector_for_test)[0];
-                    buttonTarget.removeEventListener('click', confirm_mixing_kylt);
-                    buttonTarget.addEventListener('click', start_rout_variant, false);
+                    document.getElementById('rout_confirmation_button').onclick=function(){start_rout_variant()};
+
+                    // let selector_for_test='#rout_confirmation_footer td button'
+                    // let buttonTarget=document.querySelectorAll(selector_for_test)[0];
+                    // buttonTarget.removeEventListener('click', confirm_mixing_kylt);
+                    // buttonTarget.addEventListener('click', start_rout_variant, false);
             		$('#rout_confirmation_source').html(rout_source_receiver.source);
 	            	$('#rout_confirmation_receiver').html(rout_source_receiver.receive);
 	            	$('#rout_confirmation').show();
             	}
                 if (rout_source_receiver.status ==9) {
-                    let selector_for_test='#rout_confirmation_footer td button'
-                    let buttonTarget=document.querySelectorAll(selector_for_test)[0];
-                    buttonTarget.removeEventListener('click', start_rout_variant);
-                    buttonTarget.addEventListener('click', confirm_mixing_kylt, false);
+                    document.getElementById('rout_confirmation_button').onclick=function(){confirm_mixing_kylt()};
+                    // let selector_for_test='#rout_confirmation_footer td button'
+                    // let buttonTarget=document.querySelectorAll(selector_for_test)[0];
+                    // buttonTarget.removeEventListener('click', start_rout_variant);
+                    // buttonTarget.addEventListener('click', confirm_mixing_kylt, false);
                     $('#rout_confirmation_source').html(rout_source_receiver.source);
                     $('#rout_confirmation_receiver').html(rout_source_receiver.receive);                    
                     $('#rout_confirmation').show();
                 }
             	if (rout_source_receiver.status ==4) {	
-                    $('#alarm_rout_content').html(rout_source_receiver.message);
-	            	var alarm_rout_footer_button_temp = '<tr><td width="99%" align="center"><button' +
-                        ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
-	            	$('#alarm_rout_footer_button').html(alarm_rout_footer_button_temp);
+                    $('#alarm_rout_message').html(rout_source_receiver.message);
+	            	// var alarm_rout_footer_button_temp = '<tr><td width="99%" align="center"><button' +
+              //           ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
+	            	// $('#alarm_rout_footer_button').html(alarm_rout_footer_button_temp);
 	            	$('#alarm_rout').show();
             	}
 
@@ -410,13 +413,16 @@ function stop_rout_variant_confirm(source_index){
 	var svgdom = svgobject.contentDocument;
 	 $(svgdom.getElementsByClassName("iconsource"+source_index)).show();
 	 $(svgdom.getElementsByClassName("source")).off();
+     document.getElementById('stop_rout_confirmation_rebild').onclick=function(){rebild_rout_variant(source_index)};
+     document.getElementById('stop_rout_confirmation_stop').onclick=function(){stop_rout_variant(source_index)};
 
-	$('#stop_rout_confirmation_footer_button').html('<tr><td width="33%"><button class="modal_box_btn"' +
-        ' style="width: 120px;" onclick="rebild_rout_variant('+source_index+')">Перестроить</button></td><td' +
-        ' width="33%"><button' +
-        ' class="modal_box_btn" style="width: 120px;" onclick="stop_rout_variant('+source_index+')">Остановить</button></td><td' +
-        ' width="30%"><button class="modal_box_btn" style="width: 120px;"' +
-        ' onclick="exit_stop_rout_variant()">Отмена</button></td></tr>')
+
+	// $('#stop_rout_confirmation_footer_button').html('<tr><td width="33%"><button class="modal_box_btn"' +
+ //        ' style="width: 120px;" onclick="rebild_rout_variant('+source_index+')">Перестроить</button></td><td' +
+ //        ' width="33%"><button' +
+ //        ' class="modal_box_btn" style="width: 120px;" onclick="stop_rout_variant('+source_index+')">Остановить</button></td><td' +
+ //        ' width="30%"><button class="modal_box_btn" style="width: 120px;"' +
+ //        ' onclick="exit_stop_rout_variant()">Отмена</button></td></tr>')
 	$('#stop_rout_confirmation').show();
 
 }
@@ -425,15 +431,16 @@ function stop_rout_variant_confirm(source_index){
 function restart_rout_variant_confirm(source_index){
 	var svgobject = document.getElementById('nor');
 	var svgdom = svgobject.contentDocument;
-
 	 $(svgdom.getElementsByClassName("source")).off();
+     document.getElementById('restart_rout_confirmation_manual').onclick=function(){manual_restart(source_index)};
+     document.getElementById('restart_rout_confirmation_manual').onclick=function(){auto_restart(source_index)};
 
-	$('#restart_rout_confirmation_footer_button').html('<tr><td width="33%"><button style="width: 125px;"' +
-        ' class="modal_box_btn"' +
-        ' onclick="manual_restart('+source_index+')">Ручной запуск</button></td><td width="33%"><button' +
-        ' style="width: 125px;" class="modal_box_btn"' +
-        ' onclick="auto_restart('+source_index+')">Авт. запуск</button></td><td width="30%"><button' +
-        ' style="width: 125px;" class="modal_box_btn" onclick="exit_restart()">Отмена</button></td></tr>');
+	// $('#restart_rout_confirmation_footer_button').html('<tr><td width="33%"><button style="width: 125px;"' +
+ //        ' class="modal_box_btn"' +
+ //        ' onclick="manual_restart('+source_index+')">Ручной запуск</button></td><td width="33%"><button' +
+ //        ' style="width: 125px;" class="modal_box_btn"' +
+ //        ' onclick="auto_restart('+source_index+')">Авт. запуск</button></td><td width="30%"><button' +
+ //        ' style="width: 125px;" class="modal_box_btn" onclick="exit_restart()">Отмена</button></td></tr>');
     $('#restart_rout_confirmation').show();
 
 }
