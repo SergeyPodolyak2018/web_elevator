@@ -414,7 +414,7 @@
         <!--_________________Конец текущее аварийное сообщение_________________________-->
         
 
-        <!--================Старт подтверждение смешивания культур===================-->
+        <!--================ START CONFIRMATION OF KYLT MIXING ===================-->
         <div id="confirm_mixin_kylt_rout" class="draggable modal_box mixin_kylt"> 
             <div id="confirm_mixin_kylt_rout_header" class="modal_box_header mixin_kylt_header">
                 <p class='modal_box_header_text'>Cообщения</p>
@@ -428,67 +428,51 @@
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>
         </div>
-        <!--__________________Конец подтверждение смешивания культур_______________________-->
+        <!--__________________ END CONFIRMATION OF KYLT MIXING _______________________-->
 
         
 
+        <!--================ START CURRENT GRAPH WINDOW ===================-->        
+        <div id="archive_current" class="draggable modal_box current_archive">
+            <div id="archive_current_header" class="modal_box_header current_archive_header">
+                <p class='modal_box_header_text'>Графики токов</p>
+                <a href="#" onclick="archive_current_close()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div id="archive_current_filter" class="modal_box_filter current_archive_filter">                
+                <select id="current_filter_tools_equipment" class="current_from_device_tools current_archive_filter_select" required size = "1" onchange="get_grafick_property(1)">
+                    <option value="0" >-</option>
+                    <option value="1" >Нория 27</option>
+                </select>
+                <select id="archive_current_filter_tools_equipment" class="current_from_arxiv_tools current_archive_filter_select" required size = "1" onchange="get_grafick_property(2)">
+                    <option value="0" >-</option>
+                    <option value="1" >Нория 27</option>
+                </select>
+                <select id="archive_current_filter_tools_scale" class="current_from_arxiv_tools current_archive_filter_select" required size = "1" onchange="get_grafick_property(2)">                    
+                    <option value="2">1 минута</option>
+                    <option value="6" >10 минут</option>
+                    <option value="12" >1 час</option>
+                </select>
+                <div class="current_archive_buf"></div>
+                <div class='current_archive_filter_wrapper'>
+                    <p>Дата:</p>
+                    <input type="text" id="datepicker_current" class='current_archive_filter_select' onchange="get_grafick_property(2)">
+                </div>
+                <div class='current_archive_filter_wrapper'>
+                    <p>Время:</p>
+                    <input type="text" id="timepicker_current" class='current_archive_filter_select' onchange="get_grafick_property(2)">
+                </div>
+            </div>
+            <div id="archive_current_content" class="archive_current_content" >
+                <object type="image/svg+xml" data="/static/admin/img/current8.svg" id="current_svg" class="current_archive_content_graph">
+                  Your browser does not support SVG
+                </object>
+            </div>
 
-         <!--окно графики токов-->
-            <!-- <div id="archive_current" class="draggable modal_box">
-                 <div id="archive_current_header" class="modal_box_header">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0">
-                                   <tr><td width="90%" style="padding-top:7px;">Графики токов<div class="header-wrap" style="float:right;
-                                   margin-right: -5px;">
-                                       <a href="#"  onclick="archive_current_close()" class="btn btn-default btn-back"><span></span></a>
-                                   </div></td></tr>
-
-                     </table>
-
-                 </div>
-
-                <div id="archive_current_filter">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0">
-                         <tr>
-                             <td id="current_filter_tools" width="60%">
-                                 <select id="current_filter_tools_equipment" class="current_from_device_tools" required size = "1" onchange="get_grafick_property(1)">
-                                     <option value="0" >-</option>
-                                     <option value="1" >Нория 27</option>
-                                 </select>
-                                 <select id="archive_current_filter_tools_equipment" class="current_from_arxiv_tools" required size = "1" onchange="get_grafick_property(2)">
-                                     <option value="0" >-</option>
-                                     <option value="1" >Нория 27</option>
-                                 </select>
-                                 <select id="archive_current_filter_tools_scale" class="current_from_arxiv_tools" required size = "1" onchange="get_grafick_property(2)">
-                                     <option selected value="1" >1 час</option>
-                                     <option value="2" >2 часа</option>
-                                     <option value="6" >6 часов</option>
-                                     <option value="12" >12 часов</option>
-                                 </select>
-                             </td>
-                             <td width="20%" class="current_from_arxiv_tools">
-                                 Дата:  <input type="text" id="datepicker_current" style="width:60%;" onchange="get_grafick_property(2)">
-                             </td>
-                             <td width="20%" class="current_from_arxiv_tools">
-                                 Время:<input type="text" id="timepicker_current" style="width:60%;" onchange="get_grafick_property(2)">
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
-
-
-
-                <div id="archive_current_content" class="modal_box" style="margin:5px;">
-                       <object type="image/svg+xml" data="/static/admin/img/current8.svg" id="current_svg">
-                          Your browser does not support SVG
-                       </object>
-                 </div>
-
-
-                 <div id="archive_current_footer" >
-                     <button onclick="archive_current_close()" class="modal_box_btn btn_push_right">Закрыть</button>                     
-                 </div>
-
-             </div> -->
+            <div id="archive_current_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="archive_current_close()">Закрыть</div>                    
+            </div>
+        </div>
+        <!--_________________ END CURRENT GRAPH WINDOW __________________________-->    
 
     <!--Меню управления для задвижки под зилосом-->
 

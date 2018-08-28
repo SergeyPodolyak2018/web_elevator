@@ -107,7 +107,7 @@ viewBox="0 0 33000 15000"
   <path class="fil2 str1" d="M1917 1846c35,-25 70,-49 108,-52 38,-2 79,17 119,36"/>
   <line class="fil2 str1" x1="2030" y1="1794" x2="2016" y2= "13000" />
   <line class="fil2 str1" x1="2016" y1="13000" x2="31702" y2= "12987" />
-  <polyline id="current_grafick" class="xernya fil2 str2" points=""/>
+  <polyline id="current_grafick" class="current_line fil2 str2" points=""/>
   <g id="_1289455824">
    <polyline class="fil2 str1" points="31659,12865 32170,13006 31659,13093 "/>
    <path class="fil2 str1" d="M31659 12865c22,37 44,74 44,112 0,38 -22,77 -44,116"/>

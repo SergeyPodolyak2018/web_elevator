@@ -2,6 +2,7 @@ var TEMP_CURRENT=10;
 var start_ask_сurrent_grafic=0;
 
 
+
 function Сurrent_grafic(){
 
 	this.grafic_name;
@@ -59,7 +60,7 @@ function Сurrent_grafic(){
       $(text_time1).text(current_times[i]);
       }
 
-        poliline = svgdom.getElementsByClassName('xernya');
+        poliline = svgdom.getElementsByClassName('current_line');
 
        // $(poliline).attr('points','2000,13000, '+points+', 31500,13000');
             $(poliline).attr('points',''+points);
@@ -80,7 +81,7 @@ function Сurrent_grafic(){
         var SVG = document.getElementById('current_svg');
 	    var svgdom = SVG.contentDocument;
 
-		poliline = svgdom.getElementsByClassName('xernya');
+		poliline = svgdom.getElementsByClassName('current_line');
 
 
         $(poliline).attr('points','');
@@ -143,18 +144,7 @@ this.prepear_grafic = function(max_grafic_current,max_current,nom_current){
 
 
 
-        ////////////////////////////////////////////////////////////////
-        //Изменение координат точек
-
-       // var points='';
-       // for (var i = 0; i < 59; i++ ){
-      //  points=points+''+(current_points_X[i]*1000)+','+(first_point_Y-(current_points_Y[i]*scale))+' ';
-
-      //  }
-
-      //  poliline = svgdom.getElementsByClassName('xernya');
-      //  $(poliline).attr('points',points+', 31500,13000 2000,13000 ');
-        //////////////////////////////////////////////////////////////////////////////////
+        
     }
 
    //Расчет координаты X

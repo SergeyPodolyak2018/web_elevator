@@ -1,0 +1,39 @@
+@import "variables";
+@current_archiv:~'.current_archive';
+
+@{current_archiv}{
+	width:950px;	
+	display:none;
+	left:25%;
+	top:20%;
+	&_filter_select{
+		background-color: @black-black;
+	    color: @text_main_color;
+	    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+	    
+	    & option{
+	    	background-color: @black-black;
+	    	color: @text_main_color;
+	    	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+	    }
+	}
+	&_buf{
+		flex-grow:0.8;
+	}
+	&_filter_wrapper{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		& p{
+			margin:0 10px;	
+		}
+		
+	}
+	&_content{
+		width:95%;
+		margin:0 auto;
+		&_graph{
+			width:100%;
+		}
+	}
+}

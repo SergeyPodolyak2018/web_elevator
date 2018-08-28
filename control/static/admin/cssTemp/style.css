@@ -560,6 +560,7 @@ a {
 }
 .mixin_kylt {
   width: 400px;
+  display: none;
   left: 45%;
   top: 45%;
 }
@@ -569,4 +570,38 @@ a {
   padding: 15px;
   margin: 5px;
   border-radius: 10px;
+}
+.current_archive {
+  width: 950px;
+  display: none;
+  left: 25%;
+  top: 20%;
+}
+.current_archive_filter_select {
+  background-color: #000;
+  color: #ccc;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.current_archive_filter_select option {
+  background-color: #000;
+  color: #ccc;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.current_archive_buf {
+  flex-grow: 0.8;
+}
+.current_archive_filter_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.current_archive_filter_wrapper p {
+  margin: 0 10px;
+}
+.current_archive_content {
+  width: 95%;
+  margin: 0 auto;
+}
+.current_archive_content_graph {
+  width: 100%;
 }
