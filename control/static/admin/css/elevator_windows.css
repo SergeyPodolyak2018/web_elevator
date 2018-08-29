@@ -104,3 +104,20 @@
     justify-content: space-between;
 }
 
+/*Окно для ввода времени работы задвижек сушилки*/
+
+.dryer_window{
+    position: absolute;                            
+    min-width: 350px;    
+    top:30%;
+    left:30%;    
+    display:none;
+}
+.dryer_window_content{
+    width:100%;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    
+}

@@ -3799,6 +3799,34 @@
 
          </div>
 
+        <!--=========== START WINDOW SET DRYER TIMING FORE GATE =============================-->
+
+         <div id="dryer_window" class="draggable modal_box dryer_window" >
+                 <div id="dryer_window_header" class="modal_box_header" >
+                     <table class="" width="100%" cellspacing="1" cellpadding="1" border="0">
+                            <tr>
+                                <td width="90%" style="padding-top:7px;">Запустить выгрузку сушилки?</td>
+                                <div class="header-wrap" style="float:right; margin-top:7px;">
+                                    <a href="#"  onclick="dryer_window_close()" class="btn btn-default btn-back"><span></span></a>
+                                </div>
+                            </tr>
+                     </table>
+                 </div>
+            <div  class='dryer_window_content'>
+                <p>Количество циклов в минуту</p>
+                <output name="dryer_time_out" id="dryer_time_out">1</output>
+                <div>
+                    <input type="range" name="dryer_time" id="dryer_time" value="1" min="1" max="35" oninput="dryer_time_out.value = dryer_time.value">                    
+                </div>
+            </div>
+            <div id="refit_route_window_footer" >
+                <button style="float: right;" onclick="dryer_window_close()" class="modal_box_btn btn_push_right">Отмена</button>
+                <button id='dryer_window_command_button' style="float: right;" onclick="dryer_window_start()" class="modal_box_btn dryer_window_command_button">Применить</button>
+            </div>
+
+         </div>
+        <!--_______________ END WINDOW SET DRYER TIMING FORE GATE _____________________________-->
+
          <!--Окно всех датчиков-->
              <div id="datchiki_kontrol" class="hiden_datchiki draggable modal_box">
                  <div id="datchiki_kontrol_header" class="modal_box_header" style="background:#0e0e0e; color:#ccc;">
@@ -3873,6 +3901,7 @@
         
         <script src="/static/admin/js/Preloader.js" defer></script>
         <script src="/static/admin/js/Statistica.js" defer></script>
+        <script src="/static/admin/js/dryer.js" defer></script>
 
      <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
      <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
