@@ -477,51 +477,30 @@
     
         <!-- ==============START CONTROLS FOR THE VALVE UNDER THE SILO============== -->
 
-            <!-- <div id="zadvijka_kontrol_menu"  class="draggable modal_box" style="background-color: #191919; ">
-                 <div id="zadvijka_kontrol_menu_header" class="modal_box_header" style="background-color: #0e0e0e;">
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                                   <tr>
-                                       <td style="padding-top: 7px">Управление задвижкой</td>
-                                       <td style="color:#ffa200; text-align:right; padding-right: 27px;padding-top:7px" class="settings_header_name"></td>
-                                       <td>
-                                            <div class="header-wrap" style="float:right;margin-top:-2px">
-                                                <a href="#"  onclick="zadvijka_menu_close()" class="btn btn-default btn-back">
-                                                    <span></span>
-                                                </a>
-                                            </div>
-                                       </td>
-                                   </tr>
-                     </table>
-                 </div>
+            <div id="zadvijka_kontrol_menu"  class="draggable modal_box silo-valve-block" >
+                <div id="zadvijka_kontrol_menu_header" class="modal_box_header silo-valve-block__header">
+                    <p class='modal_box_header_text'>Управление задвижкой <span class=""> Задв 130</span></p>                    
+                    <a href="#" onclick="zadvijka_menu_close()" class="btn btn-default btn-back"><span><span></a>
+                </div>
+
+                <div id="zadvijka_kontrol_menu_content" class="silo-valve-block__content">
+
+                        <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
+                            <div><p>Состояние задвижки</p></div>
+                            <div>
+                                <div>
+                                    <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
+                                        Your browser does not support SVG
+                                    </object>
+                                </div>
+                                <div>
+                                    <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control1">-</div>
+                                    <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control2">-</div>
+                                </div>
+                            </div>
 
 
-                <div id="zadvijka_kontrol_menu_content" class="modal_box_body padding_box"  style="display: block;">
-
-                        <div id="zadvijka_kontrol_menu_content_state" style="padding-top:5px;  border: 1px solid #494949; border-radius:10px;">
                             <table>
-                                <thead>
-                                    <tr>
-                                        <td colspan="3">
-                                            <span style="border:none;">Состояние задвижки</span>
-                                            
-                                        </td>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                    <td rowspan="2" colspan="2" style="text-align: center">
-                                        <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
-                                            Your browser does not support SVG
-                                        </object>
-
-                                    </td>
-                                    <td style="border: none; text-align: center; margin-right: 10px;">
-                                        <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control1">-</div>
-                                        <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control2">-</div></td>
-                                </tr>
-                                <tr>
-                                    <td style="border: none; text-align: center;">
-
-                                </tr>
                                 <tr >
                                     <td>Открыта на: <input type="text" size="8" id="zadvijka_current_time" class="disabeledField"> мс</td>
                                     <td>или: <input type="text" size="4" id="zadvijka_current_persent" class="disabeledField"> %</td>
@@ -642,16 +621,12 @@
                         </div>
                 </div>
 
-                 <div id="zadvijka_kontrol_menu_footer"  >
+                <div id="zadvijka_kontrol_menu_footer" class="modal_box_footer btn_right">
+                    <div class="modal_box_btn" onclick="zadvijka_menu_close()">Закрыть</div>                    
+                </div>
 
-                                 <button class="btn_push_right modal_box_btn" style=" margin-bottom: 5px;margin-top: 0px;" onclick="zadvijka_menu_close()">Закрыть</button>
-
-
-
-
-
-                 </div>
-            </div> -->
+                 
+            </div>
         <!-- _______________ END CONTROLS FOR THE VALVE UNDER THE SILO ____________________ -->
 
     <!--__Настройки нории___-->
@@ -3496,7 +3471,7 @@
         <script src="/static/admin/js/start.js" defer></script>
         <script src="/static/admin/js/levelbar.js" defer></script>
         <script src="/static/admin/js/current_grafic4.js" defer></script>
-        <!-- <script src="/static/admin/js/zadvijka_menu.js" defer></script> -->
+        <script src="/static/admin/js/zadvijka_menu.js" defer></script>
         <script src="/static/admin/js/settings.js" defer></script>
         <script src="/static/admin/js/alarmSound.js" defer></script>
 
