@@ -9,8 +9,8 @@ function dryer_window_open(command,p2,p3,device_index,type){
 }
 function dryer_window_close(){
 	document.getElementById('dryer_window').style.cssText='display:none';
-	document.getElementById('dryer_time').value=1;
-	document.getElementById('dryer_time_out').value=1;
+	document.getElementById('dryer_time').value=20;
+	document.getElementById('dryer_time_out').value=20;
 }
 
 function dryer_window_send_command(comand,p2,p3,index){

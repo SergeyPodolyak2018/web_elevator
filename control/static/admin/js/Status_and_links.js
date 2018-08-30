@@ -521,10 +521,7 @@ function change(oll_mex_status) {
                     }
                   }
                   //Статус силоса
-                  if (type==14 || type==16){
-                   // console.log('xer')
-                    //$(SVG.getElementsByClassName('kylt'+k)).text(''+oll_mex_status[k][4]);
-
+                  if (type==14 ){
                     var element = SVG.getElementsByClassName('silos'+k);
                     var element1 = SVG.getElementsByClassName('silos'+k+"mark_upper");
                     var element2 = SVG.getElementsByClassName('silos'+k+"mark_middle");
@@ -600,6 +597,124 @@ function change(oll_mex_status) {
                           default:                        
                               break; 
                     }
+                    
+                    color_start_end_route(k,oll_mex_status[k][3]);
+                  }
+                }
+
+                //Статус сушилки
+                  if (type==16){
+                   
+                    let maskDryerWork=8;
+                    let maskDryerGate=16;
+                    let maskDryerError=32
+
+                    var element = SVG.getElementsByClassName('dryer'+k);
+                    var element1 = SVG.getElementsByClassName('dryer'+k+"mark_upper");
+                    var element2 = SVG.getElementsByClassName('dryer'+k+"mark_middle");
+                    var element3 = SVG.getElementsByClassName('dryer'+k+"mark_lower");
+                    let elementGate = SVG.getElementsByClassName('dryer'+k+"gate");
+
+                    console.log(element);
+                    console.log(element1);
+                    console.log(element2);
+                    console.log(element3);
+                    console.log(elementGate);
+                    var status = oll_mex_status[k][1];
+
+
+                    if (element!=null){
+                       switch(status){
+                          case 0:
+                                $(element1).css('fill', 'none');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', 'none');
+                              break;                          
+                          case 2 :
+                                $(element1).css('fill', '#0000FF');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', '#0000FF');
+                              break;
+                          case 5 :
+                                $(element1).css('fill', '#FF0000');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', 'none');
+                              break;
+                          case 6 :
+                                $(element1).css('fill', 'none');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', '#00FF00');
+                              break;
+                          case 7 :
+                                $(element1).css('fill', '#FF0000');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', '#00FF00');
+                              break;
+                          case 8 :
+                                $(element1).css('fill', 'none');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', 'none');
+                              break;
+                          case 9 :
+                                $(element1).css('fill', 'none');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', '#00FF00');
+                              break;
+                          case 10 :
+                                $(element1).css('fill', '#FF0000');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', 'none');
+                              break;
+                          case 11 :
+                                $(element1).css('fill', '#FF0000');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', '#00FF00');
+                              break;
+                          case 12 :
+                                $(element1).css('fill', '#0000FF');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', 'none');
+                              break;
+                          case 13 :
+                                $(element1).css('fill', '#0000FF');
+                                $(element2).css('fill', 'none');
+                                $(element3).css('fill', '#00FF00');
+                              break;
+                          case 14 :
+                                $(element1).css('fill', '#0000FF');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', 'none');
+                              break;
+                          case 15 :
+                                $(element1).css('fill', '#0000FF');
+                                $(element2).css('fill', '#00FF00');
+                                $(element3).css('fill', '#00FF00');
+                              break;                          
+                          default:                        
+                              break; 
+                    }
+                    // Статусы для сушилки                
+                      
+                      if ((oll_mex_status[k][2] & maskDryerWork)>0){
+                        console.log('point1');
+                        $(element).css('fill', '#00FF00');//зеленый
+                      }else{
+                        if ((oll_mex_status[k][2] & maskDryerError)>0){
+                          console.log('point2');
+                          $(element).css('fill', '#FF0000');//авария
+                        }else{
+                          console.log('point3');
+                          $(element).removeAttr("style");//не работает
+                        }
+                      }
+                      if ((oll_mex_status[k][2] & maskDryerGate)>0){
+                        console.log('point4');
+                        $(elementGate).css('fill', '#00FF00');//зеленый
+                      }else{
+                        console.log('point5');
+                        $(elementGate).removeAttr("style");//не работает
+                      }                   
+                    
 
                     color_start_end_route(k,oll_mex_status[k][3]);
                   }
