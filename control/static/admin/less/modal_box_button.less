@@ -1,35 +1,10 @@
 @import "variables";
+@import "mixins";
 @modal_box_btn:~'.modal_box_btn';
 
 @{modal_box_btn}{	
-    background-color: @button_back_color;
-    cursor: pointer;    
-    padding: 6px 16px;
-    border-radius: 50px;    
-    display: inline-block;
-    margin:0px 5px 3px 5px;    
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;    
-    border: 1px solid @modal-border;
-    transition: 0.2s;
-    min-width:70px;
-    color:@text_main_color;
-    
-    &:hover:not(:active){
-        border:1px solid @button_border_act;
-        box-shadow: 0 0 10px rgba(239, 205, 31, 1);
-        color:#efcd1f;
-    }
-    &:active {    
-        top: 1px;
-        background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.1)) rgba(0,0,0,.5);
-        box-shadow:
-                0 0 1px rgba(0,0,0,.5) inset,
-                0 2px 3px rgba(0,0,0,.5) inset,
-                0 1px 1px rgba(255,255,255,.1);
-    }
+    .mix-btn-norm;
+    .btn-tipical;
 }
 
 .button_menu{
@@ -44,4 +19,27 @@
 }
 .btn_betw{
     justify-content:space-between;
+}
+
+.new_but-circul{
+    .btn-tipical;    
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position:relative;
+    p{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-56%);
+    }
+}
+.new_but-slim{
+    .btn-tipical;
+    .mix-btn-slim;  
+    width: 170px;
+    padding-right: 0px;
+    padding-left: 0px; 
+    padding-top:0px; 
+    padding-bottom: 0px;
 }

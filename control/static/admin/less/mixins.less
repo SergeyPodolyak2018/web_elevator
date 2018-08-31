@@ -1,0 +1,49 @@
+@import "variables";
+
+.mix-flex-cent-betw{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.mix-btn-norm{
+	padding: 6px 16px;
+    border-radius: 50px;
+    line-height: 1.42857143;   
+    font-size: 14px;
+    font-weight: 400;
+    min-width:70px;
+}
+
+.mix-btn-slim{
+    border-radius: 50px;
+    line-height: 1.42857143;   
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.btn-tipical{
+    background-color: @button_back_color;
+    cursor: pointer;
+    display: inline-block;
+    margin:0px 5px 3px 5px;
+    text-align: center;    
+    border: 1px solid @modal-border;
+    transition: 0.2s;
+    
+    color:@text_main_color;
+    
+    &:hover:not(:active){
+        border:1px solid @button_border_act;
+        box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+        color:#efcd1f;
+    }
+    &:active {    
+        top: 1px;
+        background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.1)) rgba(0,0,0,.5);
+        box-shadow:
+                0 0 1px rgba(0,0,0,.5) inset,
+                0 2px 3px rgba(0,0,0,.5) inset,
+                0 1px 1px rgba(255,255,255,.1);
+    }
+
+}

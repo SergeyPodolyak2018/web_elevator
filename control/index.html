@@ -486,146 +486,108 @@
                 <div id="zadvijka_kontrol_menu_content" class="silo-valve-block__content">
 
                         <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
-                            <div><p>Состояние задвижки</p></div>
-                            <div>
-                                <div>
+                            <div class='silo-valve-block__heder'><p>Состояние задвижки</p></div>
+                            <div class='silo-valve-block__container'>
+                                <div  class='silo-valve-block__container-bl1'>
                                     <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
                                         Your browser does not support SVG
                                     </object>
                                 </div>
-                                <div>
-                                    <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control1">-</div>
-                                    <div style="border-radius:5px;"  id="zadvijka_kontrol_menu_content_state_control2">-</div>
+                                <div class='silo-valve-block__container-bl2'>
+                                    <div id="zadvijka_kontrol_menu_content_state_control1">-</div>
+                                    <div id="zadvijka_kontrol_menu_content_state_control2">-</div>
                                 </div>
                             </div>
+                            <div class='silo-valve-block__container'>
+                                <div>
+                                    <span>Открыта на: </span>
+                                    <input type="text" size="8" id="zadvijka_current_time" class="disabeledField">
+                                    <span> мс</span>
+                                </div>
+                                <div>
+                                    <span>или: </span>
+                                    <input type="text" size="4" id="zadvijka_current_persent" class="disabeledField">
+                                    <span> %</span>
+                                </div>
+                                <div>
+                                    <span>Калиб. </span>
+                                    <input type="text" size="8" id="zadvijka_calibration" class="disabeledField">
+                                    <span> мс</span>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
+                            <div class='silo-valve-block__heder'><p>Калибровка</p></div>
+                            <div class='silo-valve-block__container-height'>
+                                <div  class='silo-valve-block__container-bl3'>
+                                    <p>Открытие при сработке датчика, мс</p>
+                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_calibrate" onclick="zadvijka_send_comand_from_button(5,0,0)"> Калибровка</div>
+                                </div>
+                                <div class='silo-valve-block__container-bl3'>
+                                    <div class="silo-valve-block__wrapper">
+                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration',0,0,0); disabled_button()">
+                                                <p>&ndash;</p>
+                                        </div>
+                                        <input size="4" type="text"  id="zadvijka_time_duration" value="0" class="disabeledField">
 
 
-                            <table>
-                                <tr >
-                                    <td>Открыта на: <input type="text" size="8" id="zadvijka_current_time" class="disabeledField"> мс</td>
-                                    <td>или: <input type="text" size="4" id="zadvijka_current_persent" class="disabeledField"> %</td>
-                                    <td><input type="text" size="4" id="zadvijka_calibration" class="disabeledField"> мс</td>
-                                </tr>
-                            </table>
+                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration',1,0,0);disabled_button()">
+                                                <p>+</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_save" onclick="disabled_button(); zadvijka_send_comand_from_button(8,0,0)">Сохранить</div>
+                                </div>
+                            </div>                            
                         </div>
 
-                        <div id="zadvijka_kontrol_menu_content_calibration" style="padding-top:5px; border: 1px solid #494949; border-radius:10px; margin-top:5px;">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td colspan="4"> 
-                                            <span >Калибровка</span>
-                                        </td>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                    <td style="width:215px;padding-left: 5px;">
-                                        Открытие при сработке датчика, мс
-                                    </td>
-                                    <td style="">
-                                      <div style="text-align: center;">
-                                        <button class="new_but circul"  onclick="increment_decrement('zadvijka_time_duration',0,0,0); disabled_button()">
-                                            &ndash;
-                                        </button>
-
-
-                                        <input style="text-align: center" size="4" type="text"  id="zadvijka_time_duration" value="0" pattern="^[ 0-9]+$" class="disabeledField">
-
-
-                                        <button class="new_but circul" onclick="increment_decrement('zadvijka_time_duration',1,0,0);disabled_button()">
-                                            +
-                                        </button>
-                                      </div>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    
-                                    <td style="width: 215px;">
-
-                                        <a class="modal_box_btn" style="text-decoration: none; width: 170px;padding-right: 0px;padding-left: 0px; padding-top:0px; padding-bottom: 0px;" href="#" id="zadvijka_kontrol_menu_button_calibrate" onclick="zadvijka_send_comand_from_button(5,0,0)"> Калибровка</a>
-                                    </td>
-                                    <td  style="text-align: right">
-                                        <button class="modal_box_btn" style="width:165px; padding-top:0px; padding-bottom: 0px;" id="zadvijka_kontrol_menu_button_save" onclick="disabled_button(); zadvijka_send_comand_from_button(8,0,0)">Сохранить</button></td>
-                                </tr>
-                            </table>
-                        </div>
-
-                        <div id="zadvijka_kontrol_menu_content_control" style="padding-top:5px;margin-top:5px;border-radius:10px;  border: 1px solid #494949; padding-bottom: 0px;">
-                            <table>
-                                <thead>
-                                    <tr >
-                                        <td colspan="5" style="padding-bottom:5px;" >
-                                            <span style="padding-left: 5px;">Управление задвижкой</span>
-                                        </td>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                   
-                                    <td style="width: 215px;">
-                                        <input style="text-align: center" type="radio" name="control"  value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
+                        <div id="zadvijka_kontrol_menu_content_control"  class='silo-valve-block__section'>
+                            <div class='silo-valve-block__heder'><p>Управление задвижкой</p></div>
+                            <div class='silo-valve-block__container-height2'>
+                                <div  class='silo-valve-block__container-bl3'>
+                                    <div class='silo-valve-block__container-bl3-l'>
+                                        <input type="radio" name="control"  value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
                                         Длительность откр/закр, мс
-                                    </td>
-                                    <td style="text-align: center; ">
-                                        <button class="new_but circul"  onclick="increment_decrement('zadvijka_time_duration_temp',0,0,1)">&ndash; &ndash;</button>
-                                        <button class="new_but circul" onclick="increment_decrement('zadvijka_time_duration_temp',0,0,0)">&ndash;</button>
-
-
-                                        <input style="text-align: center" type="text" size="4" id="zadvijka_time_duration_temp" class="disabeledField" value="100">
-
-                                        <button class="new_but circul" style="" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,0)">+</button>
-
-                                        <button class="new_but circul" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,1)">++</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                   
-                                    <td style="width:215px"> <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
                                         Пропорциональное откр/закр, %
-                                    </td>
-                                    <td style="text-align: center; ">
-                                        <button class="new_but circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,1)">&ndash; &ndash;</button>
-                                        <button class="new_but circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,0)">&ndash;</button>
+                                    </div>
+                                    <div></div>
+                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_open">Открыть по времени</div>
+                                </div>
+                                <div class='silo-valve-block__container-bl3'>
+                                    <div class="silo-valve-block__wrapper">
+                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration_temp',0,0,1)"><p>--<p></div>
+                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',0,0,0)"><p>-<p></div>
 
-                                        <input style="text-align: center" type="text" size="4" id="zadvijka_persetnt_duration_temp" class="disabeledField" value="5">
+
+                                        <input type="text" size="4" id="zadvijka_time_duration_temp" class="disabeledField" value="100">
+
+                                        <div class="new_but-circul" style="" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,0)"><p>+<p></div>
+
+                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,1)"><p>++<p></div>
+                                    </div>
+                                    <div class="silo-valve-block__wrapper">
+                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,1)"><p>--</p></div>
+                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,0)"><p>-<p></div>
+
+                                        <input type="text" size="4" id="zadvijka_persetnt_duration_temp" class="disabeledField" value="5">
 
 
-                                        <button class="new_but circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,0)">+</button>
-                                        <button class="new_but circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,1)">++</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <table id="zadvijka_kontrol_menu_content_control_button">
-                                            <tr>
-                                                <td>
-                                                    <button class="modal_box_btn" style="width:165px; margin-top: 5px;padding-top:0px; padding-bottom: 0px;" id="zadvijka_kontrol_menu_button_open">Открыть по времени</button>
-                                                </td>
-                                                <td style="text-align: right;">
-                                                    <button class="modal_box_btn" style="width:165px; margin-top: 5px; margin-bottom: 0px;padding-top:0px; padding-bottom: 0px; margin-top:0px"
-                                                            id="zadvijka_kontrol_menu_button_close">Закрыть по времени</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:215px;"></td>
-                                                <td style="text-align: right;">
-                                                    <button class="modal_box_btn " style="width:165px; margin-top:
-                                                    0px;padding-top:0px; padding-bottom: 0px;"
-                                                            id="zadvijka_kontrol_menu_button_full_close">Полное закрытие</button>
-                                                </td>
-                                            </tr>
-
-                                    </table>
-                                </tr>
-                            </table>
-
+                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,0)"><p>+</p></div>
+                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,1)"><p>++</p></div>
+                                    </div>
+                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_close">Закрыть по времени</div>
+                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_full_close">Полное закрытие</button>
+                                    
+                                </div>
+                            </div>                            
                         </div>
-                </div>
-
+                    </div>
                 <div id="zadvijka_kontrol_menu_footer" class="modal_box_footer btn_right">
                     <div class="modal_box_btn" onclick="zadvijka_menu_close()">Закрыть</div>                    
                 </div>
-
-                 
             </div>
         <!-- _______________ END CONTROLS FOR THE VALVE UNDER THE SILO ____________________ -->
 

@@ -1,12 +1,13 @@
+@import "mixins";
 @import "variables";
 @valve:~'.silo-valve-block';
 
 @{valve}{
-	width:850px;
+	width:500px;
 	// display:none;
 	left:20%;
 	top:20%;
-	&__content{
+	&__content-main{
 		margin: 0 auto;
 		width:99%;
 	}
@@ -14,32 +15,81 @@
 		padding:5px;
 		border: 1px solid #494949;
 		border-radius:10px;
+		width:99%;
+		margin:5px auto;
 	}
+	&__heder{
+		color:@modal-hed-text;	
+		margin-bottom:15px;
+	}
+	&__container{
+		.mix-flex-cent-betw;
+		&-bl1{
+			flex-grow:1;
+			object{
+				margin-left:45%;
+			}
+		}
+		&-bl2{
+			div{
+				text-align:center;
+				min-width:100px;
+				border-radius:5px;
+			}
+			
+		}
+		&-bl3{
+			height:100%;
+			.mix-flex-cent-betw;
+			flex-direction:column;
+			&-l{
+				align-self:flex-start;
+			}
+		}
+
+		input:not([type=radio]){
+			border:none;
+	    	color:#cccccc;
+	    	background: #131313;
+	    	border-bottom:1px solid #cccccc;
+	    	pointer-events: none;
+	    	text-align: center; 
+		}
+		&-height{
+			.mix-flex-cent-betw;
+			height:70px;
+			input:not([type=radio]){
+				border:none;
+		    	color:#cccccc;
+		    	background: #131313;
+		    	border-bottom:1px solid #cccccc;
+		    	pointer-events: none;
+		    	text-align: center; 
+			}	
+		}
+		&-height2{
+			.mix-flex-cent-betw;
+			height:115px;
+			input:not([type=radio]){
+				border:none;
+		    	color:#cccccc;
+		    	background: #131313;
+		    	border-bottom:1px solid #cccccc;
+		    	pointer-events: none;
+		    	text-align: center; 
+			}	
+		}
+	}
+	&__wrapper{
+		.mix-flex-cent-betw;
+	}
+
 	
 }
 
-.circul{
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    width: 22px;
-    height: 22px;
-}
-#zadvijka_kontrol_menu_content_state table tbody tr td input{
-	border:none;
-    color:#cccccc;
-    background: #131313;
-    border-bottom:1px solid #cccccc;
-}
-#zadvijka_kontrol_menu_content_calibration tbody tr td input{
-    color:#cccccc;
-    background: #131313;;
-}
-#zadvijka_kontrol_menu_content_control tbody tr td input{
-    color:#cccccc;
-    background: #131313;;
-}
-.disabeledField{
-                        pointer-events: none;
-                        background-color: rgb(255, 255, 255);
-                        }
+
+
+// .disabeledField{
+//                        pointer-events: none;
+//                         background-color: rgb(255, 255, 255);
+//                         }
