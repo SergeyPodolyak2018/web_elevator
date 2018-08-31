@@ -705,6 +705,7 @@ a {
 }
 .silo-valve-block {
   width: 500px;
+  display: none;
   left: 20%;
   top: 20%;
 }
