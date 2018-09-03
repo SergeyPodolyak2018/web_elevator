@@ -477,313 +477,297 @@
     
         <!-- ==============START CONTROLS FOR THE VALVE UNDER THE SILO============== -->
 
-            <div id="zadvijka_kontrol_menu"  class="draggable modal_box silo-valve-block" >
-                <div id="zadvijka_kontrol_menu_header" class="modal_box_header silo-valve-block__header">
-                    <p class='modal_box_header_text'>Управление задвижкой <span class=""> Задв 130</span></p>                    
-                    <a href="#" onclick="zadvijka_menu_close()" class="btn btn-default btn-back"><span><span></a>
-                </div>
+        <div id="zadvijka_kontrol_menu"  class="draggable modal_box silo-valve-block" >
+            <div id="zadvijka_kontrol_menu_header" class="modal_box_header silo-valve-block__header">
+                <p class='modal_box_header_text'>Управление задвижкой <span class=""> Задв 130</span></p>                    
+                <a href="#" onclick="zadvijka_menu_close()" class="btn btn-default btn-back"><span><span></a>
+            </div>
 
-                <div id="zadvijka_kontrol_menu_content" class="silo-valve-block__content">
+            <div id="zadvijka_kontrol_menu_content" class="silo-valve-block__content">
 
-                        <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
-                            <div class='silo-valve-block__heder'><p>Состояние задвижки</p></div>
-                            <div class='silo-valve-block__container'>
-                                <div  class='silo-valve-block__container-bl1'>
-                                    <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
-                                        Your browser does not support SVG
-                                    </object>
-                                </div>
-                                <div class='silo-valve-block__container-bl2'>
-                                    <div id="zadvijka_kontrol_menu_content_state_control1">-</div>
-                                    <div id="zadvijka_kontrol_menu_content_state_control2">-</div>
-                                </div>
-                            </div>
-                            <div class='silo-valve-block__container'>
-                                <div>
-                                    <span>Открыта на: </span>
-                                    <input type="text" size="8" id="zadvijka_current_time" class="disabeledField">
-                                    <span> мс</span>
-                                </div>
-                                <div>
-                                    <span>или: </span>
-                                    <input type="text" size="4" id="zadvijka_current_persent" class="disabeledField">
-                                    <span> %</span>
-                                </div>
-                                <div>
-                                    <span>Калиб. </span>
-                                    <input type="text" size="8" id="zadvijka_calibration" class="disabeledField">
-                                    <span> мс</span>
-                                </div>                                
-                            </div>
+                <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
+                    <div class='silo-valve-block__heder'><p>Состояние задвижки</p></div>
+                    <div class='silo-valve-block__container'>
+                        <div  class='silo-valve-block__container-bl1'>
+                            <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
+                                Your browser does not support SVG
+                            </object>
                         </div>
-                        <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
-                            <div class='silo-valve-block__heder'><p>Калибровка</p></div>
-                            <div class='silo-valve-block__container-height'>
-                                <div  class='silo-valve-block__container-bl3'>
-                                    <p>Открытие при сработке датчика, мс</p>
-                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_calibrate" onclick="zadvijka_send_comand_from_button(5,0,0)"> Калибровка</div>
-                                </div>
-                                <div class='silo-valve-block__container-bl3'>
-                                    <div class="silo-valve-block__wrapper">
-                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration',0,0,0); disabled_button()">
-                                                <p>&ndash;</p>
-                                        </div>
-                                        <input size="4" type="text"  id="zadvijka_time_duration" value="0" class="disabeledField">
-
-
-                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration',1,0,0);disabled_button()">
-                                                <p>+</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_save" onclick="disabled_button(); zadvijka_send_comand_from_button(8,0,0)">Сохранить</div>
-                                </div>
-                            </div>                            
-                        </div>
-
-                        <div id="zadvijka_kontrol_menu_content_control"  class='silo-valve-block__section'>
-                            <div class='silo-valve-block__heder'><p>Управление задвижкой</p></div>
-                            <div class='silo-valve-block__container-height2'>
-                                <div  class='silo-valve-block__container-bl3'>
-                                    <div class='silo-valve-block__container-bl3-l'>
-                                        <input type="radio" name="control"  value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
-                                        Длительность откр/закр, мс
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
-                                        Пропорциональное откр/закр, %
-                                    </div>
-                                    <div></div>
-                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_open">Открыть по времени</div>
-                                </div>
-                                <div class='silo-valve-block__container-bl3'>
-                                    <div class="silo-valve-block__wrapper">
-                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration_temp',0,0,1)"><p>--<p></div>
-                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',0,0,0)"><p>-<p></div>
-
-
-                                        <input type="text" size="4" id="zadvijka_time_duration_temp" class="disabeledField" value="100">
-
-                                        <div class="new_but-circul" style="" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,0)"><p>+<p></div>
-
-                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,1)"><p>++<p></div>
-                                    </div>
-                                    <div class="silo-valve-block__wrapper">
-                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,1)"><p>--</p></div>
-                                        <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,0)"><p>-<p></div>
-
-                                        <input type="text" size="4" id="zadvijka_persetnt_duration_temp" class="disabeledField" value="5">
-
-
-                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,0)"><p>+</p></div>
-                                        <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,1)"><p>++</p></div>
-                                    </div>
-                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_close">Закрыть по времени</div>
-                                    <div class="new_but-slim" id="zadvijka_kontrol_menu_button_full_close">Полное закрытие</button>
-                                    
-                                </div>
-                            </div>                            
+                        <div class='silo-valve-block__container-bl2'>
+                            <div id="zadvijka_kontrol_menu_content_state_control1">-</div>
+                            <div id="zadvijka_kontrol_menu_content_state_control2">-</div>
                         </div>
                     </div>
-                <div id="zadvijka_kontrol_menu_footer" class="modal_box_footer btn_right">
-                    <div class="modal_box_btn" onclick="zadvijka_menu_close()">Закрыть</div>                    
+                    <div class='silo-valve-block__container'>
+                        <div>
+                            <span>Открыта на: </span>
+                            <input type="text" size="8" id="zadvijka_current_time" class="disabeledField">
+                            <span> мс</span>
+                        </div>
+                        <div>
+                            <span>или: </span>
+                            <input type="text" size="4" id="zadvijka_current_persent" class="disabeledField">
+                            <span> %</span>
+                        </div>
+                        <div>
+                            <span>Калиб. </span>
+                            <input type="text" size="8" id="zadvijka_calibration" class="disabeledField">
+                            <span> мс</span>
+                        </div>                                
+                    </div>
                 </div>
+                <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
+                    <div class='silo-valve-block__heder'><p>Калибровка</p></div>
+                    <div class='silo-valve-block__container-height'>
+                        <div  class='silo-valve-block__container-bl3'>
+                            <p>Открытие при сработке датчика, мс</p>
+                            <div class="new_but-slim" id="zadvijka_kontrol_menu_button_calibrate" onclick="zadvijka_send_comand_from_button(5,0,0)"> Калибровка</div>
+                        </div>
+                        <div class='silo-valve-block__container-bl3'>
+                            <div class="silo-valve-block__wrapper">
+                                <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration',0,0,0); disabled_button()">
+                                        <p>&ndash;</p>
+                                </div>
+                                <input size="4" type="text"  id="zadvijka_time_duration" value="0" class="disabeledField">
+
+
+                                <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration',1,0,0);disabled_button()">
+                                        <p>+</p>
+                                </div>
+                            </div>
+
+                            <div class="new_but-slim" id="zadvijka_kontrol_menu_button_save" onclick="disabled_button(); zadvijka_send_comand_from_button(8,0,0)">Сохранить</div>
+                        </div>
+                    </div>                            
+                </div>
+
+                    <div id="zadvijka_kontrol_menu_content_control"  class='silo-valve-block__section'>
+                        <div class='silo-valve-block__heder'><p>Управление задвижкой</p></div>
+                        <div class='silo-valve-block__container-height2'>
+                            <div  class='silo-valve-block__container-bl3'>
+                                <div class='silo-valve-block__container-bl3-l'>
+                                    <input type="radio" name="control"  value="1" onclick="change_button_name(this)" checked id="zadvijka_kontrol_menu_content_control_radiobutton">
+                                    Длительность откр/закр, мс
+                                </div>
+                                <div>
+                                    <input type="radio" name="control" value="2" onclick="change_button_name(this)" >
+                                    Пропорциональное откр/закр, %
+                                </div>
+                                <div></div>
+                                <div class="new_but-slim" id="zadvijka_kontrol_menu_button_open">Открыть по времени</div>
+                            </div>
+                            <div class='silo-valve-block__container-bl3'>
+                                <div class="silo-valve-block__wrapper">
+                                    <div class="new_but-circul"  onclick="increment_decrement('zadvijka_time_duration_temp',0,0,1)"><p>--<p></div>
+                                    <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',0,0,0)"><p>-<p></div>
+
+
+                                    <input type="text" size="4" id="zadvijka_time_duration_temp" class="disabeledField" value="100">
+
+                                    <div class="new_but-circul" style="" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,0)"><p>+<p></div>
+
+                                    <div class="new_but-circul" onclick="increment_decrement('zadvijka_time_duration_temp',1,0,1)"><p>++<p></div>
+                                </div>
+                                <div class="silo-valve-block__wrapper">
+                                    <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,1)"><p>--</p></div>
+                                    <div class="new_but-circul"  onclick="increment_decrement('zadvijka_persetnt_duration_temp',0,1,0)"><p>-<p></div>
+
+                                    <input type="text" size="4" id="zadvijka_persetnt_duration_temp" class="disabeledField" value="5">
+
+
+                                    <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,0)"><p>+</p></div>
+                                    <div class="new_but-circul" onclick="increment_decrement('zadvijka_persetnt_duration_temp',1,1,1)"><p>++</p></div>
+                                </div>
+                                <div class="new_but-slim" id="zadvijka_kontrol_menu_button_close">Закрыть по времени</div>
+                                <div class="new_but-slim" id="zadvijka_kontrol_menu_button_full_close">Полное закрытие</div>
+                                
+                            </div>
+                        </div>                            
+                    </div>
             </div>
+            <div id="zadvijka_kontrol_menu_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="zadvijka_menu_close()">Закрыть</div>                    
+            </div>
+        </div>
         <!-- _______________ END CONTROLS FOR THE VALVE UNDER THE SILO ____________________ -->
 
-    <!--__Настройки нории___-->
-            <!-- <div id="settings_noriya" class="draggable modal_box">
-                <form method="POST" id="form_noriya_settings" name="form_noriya_settings" action="javascript:void(null);" onsubmit="">
-                 <div id="settings_noriya_header" class="modal_box_header ">
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0">
-                                   <tr><td><span>
-                                       <div id="settings_noriya_total_settings" class="name_options activ_modal_sub_menu" style="float:left; margin-right:5px;"> Общие настройки</div>
-                        <div id="settings_noriya_spicial_settings" class="name_options" style="float:left; ">Специальные настройки</div>
-                                   </span></td>
-                                       <td style="color:#ffa200; text-align:right; padding-right: 23px;" class="settings_header_name"></td>
-                                           <td>
-                                               <div class="header-wrap" style="float:right;margin-top:-10px; margin-right: -5px;">
-                                                   <a href="#"  onclick="setings_universal_close(1)" class="btn btn-default btn-back"><span></span></a>
-                                               </div>
+
+        <!--================== START SETTINGS NORIA =========================-->
+        <div id="settings_noriya" class="draggable modal_box settings-noriya">
+            
+            <div id="settings-noriya__header" class="modal_box_header settings-noriya__header">
+                <p class='modal_box_header_text'>Настройки <span id="settings-noriya__name"></span></p>
+                
+                <a href="#" onclick="setings_universal_close(1)" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="">
+                <div id="settings_noriya_total_settings" class="name_options activ_modal_sub_menu" >Общие настройки</div>
+                <div id="settings_noriya_spicial_settings" class="name_options">Специальные настройки</div>
+            </div>
+            
+               <form method="POST" id="form_noriya_settings" name="form_noriya_settings" action="javascript:void(null);" onsubmit="">
+                    <div id="settings_noriya_content" class="modal_box_body" >
+
+                        <div id="settings_noriya_global" >
+
+                            <table class="table" id="table_settings_noriya_global"  cellspacing="1" cellpadding="1" border="0">
+                                <tr><td colspan="3" style="  background-color: #0e0e0e; color: #ccc">Настройки</td></tr>
+                                <tr><td>Управление</td><td></td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km" SIZE=2></td></tr>
+                                <tr><td>Контроль1</td><td> <select size="1" name="FlagsMachine_bit8"><option value="0">0</option><option value="1">1</option></select></td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv" SIZE=2></td></tr>
+                                <tr><td>Контроль2</td><td> </td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv_R" SIZE=2></td></tr>
+                                <tr><td>Дист.упр.</td><td> <select size="1" name="FlagsMachine_bit5"><option value="0">0</option><option value="1">1</option></select></td><td></td></tr>
+                                <tr><td style="padding-right: 3px!important;">Не вкл. при АМ</td><td> <select size="1" name="FlagsMachine_bit0"><option value="0">0</option><option value="1">1</option></select></td><td></td></tr>
+                            </table>
+                        </div>
+
+                        <div id="settings_noriya_aditional" >
+
+                            <table class="table" id="table_settings_noriya_aditional" cellspacing="1" cellpadding="1" border="0">
+                                 <tr><td colspan="2" style="background-color:#0e0e0e; color: #ccc">Настройки</td></tr>
+                                <tr><td>Индекс уст-ва</td><td><input name="EquipIndex" SIZE=4 readonly></td></tr>
+                                <tr><td>Уст-во в работе</td><td><select style="width:98%;" name="FlagsMachine_bit7"><option value="0">0</option><option value="1">1</option></select></td></tr>
+                                <tr><td>Время разгона, мс</td><td><input class="checkable_data_form" name="Time_RKS" SIZE=4></td></tr>
+                                <tr><td>Время откл., с</td><td><input name="Vent_time_off" SIZE=4</td></tr>
+                                <tr><td>Период ТО, ч</td><td><input class="checkable_data_form" name="StatisticsPeriod" SIZE=4></td></tr>
+                                <tr><td>Приоритет датчиков</td><td><input class="checkable_data_form" name="Priority_dat" SIZE=4></td></tr>
+                                <tr><td>Зона звук. сигнализ4</td><td><input class="checkable_data_form" name="Bell_Zone" SIZE=4></td></tr>
+                                 <tr><td>Работа с ПЧ</td><td><select style="width:98%;" name="Invertor"><option value="0">0</option><option value="1">1</option></select></td></tr>
+                                <tr><td>Адрес ПЧ</td><td><input class="checkable_data_form" name="Adr_invertor" SIZE=4></td></tr>
+                                <tr><td>Скорость об/с</td><td><input class="checkable_data_form" name="Inverter_speed" SIZE=4></td></tr>
+                            </table>
+                        </div>
+
+                        <div id="settings_noriya_sensors" >
+                            <table class="table" id="table_settings_noriya_sensors">
+                                <thead>
+                                        <tr><td colspan="6" style="  background-color: #0e0e0e; color: #ccc">Датчики</td></tr>
+
+                                        <tr style="text-align: center">
+                                            <td>Исп.</td>
+                                            <td>Название</td>
+                                            <td>Адрес</td>
+                                            <td>0/1</td>
+                                            <td>Фильтр</td>
+                                            <td>Флаги</td>
+                                        </tr>
+                                </thead>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat0_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat0_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat0" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat0_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td></td>
+                                           <td></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat1_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat1_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat1" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat1_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td></td>
+                                           <td></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat2_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat2_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat2" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat2_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td></td>
+                                           <td></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat3_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat3_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat3" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat3_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td></td>
+                                           <td></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat4_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat4_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat4" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat4_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td></td>
+                                           <td></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat5_bit1"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat5_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat5" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat5_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat5" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat5_bit1"  title="ожидать сигнал обратной связи (время разгона, мс)"><option value="0">0</option><option value="1">1</option></select>
+                                           <select size="1" name="Flags_dat5_bit6"  title="остановить маршрут при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
                                            </td>
-                                   </tr>
-                                       
-
-
-
-                     </table>
-
-                 </div>
-                   
-
-                <div id="settings_noriya_content" class="modal_box_body" style="float:left;">
-
-                    <div id="settings_noriya_global" style="margin-right: -5px;!important;">
-
-                        <table class="table" id="table_settings_noriya_global"  cellspacing="1" cellpadding="1" border="0">
-                            <tr><td colspan="3" style="  background-color: #0e0e0e; color: #ccc">Настройки</td></tr>
-                            <tr><td>Управление</td><td></td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km" SIZE=2></td></tr>
-                            <tr><td>Контроль1</td><td> <select size="1" name="FlagsMachine_bit8"><option value="0">0</option><option value="1">1</option></select></td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv" SIZE=2></td></tr>
-                            <tr><td>Контроль2</td><td> </td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv_R" SIZE=2></td></tr>
-                            <tr><td>Дист.упр.</td><td> <select size="1" name="FlagsMachine_bit5"><option value="0">0</option><option value="1">1</option></select></td><td></td></tr>
-                            <tr><td style="padding-right: 3px!important;">Не вкл. при АМ</td><td> <select size="1" name="FlagsMachine_bit0"><option value="0">0</option><option value="1">1</option></select></td><td></td></tr>
-                        </table>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat6_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat6_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat6" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat6_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat6" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat6_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
+                                               <select size="1" name="Flags_dat6_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat7_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat7_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat7" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat7_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat7" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat7_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
+                                               <select size="1" name="Flags_dat7_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td><select size="1" name="Type_dat8_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat8_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat8" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat8_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat8" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat8_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select></td>
+                                       </tr>
+                                      <tr>
+                                           <td><select size="1" name="Type_dat9_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat9_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat9" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat9_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat9" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat9_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
+                                               <select size="1" name="Flags_dat9_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
+                                       </tr>
+                                      <tr>
+                                           <td><select size="1" name="Type_dat10_bit0"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat10_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat10" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat10_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat10" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat10_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
+                                               <select size="1" name="Flags_dat10_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
+                                       </tr>
+                                        <tr>
+                                           <td><select size="1" name="Type_dat11_bit0"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input name="dat11_name" SIZE=10 readonly></td>
+                                           <td><input class="checkable_data_form adres_getable" name="Adr_dat11" SIZE=1  title="Адрес датчика"></td>
+                                           <td><select style="width: 100%;" name="Flags_dat11_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
+                                           <td><input class="checkable_data_form" name="Time_dat11" SIZE=4  title="время фильтрации мс"></td>
+                                           <td><select size="1" name="Flags_dat11_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
+                                               <select size="1" name="Flags_dat11_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
+                                       </tr>
+                            </table>
+                        </div>
                     </div>
+                </form>   
+            
+            <div id="confirm_mixin_kylt_rout_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="setings_universal_close(1)">Закрыть</div>
+                <div class="modal_box_btn" onclick="setings_universal_save(1)">Сохранить</div>
+            </div> 
+               
+        </div>
 
-                    <div id="settings_noriya_aditional" style="margin-right: -5px;!important; display:none;">
-
-                        <table class="table" id="table_settings_noriya_aditional" cellspacing="1" cellpadding="1" border="0">
-                             <tr><td colspan="2" style="background-color:#0e0e0e; color: #ccc">Настройки</td></tr>
-                            <tr><td>Индекс уст-ва</td><td><input name="EquipIndex" SIZE=4 readonly></td></tr>
-                            <tr><td>Уст-во в работе</td><td><select style="width:98%;" name="FlagsMachine_bit7"><option value="0">0</option><option value="1">1</option></select></td></tr>
-                            <tr><td>Время разгона, мс</td><td><input class="checkable_data_form" name="Time_RKS" SIZE=4></td></tr>
-                            <tr><td>Время откл., с</td><td><input name="Vent_time_off" SIZE=4</td></tr>
-                            <tr><td>Период ТО, ч</td><td><input class="checkable_data_form" name="StatisticsPeriod" SIZE=4></td></tr>
-                            <tr><td>Приоритет датчиков</td><td><input class="checkable_data_form" name="Priority_dat" SIZE=4></td></tr>
-                            <tr><td>Зона звук. сигнализ4</td><td><input class="checkable_data_form" name="Bell_Zone" SIZE=4></td></tr>
-                             <tr><td>Работа с ПЧ</td><td><select style="width:98%;" name="Invertor"><option value="0">0</option><option value="1">1</option></select></td></tr>
-                            <tr><td>Адрес ПЧ</td><td><input class="checkable_data_form" name="Adr_invertor" SIZE=4></td></tr>
-                            <tr><td>Скорость об/с</td><td><input class="checkable_data_form" name="Inverter_speed" SIZE=4></td></tr>
-
-
-
-                     </table>
-                    </div>
-
-                    <div id="settings_noriya_sensors" style="float:left;">
-                        <table class="table" id="table_settings_noriya_sensors">
-                            <thead>
-                                    <tr><td colspan="6" style="  background-color: #0e0e0e; color: #ccc">Датчики</td></tr>
-
-                                    <tr style="text-align: center">
-                                        <td>Исп.</td>
-                                        <td>Название</td>
-                                        <td>Адрес</td>
-                                        <td>0/1</td>
-                                        <td>Фильтр</td>
-                                        <td>Флаги</td>
-                                    </tr>
-                            </thead>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat0_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat0_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat0" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat0_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td></td>
-                                       <td></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat1_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat1_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat1" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat1_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td></td>
-                                       <td></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat2_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat2_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat2" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat2_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td></td>
-                                       <td></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat3_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat3_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat3" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat3_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td></td>
-                                       <td></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat4_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat4_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat4" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat4_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td></td>
-                                       <td></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat5_bit1"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat5_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat5" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat5_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat5" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat5_bit1"  title="ожидать сигнал обратной связи (время разгона, мс)"><option value="0">0</option><option value="1">1</option></select>
-                                       <select size="1" name="Flags_dat5_bit6"  title="остановить маршрут при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat6_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat6_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat6" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat6_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat6" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat6_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                           <select size="1" name="Flags_dat6_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat7_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat7_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat7" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat7_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat7" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat7_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                           <select size="1" name="Flags_dat7_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td><select size="1" name="Type_dat8_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat8_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat8" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat8_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat8" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat8_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select></td>
-                                   </tr>
-                                  <tr>
-                                       <td><select size="1" name="Type_dat9_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat9_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat9" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat9_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat9" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat9_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                           <select size="1" name="Flags_dat9_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
-                                   </tr>
-                                  <tr>
-                                       <td><select size="1" name="Type_dat10_bit0"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat10_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat10" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat10_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat10" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat10_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                           <select size="1" name="Flags_dat10_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
-                                   </tr>
-                                    <tr>
-                                       <td><select size="1" name="Type_dat11_bit0"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input name="dat11_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat11" SIZE=1  title="Адрес датчика"></td>
-                                       <td><select style="width: 100%;" name="Flags_dat11_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat11" SIZE=4  title="время фильтрации мс"></td>
-                                       <td><select size="1" name="Flags_dat11_bit5"  title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select>
-                                           <select size="1" name="Flags_dat11_bit7"  title="не выключать устройство и подать предупредительное сообщение"><option value="0">0</option><option value="1">1</option></select></td>
-                                   </tr>
-                     </table>
-                    </div>
-
-
-                 </div>
-
-
-                 <div id="settings_noriya_footer" >
-                     
-                     <button style="float:right;" onclick="setings_universal_close(1)" class="modal_box_btn btn_push_right">Закрыть</button>
-                     <button style="float:right;" onclick="setings_universal_save(1)" class="modal_box_btn btn_push_right" >Сохранить</button>
-
-
-                 </div>
-                </form>
-             </div> -->
+        <!-- ________________________ END SETTINGS NORIA ___________________________ -->
 
 
          <!--__Настройки конвейера___-->

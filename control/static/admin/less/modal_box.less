@@ -22,12 +22,20 @@
 	    display:flex;
 	    align-items:center;
 	    justify-content:space-between;
+	    
 	    &_text{
 	    	position:absolute;
 	    	top:50%;
 	    	transform:translateY(-50%);
 	    	left:10px;
+	    	span{
+	    		color:@text_main_color;	 
+	    	}
 	    }
+	}
+	&_body{
+		display:flex;
+		justify-content:space-between;
 	}
 	&_footer{
 		display: flex;

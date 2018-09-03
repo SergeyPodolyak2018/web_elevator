@@ -320,6 +320,13 @@ a {
   transform: translateY(-50%);
   left: 10px;
 }
+.modal_box_header_text span {
+  color: #ccc;
+}
+.modal_box_body {
+  display: flex;
+  justify-content: space-between;
+}
 .modal_box_footer {
   display: flex;
   margin: 10px 0px;
@@ -790,4 +797,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.settings-noriya {
+  width: 600px;
+  left: 20%;
+  top: 20%;
 }

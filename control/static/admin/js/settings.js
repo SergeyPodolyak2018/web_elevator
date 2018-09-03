@@ -254,16 +254,16 @@ function settings_equipment_open(p1,p2,p3,index,type){
         //Заполнение шапки настройки
         
         
-        var div_settings_header_name=document.getElementById('settings_'+device_type+'_header');
-        var selector='td.settings_header_name'
-        var settings_header_name = div_settings_header_name.querySelectorAll(selector);
-        console.log(settings_header_name);
+        var settings_header_name=document.getElementById('settings-'+device_type+'__name');
+        // var selector='td.settings_header_name'
+        // var settings_header_name = div_settings_header_name.querySelectorAll(selector);
+        // console.log(settings_header_name);
         
 
         form = document.forms['form_'+device_type+'_settings'];
         
         if(device_type!='current' & device_type!='kylt'& device_type!='analog_dat'){
-            settings_header_name[0].innerText=menu_header_text[index].longName;
+            settings_header_name.innerText=menu_header_text[index].longName;
             console.log(menu_header_text[index].longName);
             form.elements["EquipIndex"].value =index;
             url_string='/device_get_settings/?index='+index;
