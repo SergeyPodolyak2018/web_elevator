@@ -301,7 +301,7 @@ function settings_equipment_open(p1,p2,p3,index,type){
 
                                 } catch (err) {
 
-                                  console.log('а нам похуй');
+                                  console.log('такое поле отсутствует');
 
                                 }
 

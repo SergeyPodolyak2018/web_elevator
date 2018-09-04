@@ -326,6 +326,7 @@ a {
 .modal_box_body {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .modal_box_footer {
   display: flex;
@@ -343,6 +344,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.mix-flex-cent {
+  display: flex;
+  align-items: center;
 }
 .mix-btn-norm {
   padding: 6px 16px;
@@ -799,7 +804,53 @@ a {
   justify-content: space-between;
 }
 .settings-noriya {
-  width: 600px;
+  width: 700px;
+  display: none;
   left: 20%;
   top: 20%;
+}
+.settings-universal__sub-header {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.settings-universal__sub-header .name_options {
+  padding: 5px;
+  margin: 0px 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #000;
+}
+.settings-universal__sub-header .activ_modal_sub_menu {
+  padding: 8px;
+  background-color: #555;
+  color: #fff;
+}
+.settings-universal .settings-hide {
+  display: none;
+}
+.settings-universal__table-wrapper {
+  border: 1px solid #494949;
+  border-radius: 8px;
+}
+.settings-universal__table {
+  border-spacing: 0;
+  color: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.settings-universal__table td {
+  padding: 8px;
+  border: 1px solid #494949;
+}
+.settings-universal__table td input,
+.settings-universal__table td option,
+.settings-universal__table td select {
+  background: #131313;
+  border: 1px solid #494949;
+  color: #cccccc;
+}
+.settings-universal__table-header {
+  color: #ffa200;
+  background-color: #0e0e0e;
 }

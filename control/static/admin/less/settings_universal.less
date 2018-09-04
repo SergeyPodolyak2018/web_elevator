@@ -1,0 +1,55 @@
+@import "mixins";
+@import "variables";
+@settings:~'.settings-universal';
+
+@{settings}{
+	
+	&__header{}
+	&__sub-header{
+		padding-left: 10px;
+		.mix-flex-cent;
+		.name_options{
+		    padding:5px;
+		    margin: 0px 5px;
+		    cursor: pointer;		    
+		    border-radius: 10px;
+		    background: @black-black;
+		}
+		.activ_modal_sub_menu{
+		    padding:8px;
+		    background-color: @sub-active-button-backcolor;
+		    color:@sub-active-button-color;
+		}
+	}
+	.settings-hide{
+		display:none;
+	}
+	&__table-wrapper{
+		border: 1px solid #494949;
+		border-radius: 8px;
+	}
+	&__table{
+		// background-color: #191919;
+    	border-spacing: 0;
+	    color: #ccc;
+	    border-radius: 8px;
+	    overflow: hidden;
+	    td{	    	   
+    		padding: 8px;
+    		border: 1px solid #494949;
+    		input,option,select{
+			    background: #131313;
+				border: 1px solid #494949;
+				color: #cccccc;
+				
+    		}    
+	    }
+
+	}
+	&__table-header{
+		color:@modal-hed-text;
+		background-color: @menu_black;
+	}
+
+
+}
