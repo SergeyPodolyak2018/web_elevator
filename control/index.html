@@ -594,21 +594,21 @@
 
         <!--================== START SETTINGS NORIA =========================-->
         <div id="settings_noriya" class="draggable modal_box settings-universal settings-noriya">
-            <div id="settings-noriya__header" class="modal_box_header settings-universal__header">
+            <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-noriya__name"></span></p>
                 <a href="#" onclick="setings_universal_close(1)" class="btn btn-default btn-back"><span><span></a>
             </div>
             <div class="settings-universal__sub-header">
-                <div id="settings_noriya_total_settings" class="name_options activ_modal_sub_menu total_settings" >Общие настройки</div>
-                <div id="settings_noriya_spicial_settings" class="name_options spicial_settings">Специальные настройки</div>
+                <div class="name_options activ_modal_sub_menu total_settings" >Общие настройки</div>
+                <div class="name_options spicial_settings">Специальные настройки</div>
             </div>
             
             <form method="POST" id="form_noriya_settings" name="form_noriya_settings" action="javascript:void(null);" onsubmit="" autocomplete="off">
-                <div id="settings_noriya_content" class="modal_box_body" >
+                <div class="modal_box_body" >
 
-                    <div id="settings_noriya_global" class="settings-universal__table-wrapper total_settings-wrap">
+                    <div class="settings-universal__table-wrapper total_settings-wrap">
 
-                        <table class="settings-universal__table" id="table_settings_noriya_global"  cellspacing="1" cellpadding="1" border="0">
+                        <table class="settings-universal__table" cellspacing="1" cellpadding="1" border="0">
                             <tr><td colspan="3" class="settings-universal__table-header">Настройки общие</td></tr>
                             <tr><td>Управление</td><td></td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km" SIZE=2></td></tr>
                             <tr><td>Контроль1</td><td> <select size="1" name="FlagsMachine_bit8"><option value="0">0</option><option value="1">1</option></select></td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv" SIZE=2></td></tr>
@@ -618,9 +618,9 @@
                         </table>
                     </div>
 
-                    <div id="settings_noriya_aditional" class="settings-hide settings-universal__table-wrapper spicial_settings-wrap">
+                    <div class="settings-hide settings-universal__table-wrapper spicial_settings-wrap">
 
-                        <table class="settings-universal__table" id="table_settings_noriya_aditional" cellspacing="1" cellpadding="1" border="0">
+                        <table class="settings-universal__table" cellspacing="1" cellpadding="1" border="0">
                              <tr><td colspan="2" class="settings-universal__table-header">Настройки специальные</td></tr>
                             <tr><td>Индекс уст-ва</td><td><input name="EquipIndex" SIZE=4 readonly></td></tr>
                             <tr><td>Уст-во в работе</td><td><select name="FlagsMachine_bit7"><option value="0">0</option><option value="1">1</option></select></td></tr>
@@ -632,8 +632,8 @@
                         </table>
                     </div>
 
-                    <div id="settings_noriya_sensors" class="settings-universal__table-wrapper">
-                        <table class="settings-universal__table" id="table_settings_noriya_sensors" >
+                    <div class="settings-universal__table-wrapper">
+                        <table class="settings-universal__table" >
                             <thead>
                                     <tr><td colspan="6" class="settings-universal__table-header">Датчики</td></tr>
 
@@ -764,22 +764,24 @@
         <!-- ________________________ END SETTINGS NORIA ___________________________ -->
 
         <!--================== START SETTINGS KONVEYOR =========================-->
-        <!-- <div id="settings_konveyer" class="draggable modal_box settings-universal settings-konveyer">
+        <div id="settings_konveyer" class="draggable modal_box settings-universal settings-konveyer">
             <div id="settings-noriya__header" class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-konveyer__name"></span></p>
                 <a href="#" onclick="setings_universal_close(2)" class="btn btn-default btn-back"><span><span></a>
             </div>
             <div class="settings-universal__sub-header">
-                <div id="settings_noriya_total_settings" class="name_options activ_modal_sub_menu" >Общие настройки</div>
-                <div id="settings_noriya_spicial_settings" class="name_options">Специальные настройки</div>
+                <div  class="name_options activ_modal_sub_menu total_settings" >Общие настройки</div>
+                <div  class="name_options spicial_settings">Специальные настройки</div>
             </div>
             
             <form method="POST" id="form_noriya_settings" name="form_noriya_settings" action="javascript:void(null);" onsubmit="" autocomplete="off">
-                
+                <div id="settings_noriya_global" class="settings-universal__table-wrapper total_settings-wrap">
+
+                </div>
             </form>
             <div id="confirm_mixin_kylt_rout_footer" class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(1)">Закрыть</div>
-                <div class="modal_box_btn" onclick="setings_universal_save(1)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(2)">Закрыть</div>
+                <div class="modal_box_btn" onclick="setings_universal_save(2)">Сохранить</div>
             </div> 
                
         </div>
@@ -999,7 +1001,7 @@
 
                  </div>
                 </form>
-             </div> -->
+             </div>
         <!--________________________ END SETTINGS KONVEYOR _____________________________-->
 
          <!--Настройки Задвижки-->

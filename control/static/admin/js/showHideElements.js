@@ -69,15 +69,13 @@ function adres_datchik(object){
     } 
     
 })();
-function showTotal(){
-    console.log(this);
+function showTotal(){    
     this.classList.add('activ_modal_sub_menu');
     this.parentNode.getElementsByClassName('spicial_settings')[0].classList.remove('activ_modal_sub_menu');
     this.parentNode.parentNode.getElementsByClassName('total_settings-wrap')[0].classList.add('settings-hide');
     this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.remove('settings-hide');
 }
-function showSpecial(){
-    console.log(this);
+function showSpecial(){    
     this.classList.add('activ_modal_sub_menu');
     this.parentNode.getElementsByClassName('total_settings')[0].classList.remove('activ_modal_sub_menu');
     this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.add('settings-hide');
