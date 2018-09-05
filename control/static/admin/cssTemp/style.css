@@ -809,6 +809,42 @@ a {
   left: 20%;
   top: 20%;
 }
+.settings-konveyer {
+  width: 755px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.settings-shutter {
+  width: 695px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.settings-double-shutter {
+  width: 695px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.settings-group-shutter {
+  width: 695px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.settings-silos {
+  width: 765px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.settings-dryer {
+  width: 785px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
 .settings-universal__sub-header {
   padding-left: 10px;
   display: flex;

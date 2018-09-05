@@ -72,14 +72,14 @@ function adres_datchik(object){
 function showTotal(){    
     this.classList.add('activ_modal_sub_menu');
     this.parentNode.getElementsByClassName('spicial_settings')[0].classList.remove('activ_modal_sub_menu');
-    this.parentNode.parentNode.getElementsByClassName('total_settings-wrap')[0].classList.add('settings-hide');
-    this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.remove('settings-hide');
+    this.parentNode.parentNode.getElementsByClassName('total_settings-wrap')[0].classList.remove('settings-hide');
+    this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.add('settings-hide');
 }
 function showSpecial(){    
     this.classList.add('activ_modal_sub_menu');
     this.parentNode.getElementsByClassName('total_settings')[0].classList.remove('activ_modal_sub_menu');
-    this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.add('settings-hide');
-    this.parentNode.parentNode.getElementsByClassName('total_settings-wrap')[0].classList.remove('settings-hide');
+    this.parentNode.parentNode.getElementsByClassName('spicial_settings-wrap')[0].classList.remove('settings-hide');
+    this.parentNode.parentNode.getElementsByClassName('total_settings-wrap')[0].classList.add('settings-hide');
 }
 
 // $('#settings_noriya_spicial_settings').click(function () {
