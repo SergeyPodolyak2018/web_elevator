@@ -1,5 +1,7 @@
 @import "variables";
+@import "mixins";
 @box:~'.modal_box';
+
 
 @{box}{	
 	position:absolute;
@@ -36,6 +38,10 @@
 	&_body{
 		display:flex;
 		justify-content:space-between;
+		padding:10px;
+	}
+	&_body-column{
+		.mix-flex-cent-column;
 		padding:10px;
 	}
 	&_footer{
