@@ -1,0 +1,18 @@
+@import "mixins";
+@import "variables";
+@settings-device:~'.settings-device';
+
+
+@{settings-device}{
+	left:20%;
+	top:20%;
+	display:none;
+	.settings-universal__table-wrapper {
+		max-height:400px;
+	}
+	tbody tr:hover{
+		background-color: @yellow;
+		color:@black;
+	}
+	
+}
