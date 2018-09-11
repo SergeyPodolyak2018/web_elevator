@@ -6,26 +6,15 @@
     
     <title>Элеватор</title>
     <link href="/static/admin/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="/static/admin/js/jquery-ui-1.12.1/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/static/admin/css/elevator.css">
-    <link rel="stylesheet" href="/static/admin/css/elevator_windows.css">
-    <link rel="stylesheet" href="/static/admin/css/style.css">
-    <link rel="stylesheet" href="/static/admin/css/fountain_animation.css"> -->
-    <link rel="stylesheet" href="/static/admin/cssTemp/style.css">
-    <link rel="stylesheet" href="/static/admin/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.css">
-
-
-    <script src="/static/admin/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
-    <script src="/static/admin/js/jquery-1.12.4/jquery-1.12.4.js"></script>
-    <script src="/static/admin/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/static/admin/css/style.css">    
 </head>
 
 <body>
 
-    <!-- ==============Основной контейнер================== -->
+    <!-- === MAIN CONTAINER === -->
     <div id="container" class="main_container">
 
-        <!-- ==============Начало Прелоудер================== -->
+        <!-- ===START PRELOADER=== -->
         <div id="container_fountainG">
             <div id="fountainG">
                 <div id="fountainG_1" class="fountainG"></div>
@@ -38,33 +27,33 @@
                 <div id="fountainG_8" class="fountainG"></div>
             </div>
         </div>
-        <!-- _____________Окончание Прелоудер________________ -->
+        <!-- ___ END PRELOADER ___ -->
         
 
-        <!-- ==========Плашка с кнопками============ -->
+        <!-- ===START PLATE WITH BUTTONS === -->
         <div id="header"  class="main_menu">
 
-            <!-- Логотип зерновая столица-->
+            <!-- Logotype of the grain capital-->
                <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/static/admin/img/logotip.svg" id="logotip" class="menu_button_typ1">
                       Your browser does not support SVG
                </object></div>
-            <!--Запуск маршрута-->
+            <!--Starting the route-->
                 <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/static/admin/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
-            <!--Штатный останов-->
+            <!--Staff stop-->
                <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/static/admin/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
-            <!--Экстренный останов-->
+            <!--Emergency stop-->
                <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/static/admin/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
-            <!--Звонок-->
+            <!--Call-->
              <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
                           Your browser does not support SVG
              </object></div>
-            <!--Архив-->
+            <!--Archive-->
             <div class="button_with_SVG" id="archiv_SVG">
                 <object type="image/svg+xml" data="/static/admin/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
                           Your browser does not support SVG
@@ -77,7 +66,7 @@
                     <div class="menu_button" onclick="archive_current_open(1)">Текущие графики токов</div>
                 </div>
             </div>
-            <!--Сервис-->
+            <!--Service-->
                 <div class="button_with_SVG" id="servise_SVG">
                     <object type="image/svg+xml" data="/static/admin/img/service_split.svg" id="service_button" class="menu_button_typ2">
                               Your browser does not support SVG
@@ -111,22 +100,22 @@
                         <div class="menu_button">О программе</div>
                     </div>
                 </div>
-            <!-- Кнопка выхода-->
+            <!-- Exit button-->
                 <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
         </div>
-        <!-- ___________Конец Плашка с кнопками______________ -->
+        <!-- ___END PLATE WITH BUTTONS___ -->
 
-        <!-- =============Обертка для размещения рисунка SVG==========-->
+        <!-- === START WRAPPER FOR PLACING THE PICTURE SVG===-->
         <div id="wrapper" class="svg_wrapper">
             <object type="image/svg+xml" data="/static/admin/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
                 Your browser does not support SVG
             </object>
         </div>
-        <!-- ________Конец Обертка для размещения рисунка SVG___________-->
+        <!-- ___ START WRAPPER FOR PLACING THE PICTURE SVG___-->
 
-        <!-- ==============Начало Подвал сайта========================== -->
+        <!-- ===START THE BASEMENT OF THE SITE=== -->
         <div id="footer" class="footer">
             <div class="footer_cell"><p id="Name_devise"></p></div>
             <div class="footer_cell"><p id="footer_help"></p></div>
@@ -138,10 +127,10 @@
             <div class="footer_cell"><p id="Date"></p></div>
             <div class="footer_cell"><p id="Time"></p></div>
         </div>
-        <!-- _____________Конец Подвал сайта______________________ -->
+        <!-- ___END THE BASEMENT OF THE SITE___ -->
 
 
-        <!-- ====================Старт выбор вирианта маршрута======================= -->
+        <!-- ===START CHOICE OF ROUTE VARIANTS=== -->
         <div id="rout" class="draggable modal_box rout_variant" >
             <div id="rout_variant_header" class="modal_box_header rout_variant_header">
                <p class='modal_box_header_text'>Варианты маршрутов</p>
@@ -149,11 +138,11 @@
             </div>
             <div id="rout_kultura" class='rout_variant_kult'>
                 <select id="kult" class='rout_variant_kult_select' required size = "1">
-                    <!-- данные поступают из скрипта -->
+                    <!-- data comes from the script -->
                 </select>
             </div>
             <div id="rout_variant" class="rout_variant_buttons">
-                <!-- данные поступают из скрипта -->
+                <!-- data comes from the script -->
                 <!-- <a href="#" class="rout_variant_button">1</a>   -->                              
             </div>
             <div id="archiv_device_footer" class="modal_box_footer btn_right">
@@ -161,9 +150,9 @@
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>
         </div>
-        <!-- ___________________Конец выбор вирианта маршрута_______________________ -->
+        <!-- ___END CHOICE OF ROUTE VARIANTS___ -->
 
-        <!-- ====================Старт подтверждение запуска маршрута============================-->
+        <!-- ===START CONFIRMATION OF ROUTE START===-->
         <div id="rout_confirmation" class="draggable modal_box rout_confirmation">
             <div id="rout_confirmation_header" class="modal_box_header rout_confirmation_header">
                <p class='modal_box_header_text'>Запустить выбранный маршрут?</p>
@@ -175,13 +164,13 @@
                 <p id="rout_confirmation_receiver">Точка2</p>
             </div>
             <div id="archiv_device_footer" class="modal_box_footer btn_right">
-                <div class="modal_box_btn" id="rout_confirmation_button">Запуск</div>
+                <div class="modal_box_btn" id="rout_confirmation_button-start">Запуск</div>
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>            
         </div>
-        <!-- _____________________Стоп подтверждение запуска маршрута________________-->
+        <!-- ___END CONFIRMATION OF ROUTE START___-->
 
-        <!-- =================Старт подтверждение остановки маршрута==================-->
+        <!-- ===START ROUTE STOP CONFIRMATION===-->
         <div id="stop_rout_confirmation" class="draggable modal_box stop_rout">
             <div id="restart_rout_confirmation_header" class="modal_box_header stop_rout_header">
                <p class='modal_box_header_text'>Остановить выбранный маршрут?</p>
@@ -195,9 +184,9 @@
                 <div class="modal_box_btn" onclick="exit_stop_rout_variant()">Отмена</div>
             </div>
         </div>
-        <!-- _______________Конец подтверждение остановки маршрута_____________________-->
+        <!-- ___END ROUTE STOP CONFIRMATION___-->
 
-        <!-- ================Старт подтверждение перезапуска маршрута====================-->
+        <!-- ===START CONFIRMATION OF ROUTE RESTART===-->
         <div id="restart_rout_confirmation" class="draggable modal_box restart_rout">
             <div id="restart_rout_confirmation_header" class="modal_box_header restart_rout_header">
                <p class='modal_box_header_text'>Перезапустить выбранный маршрут?</p>
@@ -210,10 +199,10 @@
                 <div class="modal_box_btn" onclick="exit_restart()">Отмена</div>
             </div>
         </div>
-        <!-- _______________Конец подтверждение перезапуска маршрута_____________________-->
+        <!-- ___START CONFIRMATION OF ROUTE RESTART___-->
 
 
-        <!-- ==============Старт ошибка маршрута======================= -->
+        <!-- ===START ROUTE ERROR=== -->
         <div id="alarm_rout" class="draggable modal_box alarm_rout">
             <div id="alarm_rout_header" class="modal_box_header alarm_rout_header">
                <p class='modal_box_header_text'>Cообщения</p>
@@ -226,9 +215,9 @@
                 <div class="modal_box_btn" onclick="close_alarm_rout()">Ok</div>                
             </div>            
         </div>
-        <!-- ______________Конец ошибка маршрута__________________ -->
+        <!-- ___START ROUTE ERROR___ -->
 
-        <!-- ==============Старт связь с ПЛК======================= -->
+        <!-- ===START COMMUNICATION WITH THE PLC=== -->
         <div id="alarm_plc_connection" class="draggable modal_box alarm_plc">
             <div id="" class="modal_box_header alarm_plc_header">
                <p class='modal_box_header_text'>Cообщения</p>
@@ -241,9 +230,9 @@
                 <div class="modal_box_btn" onclick="close_plc_alarm()">Закрыть</div>
             </div>            
         </div>
-        <!-- ______________Конец связь с ПЛК__________________ -->
+        <!-- __END COMMUNICATION WITH THE PLC___ -->
 
-        <!--================Старт Окно архив сообщений===================-->
+        <!--===START MESSAGE ARCHIVE WINDOW===-->
         <div id="archiv_message" class="draggable modal_box archiv_message" >
             <div id="archiv_message_header" class="modal_box_header archiv_message_header">
                <p class='modal_box_header_text'>Архив сообщений</p>
@@ -292,9 +281,9 @@
                 <div class="modal_box_btn" onclick="archiv_alarm_close()">Закрыть</div>
             </div>
         </div>
-        <!--________________Конец Окно архив сообщений___________________-->
+        <!--___END MESSAGE ARCHIVE WINDOW___-->
 
-        <!--================Старт Окно архив маршрутов===================-->
+        <!--===Start ROUTES ARCHIVE WINDOW===-->
           
         <div id="archiv_rout" class="draggable modal_box archiv_rout">
             <div id="archiv_rout_header" class="modal_box_header">
@@ -336,9 +325,9 @@
                 <div class="modal_box_btn" onclick="archiv_rout_close()">Закрыть</div>
             </div>                 
         </div>
-        <!--________________Конец Окно архив Маршрутов_______________________-->
+        <!--___END ROUTES ARCHIVE WINDOW___-->
 
-        <!--================Старт Окно архив устройств===================-->
+        <!--===Start DEVICE ARCHIVE WINDOW===-->
 
         <div id="archiv_device" class="draggable modal_box archiv_device">
             <div id="archiv_rout_header" class="modal_box_header">
@@ -376,9 +365,9 @@
                     <div class="modal_box_btn" onclick="archiv_device_close()">Закрыть</div>
             </div>             
         </div>
-        <!--_____________________Конец Окно архив устройств_______________________-->
+        <!--___END DEVICE ARCHIVE WINDOW___-->
 
-        <!--================Старт текущее аварийное сообщение===================-->    
+        <!--===START CURRENT ALARM MESSAGE===-->    
         <div id="alarm_message" class="draggable modal_box alarm_message">
             <div id="archiv_rout_header" class="modal_box_header">
                 <p class='modal_box_header_text'>Аварийные сообщения</p>
@@ -410,10 +399,10 @@
                 <div class="modal_box_btn" onclick="alarm_message_close()">Закрыть</div>
             </div>                 
         </div>
-        <!--_________________Конец текущее аварийное сообщение_________________________-->
+        <!--___END CURRENT ALARM MESSAGE___-->
         
 
-        <!--================ START CONFIRMATION OF KYLT MIXING ===================-->
+        <!--=== START CONFIRMATION OF KYLT MIXING ===-->
         <div id="confirm_mixin_kylt_rout" class="draggable modal_box mixin_kylt"> 
             <div id="confirm_mixin_kylt_rout_header" class="modal_box_header mixin_kylt_header">
                 <p class='modal_box_header_text'>Cообщения</p>
@@ -427,11 +416,11 @@
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>
         </div>
-        <!--__________________ END CONFIRMATION OF KYLT MIXING _______________________-->
+        <!--___ END CONFIRMATION OF KYLT MIXING ___-->
 
         
 
-        <!--================ START CURRENT GRAPH WINDOW ===================-->        
+        <!--=== START CURRENT GRAPH WINDOW ===-->        
         <div id="archive_current" class="draggable modal_box current_archive">
             <div id="archive_current_header" class="modal_box_header current_archive_header">
                 <p class='modal_box_header_text'>Графики токов</p>
@@ -471,10 +460,10 @@
                 <div class="modal_box_btn" onclick="archive_current_close()">Закрыть</div>                    
             </div>
         </div>
-        <!--_________________ END CURRENT GRAPH WINDOW __________________________-->    
+        <!--___ END CURRENT GRAPH WINDOW __-->    
 
     
-        <!-- ==============START CONTROLS FOR THE VALVE UNDER THE SILO============== -->
+        <!-- ===START CONTROLS FOR THE VALVE UNDER THE SILO=== -->
 
         <div id="zadvijka_kontrol_menu"  class="draggable modal_box silo-valve-block" >
             <div id="zadvijka_kontrol_menu_header" class="modal_box_header silo-valve-block__header">
@@ -588,10 +577,10 @@
                 <div class="modal_box_btn" onclick="zadvijka_menu_close()">Закрыть</div>                    
             </div>
         </div>
-        <!-- _______________ END CONTROLS FOR THE VALVE UNDER THE SILO ____________________ -->
+        <!-- ___ END CONTROLS FOR THE VALVE UNDER THE SILO ___ -->
 
 
-        <!--================== START SETTINGS NORIA =========================-->
+        <!--=== START SETTINGS NORIA ===-->
         <div id="settings_noriya" class="draggable modal_box settings-universal settings-noriya">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-noriya__name"></span></p>
@@ -759,9 +748,9 @@
                
         </div>
 
-        <!-- ________________________ END SETTINGS NORIA ___________________________ -->
+        <!-- ___ END SETTINGS NORIA ___ -->
 
-        <!--================== START SETTINGS KONVEYOR =========================-->
+        <!--=== START SETTINGS KONVEYOR ===-->
             <div id="settings_konveyer" class="draggable modal_box settings-universal settings-konveyer">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-konveyer__name"></span></p>
@@ -952,10 +941,10 @@
             </div>
         </div>
 
-        <!--__________________ END SETTINGS KONVEYOR ________________________-->
+        <!--___ END SETTINGS KONVEYOR ___-->
 
         
-        <!--================== START SETTINGS SHUTTER =========================-->
+        <!--=== START SETTINGS SHUTTER ===-->
         <div id="settings_zadvijka" class="draggable modal_box settings-universal settings-shutter">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-zadvijka__name"></span></p>
@@ -1073,11 +1062,11 @@
             </div> 
                
         </div>
-    <!--___________________ END SETTINGS SHUTTER ______________________-->
+    <!--___ END SETTINGS SHUTTER ___-->
 
 
 
-    <!--================== START SETTINGS DOUBLE SHUTTER =========================-->
+    <!--=== START SETTINGS DOUBLE SHUTTER ===-->
     <div id="settings_Pzadvijka" class="draggable modal_box settings-universal settings-double-shutter">
         <div class="modal_box_header settings-universal__header">
             <p class='modal_box_header_text'>Настройки <span id="settings-Pzadvijka__name"></span></p>
@@ -1191,10 +1180,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(5)">Сохранить</div>
             </div>
         </div>
-    <!--_________________ END SETTINGS DOUBLE SHUTTER __________________ --> 
+    <!--___ END SETTINGS DOUBLE SHUTTER ___ --> 
 
 
-    <!--================== START SETTINGS GROUP SHUTTER =========================--> 
+    <!--=== START SETTINGS GROUP SHUTTER ===--> 
         <div id="settings_zadvijkaGroup" class="draggable modal_box settings-universal settings-group-shutter">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-zadvijkaGroup__name"></span></p>
@@ -1360,10 +1349,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(23)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS GROUP SHUTTER ___________________________-->  
+    <!--___ END SETTINGS GROUP SHUTTER ___-->  
 
 
-    <!--================== START SETTINGS SILOS =========================-->
+    <!--=== START SETTINGS SILOS ===-->
         <div id="settings_silos" class="draggable modal_box settings-universal settings-silos">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-silos__name"></span></p>
@@ -1444,10 +1433,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(14)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS SILOS ___________________________--> 
+    <!--___ END SETTINGS SILOS ___--> 
 
 
-    <!--================== START SETTINGS DRYER =========================-->
+    <!--=== START SETTINGS DRYER ===-->
         <div id="settings_dryer" class="draggable modal_box settings-universal settings-dryer">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-konveyer__name"></span></p>
@@ -1538,10 +1527,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(16)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS DRYER ___________________________-->
+    <!--___ END SETTINGS DRYER ___-->
 
 
-    <!--================== START SETTINGS VALVE =========================-->
+    <!--=== START SETTINGS VALVE ===-->
         <div id="settings_klapan" class="draggable modal_box settings-universal settings-valve">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-klapan__name"></span></p>
@@ -1650,10 +1639,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(3)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS VALVE __________________________--> 
+    <!--___ END SETTINGS VALVE __--> 
 
 
-    <!--================== START SETTINGS VENT =========================-->
+    <!--=== START SETTINGS VENT ===-->
 
         <div id="settings_ventilyator" class="draggable modal_box settings-universal settings-vent">
             <div class="modal_box_header settings-universal__header">
@@ -1775,9 +1764,9 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(6)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS VENT ___________________________--> 
+    <!--___ END SETTINGS VENT ___--> 
 
-    <!--================== START SETTINGS GATE =========================-->
+    <!--=== START SETTINGS GATE ===-->
         <div id="settings_gate" class="draggable modal_box settings-universal settings-gate">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-gate__name"></span></p>
@@ -1960,12 +1949,12 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(18)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS GATE ___________________________--> 
+    <!--___ END SETTINGS GATE ___--> 
 
 
 
 
-    <!--================== START SETTINGS TUBE =========================-->
+    <!--=== START SETTINGS TUBE ===-->
         <div id="settings_tube" class="draggable modal_box settings-universal settings-tube">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-tube__name"></span></p>
@@ -2096,10 +2085,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(7)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS TUBE ___________________________--> 
+    <!--___ END SETTINGS TUBE ___--> 
 
 
-    <!--================== START SETTINGS SEPARATOR =========================-->
+    <!--=== START SETTINGS SEPARATOR ===-->
         <div id="settings_separator" class="draggable modal_box settings-universal settings-separator">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-separator__name"></span></p>
@@ -2168,12 +2157,12 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(17)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS SEPARATOR ___________________________--> 
+    <!--___ END SETTINGS SEPARATOR ___--> 
 
 
 
 
-    <!--================== START SETTINGS ENABLE =========================-->
+    <!--=== START SETTINGS ENABLE ===-->
         <div id="settings_enable" class="draggable modal_box settings-universal settings-enable">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки <span id="settings-enable__name"></span></p>
@@ -2282,9 +2271,9 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(19)">Сохранить</div>
             </div>
         </div>
-    <!--__________________ END SETTINGS ENABLE ___________________________--> 
+    <!--___ END SETTINGS ENABLE ___--> 
 
-    <!--================== START SETTINGS BELL =========================-->
+    <!--=== START SETTINGS BELL ===-->
 
     <div id="settings_bell" class="draggable modal_box settings-universal settings-bell">
             <div class="modal_box_header settings-universal__header">
@@ -2408,11 +2397,11 @@
             </div>
         </div>
 
-        <!--__________________ END SETTINGS BELL ___________________________-->
+        <!--___ END SETTINGS BELL ___-->
 
 
 
-        <!--================== START SETTINGS CURRENT =========================-->
+        <!--=== START SETTINGS CURRENT ===-->
         <div id="settings_current" class="draggable modal_box settings-universal settings-current">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки датчика тока <span id="settings-current__name"></span></p>
@@ -2482,14 +2471,9 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(100)">Сохранить</div>
             </div>
         </div>
-         <!--__________________ END SETTINGS CURRENT ___________________________-->
+         <!--___ END SETTINGS CURRENT ___-->
 
-
-
-
-
-
-        <!--================== START SETTINGS ANALOG =========================-->
+        <!--=== START SETTINGS ANALOG ===-->
         <div id="settings_analog_dat" class="draggable modal_box settings-universal settings-analog">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки аналогового датчика<span id="settings-current__name"></span></p>
@@ -2543,9 +2527,9 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(102)">Сохранить</div>
             </div>
         </div>
-        <!--__________________ END SETTINGS ANALOG ___________________________-->
+        <!--___ END SETTINGS ANALOG ___-->
 
-        <!--================== START SETTINGS KYLT =========================-->
+        <!--=== START SETTINGS KYLT ===-->
         <div id="settings_kylt" class="draggable modal_box settings-universal settings-kylt">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Настройки культуры<span id="settings-current__name"></span></p>
@@ -2573,10 +2557,10 @@
                 <div class="modal_box_btn" onclick="setings_universal_save(101)">Сохранить</div>
             </div>
         </div>
-        <!--__________________ END SETTINGS KYLT ___________________________-->
+        <!--___ END SETTINGS KYLT ___-->
 
 
-        <!--================== START SET KYLT =========================-->
+        <!--=== START SET KYLT ===-->
         <div id="kylt_set_confirmation_window" class="draggable modal_box set-kylt">
             <div id="alarm_rout_header" class="modal_box_header kylt-set__header">
                <p class='modal_box_header_text'>Установить культуру</p>
@@ -2590,7 +2574,6 @@
                 <div>
                     <span>Название культуры</span>
                     <select id="kylt_set_confirmation_list"></select>
-
                 </div>
             </div>
             <div id="alarm_rout_footer" class="modal_box_footer btn_right">
@@ -2598,11 +2581,11 @@
                 <div class="modal_box_btn" onclick="kylt_set_close()">Закрыть</div>                  
             </div>            
         </div>
-        <!--__________________ END SET KYLT ___________________________-->
+        <!--___ END SET KYLT ___-->
 
         
 
-        <!--================== START SETTINGS DEVICE ADD ========================-->
+        <!--=== START SETTINGS DEVICE ADD ===-->
         <div id="add_equipment" class="draggable modal_box add-equipment">
             <div class="modal_box_header add-equipment__header">
                <p class='modal_box_header_text'>Добавить устройство</p>
@@ -2635,10 +2618,10 @@
             </div>            
         </div>
 
-        <!--__________________ END SETTINGS DEVICE ADD __________________________-->
+        <!--___ END SETTINGS DEVICE ADD ___-->
 
     
-        <!--================== START LINCK DATA BASE ========================-->
+        <!--=== START LINCK DATA BASE ===-->
 
         <div id="linck_settings" class="draggable modal_box settings-linck">
             <div class="modal_box_header settings-linck__header">
@@ -2669,12 +2652,12 @@
                 <div class="modal_box_btn" onclick="linck_close()">Закрыть</div>                  
             </div>            
         </div>
-        <!--__________________ END LINCK DATA BASE __________________________-->
+        <!--___ END LINCK DATA BASE ___-->
 
 
 
 
-        <!--================== START LINCK CHANGE ROW ========================-->
+        <!--=== START LINCK CHANGE ROW ===-->
         <div id="change_row_link" class="draggable modal_box settings-universal settings-linck-change_row">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Изменение связи<span id="settings-linck__name"></span></p>
@@ -2697,10 +2680,10 @@
                 <div class="modal_box_btn" onclick="change_row_link_close()">Закрыть</div>
             </div>
         </div>
-        <!--__________________ END LINCK CHANGE ROW __________________________-->
+        <!--___ END LINCK CHANGE ROW ___-->
 
 
-        <!--================== START DEVICE DATA BASE ========================-->
+        <!--=== START DEVICE DATA BASE ===-->
         <div id="device_settings" class="draggable modal_box settings-device">
             <div class="modal_box_header settings-universal__header">
                <p class='modal_box_header_text'>БД устройств</p>
@@ -2728,9 +2711,9 @@
                 <div class="modal_box_btn" onclick="device_settings_close()">Закрыть</div>
             </div>            
         </div>
-        <!--__________________ END DEVICE DATA BASE __________________________-->
+        <!--___ END DEVICE DATA BASE ___-->
 
-        <!--================== START DEVICE CHANGE ROW ========================-->
+        <!--=== START DEVICE CHANGE ROW ===-->
         <div id="change_row_device_settings" class="draggable modal_box settings-universal settings-device-change_row">
             <div class="modal_box_header settings-universal__header">
                 <p class='modal_box_header_text'>Изменение атрибутов устройства<span id="settings-device__name"></span></p>
@@ -2752,11 +2735,11 @@
                 <div class="modal_box_btn" onclick="change_row_device_settings_close()">Закрыть</div>
             </div>
         </div>
-        <!--__________________ END DEVICE CHANGE ROW __________________________-->
+        <!--___ END DEVICE CHANGE ROW ___-->
 
 
 
-        <!--================== START KYLT DATA BASE ========================-->
+        <!--=== START KYLT DATA BASE ===-->
         <div id="culture_settings" class="draggable modal_box settings-culture-db">
             <div class="modal_box_header settings-universal__header">
                <p class='modal_box_header_text'>БД культур</p>
@@ -2785,13 +2768,13 @@
                 <div class="modal_box_btn" onclick="culture_close()">Закрыть</div>
             </div>            
         </div>
-        <!--__________________ END KYLT DATA BASE __________________________-->
+        <!--___ END KYLT DATA BASE ___-->
 
 
-        <!--================== START KYLT CHANGE ROW ========================-->
+        <!--=== START KYLT CHANGE ROW ===-->
         <div id="change_row_culture" class="draggable modal_box settings-universal settings-kylt-change_row">
             <div class="modal_box_header settings-universal__header">
-                <p class='modal_box_header_text'>Изменение атрибутов культуры<span id="settings-kylt__name"></span></p>
+                <p class='modal_box_header_text'>Изменение атрибутов культуры <span id="settings-kylt__name"></span></p>
                 <a href="#" onclick="change_row_culture_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
                 <div class="modal_box_body" >
@@ -2828,210 +2811,165 @@
                 <div class="modal_box_btn" onclick="change_row_culture_close()">Закрыть</div>
             </div>
         </div>
-        <!--__________________ END KYLT CHANGE ROW __________________________-->
+        <!--___ END KYLT CHANGE ROW ___-->
 
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-         
-
-         <!--__Установка позиции поворотной трубы__-->
-
-         <!-- <div id="position_pt_confirmation_window" class="draggable modal_box" >
-                 <div id="position_pt_confirmation_window_header" class="modal_box_header" >
-                     <table width="100%" cellspacing="1" cellpadding="1" border="0" style="padding-top: 7px;">
-                            <tr><td width="90%">Установить позицию<div class="header-wrap" style="float:right;margin-top:-3px; margin-right: -5px;">
-                                <a href="#"  onclick="close_position_pt()" class="btn btn-default btn-back"><span></span></a>
-                            </div></td></tr>
-                     </table>
-                 </div>
-                <div id="position_pt_confirmation_window_content" class="modal_box_body">
-                    <div id="kposition_pt_confirmation_window_global" width="98%" style="margin:5px; ">
-                        <table class="" style="width: 100%">
-                             <tbody>
-                                <div id="PT_pos_buttons" max-width="100%" height="auto">
-
-                                 </div>
-                             </tbody>
-                        </table>
-                    </div>
-                 </div>
-                 <div id="position_pt_confirmation_window_footer" style="padding-top: 10px;">
-
-                     <button onclick="close_position_pt()" class="modal_box_btn btn_push_right">Закрыть</button>
-                 </div>
-
-         </div> -->
-
-                  <!--___Окно подтверждения для многих механизмов____-->
-
-         <!-- <div id="oll_mex_confirmation_window" class="draggable modal_box" >
-             <div id="oll_mex_confirmation_window_header" class="modal_box_header" >
-                 <table class="" width="100%" cellspacing="1" cellpadding="1" border="0">
-                        <tr>
-                            <td width="90%" style="padding-top:7px;" id="confirmation_header_name"></td>
-                            <div class="header-wrap" style="float:right; margin-top:7px;">
-                                <a href="#"  onclick="oll_mex_confirm_close()" class="btn btn-default btn-back"><span></span></a>
-                            </div>
-                        </tr>
-                 </table>
-             </div>
-            <div id="oll_mex_confirmation_window_content" class="modal_box_body" style="width: 98%">
-                <div id="oll_mex_confirmation_window_global" style="width:98%">
-                    <table  class="" style="width: 100%; padding-left:10px;">
-                         <tbody>
-                         <tr id="oll_mex_message"></tr>
-                         </tbody>
-                    </table>
-                </div>
-             </div>
-             <div id="oll_mex_confirmation_window_footer" >
-                <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                    <tr id="oll_mex_buttons"></tr>
-                </table>
-             </div>
-         </div> -->
-    <!-- Окно статистики конкретного механизма -->
-        <!-- <div id="statistic_window" class="draggable universal_window" style="display: none">
-            <div id="statistic_window_header" class="universal_window_header">
-                <p class="statistic_window_header_name">Нория 5Н</p><a href="#" class="btn btn-default btn-back" onclick="statistic_close()"><span></span></a>
+        <!--=== START SET TUBE POSITION ===-->
+        <div id="position_pt_confirmation_window" class="draggable modal_box set-tube-position">
+            <div id="alarm_rout_header" class="modal_box_header kylt-set__header">
+               <p class='modal_box_header_text'>Установить позицию</p>
+               <a href="#" onclick="close_position_pt()" class="btn btn-default btn-back"><span><span></a>
             </div>
-            <div id="statistic_window_content" class="universal_window_content">
+            <div class="set-tube-position__body">
+                <div id="PT_pos_buttons" class="set-tube-position__buttons">
+                    <!-- данные поступают из скрипта Commands.set_position_pt-->
+                    <!-- <div class="set-tube-position__button"><p>1</p></div>    -->
+                </div>
+            </div>
+            <div id="position_pt_confirmation_window_footer" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="close_position_pt()">Закрыть</div>                  
+            </div>            
+        </div>
+        <!--___ END SET TUBE POSITION __-->
+
+        <!--=== START All DEVICE CONFIRM WINDOW ===-->
+        <div id="oll_mex_confirmation_window" class="draggable modal_box all-mex-confirm">
+            <div id="" class="modal_box_header">
+               <p class='modal_box_header_text'>Подтверждение <span id="confirmation_header_name"></span></p>
+               <a href="#" onclick="oll_mex_confirm_close()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="modal_box_body">
+                <p id="oll_mex_message">Запустить конвейер?</p>
+            </div>
+            <div id="" class="modal_box_footer btn_right">
+                <div id="oll_mex_buttons" class="modal_box_btn">Выполнить</div>
+                <div class="modal_box_btn" onclick="oll_mex_confirm_close()">Закрыть</div>
+            </div>            
+        </div>
+        <!--___ END All DEVICE CONFIRM WINDOW ___-->
+
+
+
+        <!--=== START STATISTIC WINDOW ===-->
+        <div id="statistic_window" class="draggable modal_box statistic">
+            <div id="" class="modal_box_header">
+               <p class='modal_box_header_text'>Статистика <span class="statistic_window_header_name"></span></p>
+               <a href="#" onclick="statistic_close()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="modal_box_body">
                 <div><p>Oбщее время работы ч.</p><div class="text_cover"><p class="statistic_work">000</p></div></div>
                 <div><p>Общее количество переключений</p><div class="text_cover"><p class="statistic_switch">000</p></div></div>
                 <div><p>Периодичность обслуживания ч.</p><div class="text_cover"><p class="statistic_period">000</p></div></div>
-                <div><p>Остаток времени до ТО ч.</p><div class="text_cover"><p class="statistic_residue">000</p></div></div>                
+                <div><p>Остаток времени до ТО ч.</p><div class="text_cover"><p class="statistic_residue">000</p></div></div>
             </div>
-            <div id="statistic_window_footer" class="universal_window_footer">                
-                <div class="universal_button" onclick="statistic_close()">Закрыть</div>
+            <div id="" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="statistic_close()">Закрыть</div>
             </div>            
-        </div> -->
+        </div>
+        <!--___ END STATISTIC WINDOW __-->
 
-
-         <!--___Окно постановки линии в ремонт -->
-
-         <!-- <div id="refit_route_window" class="draggable modal_box" >
-                 <div id="refit_route_window_header" class="modal_box_header" >
-                     <table class="" width="100%" cellspacing="1" cellpadding="1" border="0">
-                            <tr>
-                                <td width="90%" style="padding-top:7px;">Блокировать/разблокировать?</td>
-                                <div class="header-wrap" style="float:right; margin-top:7px;">
-                                    <a href="#"  onclick="refit_route_close()" class="btn btn-default btn-back"><span></span></a>
-                                </div>
-                            </tr>
-                     </table>
-                 </div>
-            
-            <div id="refit_route_window_footer" >
-                <button style="float: right;" onclick="refit_route_close()" class="modal_box_btn btn_push_right">Нет</button>
-                <button style="float: right;" class="modal_box_btn refit_route_command_button">Да</button>
+        <!--=== START LINE REPARE WINDOW ===-->
+        <div id="refit_route_window" class="draggable modal_box refit-route-window">
+            <div id="" class="modal_box_header">
+               <p class='modal_box_header_text'>Блокировать/разблокировать?</p>
+               <a href="#" onclick="statistic_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
+            <div id="" class="modal_box_footer btn_right">
+                <div class="modal_box_btn refit_route_command_button">Да</div>
+                <div class="modal_box_btn" onclick="refit_route_close()">Нет</div>
+            </div>            
+        </div>
+        <!--___ END LINE REPARE WINDOW __-->
 
-         </div> -->
 
-         <!--Окно всех датчиков-->
-             <!-- <div id="datchiki_kontrol" class="hiden_datchiki draggable modal_box">
-                 <div id="datchiki_kontrol_header" class="modal_box_header" style="background:#0e0e0e; color:#ccc;">
-                     <table width="100%" cellspacing="2" cellpadding="1" border="0">
-                         <tr><td width="30%">Датчики</td><td id="fool_name_of_device" style="color:#ffa200; float:right; padding-right:30px;">название</td><div class="header-wrap" style="float:right; margin-right: -5px;">
-                             <a href="#"  onclick="close_datchiki()" class="btn btn-default btn-back"><span></span></a>
-                         </div></tr>
-
-                     </table>
-                 </div>
-                 <div id="datchiki" class="modsl modal_box_body" style="">
-                     <table class="table" style="width: auto">
-                         <tbody id="table_datchiki"></tbody>
-                     </table>
-
-                 </div>
-                 <div id="control" style="background: #0e0e0e;">
-                     <table style="width: auto">
-                         <tbody id="table_control"></tbody>
-                     </table>
-                 </div>
-                 <div style="clear: both;"></div>
-                 <div id="datchiki_kontrol_footer" style="background: #0e0e0e;" >
-                     <button class="btn_push_right modal_box_btn" onclick="close_datchiki()">Закрыть</button>
-
-                 </div>
-             </div> -->
-
-             <!--Иконки увеличения или уменьшения-->
-                <div id="zoomInOut" style="float: left;position: absolute;top:70%;display: block;">
-        <!-- Иконки плюс -->    
-                <div style="width: 100%;float:left;display: block;">                       
-                    <object type="image/svg+xml" data="/static/admin/img/zoomPlaz.svg" id="zoomIn_svg" style="width:100%;height:100%;">
-                                  Your browser does not support SVG
-                    </object>
+        <!--=== START SENSORS WINDOW ===-->
+        <div id="datchiki_kontrol" class="draggable modal_box sensors-window">
+            <div id="" class="modal_box_header">
+               <p class='modal_box_header_text'>Датчики <span id="fool_name_of_device"></span></p>
+               <a href="#" onclick="close_datchiki()" class="btn btn-default btn-back"><span><span></a>
+            </div>
+            <div class="modal_box_body">
+                <div id="datchiki" class="sensors-window__wrapper">
+                    <div class="settings-universal__table-wrapper">
+                        <table class="settings-universal__table">
+                            <tbody id="table_datchiki"></tbody>
+                        </table>
+                    </div>
                 </div>
-                <!--Буфер-->
-                <div style="width: 100%;height: 50%;float:left;display: block;">                       
-                    
-                </div>
-        <!-- Иконки  минус--> 
-                <div style="width: 100%;float:left;display: block;">                          
-                    <object type="image/svg+xml" data="/static/admin/img/zoomMinus.svg" id="zoomOut_svg" style="width: 100%;height: 100%;">
-                                  Your browser does not support SVG
-                    </object>
+                <div id="control" class="sensors-window__wrapper-color">
+                    <div class="settings-universal__table-wrapper">
+                        <table class="settings-universal__table">
+                            <tbody id="table_control"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <div id="" class="modal_box_footer btn_right">
+                <div class="modal_box_btn" onclick="close_datchiki()">Закрыть</div>
+            </div>            
+        </div>
+        <!--___ END SENSORS WINDOW ___-->
+
+
+        <!--=== START ZOOM ICONS ===-->
+        <div id="zoomInOut" class="zoom-icon">
+            <!-- Icon plas -->    
+            <div class="zoom-icon__wrapper">                       
+                <object type="image/svg+xml" data="/static/admin/img/zoomPlaz.svg" id="zoomIn_svg">
+                              Your browser does not support SVG
+                </object>
+            </div>
+            <!-- Icon  mines--> 
+            <div class="zoom-icon__wrapper">                          
+                <object type="image/svg+xml" data="/static/admin/img/zoomMinus.svg" id="zoomOut_svg">
+                              Your browser does not support SVG
+                </object>
+            </div>
+        </div>
+        <!--___ END ZOOM ICONS ___-->
 
 
     </div>
-    <!-- _____________Окончание Основной контейнер________________ -->
+    <!-- ___END MAIN CONTAINER___ -->
+
+
+    <!-- Start libs -->
+    <script src="/static/admin/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
+    <script src="/static/admin/js/jquery-1.12.4/jquery-1.12.4.js"></script>
+    <script src="/static/admin/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <!-- END libs -->
      
+    <script src="/static/admin/js/zoom_liski.js" defer></script>
+    <script src="/static/admin/js/rout.js" defer></script>
+    <script src="/static/admin/js/archiv_alarm.js" defer></script>
+    <script src="/static/admin/js/servis_and_archiv_menu.js" defer></script>
+    <script src="/static/admin/js/menu_button.js" defer></script>
+    <script src="/static/admin/js/Status_and_links.js" defer></script>
 
+    <script src="/static/admin/js/Commands.js" defer></script>
+    <script src="/static/admin/js/start.js" defer></script>
+    <script src="/static/admin/js/levelbar.js" defer></script>
+    <script src="/static/admin/js/current_grafic4.js" defer></script>
+    <script src="/static/admin/js/zadvijka_menu.js" defer></script>
+    <script src="/static/admin/js/settings.js" defer></script>
+    <script src="/static/admin/js/alarmSound.js" defer></script>
 
+    <script src="/static/admin/js/route_status_vizualization.js" defer></script>
+    <script src="/static/admin/js/Menu_fore_managment_deveces.js" defer></script>
+    <script src="/static/admin/js/showHideElements.js" defer></script>
+    <script src="/static/admin/js/plc_alarm.js" defer></script>
 
-     <!--<link rel="stylesheet" href="/static/admin/js/tooltipster-master/dist/css/tooltipster.bundle.css">-->
+    <script src="/static/admin/js/Preloader.js" defer></script>
+    <script src="/static/admin/js/Statistica.js" defer></script>
 
-        <script src="/static/admin/js/zoom_liski.js" defer></script>
-        <script src="/static/admin/js/rout.js" defer></script>
-        <script src="/static/admin/js/archiv_alarm.js" defer></script>
-        <script src="/static/admin/js/servis_and_archiv_menu.js" defer></script>
-        <script src="/static/admin/js/menu_button.js" defer></script>
-        <script src="/static/admin/js/Status_and_links.js" defer></script>
-       <!-- <script src="/static/admin/js/elevator_revA.js" defer></script>-->
-        <script src="/static/admin/js/Commands.js" defer></script>
-        <script src="/static/admin/js/start.js" defer></script>
-        <script src="/static/admin/js/levelbar.js" defer></script>
-        <script src="/static/admin/js/current_grafic4.js" defer></script>
-        <script src="/static/admin/js/zadvijka_menu.js" defer></script>
-        <script src="/static/admin/js/settings.js" defer></script>
-        <script src="/static/admin/js/alarmSound.js" defer></script>
+    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
+    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
+    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
 
-        <script src="/static/admin/js/route_status_vizualization.js" defer></script>
-        <script src="/static/admin/js/Menu_fore_managment_deveces.js" defer></script>
-        <script src="/static/admin/js/showHideElements.js" defer></script>
-        <script src="/static/admin/js/plc_alarm.js" defer></script>
-        
-        <script src="/static/admin/js/Preloader.js" defer></script>
-        <script src="/static/admin/js/Statistica.js" defer></script>
-
-     <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
-     <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
-     <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
-
-     <script src="static/admin/js/showHideElements.js"></script>
-     <script src="/static/admin/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
-    <!-- <script type="text/javascript" src="/static/admin/js/tooltipster-master/dist/js/tooltipster.bundle.min.js"></script>-->
+    <script src="static/admin/js/showHideElements.js"></script>
+    <script src="/static/admin/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
+   
 
 </body>
-
 
 </html>
 

@@ -27,7 +27,7 @@ function staistic_ask(p1,p2,p3,index,type){
 function open_statistic_window(index,answer){
 	let fields=["work","switch","period","residue"]
 	let statisticWindow=document.getElementById('statistic_window');
-	statisticWindow.removeAttribute("style");
+	statisticWindow.style.cssText='display:block;'
 	for (let i in fields) {
 		statisticWindow.getElementsByClassName('statistic_'+fields[i])[0].innerHTML=answer[fields[i]];
 	}

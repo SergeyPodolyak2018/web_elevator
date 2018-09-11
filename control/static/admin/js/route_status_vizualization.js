@@ -32,9 +32,9 @@ function getNewObjectOfOneRoute(){
 	var sourceTable=document.createElement('td');
 	var receiveTable=document.createElement('td');
 	var kyltTable=document.createElement('td');
-	sourceTable.style.cssText='padding-left: 5px;';
-	receiveTable.style.cssText='padding-left: 5px;';
-	kyltTable.style.cssText='padding-left: 5px;';	
+	// sourceTable.style.cssText='padding-left: 5px;';
+	// receiveTable.style.cssText='padding-left: 5px;';
+	// kyltTable.style.cssText='padding-left: 5px;';	
 
 	rowOfRoute.appendChild(sourceTable);
 	rowOfRoute.appendChild(receiveTable);
@@ -159,30 +159,31 @@ function get_route_statuses(){
  //Создать див в котором будут отображаться маршруты   
 function createDivWithTable(){
 	var divForeProject=document.createElement('div');
-	divForeProject.style.cssText='font-family: sans-serif;\
-                            display: none;\
-                            width: auto;\
-                            height: auto;\
-                            position: absolute;\
-                            top:20%;\
-                            left:20%;\
-                            background-color: #e9e9e9;\
-                            border:1px solid #808080;\
-                            border-radius: 2px;';
+	// divForeProject.style.cssText='font-family: sans-serif;\
+                            
+ //                            width: auto;\
+ //                            height: auto;\
+ //                            position: absolute;\
+ //                            top:20%;\
+ //                            left:20%;\
+ //                            background-color: #e9e9e9;\
+ //                            border:1px solid #808080;\
+ //                            border-radius: 2px;';
 
     divForeProject.setAttribute('id','oll_route_statuses');
-    divForeProject.setAttribute('class','draggable modal_box');
+    divForeProject.setAttribute('class','draggable modal_box rout-list');
 
 	var tableForeProject=document.createElement('table');
-	tableForeProject.style.cssText='border: 1px solid #000000;'
-	var tableheadForeProject='<thead>\
-                                <tr style="background-color: silver">\
-                                    <td style="padding: 5px;">Источник</td>\
-                                    <td style="padding: 5px;">Приемник</td>\
-                                    <td style="padding: 5px;">Культура</td>\
+	tableForeProject.setAttribute('class','settings-universal__table');
+	// tableForeProject.style.cssText='border: 1px solid #000000;'
+	var tableheadForeProject='<thead class="settings-universal__table-header">\
+                                <tr>\
+                                    <td>Источник</td>\
+                                    <td>Приемник</td>\
+                                    <td>Культура</td>\
                                 </tr>\
                             </thead>\
-                            <tbody id="tbody_oll_route_statuses">\
+                            <tbody id="tbody_oll_route_statuses" class="rout-list__tbody">\
                             </tbody>';
 
     tableForeProject.innerHTML=tableheadForeProject;

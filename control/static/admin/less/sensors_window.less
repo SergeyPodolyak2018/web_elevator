@@ -1,0 +1,31 @@
+@import "mixins";
+@import "variables";
+@sensors-window:~'.sensors-window';
+
+
+@{sensors-window}{
+	left:40%;
+	top:40%;
+	display: none;
+	&__wrapper{
+		margin-right:10px;
+		&-color{
+			table{color:@black;}
+		}
+	}
+	&__sensor{
+		width:15px;
+		height:15px;
+		border-radius: 50px;
+		border: none;
+		border:solid 1px #494949;
+	}
+	&__remont-button{
+		.btn-tipical;
+		.mix-btn-slim;
+		padding: 1px 6px;
+	}
+	&__control{
+		background: #E5E5E6;
+	}
+}

@@ -225,6 +225,7 @@ function show_rout_variant_window(json_from_server){
     div_table_rout_variant.innerHTML = table_body;
     //div_kult.innerHTML = selekt_kult;
     div_kult.innerHTML =global_object_oll_kylt_from_server;
+    document.getElementById('rout').style.cssText="display:block"
     // $('#rout').show();
     // var a = $('#rout_variant').width();
     // if(a>145){
@@ -291,7 +292,7 @@ function start_chek_variant(){
             	console.log(rout_source_receiver);
             	$('#rout').hide();
             	if (rout_source_receiver.status ==8) {
-                    document.getElementById('rout_confirmation_button').onclick=function(){start_rout_variant()};
+                    document.getElementById('rout_confirmation_button-start').onclick=function(){start_rout_variant()};
 
                     // let selector_for_test='#rout_confirmation_footer td button'
                     // let buttonTarget=document.querySelectorAll(selector_for_test)[0];
@@ -302,7 +303,7 @@ function start_chek_variant(){
 	            	$('#rout_confirmation').show();
             	}
                 if (rout_source_receiver.status ==9) {
-                    document.getElementById('rout_confirmation_button').onclick=function(){confirm_mixing_kylt()};
+                    document.getElementById('rout_confirmation_button-start').onclick=function(){confirm_mixing_kylt()};
                     // let selector_for_test='#rout_confirmation_footer td button'
                     // let buttonTarget=document.querySelectorAll(selector_for_test)[0];
                     // buttonTarget.removeEventListener('click', start_rout_variant);
@@ -314,7 +315,7 @@ function start_chek_variant(){
             	if (rout_source_receiver.status ==4) {	
                     $('#alarm_rout_message').html(rout_source_receiver.message);
 	            	// var alarm_rout_footer_button_temp = '<tr><td width="99%" align="center"><button' +
-              //           ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
+              //         ' class="modal_box_btn" onclick="close_alarm_rout(event)">ОK</button></td></tr>';
 	            	// $('#alarm_rout_footer_button').html(alarm_rout_footer_button_temp);
 	            	$('#alarm_rout').show();
             	}

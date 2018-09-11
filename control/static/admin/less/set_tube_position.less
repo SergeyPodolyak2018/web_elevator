@@ -1,0 +1,53 @@
+@import "mixins";
+@import "variables";
+@set-tube-position:~'.set-tube-position';
+
+
+@{set-tube-position}{
+	left:20%;
+	top:20%;
+	width:410px;
+	 display:none;
+	&__body{
+		.mix-flex-cent;
+		.mix-just-cont-center;
+	}
+
+	&__buttons{
+		.mix-flex-cent;
+		.mix-just-cont-center;
+	}
+	&__button{
+		position:relative;
+		cursor: pointer;
+		width:30px;
+		height:30px;
+	    border-radius: 35%;
+	    transition: 0.2s;
+	    margin: 5px;
+	    color: @text_main_color;
+	    background-color: @button_back_color;
+	    border: 1px solid @modal-border;
+	    // box-shadow: 0px 0px 15px rgb(0, 255, 0);
+	    p{
+	    	position:absolute;
+	    	top:50%;
+	    	left:50%;
+	    	transform:translate(-50%,-50%);
+	    }
+		&:hover {
+	        border:1px solid @button_border_act;
+        	box-shadow: 0 0 10px rgba(239, 205, 31, 1);
+        	color:#efcd1f;
+        }
+        &:active{
+            top: 1px;
+	        background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.1)) rgba(0,0,0,.5);
+	        box-shadow:
+	                0 0 1px rgba(0,0,0,.5) inset,
+	                0 2px 3px rgba(0,0,0,.5) inset,
+	                0 1px 1px rgba(255,255,255,.1);
+        }
+	}
+	
+}

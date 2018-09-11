@@ -155,7 +155,7 @@ $(window).load(function () {
           if ('contentDocument' in svgobject){
                //Создание объекта с информацией
                 var svgdom = svgobject.contentDocument;
-
+                
                 //Event to close windows---------------------------------------------------------------------------------------
 		          $(svgdom.getElementsByTagName("svg")).on('click', function(e){                    
 		              hidemenu();//locate in servis_and_archiv_menu

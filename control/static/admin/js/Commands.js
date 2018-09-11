@@ -17,7 +17,8 @@
 
 //Фукция закытия меню датчиков
   function close_datchiki() {
-    $('#datchiki_kontrol').removeClass('visible_datchiki').addClass('hiden_datchiki');   
+    document.getElementById('datchiki_kontrol').style.cssText="display:none"
+    // $('#datchiki_kontrol').removeClass('visible_datchiki').addClass('hiden_datchiki');   
     //закончить циклический запрос
     clearInterval(global_start_function);
 
@@ -88,7 +89,7 @@ function datchiki(p1,p2,p3,number) {
         objectMenuManager.hide();
 
         var url_string2 = '/dat/?index='+number;
-
+        
         $('#fool_name_of_device').text(menu_header_text[number].shortName);
         $.ajax({
             url: url_string2,
@@ -105,19 +106,18 @@ function datchiki(p1,p2,p3,number) {
               for(var k in dat_cont){
               console.log(k);
                 if (k.charAt(0) =='d') {
-                  string_temp_d_1='<tr><td><div style="width:15px;height:15px; -webkit-border-radius: 50px;border-radius: 50px;' +
-                      ' border: none;border:solid 1px #494949;" id="dat'+k.substr(1)+'_status"></div></td>';
+                  string_temp_d_1='<tr><td><div class="sensors-window__sensor" id="dat'+k.substr(1)+'_status"></div></td>';
                   string_temp_d_2='<td id="dat'+k.substr(1)+'_name">'+dat_cont[k].name+'</td>';
                   if (dat_cont[k].enable_remont ==0) {
                     string_temp_d_3= '';
                   }
                   else{
-                    string_temp_d_3= '<td><a href="#" class="remont_button" id="remont'+k.substr(1)+'" onclick="datchik_remont(16,'+number+','+k.substr(1)+')">Ремонт</a></td></tr>';
+                    string_temp_d_3= '<td><a href="#" class="sensors-window__remont-button" id="remont'+k.substr(1)+'" onclick="datchik_remont(16,'+number+','+k.substr(1)+')">Ремонт</a></td></tr>';
                   }
                   string_temp_d=string_temp_d+string_temp_d_1+string_temp_d_2+string_temp_d_3;
                 }
                 if (k.charAt(0) =='c') {
-                  string_temp_c_1='<tr><td id="control'+k.substr(1)+'" style="background: #E5E5E6">'+dat_cont[k].name+'</td></tr>';
+                  string_temp_c_1='<tr><td class="sensors-window__control" id="control'+k.substr(1)+'">'+dat_cont[k].name+'</td></tr>';
                   string_temp_c=string_temp_c+string_temp_c_1;
                 }
               }
@@ -129,13 +129,13 @@ function datchiki(p1,p2,p3,number) {
               div_control.innerHTML = string_temp_c;
 
               //Диалог открытия датчиков
-             
-              $('#datchiki_kontrol').removeClass('hiden_datchiki').addClass('visible_datchiki');
+             document.getElementById('datchiki_kontrol').style.cssText="display:block"
+              // $('#datchiki_kontrol').removeClass('hiden_datchiki').addClass('visible_datchiki');
               
-              var a = $('#control').width();
-              var b = $('#datchiki').width();
-              var c = a+b+4;
-              $('#datchiki_kontrol').width(c);
+              // var a = $('#control').width();
+              // var b = $('#datchiki').width();
+              // var c = a+b+4;
+              // $('#datchiki_kontrol').width(c);
               //Очистить предыдущий циклический запрос
               clearInterval(global_start_function);
               //установить циклический запрос
@@ -244,7 +244,7 @@ function set_position_pt(command,p1,p2,device_index){
     objectMenuManager.hide();
     $('#position_pt_confirmation_window').show();
     for(let i=1;i<=10;i++){
-        temp_string=temp_string+'<div style="float: left; padding:5px;"><button onclick="start_stop_mex('+(20+i)+',0,0,'+device_index+')">'+i+'</button></div>'
+        temp_string=temp_string+'<div class="set-tube-position__button" onclick="start_stop_mex('+(20+i)+',0,0,'+device_index+')"><p>'+i+'</p></div>'
     }
     document.getElementById('PT_pos_buttons').innerHTML = temp_string;
 
@@ -274,51 +274,59 @@ function bell_command(command){
 function oll_mex_confirm(command,p2,p3,device_index,type){
     var temp_string='';
     var temp_string2='';
-    //$( "#menu").dialog("close");
     objectMenuManager.hide();
 
     var confirm_header_name_tr=document.getElementById('confirmation_header_name');
     console.log(confirm_header_name_tr);
     confirm_header_name_tr.innerText=menu_header_text[device_index].longName;
+    let confirmButton=document.getElementById('oll_mex_buttons');
+    confirmButton.onclick=function(){
+                  oll_mex_confirm_confirm(command,0,0,device_index);
+                };
+
     switch(type){
-            case 1:
-                temp_string='<td style="text-align: center; "><button style="margin-bottom: 0px; margin:2px;' +
-                    ' float:right;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Запуск</button></td><td' +
-                    ' style="text-align: center; "><button  style="margin-bottom: 0px;' +
-                    ' margin:2px float:left;"class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
+            case 1:                
+                confirmButton.innerText="Запуск";
+                // temp_string='<td style="text-align: center; "><button style="margin-bottom: 0px; margin:2px;' +
+                //     ' float:right;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Запуск</button></td><td' +
+                //     ' style="text-align: center; "><button  style="margin-bottom: 0px;' +
+                //     ' margin:2px float:left;"class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
                 document.getElementById("oll_mex_message").innerText="Вы уверены?";
                 break;
             case 2:
-                temp_string='<td style="text-align: center;"><button style="margin-bottom: 0px; margin:2px;' +
-                    ' float:right;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Запуск</button></td><td' +
-                    ' style="text-align: center; "><button style="margin-bottom: 0px; margin:2px; float:left;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
+                confirmButton.innerText="Запуск";
+                // temp_string='<td style="text-align: center;"><button style="margin-bottom: 0px; margin:2px;' +
+                //     ' float:right;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Запуск</button></td><td' +
+                //     ' style="text-align: center; "><button style="margin-bottom: 0px; margin:2px; float:left;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
                 document.getElementById("oll_mex_message").innerText="Вы уверены?";
                 break;
             case 4:
-                temp_string='<td style="text-align: center;"><button s' +
-                    'tyle="margin-bottom: 0px; margin:2px; float:right;" class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Открыть</button></td><td' +
-                    ' style="text-align: center;"><button style="margin-bottom: 0px; margin:2px; float:left;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
+                confirmButton.innerText="Открыть";
+                // temp_string='<td style="text-align: center;"><button s' +
+                //     'tyle="margin-bottom: 0px; margin:2px; float:right;" class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Открыть</button></td><td' +
+                //     ' style="text-align: center;"><button style="margin-bottom: 0px; margin:2px; float:left;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
                 document.getElementById("oll_mex_message").innerText="Полностью открыть задвижку?";
                 break;
             case 23:
-                temp_string='<td style="text-align: center;"><button style="margin-bottom:0px; margin:2px;' +
-                    ' float:right;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Открыть</button></td><td' +
-                    ' style="text-align: center;"><button style="margin-bottom:0px; margin: 2px;' +
-                    ' float:left;"' +
-                    ' class="modal_box_btn"' +
-                    ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
+                confirmButton.innerText="Открыть";
+                // temp_string='<td style="text-align: center;"><button style="margin-bottom:0px; margin:2px;' +
+                //     ' float:right;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_confirm('+command+',0,0,'+device_index+')">Открыть</button></td><td' +
+                //     ' style="text-align: center;"><button style="margin-bottom:0px; margin: 2px;' +
+                //     ' float:left;"' +
+                //     ' class="modal_box_btn"' +
+                //     ' onclick="oll_mex_confirm_close()">Отмена</button></td>'
                 document.getElementById("oll_mex_message").innerText="Полностью открыть задвижку?";
                 break;
 
@@ -328,7 +336,7 @@ function oll_mex_confirm(command,p2,p3,device_index,type){
         }
 
     $('#oll_mex_confirmation_window').show();
-    document.getElementById('oll_mex_buttons').innerHTML = temp_string;
+    //document.getElementById('oll_mex_buttons').innerHTML = temp_string;
 }
 //подтвердить команду механизму
 function oll_mex_confirm_confirm(comand,p2,p3,index){
