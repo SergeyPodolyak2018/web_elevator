@@ -32,9 +32,7 @@ function getNewObjectOfOneRoute(){
 	var sourceTable=document.createElement('td');
 	var receiveTable=document.createElement('td');
 	var kyltTable=document.createElement('td');
-	// sourceTable.style.cssText='padding-left: 5px;';
-	// receiveTable.style.cssText='padding-left: 5px;';
-	// kyltTable.style.cssText='padding-left: 5px;';	
+	
 
 	rowOfRoute.appendChild(sourceTable);
 	rowOfRoute.appendChild(receiveTable);
@@ -159,16 +157,7 @@ function get_route_statuses(){
  //Создать див в котором будут отображаться маршруты   
 function createDivWithTable(){
 	var divForeProject=document.createElement('div');
-	// divForeProject.style.cssText='font-family: sans-serif;\
-                            
- //                            width: auto;\
- //                            height: auto;\
- //                            position: absolute;\
- //                            top:20%;\
- //                            left:20%;\
- //                            background-color: #e9e9e9;\
- //                            border:1px solid #808080;\
- //                            border-radius: 2px;';
+
 
     divForeProject.setAttribute('id','oll_route_statuses');
     divForeProject.setAttribute('class','draggable modal_box rout-list');
