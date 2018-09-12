@@ -28,16 +28,27 @@ gulp.task('default', ['less', 'watch']);
 
 gulp.task('create', () => {
 	if(!fs.existsSync('build')){ 
-		fs.mkdirSync('build')
+		fs.mkdirSync('build');
+	}
+	if(!fs.existsSync('build/control')){ 
+		fs.mkdirSync('build/control');
+	}
+	if(!fs.existsSync('build/start')){ 
+		fs.mkdirSync('build/start');
 	}
 
     const folders = [
-        'build/css',
-        'build/img',
-        'build/img/content',
-        'build/img/icons',
-        'build/fonts',
-        'build/js'
+    	'build/control/audio',
+    	'build/control/css',
+    	'build/control/fonts',
+    	'build/control/img',
+    	'build/control/imgOfProject',
+    	'build/control/less',    	
+    	//         
+    	'build/start/css',
+    	'build/start/fontawesome',
+    	'build/start/images',
+    	'build/start/js',
     ];
 
     folders.forEach(dir => {
