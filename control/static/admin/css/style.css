@@ -172,36 +172,6 @@ a {
 .dispNone {
   display: none;
 }
-.archiv_message {
-  width: 850px;
-  display: none;
-  left: 20%;
-  top: 20%;
-}
-.archiv_rout {
-  width: 850px;
-  display: none;
-  left: 20%;
-  top: 20%;
-}
-.archiv_device {
-  width: 850px;
-  display: none;
-  left: 20%;
-  top: 20%;
-}
-.alarm_message {
-  width: 1200px;
-  display: none;
-  left: 20%;
-  top: 20%;
-}
-.alarm_plc {
-  width: 300px;
-  display: none;
-  left: 45%;
-  top: 45%;
-}
 /* ===================== START SCROLLBAR========================== */
 ::-webkit-scrollbar {
   background: #515151;
@@ -1405,6 +1375,39 @@ a {
 }
 .rout-list__tbody {
   color: #282828;
+}
+.alarm_message {
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.alarm_message .modal_table {
+  width: 100%;
+  overflow-y: initial;
+}
+.archiv_message {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.archiv_device {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.archiv_rout {
+  width: 850px;
+  display: none;
+  left: 20%;
+  top: 20%;
+}
+.alarm_plc {
+  width: 300px;
+  display: none;
+  left: 45%;
+  top: 45%;
 }
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com

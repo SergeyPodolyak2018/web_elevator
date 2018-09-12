@@ -374,23 +374,24 @@
                 <a href="#" onclick="alarm_message_close()" class="btn btn-default btn-back"><span><span></a>                    
             </div>
 
-            <div id="alarm_message_content" class="modal_table">
-                <div id="table_head_alarm_message" class='modal_table_header'>
-                    <div class='modal_table_header_cell'>Дата</div>
-                    <div class='modal_table_header_cell'>Время</div>
-                    <div class='modal_table_header_cell'>Название</div>
-                    <div class='modal_table_header_cell'>Сообщение</div>
-                    <div class='modal_table_header_cell'>Cтатус</div> 
-                    <div class='modal_table_header_cell'>Квитировать</div>                       
-                </div>
-
-                <div class='modal_table_wrapper'>
-                    <table id="table_alarm_message" class="modal_table_content">
-                      <tbody>
-                        <tr>
-                          <td></td>
-                        </tr>
-                      </tbody>
+            <div id="alarm_message_content" class="modal_box_body">
+                <div class='settings-universal__table-wrapper'>
+                    <table class="settings-universal__table" >
+                        <thead>
+                                <tr class="settings-universal__table-header">
+                                    <td>Дата</td>
+                                    <td>Время</td>
+                                    <td>Название</td>
+                                    <td>Сообщение</td>
+                                    <td>Cтатус</td>
+                                    <td>Квитировать</td>
+                                </tr>
+                        </thead>
+                        <tbody id="table_alarm_message" class="modal_table_content">
+                            <tr>
+                              <td></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>               
