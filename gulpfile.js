@@ -9,10 +9,10 @@ gulp.task('watch', function () {
 });
 
 gulp.task('less', function () {
-    gulp.src('./styles/*.less')
+    gulp.src('./control/static/admin/less/style.less')
         .pipe(plumber())
         .pipe(less())
-        .pipe(gulp.dest('./styles/'))
+        .pipe(gulp.dest('./control/static/admin/css/'))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
