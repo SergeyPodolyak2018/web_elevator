@@ -1,9 +1,10 @@
-var gulp = require('gulp'),
-    less = require('gulp-less'),
-    cssmin = require('gulp-cssmin'),
-    plumber = require('gulp-plumber'),
-    rename = require('gulp-rename');
+const gulp = require('gulp');
+const less = require('gulp-less');
+const cssmin = require('gulp-cssmin');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
 const fs   = require('fs');
+const clean = require('gulp-clean');
 
 gulp.task('watch', function () {
     gulp.watch('./control/static/admin/less/*.less', ['less']);
