@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     
     <title>Элеватор</title>
-    <link href="/static/admin/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="/static/admin/css/style.min.css">    
+    <link href="/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css">    
 </head>
 
 <body>
@@ -34,28 +34,28 @@
         <div id="header"  class="main_menu">
 
             <!-- Logotype of the grain capital-->
-               <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/static/admin/img/logotip.svg" id="logotip" class="menu_button_typ1">
+               <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/img/logotip.svg" id="logotip" class="menu_button_typ1">
                       Your browser does not support SVG
                </object></div>
             <!--Starting the route-->
-                <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/static/admin/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
+                <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
             <!--Staff stop-->
-               <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/static/admin/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
+               <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
             <!--Emergency stop-->
-               <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/static/admin/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
+               <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
             <!--Call-->
-             <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
+             <div class="button_with_SVG"><object type="image/svg+xml" data="/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
                           Your browser does not support SVG
              </object></div>
             <!--Archive-->
             <div class="button_with_SVG" id="archiv_SVG">
-                <object type="image/svg+xml" data="/static/admin/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
+                <object type="image/svg+xml" data="/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object>
                 <div id="archiv" class="menu_contextual hiden">
@@ -68,7 +68,7 @@
             </div>
             <!--Service-->
                 <div class="button_with_SVG" id="servise_SVG">
-                    <object type="image/svg+xml" data="/static/admin/img/service_split.svg" id="service_button" class="menu_button_typ2">
+                    <object type="image/svg+xml" data="/img/service_split.svg" id="service_button" class="menu_button_typ2">
                               Your browser does not support SVG
                     </object>
                     <div id="servis" class="menu_contextual hiden">
@@ -84,13 +84,13 @@
                                 <div class="menu_button">БД пользователей</div>
                             </div>
                         </div>
-                        <div href="#" class="menu_button">Культура<span >&#9658;</span>
+                        <div class="menu_button">Культура<span >&#9658;</span>
                             <div id="kulture" class="menu_contextual_internal">
                                 <div id="menu_button_culture_open" class="menu_button">Справочник культур</div>
                                 <div class="menu_button">Карта культур</div>
                             </div>
                         </div>
-                        <div href="#" class="menu_button">Настройки видимости<span >&#9658;</span>
+                        <div class="menu_button">Настройки видимости<span >&#9658;</span>
                             <div id="visiblSettings" class="menu_contextual_internal">
                                 <div class="menu_button" onclick="showHideKylt()">Скрыть/Показать культ.</div>
                                 <div class="menu_button" onclick="showHideCurrent()">Скрыть/Показать токи</div>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             <!-- Exit button-->
-                <div class="button_with_SVG"><object type="image/svg+xml" data="/static/admin/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
+                <div class="button_with_SVG"><object type="image/svg+xml" data="/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
         </div>
@@ -109,7 +109,7 @@
 
         <!-- === START WRAPPER FOR PLACING THE PICTURE SVG===-->
         <div id="wrapper" class="svg_wrapper">
-            <object type="image/svg+xml" data="/static/admin/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
+            <object type="image/svg+xml" data="/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
                 Your browser does not support SVG
             </object>
         </div>
@@ -145,7 +145,7 @@
                 <!-- data comes from the script -->
                 <!-- <a href="#" class="rout_variant_button">1</a>   -->                              
             </div>
-            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+            <div id="rout_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" id="rout_confirmation_button" onclick="start_chek_variant()">OK</div>
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>
@@ -160,10 +160,10 @@
             </div>
             <div id="rout_confirmation_content" class="rout_confirmation_content flex">
                 <p id="rout_confirmation_source">Точка1</p>
-                <p>&#8594</p>
+                <p>&#8594;</p>
                 <p id="rout_confirmation_receiver">Точка2</p>
             </div>
-            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+            <div id="rout_confirmation_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" id="rout_confirmation_button-start">Запуск</div>
                 <div class="modal_box_btn" onclick="exit_rout_variant()">Отмена</div>
             </div>            
@@ -172,7 +172,7 @@
 
         <!-- ===START ROUTE STOP CONFIRMATION===-->
         <div id="stop_rout_confirmation" class="draggable modal_box stop_rout">
-            <div id="restart_rout_confirmation_header" class="modal_box_header stop_rout_header">
+            <div id="stop_rout_confirmation_header" class="modal_box_header stop_rout_header">
                <p class='modal_box_header_text'>Остановить выбранный маршрут?</p>
                <a href="#" onclick="exit_stop_rout_variant()" class="btn btn-default btn-back"><span><span></a>
             </div>
@@ -219,14 +219,14 @@
 
         <!-- ===START COMMUNICATION WITH THE PLC=== -->
         <div id="alarm_plc_connection" class="draggable modal_box alarm_plc">
-            <div id="" class="modal_box_header alarm_plc_header">
+            <div id="alarm_plc_header" class="modal_box_header alarm_plc_header">
                <p class='modal_box_header_text'>Cообщения</p>
                <a href="#" onclick="close_plc_alarm()" class="btn btn-default btn-back"><span><span></a>
             </div>
             <div class="alarm_plc_content">
                 <p>Связь с ПЛК отсутствует</p>
             </div>
-            <div id="" class="modal_box_footer btn_right">
+            <div class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="close_plc_alarm()">Закрыть</div>
             </div>            
         </div>
@@ -241,7 +241,7 @@
 
             <div id="archiv_message_filter" class="modal_box_filter archiv_message_filter">
                 <div id='message_filter'>
-                    <select id="message_filter_select" required size = "1" width="20%" onchange="archiv_alarm_sort()">
+                    <select id="message_filter_select" required size = "1" onchange="archiv_alarm_sort()">
                         <option value="0" >Все</option>
                         <option value="1" >Аварийные</option>
                         <option value="2" >Предупрежнения</option>
@@ -254,7 +254,7 @@
                 <input type="text" id="datepicker_message1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_message2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
                 <div id='archiv_message_filter_button' class="modal_box_btn">Сортировать</div>
             </div>
 
@@ -296,7 +296,7 @@
                 <input type="text" id="datepicker_rout1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_rout2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
                 <div id='archiv_rout_filter_button' onclick="archiv_rout_sort()" class="modal_box_btn">Сортировать</div>
             </div>                
             <div id="archiv_rout_content" class="modal_table">
@@ -321,7 +321,7 @@
                 </div>
             </div>
             
-            <div id="archiv_message_footer" class="modal_box_footer btn_right">
+            <div id="archiv_rout_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="archiv_rout_close()">Закрыть</div>
             </div>                 
         </div>
@@ -330,7 +330,7 @@
         <!--===Start DEVICE ARCHIVE WINDOW===-->
 
         <div id="archiv_device" class="draggable modal_box archiv_device">
-            <div id="archiv_rout_header" class="modal_box_header">
+            <div id="archiv_device_header" class="modal_box_header">
                 <p class='modal_box_header_text'>Журнал действий</p>
                 <a href="#" onclick="archiv_device_close()" class="btn btn-default btn-back"><span><span></a>                    
             </div>
@@ -340,8 +340,8 @@
                 <input type="text" id="datepicker_device1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_device2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img class="tooltip"  title="Печать" src="/static/admin/img/printer.png"></a>                             
-                <div id='archiv_device_filter_button' onclick="onclick="archiv_device_sort(number)"" class="modal_box_btn">Сортировать</div>
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
+                <div id='archiv_device_filter_button' onclick="archiv_device_sort(number)" class="modal_box_btn">Сортировать</div>
             </div>  
             <div id="archiv_device_content" class="modal_table">
                 <div id="table_head_rchiv_device" class='modal_table_header'>
@@ -369,7 +369,7 @@
 
         <!--===START CURRENT ALARM MESSAGE===-->    
         <div id="alarm_message" class="draggable modal_box alarm_message">
-            <div id="archiv_rout_header" class="modal_box_header">
+            <div id="alarm_message_header" class="modal_box_header">
                 <p class='modal_box_header_text'>Аварийные сообщения</p>
                 <a href="#" onclick="alarm_message_close()" class="btn btn-default btn-back"><span><span></a>                    
             </div>
@@ -395,7 +395,7 @@
                     </table>
                 </div>
             </div>               
-            <div id="archiv_device_footer" class="modal_box_footer btn_right">
+            <div id="alarm_message_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="alarm_confirmation_all()">Квитировать все</div>
                 <div class="modal_box_btn" onclick="alarm_message_close()">Закрыть</div>
             </div>                 
@@ -452,7 +452,7 @@
                 </div>
             </div>
             <div id="archive_current_content" class="archive_current_content" >
-                <object type="image/svg+xml" data="/static/admin/img/current8.svg" id="current_svg" class="current_archive_content_graph">
+                <object type="image/svg+xml" data="/img/current8.svg" id="current_svg" class="current_archive_content_graph">
                   Your browser does not support SVG
                 </object>
             </div>
@@ -478,7 +478,7 @@
                     <div class='silo-valve-block__heder'><p>Состояние задвижки</p></div>
                     <div class='silo-valve-block__container'>
                         <div  class='silo-valve-block__container-bl1'>
-                            <object type="image/svg+xml" data="/static/admin/img/zadvijka.svg" id="zadvijka_svg">
+                            <object type="image/svg+xml" data="/img/zadvijka.svg" id="zadvijka_svg">
                                 Your browser does not support SVG
                             </object>
                         </div>
@@ -505,7 +505,7 @@
                         </div>                                
                     </div>
                 </div>
-                <div id="zadvijka_kontrol_menu_content_state"  class='silo-valve-block__section'>
+                <div id="zadvijka_kontrol_menu_content_calibr"  class='silo-valve-block__section'>
                     <div class='silo-valve-block__heder'><p>Калибровка</p></div>
                     <div class='silo-valve-block__container-height'>
                         <div  class='silo-valve-block__container-bl3'>
@@ -613,7 +613,7 @@
                             <tr><td>Индекс уст-ва</td><td><input name="EquipIndex" SIZE=4 readonly></td></tr>
                             <tr><td>Уст-во в работе</td><td><select name="FlagsMachine_bit7"><option value="0">0</option><option value="1">1</option></select></td></tr>
                             <tr><td>Время разгона, мс</td><td><input class="checkable_data_form" name="Time_RKS" SIZE=4></td></tr>
-                            <tr><td>Время откл., с</td><td><input name="Vent_time_off" SIZE=4</td></tr>
+                            <tr><td>Время откл., с</td><td><input name="Vent_time_off" SIZE=4></td></tr>
                             <tr><td>Период ТО, ч</td><td><input class="checkable_data_form" name="StatisticsPeriod" SIZE=4></td></tr>
                             <tr><td>Приоритет датчиков</td><td><input class="checkable_data_form" name="Priority_dat" SIZE=4></td></tr>
                             <tr><td>Зона звук. сигнализ.</td><td><input class="checkable_data_form" name="Bell_Zone" SIZE=4></td></tr>
@@ -742,7 +742,7 @@
                     </div>
                 </div>
             </form>
-            <div id="confirm_mixin_kylt_rout_footer" class="modal_box_footer btn_right">
+            <div id="settings_noriya_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="setings_universal_close(1)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(1)">Сохранить</div>
             </div> 
@@ -811,8 +811,7 @@
                                        <td><select size="1" name="Type_dat0_bit0" class="tooltip"
                                                    title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
                                        <td><input name="dat0_name" SIZE=10 readonly></td>
-                                       <td><input class="checkable_data_form adres_getable" name="Adr_dat0" SIZE=4 class="tooltip"
-                                                  title="Адрес датчика"></td>
+                                       <td><input class="checkable_data_form adres_getable tooltip" name="Adr_dat0" SIZE=4 title="Адрес датчика"></td>
                                        <td><select  name="Flags_dat0_bit3" class="tooltip"
                                                    title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
                                        <td></td>
@@ -899,7 +898,7 @@
                                        <td><input class="checkable_data_form adres_getable tooltip" name="Adr_dat8"
                                                   SIZE=4  title="Адрес датчика"></td>
                                        <td><select  name="Flags_dat8_bit3" class="tooltip" title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
-                                       <td><input class="checkable_data_form" name="Time_dat8" SIZE=4 class="tooltip" title="время фильтрации мс"></td>
+                                       <td><input class="checkable_data_form tooltip" name="Time_dat8" SIZE=4  title="время фильтрации мс"></td>
                                        <td><select size="1" name="Flags_dat8_bit5" class="tooltip" title="выключить нач.транспортеры или закрыть нач.задвижки при сработке датчика"><option value="0">0</option><option value="1">1</option></select></td>
                                    </tr>
                                   <tr>
@@ -968,8 +967,8 @@
                                 <tr><td>Открыть I</td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv_R" SIZE=4></td></tr>
                                 <tr><td>Режим сим.</td><td> <select  name="FlagsMachine_bit3"><option value="0">0</option><option value="1">1</option></select></td></tr>
                                 <tr><td>Не закр. при АМ</td><td> <select name="FlagsMachine_bit0"><option value="0">0</option><option value="1">1</option></select></td></tr>
-                                <tr><td >Не закр. при выкл.</td><td> <select sname="FlagsMachine_bit1"><option value="0">0</option><option value="1">1</option></select></td></tr>
-                                <tr><td>Дистанц. управл.</td><td> <select name="FlagsMachine_bit5"><option value="0">0</option><option value="1">1</option></select></td></tr>
+                                <tr><td >Не закр. при выкл.</td><td> <select name="FlagsMachine_bit1"><option value="0">0</option><option value="1">1</option></select></td></tr>
+                                <tr><td>Дистанц. управл.</td><td><select name="FlagsMachine_bit5"><option value="0">0</option><option value="1">1</option></select></td></tr>
                             </table>
                         </div>
                         <div class="settings-hide settings-universal__table-wrapper spicial_settings-wrap">
@@ -1005,7 +1004,6 @@
                                                   SIZE=4  title="Адрес датчика"></td>
                                        <td><select name="Flags_dat0_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
                                       <td><input class="checkable_data_form" name="Time_dat0" SIZE=4  title="время фильтрации мс"></td>
-
                                    </tr>
                                    <tr>
                                        <td><select size="1" name="Type_dat1_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
@@ -1013,7 +1011,6 @@
                                        <td><input class="checkable_data_form adres_getable" name="Adr_dat1" SIZE=4  title="Адрес датчика"></td>
                                        <td><select name="Flags_dat1_bit3"  title="Датчик в норме = 0/1"><option value="0">0</option><option value="1">1</option></select></td>
                                        <td><input class="checkable_data_form" name="Time_dat1" SIZE=4  title="время фильтрации мс"></td>
-
                                    </tr>
                                    <tr>
                                        <td><select size="1" name="Type_dat2_bit0"  title="если 1, тогда датчик подключён"><option value="0">0</option><option value="1">1</option></select></td>
@@ -1224,7 +1221,7 @@
                                 <tr><td>Индекс тр-ра</td><td><input name="Konv_index" SIZE=2></td></tr>
                                 <tr><td>Управление ПЧ</td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km_dop" SIZE=2></td></tr>
                                 <tr><td>Адрес JOG1</td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km_R_dop" SIZE=2></td></tr>
-                                <tr><td>Работа ПЧ</td><td><input cla6s="checkable_data_form adres_getable" name="Parameter1" SIZE=2></td></tr>
+                                <tr><td>Работа ПЧ</td><td><input class="checkable_data_form adres_getable" name="Parameter1" SIZE=2></td></tr>
                                 <tr><td colspan="4" class="settings-universal__table-header">Индексы задвижек</td></tr>
                                 <tr><td >Задвижка 2</td><td><input class="checkable_data_form" name="Parameter2" SIZE=2></td></tr>
                                 <tr><td >Задвижка 3</td><td><input class="checkable_data_form" name="Parameter3" SIZE=2></td></tr>
@@ -1440,7 +1437,7 @@
     <!--=== START SETTINGS DRYER ===-->
         <div id="settings_dryer" class="draggable modal_box settings-universal settings-dryer">
             <div class="modal_box_header settings-universal__header">
-                <p class='modal_box_header_text'>Настройки <span id="settings-konveyer__name"></span></p>
+                <p class='modal_box_header_text'>Настройки <span id="settings_dryer__name"></span></p>
                 <a href="#" onclick="setings_universal_close(16)" class="btn btn-default btn-back"><span><span></a>
             </div>
             <form method="POST" id="form_dryer_settings" name="form_dryer_settings" action="javascript:void(null);" onsubmit="" autocomplete="off">                
@@ -2108,7 +2105,7 @@
                             <tr><td>Управление</td><td><input class="checkable_data_form adres_getable_Q" name="Adr_km" SIZE=4></td></tr>
                             <tr><td>Контроль</td><td><input class="checkable_data_form adres_getable" name="Adr_obr_sv" SIZE=4></td></tr>
                             <tr><td >Местное управление </td>
-                                <td><select sname="FlagsMachine_bit15"><option value="0">0</option><option value="1">1</option></select></td></tr>
+                                <td><select name="FlagsMachine_bit15"><option value="0">0</option><option value="1">1</option></select></td></tr>
 
                         </table>
                     </div>
@@ -2477,7 +2474,7 @@
         <!--=== START SETTINGS ANALOG ===-->
         <div id="settings_analog_dat" class="draggable modal_box settings-universal settings-analog">
             <div class="modal_box_header settings-universal__header">
-                <p class='modal_box_header_text'>Настройки аналогового датчика<span id="settings-current__name"></span></p>
+                <p class='modal_box_header_text'>Настройки аналогового датчика<span id="settings_analog_dat__name"></span></p>
                 <a href="#" onclick="setings_universal_close(102)" class="btn btn-default btn-back"><span><span></a>
             </div>            
             
@@ -2533,7 +2530,7 @@
         <!--=== START SETTINGS KYLT ===-->
         <div id="settings_kylt" class="draggable modal_box settings-universal settings-kylt">
             <div class="modal_box_header settings-universal__header">
-                <p class='modal_box_header_text'>Настройки культуры<span id="settings-current__name"></span></p>
+                <p class='modal_box_header_text'>Настройки культуры<span id="settings_kylt__name"></span></p>
                 <a href="#" onclick="setings_universal_close(101)" class="btn btn-default btn-back"><span><span></a>
             </div>            
             
@@ -2563,7 +2560,7 @@
 
         <!--=== START SET KYLT ===-->
         <div id="kylt_set_confirmation_window" class="draggable modal_box set-kylt">
-            <div id="alarm_rout_header" class="modal_box_header kylt-set__header">
+            <div id="kylt_set_confirmation_window_header" class="modal_box_header kylt-set__header">
                <p class='modal_box_header_text'>Установить культуру</p>
                <a href="#" onclick="kylt_set_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
@@ -2577,7 +2574,7 @@
                     <select id="kylt_set_confirmation_list"></select>
                 </div>
             </div>
-            <div id="alarm_rout_footer" class="modal_box_footer btn_right">
+            <div id="kylt_set_confirmation_window_footer" class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="kylt_set_save(document.getElementById('Kylt_device_Index').value,document.getElementById('kylt_set_confirmation_list').value)">Сохранить</div>
                 <div class="modal_box_btn" onclick="kylt_set_close()">Закрыть</div>                  
             </div>            
@@ -2816,7 +2813,7 @@
 
         <!--=== START SET TUBE POSITION ===-->
         <div id="position_pt_confirmation_window" class="draggable modal_box set-tube-position">
-            <div id="alarm_rout_header" class="modal_box_header kylt-set__header">
+            <div id="position_pt_confirmation_window_header" class="modal_box_header kylt-set__header">
                <p class='modal_box_header_text'>Установить позицию</p>
                <a href="#" onclick="close_position_pt()" class="btn btn-default btn-back"><span><span></a>
             </div>
@@ -2834,14 +2831,14 @@
 
         <!--=== START All DEVICE CONFIRM WINDOW ===-->
         <div id="oll_mex_confirmation_window" class="draggable modal_box all-mex-confirm">
-            <div id="" class="modal_box_header">
+            <div  class="modal_box_header">
                <p class='modal_box_header_text'>Подтверждение <span id="confirmation_header_name"></span></p>
                <a href="#" onclick="oll_mex_confirm_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
             <div class="modal_box_body">
                 <p id="oll_mex_message">Запустить конвейер?</p>
             </div>
-            <div id="" class="modal_box_footer btn_right">
+            <div  class="modal_box_footer btn_right">
                 <div id="oll_mex_buttons" class="modal_box_btn">Выполнить</div>
                 <div class="modal_box_btn" onclick="oll_mex_confirm_close()">Закрыть</div>
             </div>            
@@ -2852,7 +2849,7 @@
 
         <!--=== START STATISTIC WINDOW ===-->
         <div id="statistic_window" class="draggable modal_box statistic">
-            <div id="" class="modal_box_header">
+            <div  class="modal_box_header">
                <p class='modal_box_header_text'>Статистика <span class="statistic_window_header_name"></span></p>
                <a href="#" onclick="statistic_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
@@ -2862,7 +2859,7 @@
                 <div><p>Периодичность обслуживания ч.</p><div class="text_cover"><p class="statistic_period">000</p></div></div>
                 <div><p>Остаток времени до ТО ч.</p><div class="text_cover"><p class="statistic_residue">000</p></div></div>
             </div>
-            <div id="" class="modal_box_footer btn_right">
+            <div  class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="statistic_close()">Закрыть</div>
             </div>            
         </div>
@@ -2870,11 +2867,11 @@
 
         <!--=== START LINE REPARE WINDOW ===-->
         <div id="refit_route_window" class="draggable modal_box refit-route-window">
-            <div id="" class="modal_box_header">
+            <div  class="modal_box_header">
                <p class='modal_box_header_text'>Блокировать/разблокировать?</p>
                <a href="#" onclick="statistic_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
-            <div id="" class="modal_box_footer btn_right">
+            <div  class="modal_box_footer btn_right">
                 <div class="modal_box_btn refit_route_command_button">Да</div>
                 <div class="modal_box_btn" onclick="refit_route_close()">Нет</div>
             </div>            
@@ -2884,7 +2881,7 @@
 
         <!--=== START SENSORS WINDOW ===-->
         <div id="datchiki_kontrol" class="draggable modal_box sensors-window">
-            <div id="" class="modal_box_header">
+            <div class="modal_box_header">
                <p class='modal_box_header_text'>Датчики <span id="fool_name_of_device"></span></p>
                <a href="#" onclick="close_datchiki()" class="btn btn-default btn-back"><span><span></a>
             </div>
@@ -2904,7 +2901,7 @@
                     </div>
                 </div>
             </div>
-            <div id="" class="modal_box_footer btn_right">
+            <div  class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="close_datchiki()">Закрыть</div>
             </div>            
         </div>
@@ -2915,13 +2912,13 @@
         <div id="zoomInOut" class="zoom-icon">
             <!-- Icon plas -->    
             <div class="zoom-icon__wrapper">                       
-                <object type="image/svg+xml" data="/static/admin/img/zoomPlaz.svg" id="zoomIn_svg">
+                <object type="image/svg+xml" data="/img/zoomPlaz.svg" id="zoomIn_svg">
                               Your browser does not support SVG
                 </object>
             </div>
             <!-- Icon  mines--> 
             <div class="zoom-icon__wrapper">                          
-                <object type="image/svg+xml" data="/static/admin/img/zoomMinus.svg" id="zoomOut_svg">
+                <object type="image/svg+xml" data="/img/zoomMinus.svg" id="zoomOut_svg">
                               Your browser does not support SVG
                 </object>
             </div>
@@ -2934,40 +2931,40 @@
 
 
     <!-- Start libs -->
-    <script src="/static/admin/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
-    <script src="/static/admin/js/jquery-1.12.4/jquery-1.12.4.js"></script>
-    <script src="/static/admin/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
+    <script src="/js/jquery-1.12.4/jquery-1.12.4.js"></script>
+    <script src="/js/jquery-ui-1.12.1/jquery-ui.js"></script>
     <!-- END libs -->
      
-    <script src="/static/admin/js/zoom_liski.js" defer></script>
-    <script src="/static/admin/js/rout.js" defer></script>
-    <script src="/static/admin/js/archiv_alarm.js" defer></script>
-    <script src="/static/admin/js/servis_and_archiv_menu.js" defer></script>
-    <script src="/static/admin/js/menu_button.js" defer></script>
-    <script src="/static/admin/js/Status_and_links.js" defer></script>
+    <script src="/js/zoom_liski.js" defer></script>
+    <script src="/js/rout.js" defer></script>
+    <script src="/js/archiv_alarm.js" defer></script>
+    <script src="/js/servis_and_archiv_menu.js" defer></script>
+    <script src="/js/menu_button.js" defer></script>
+    <script src="/js/Status_and_links.js" defer></script>
 
-    <script src="/static/admin/js/Commands.js" defer></script>
-    <script src="/static/admin/js/start.js" defer></script>
-    <script src="/static/admin/js/levelbar.js" defer></script>
-    <script src="/static/admin/js/current_grafic4.js" defer></script>
-    <script src="/static/admin/js/zadvijka_menu.js" defer></script>
-    <script src="/static/admin/js/settings.js" defer></script>
-    <script src="/static/admin/js/alarmSound.js" defer></script>
+    <script src="/js/Commands.js" defer></script>
+    <script src="/js/start.js" defer></script>
+    <script src="/js/levelbar.js" defer></script>
+    <script src="/js/current_grafic4.js" defer></script>
+    <script src="/js/zadvijka_menu.js" defer></script>
+    <script src="/js/settings.js" defer></script>
+    <script src="/js/alarmSound.js" defer></script>
 
-    <script src="/static/admin/js/route_status_vizualization.js" defer></script>
-    <script src="/static/admin/js/Menu_fore_managment_deveces.js" defer></script>
-    <script src="/static/admin/js/showHideElements.js" defer></script>
-    <script src="/static/admin/js/plc_alarm.js" defer></script>
+    <script src="/js/route_status_vizualization.js" defer></script>
+    <script src="/js/Menu_fore_managment_deveces.js" defer></script>
+    <script src="/js/showHideElements.js" defer></script>
+    <script src="/js/plc_alarm.js" defer></script>
 
-    <script src="/static/admin/js/Preloader.js" defer></script>
-    <script src="/static/admin/js/Statistica.js" defer></script>
+    <script src="/js/Preloader.js" defer></script>
+    <script src="/js/Statistica.js" defer></script>
 
-    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
-    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
-    <script type="text/javascript" src="/static/admin/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
+    <script src="/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
+    <script src="/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
+    <script src="/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
 
-    <script src="static/admin/js/showHideElements.js"></script>
-    <script src="/static/admin/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
+    <script src="/js/showHideElements.js"></script>
+    <script src="/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
    
 
 </body>
