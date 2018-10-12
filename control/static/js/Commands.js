@@ -44,12 +44,12 @@ function menu_kreator(device_index,device_string_type,posX,posY){
                   //Check object empty or not
                   if(Object.keys(menu_struktura).length!=0){
                     for (let i in menu_struktura){
-                          if (menu_struktura[i].enable==0) {
+                          if (menu_struktura[i].enable==0){
                             temp_string=temp_string+'<div class="button_menu"><div ' +
                                 ' class="modal_box_btn"' +
-                                ' onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important;" disabled>'+menu_struktura[i].name+'</div></div>'
+                                ' onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important;" disabled>'+menu_struktura[i].name+'</div></div>';
                           } else {
-                            temp_string=temp_string+'<div class="button_menu"><div class="modal_box_btn" onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important">'+menu_struktura[i].name+'</div></div>'
+                            temp_string=temp_string+'<div class="button_menu"><div class="modal_box_btn" onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important">'+menu_struktura[i].name+'</div></div>';
                           }
                     }                  
                     let div_menu = document.getElementById('menu');                    

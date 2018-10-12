@@ -60,7 +60,7 @@ function asckerStatusOfUser(){
 $(window).load(function () {
 
     // Создать новый объект worker1
-        var worker = new Worker('/static/admin/js/worker.js');
+        var worker = new Worker('/static/js/worker.js');
         // Получить сообщение от работника
         worker.onmessage = function (event) {
             var temp=event.data;
@@ -71,14 +71,14 @@ $(window).load(function () {
         };
 
         // Создать новый объект worker2
-        var worker2 = new Worker('/static/admin/js/worker2.js');
+        var worker2 = new Worker('/static/js/worker2.js');
         // Получить сообщение от работника
         worker2.onmessage = function (event){
             linck(event.data);
         };
 
    // Создать новый объект worker3
-        var worker3 = new Worker('/static/admin/js/worker3.js');
+        var worker3 = new Worker('/static/js/worker3.js');
         // Получить сообщение от работника
         worker3.onmessage = function (event) {
         var temp=event.data;
@@ -89,7 +89,7 @@ $(window).load(function () {
         };
 
     // Создать новый объект worker4
-        var worker4 = new Worker('/static/admin/js/worker4.js');
+        var worker4 = new Worker('/static/js/worker4.js');
         // Получить сообщение от работника
         worker4.onmessage = function (event) {
         var temp=event.data;

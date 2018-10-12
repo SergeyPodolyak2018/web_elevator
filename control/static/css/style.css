@@ -88,7 +88,6 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -327,7 +326,7 @@ a {
   background-color: #0e0e0e;
   cursor: pointer;
   display: inline-block;
-  margin: 0px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
   text-align: center;
   border: 1px solid #494949;
   transition: 0.2s;
@@ -407,11 +406,12 @@ a {
   background-color: #0e0e0e;
   cursor: pointer;
   display: inline-block;
-  margin: 0px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
   text-align: center;
   border: 1px solid #494949;
   transition: 0.2s;
   color: #ccc;
+  margin: 0px 5px 3px 5px;
 }
 .modal_box_btn:hover:not(:active) {
   border: 1px solid #efcd1f;
@@ -438,7 +438,7 @@ a {
   background-color: #0e0e0e;
   cursor: pointer;
   display: inline-block;
-  margin: 0px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
   text-align: center;
   border: 1px solid #494949;
   transition: 0.2s;
@@ -468,7 +468,7 @@ a {
   background-color: #0e0e0e;
   cursor: pointer;
   display: inline-block;
-  margin: 0px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
   text-align: center;
   border: 1px solid #494949;
   transition: 0.2s;
@@ -765,6 +765,7 @@ a {
   text-align: center;
   min-width: 100px;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 .silo-valve-block__container-bl3 {
   height: 100%;
@@ -1118,7 +1119,7 @@ a {
   background-color: #0e0e0e;
   cursor: pointer;
   display: inline-block;
-  margin: 0px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
   text-align: center;
   border: 1px solid #494949;
   transition: 0.2s;

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     
     <title>Элеватор</title>
-    <link href="/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/style.css">    
+    <link href="/static/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/style.css">    
 </head>
 
 <body>
@@ -34,28 +34,28 @@
         <div id="header"  class="main_menu">
 
             <!-- Logotype of the grain capital-->
-               <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/img/logotip.svg" id="logotip" class="menu_button_typ1">
+               <div class="button_with_SVG2" id="logotip_linkc" ><object type="image/svg+xml" data="/static/img/logotip.svg" id="logotip" class="menu_button_typ1">
                       Your browser does not support SVG
                </object></div>
             <!--Starting the route-->
-                <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
+                <div class="button_with_SVG start_rout_linck"><object type="image/svg+xml" data="/static/img/start_rout_split.svg" id="start_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
             <!--Staff stop-->
-               <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
+               <div class="button_with_SVG stop_rout_linck"><object type="image/svg+xml" data="/static/img/stop_rout_split.svg" id="stop_rout_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
             <!--Emergency stop-->
-               <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
+               <div class="button_with_SVG" id="extra_stop_linck"><object type="image/svg+xml" data="/static/img/extra_stop.svg" id="extra_stop_button" class="menu_button_typ2">
                           Your browser does not support SVG
                </object></div>
             <!--Call-->
-             <div class="button_with_SVG"><object type="image/svg+xml" data="/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
+             <div class="button_with_SVG"><object type="image/svg+xml" data="/static/img/ring_button_split.svg" id="ring_button" class="menu_button_typ2">
                           Your browser does not support SVG
              </object></div>
             <!--Archive-->
             <div class="button_with_SVG" id="archiv_SVG">
-                <object type="image/svg+xml" data="/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
+                <object type="image/svg+xml" data="/static/img/archiv_split.svg" id="archiv_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object>
                 <div id="archiv" class="menu_contextual hiden">
@@ -68,7 +68,7 @@
             </div>
             <!--Service-->
                 <div class="button_with_SVG" id="servise_SVG">
-                    <object type="image/svg+xml" data="/img/service_split.svg" id="service_button" class="menu_button_typ2">
+                    <object type="image/svg+xml" data="/static/img/service_split.svg" id="service_button" class="menu_button_typ2">
                               Your browser does not support SVG
                     </object>
                     <div id="servis" class="menu_contextual hiden">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             <!-- Exit button-->
-                <div class="button_with_SVG"><object type="image/svg+xml" data="/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
+                <div class="button_with_SVG"><object type="image/svg+xml" data="/static/img/exit_button_split.svg" id="exit_button" class="menu_button_typ2">
                           Your browser does not support SVG
                 </object></div>
         </div>
@@ -109,7 +109,7 @@
 
         <!-- === START WRAPPER FOR PLACING THE PICTURE SVG===-->
         <div id="wrapper" class="svg_wrapper">
-            <object type="image/svg+xml" data="/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
+            <object type="image/svg+xml" data="/static/imgOfProject/projectSVG.svg" id="nor" class="svg_wrapper_project">
                 Your browser does not support SVG
             </object>
         </div>
@@ -254,7 +254,7 @@
                 <input type="text" id="datepicker_message1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_message2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_message_content')"><img class="tooltip"  title="Печать" src="/static/img/printer.png"></a>                             
                 <div id='archiv_message_filter_button' class="modal_box_btn">Сортировать</div>
             </div>
 
@@ -296,7 +296,7 @@
                 <input type="text" id="datepicker_rout1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_rout2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_rout_content')"><img class="tooltip"  title="Печать" src="/static/img/printer.png"></a>                             
                 <div id='archiv_rout_filter_button' onclick="archiv_rout_sort()" class="modal_box_btn">Сортировать</div>
             </div>                
             <div id="archiv_rout_content" class="modal_table">
@@ -340,7 +340,7 @@
                 <input type="text" id="datepicker_device1">                             
                 <p>по:</p>
                 <input type="text" id="datepicker_device2">
-                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img class="tooltip"  title="Печать" src="/img/printer.png"></a>                             
+                <a href="#" class="printButton" onclick="printContentOfDifferentVindows('archiv_device_content')"><img class="tooltip"  title="Печать" src="/static/img/printer.png"></a>                             
                 <div id='archiv_device_filter_button' onclick="archiv_device_sort(number)" class="modal_box_btn">Сортировать</div>
             </div>  
             <div id="archiv_device_content" class="modal_table">
@@ -452,7 +452,7 @@
                 </div>
             </div>
             <div id="archive_current_content" class="archive_current_content" >
-                <object type="image/svg+xml" data="/img/current8.svg" id="current_svg" class="current_archive_content_graph">
+                <object type="image/svg+xml" data="/static/img/current8.svg" id="current_svg" class="current_archive_content_graph">
                   Your browser does not support SVG
                 </object>
             </div>
@@ -468,7 +468,7 @@
 
         <div id="zadvijka_kontrol_menu"  class="draggable modal_box silo-valve-block" >
             <div id="zadvijka_kontrol_menu_header" class="modal_box_header silo-valve-block__header">
-                <p class='modal_box_header_text'>Управление задвижкой <span class=""> Задв 130</span></p>                    
+                <p class='modal_box_header_text'>Управление задвижкой <span id="zadvijka_kontrol_menu_header-name"> Задв 130</span></p>                    
                 <a href="#" onclick="zadvijka_menu_close()" class="btn btn-default btn-back"><span><span></a>
             </div>
 
@@ -478,7 +478,7 @@
                     <div class='silo-valve-block__heder'><p>Состояние задвижки</p></div>
                     <div class='silo-valve-block__container'>
                         <div  class='silo-valve-block__container-bl1'>
-                            <object type="image/svg+xml" data="/img/zadvijka.svg" id="zadvijka_svg">
+                            <object type="image/svg+xml" data="/static/img/zadvijka.svg" id="zadvijka_svg">
                                 Your browser does not support SVG
                             </object>
                         </div>
@@ -2912,13 +2912,13 @@
         <div id="zoomInOut" class="zoom-icon">
             <!-- Icon plas -->    
             <div class="zoom-icon__wrapper">                       
-                <object type="image/svg+xml" data="/img/zoomPlaz.svg" id="zoomIn_svg">
+                <object type="image/svg+xml" data="/static/img/zoomPlaz.svg" id="zoomIn_svg">
                               Your browser does not support SVG
                 </object>
             </div>
             <!-- Icon  mines--> 
             <div class="zoom-icon__wrapper">                          
-                <object type="image/svg+xml" data="/img/zoomMinus.svg" id="zoomOut_svg">
+                <object type="image/svg+xml" data="/static/img/zoomMinus.svg" id="zoomOut_svg">
                               Your browser does not support SVG
                 </object>
             </div>
@@ -2931,40 +2931,40 @@
 
 
     <!-- Start libs -->
-    <script src="/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
-    <script src="/js/jquery-1.12.4/jquery-1.12.4.js"></script>
-    <script src="/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="/static/js/jqueryLibrary v1.11.1/jquery-latest.js"></script>
+    <script src="/static/js/jquery-1.12.4/jquery-1.12.4.js"></script>
+    <script src="/static/js/jquery-ui-1.12.1/jquery-ui.js"></script>
     <!-- END libs -->
      
-    <script src="/js/zoom_liski.js" defer></script>
-    <script src="/js/rout.js" defer></script>
-    <script src="/js/archiv_alarm.js" defer></script>
-    <script src="/js/servis_and_archiv_menu.js" defer></script>
-    <script src="/js/menu_button.js" defer></script>
-    <script src="/js/Status_and_links.js" defer></script>
+    <script src="/static/js/zoom_liski.js" defer></script>
+    <script src="/static/js/rout.js" defer></script>
+    <script src="/static/js/archiv_alarm.js" defer></script>
+    <script src="/static/js/servis_and_archiv_menu.js" defer></script>
+    <script src="/static/js/menu_button.js" defer></script>
+    <script src="/static/js/Status_and_links.js" defer></script>
 
-    <script src="/js/Commands.js" defer></script>
-    <script src="/js/start.js" defer></script>
-    <script src="/js/levelbar.js" defer></script>
-    <script src="/js/current_grafic4.js" defer></script>
-    <script src="/js/zadvijka_menu.js" defer></script>
-    <script src="/js/settings.js" defer></script>
-    <script src="/js/alarmSound.js" defer></script>
+    <script src="/static/js/Commands.js" defer></script>
+    <script src="/static/js/start.js" defer></script>
+    <script src="/static/js/levelbar.js" defer></script>
+    <script src="/static/js/current_grafic4.js" defer></script>
+    <script src="/static/js/zadvijka_menu.js" defer></script>
+    <script src="/static/js/settings.js" defer></script>
+    <script src="/static/js/alarmSound.js" defer></script>
 
-    <script src="/js/route_status_vizualization.js" defer></script>
-    <script src="/js/Menu_fore_managment_deveces.js" defer></script>
-    <script src="/js/showHideElements.js" defer></script>
-    <script src="/js/plc_alarm.js" defer></script>
+    <script src="/static/js/route_status_vizualization.js" defer></script>
+    <script src="/static/js/Menu_fore_managment_deveces.js" defer></script>
+    <script src="/static/js/showHideElements.js" defer></script>
+    <script src="/static/js/plc_alarm.js" defer></script>
 
-    <script src="/js/Preloader.js" defer></script>
-    <script src="/js/Statistica.js" defer></script>
+    <script src="/static/js/Preloader.js" defer></script>
+    <script src="/static/js/Statistica.js" defer></script>
 
-    <script src="/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
-    <script src="/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
-    <script src="/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
+    <script src="/static/js/greensock-js/src/uncompressed/TweenLite.js" defer></script>
+    <script src="/static/js/greensock-js/src/uncompressed/utils/Draggable.js" defer></script>
+    <script src="/static/js/greensock-js/src/uncompressed/plugins/CSSPlugin.js" defer></script>
 
-    <script src="/js/showHideElements.js"></script>
-    <script src="/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
+    <script src="/static/js/showHideElements.js"></script>
+    <script src="/static/js/jonthornton-jquery-timepicker-3aa2e80/jquery.timepicker.js"></script>
    
 
 </body>

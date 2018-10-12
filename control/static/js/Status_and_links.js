@@ -402,7 +402,7 @@ function change(oll_mex_status) {
                         if (status==3){
                           $(element).css('fill', '#00FFFF');//маршруто
                         }
-                        if (status==5){
+                        if (status==5 || status==0){
                           //$(element).css('fill', '#E5E5E6'); //закрыто
                           $(element).removeAttr("style");//закрыто
                         }
@@ -434,7 +434,7 @@ function change(oll_mex_status) {
                         if (status==3){
                           $(element).css('fill', '#00FFFF');//маршруто
                         }
-                        if (status==5){
+                        if (status==5 ||status==0){
                           //$(element).css('fill', '#E5E5E6'); //закрыто
                           $(element).removeAttr("style");//закрыто
                         }
@@ -661,6 +661,12 @@ function change(oll_mex_status) {
                         $(element1).css('fill', '#E5E5E6');//серый
                         $(element2).css('fill', '#00FF00');//зеленый
                       }
+                      if (status==0){
+                        var element1 = SVG.getElementsByClassName('klapan'+k+' left');
+                        var element2 = SVG.getElementsByClassName('klapan'+k+' right');
+                        $(element1).css('fill', '#E5E5E6');//серый
+                        $(element2).css('fill', '#E5E5E6');//серый
+                      }
 
 
                     }
@@ -701,7 +707,7 @@ function change(oll_mex_status) {
 
                         }
 
-                        if (status==5){
+                        if (status==5 || status==0){
                           var element1 = SVG.getElementsByClassName('Pzadvijka'+k+' left');
                           var element2 = SVG.getElementsByClassName('Pzadvijka'+k+' right');
                           $(element1).removeAttr("style");//закрыто
