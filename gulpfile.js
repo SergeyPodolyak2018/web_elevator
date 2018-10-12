@@ -115,8 +115,14 @@ gulp.task('copyFonts', function () {
 });
 
 gulp.task('copyImg', function () {
-    gulp.src('./control/static/img/*')
+    gulp.src('./control/static/img/*.png')
         .pipe(gulp.dest('./build/control/static/img'));
+});
+
+gulp.task('copySVG', function () {
+    gulp.src('./control/static/img/*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('./build/control/static/img'));
 });
 
 // gulp.task('copyImgProj', function () {
@@ -171,7 +177,7 @@ gulp.task('copyStart', function () {
 });
 
 gulp.task('buildStart', gulpSequence('copyStart'));
-gulp.task('buildControl', gulpSequence('converter','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copyImgProj','copyFav'));
+gulp.task('buildControl', gulpSequence('converter','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
 gulp.task('build', gulpSequence('cleanFolder', 'create','minifyHtmlMain','copyFavMain','buildStart','buildControl'));
 
 
