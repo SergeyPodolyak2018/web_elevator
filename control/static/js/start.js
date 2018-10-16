@@ -189,8 +189,12 @@ $(window).load(function () {
 
         //Функция зумирования
          initialize();     
+        //Подготовка форм
+        prepareFormInputs();
 
 		hidePreloader ();
+
+
 
 });
 

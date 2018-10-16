@@ -322,48 +322,50 @@ function settings_equipment_open(p1,p2,p3,index,type){
 
 }
 
-$('.checkable_data_form').bind("change keyup input click blur ", function() {
-    if (this.value.match(/[^0-9]/g)) {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    }   
-    
-});
-$('.checkable_data_form').bind("blur", function() {    
-    if (this.value == '') {
-        this.value = '0';
-    }    
-});
 
-$('.adres_getable').hover(function() {
+function prepareFormInputs(){
+    $('.checkable_data_form').bind("change keyup input click blur ", function() {
+        if (this.value.match(/[^0-9]/g)) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        }   
+        
+    });
+    $('.checkable_data_form').bind("blur", function() {    
+        if (this.value == '') {
+            this.value = '0';
+        }    
+    });
 
-    var abstrackt_value=$(this).val();
-    if(abstrackt_value>=8){
-    var a=Math.floor(abstrackt_value/8);
+    $('.adres_getable').hover(function() {
 
-    var b=abstrackt_value%8;
+        var abstrackt_value=$(this).val();
+        if(abstrackt_value>=8){
+        var a=Math.floor(abstrackt_value/8);
 
-    $(this).attr('title',"I"+a+'.'+b);
-    }else{
-        $(this).attr('title',"Канал датчика");
-    }
-    
+        var b=abstrackt_value%8;
 
-    
-});
-$('.adres_getable_Q').hover(function() {
-    var abstrackt_value=$(this).val();
-    if(abstrackt_value>=8){
-    var a=Math.floor(abstrackt_value/8);
+        $(this).attr('title',"I"+a+'.'+b);
+        }else{
+            $(this).attr('title',"Канал датчика");
+        }
+        
 
-    var b=abstrackt_value%8;
+        
+    });
+    $('.adres_getable_Q').hover(function() {
+        var abstrackt_value=$(this).val();
+        if(abstrackt_value>=8){
+        var a=Math.floor(abstrackt_value/8);
 
-    $(this).attr('title',"Q"+a+'.'+b);
-    }else{
-        $(this).attr('title',"Канал выхода");
-    }
-});
+        var b=abstrackt_value%8;
 
+        $(this).attr('title',"Q"+a+'.'+b);
+        }else{
+            $(this).attr('title',"Канал выхода");
+        }
+    });
 
+}
 
 
 

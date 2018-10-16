@@ -105,7 +105,7 @@ gulp.task('copyJsFolders', function () {
 
 //сжатие файлов js
 gulp.task('compressJs', function () {
-  return gulp.src("./control/static/js/*.js")
+  return gulp.src(["./control/static/js/bundle.js","./control/static/js/worker*(2|3|4).js"])
         .pipe(uglify(/* options */))
         .pipe(gulp.dest("./build/control/static/js"));
 });
@@ -179,11 +179,15 @@ gulp.task('converter', () => {
     .pipe(gulp.dest('./control/static/imgOfProject'));
 });
 
-
-
+//конкатенация js файлов кроме тех что указаны в регулярке
+gulp.task('concatJs', function() {
+  return gulp.src('./control/static/js/!(worker|worker2|worker3|worker4|bundle).js')
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('./control/static/js'));
+});
 
 gulp.task('buildStart', gulpSequence('copyStart'));
-gulp.task('buildControl', gulpSequence('converter','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
+gulp.task('buildControl', gulpSequence('converter','concatJs','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
 gulp.task('build', gulpSequence('cleanFolder', 'create','minifyHtmlMain','copyFavMain','buildStart','buildControl'));
 
 
