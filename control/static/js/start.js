@@ -15,6 +15,9 @@ var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
 
+
+
+
 //Function thet hide status of user
 function statusOfuser(user){
 	var userSatus=user;
@@ -395,80 +398,8 @@ function setEventOnElement(userType){
 	}
 
 
-//function open equipment dialog
-/*
-		$( function() {
-		                 $( "#menu" ).dialog({
-		                      autoOpen: false,
-		                      resizable: false,
-		                      height: "auto",
-		                      width: "auto",
-		                      show: {
-		                        effect: "blind",
-		                        duration: 0
-		                      },
-		                      hide: {
-		                        effect: "blind",
-		                        duration: 0
-		                      },
-		                      close: function() {
 
 
-		                      },
-		                      open: function() {
-
-		                      }
-		                    });
-
-		     });
-
-*/
-
-//отображение даты
-     function date() {
-         var d = new Date();
-         var yyyy = d.getFullYear().toString();
-         var mm = (d.getMonth()+1);
-         if(mm<10){
-         mm= '0'+mm.toString();
-         }else{
-         mm= mm.toString();
-         }
-         var dd  = d.getDate();
-         if(dd<10){
-         dd= '0'+dd.toString();
-         }else{
-         dd= dd.toString();
-         }
-
-         var full_date = yyyy +"."+mm+"."+dd;
-         return full_date
-     }
-
-//отображение текущего времени
-     function time() {
-         var d = new Date();
-         var hh = d.getHours();
-         if(hh<10){
-          hh= '0'+hh.toString();
-         }else{
-          hh= hh.toString();
-         }
-         var mm = d.getMinutes(); // getMonth() is zero-based
-         if(mm<10){
-          mm= '0'+mm.toString();
-         }else{
-          mm= mm.toString();
-         }
-         var ss  = d.getSeconds().toString();
-         if(ss<10){
-          ss= '0'+ss.toString();
-         }else{
-          ss= ss.toString();
-         }
-         var full_time = hh+":"+mm+":"+ss;
-         return full_time
-     }
 
 
 
