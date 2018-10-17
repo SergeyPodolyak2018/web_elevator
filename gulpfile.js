@@ -187,7 +187,8 @@ gulp.task('concatJs', function() {
 });
 
 gulp.task('buildStart', gulpSequence('copyStart'));
-gulp.task('buildControl', gulpSequence('converter','concatJs','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
+// gulp.task('buildControl', gulpSequence('converter','concatJs','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
+gulp.task('buildControl', gulpSequence('concatJs','less','minifyHtml','minifyCss','copyJsFolders','compressJs','copyAud','copyFonts','copyImg','copySVG','copyImgProj','copyFav'));
 gulp.task('build', gulpSequence('cleanFolder', 'create','minifyHtmlMain','copyFavMain','buildStart','buildControl'));
 
 

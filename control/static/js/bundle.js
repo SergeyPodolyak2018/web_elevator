@@ -13851,6 +13851,64 @@ initialization();
 
 
 
+//Main parent class for all devices
+
+class Mechanism{
+	constructor(id,name,node){
+    	this._nodSvg=node;
+    	this._name = name;
+		this._id=id;
+    	this._select=node.getElementsByClassName('select')[0];
+    	this._setName();
+  	}
+	// _setId(){
+		
+	// 	this._setName();
+	// }
+	_setName(){		
+		this._nameShort=menu_header_text[this._id].shortName;
+		this._nameLong=menu_header_text[this._id].longName;
+		this._setHover();
+
+	}
+	_setSelect(){
+
+	}
+	_setSettings(){
+
+	}
+	_setHover(){
+		console.log('расстановка событий');
+		this._nodSvg.addEventListener("mouseover", function( event ) {
+			console.log('мыш внутри');
+			console.log(this);
+	    	this._select.style.cssText='stroke-width: 100px; stroke:#f5ed00';
+	    	title_svg.innerHTML=this._nameLong;
+		    // setTimeout(function() {
+		    //   event.target.style.color = "";
+		    // }, 500);
+	  	}.bind(this), false);
+
+		this._nodSvg.addEventListener("mouseout", function( event ) {
+			console.log('мыш вышла');
+			this._select.removeAttribute("style");
+			title_svg.innerHTML='';
+			// setTimeout(function() {
+			//   event.target.style.color = "";
+			// }, 500);
+		}.bind(this), false);
+
+
+	}
+	_setClick(){
+
+	}
+
+		
+
+
+
+}
 function open_plc_alarm(){
 	console.log('open_plc_alarm()');
 	document.getElementById('alarm_plc_connection').style.display = 'block';
@@ -15738,7 +15796,7 @@ $('.modal_box').click(function () {
 var global_start_function=0;
 var сurrent_grafic=0;   
 var header_menu={};                              //global variable to manipulate header menu
-var title_dsfvasdc;                           // tool tip on the object
+var title_svg;                           // tool tip on the object
 var link_global_object;                       //object with oll lines 
 var global_object_status={};                  //object of staus of all elements
 var global_object_status_analog={};           //status fo anlog sensors
@@ -15749,6 +15807,10 @@ var global_kylt_from_server_formated={};      //formated list of kylt to use in 
 var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,'silos':14,'dryer':16,'separator':17,'gate':18,'vent':6,'tube':7,'car':15,'enable':19,'zadvijkaGroup':23,'current':100,'kylt':101, 'analog_dat':102};//существующие типы элементов
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
+var main_object_with_mechanisms={};
+
+
+
 
 //Function thet hide status of user
 function statusOfuser(user){
@@ -15899,7 +15961,7 @@ $(window).load(function () {
 
                 
                 //заполнение переменных
-                title_dsfvasdc=svgdom.getElementsByClassName("title_very_dificult");
+                title_svg=svgdom.getElementsByClassName("title_very_dificult")[0];
                 link_global_object=$(svgdom.getElementsByClassName("line"));
             }
 
@@ -15915,7 +15977,7 @@ $(window).load(function () {
          inicializePreventDefoult();
 
         //Asck user status and inicialithe elements
-		asckerStatusOfUser();
+		// asckerStatusOfUser();
 		
 		//Функция перетаскивания------------------------------
          // $( ".draggable" ).draggable({distance: 15});//
@@ -15944,7 +16006,11 @@ function get_name_for_oll_devaces(){
                 if(result!=404){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
+
+                    asckerStatusOfUser();
                 }
+
+
             }
             });
     }
@@ -16014,31 +16080,38 @@ function setEventOnElement(userType){
                 //механизмы
                 ////////////////////////////////////////////////////////////////////////
                 for (let i in element_type_number){
-
+                    let tempObjContainer =svgdom.getElementsByClassName(""+i);
+                    console.log(tempObjContainer);
                     if (i!='current'& i!='kylt'& i!='analog_dat'){
+                        for (var t = 0; t < tempObjContainer.length; t++) {
+                            console.log(t);
+                            let tempName=tempObjContainer[t].getAttribute("class").split(' ')[1];
+                            let tempId=parseInt(tempName.match(/-*[0-9]+/));
+                            main_object_with_mechanisms[tempId]=new Mechanism(tempId,tempName,tempObjContainer[t]);
+                        }
                         //Подсветка линий
-                        $(svgdom.getElementsByClassName(""+i)).hover(
-                            function () {
-                            setTimeout($.proxy(function(){
-                                 var element_name = ($(this).attr('class').split(' ')[1]);
-                                 if (parseInt(element_name.match(/-*[0-9]+/)) in menu_header_text){
-                                 let temp_text=menu_header_text[parseInt(element_name.match(/-*[0-9]+/))].longName;
-                                    $(title_dsfvasdc).text(temp_text);
-                                    }
+                        // $(svgdom.getElementsByClassName(""+i)).hover(
+                        //     function () {
+                        //     setTimeout($.proxy(function(){
+                        //          var element_name = ($(this).attr('class').split(' ')[1]);
+                        //          if (parseInt(element_name.match(/-*[0-9]+/)) in menu_header_text){
+                        //          let temp_text=menu_header_text[parseInt(element_name.match(/-*[0-9]+/))].longName;
+                        //             $(title_svg).text(temp_text);
+                        //             }
 
-                                $('.'+element_name+'select',svgdom).css({
-                                    'stroke-width': '100px',
-                                    'stroke':'#f5ed00'
-                                });
-                            }, this), 0)},
-                            function () {
-                                setTimeout($.proxy(function( ){
-                                    var element_name =($(this).attr('class').split(' ')[1]);
-                                    //$('.'+element_name+'select',svgdom).css('stroke-width', '5px');
-                                    $('.'+element_name+'select',svgdom).removeAttr("style");
-                                    $(title_dsfvasdc).text('');
-                                 }, this), 0)}
-                        );
+                        //         $('.'+element_name+'select',svgdom).css({
+                        //             'stroke-width': '100px',
+                        //             'stroke':'#f5ed00'
+                        //         });
+                        //     }, this), 0)},
+                        //     function () {
+                        //         setTimeout($.proxy(function( ){
+                        //             var element_name =($(this).attr('class').split(' ')[1]);
+                                    
+                        //             $('.'+element_name+'select',svgdom).removeAttr("style");
+                        //             $(title_svg).text('');
+                        //          }, this), 0)}
+                        // );
 
                         //Клик на устройствах
                        $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
@@ -16100,7 +16173,8 @@ function setEventOnElement(userType){
                         }
                     }
                 }
-          }
+                console.log(main_object_with_mechanisms);
+        }
     }
 	
 
@@ -16130,80 +16204,8 @@ function setEventOnElement(userType){
 	}
 
 
-//function open equipment dialog
-/*
-		$( function() {
-		                 $( "#menu" ).dialog({
-		                      autoOpen: false,
-		                      resizable: false,
-		                      height: "auto",
-		                      width: "auto",
-		                      show: {
-		                        effect: "blind",
-		                        duration: 0
-		                      },
-		                      hide: {
-		                        effect: "blind",
-		                        duration: 0
-		                      },
-		                      close: function() {
 
 
-		                      },
-		                      open: function() {
-
-		                      }
-		                    });
-
-		     });
-
-*/
-
-//отображение даты
-     function date() {
-         var d = new Date();
-         var yyyy = d.getFullYear().toString();
-         var mm = (d.getMonth()+1);
-         if(mm<10){
-         mm= '0'+mm.toString();
-         }else{
-         mm= mm.toString();
-         }
-         var dd  = d.getDate();
-         if(dd<10){
-         dd= '0'+dd.toString();
-         }else{
-         dd= dd.toString();
-         }
-
-         var full_date = yyyy +"."+mm+"."+dd;
-         return full_date
-     }
-
-//отображение текущего времени
-     function time() {
-         var d = new Date();
-         var hh = d.getHours();
-         if(hh<10){
-          hh= '0'+hh.toString();
-         }else{
-          hh= hh.toString();
-         }
-         var mm = d.getMinutes(); // getMonth() is zero-based
-         if(mm<10){
-          mm= '0'+mm.toString();
-         }else{
-          mm= mm.toString();
-         }
-         var ss  = d.getSeconds().toString();
-         if(ss<10){
-          ss= '0'+ss.toString();
-         }else{
-          ss= ss.toString();
-         }
-         var full_time = hh+":"+mm+":"+ss;
-         return full_time
-     }
 
 
 

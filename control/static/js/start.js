@@ -3,7 +3,7 @@
 var global_start_function=0;
 var сurrent_grafic=0;   
 var header_menu={};                              //global variable to manipulate header menu
-var title_dsfvasdc;                           // tool tip on the object
+var title_svg;                           // tool tip on the object
 var link_global_object;                       //object with oll lines 
 var global_object_status={};                  //object of staus of all elements
 var global_object_status_analog={};           //status fo anlog sensors
@@ -14,6 +14,7 @@ var global_kylt_from_server_formated={};      //formated list of kylt to use in 
 var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,'silos':14,'dryer':16,'separator':17,'gate':18,'vent':6,'tube':7,'car':15,'enable':19,'zadvijkaGroup':23,'current':100,'kylt':101, 'analog_dat':102};//существующие типы элементов
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
+var main_object_with_mechanisms={};
 
 
 
@@ -167,7 +168,7 @@ $(window).load(function () {
 
                 
                 //заполнение переменных
-                title_dsfvasdc=svgdom.getElementsByClassName("title_very_dificult");
+                title_svg=svgdom.getElementsByClassName("title_very_dificult")[0];
                 link_global_object=$(svgdom.getElementsByClassName("line"));
             }
 
@@ -183,7 +184,7 @@ $(window).load(function () {
          inicializePreventDefoult();
 
         //Asck user status and inicialithe elements
-		asckerStatusOfUser();
+		// asckerStatusOfUser();
 		
 		//Функция перетаскивания------------------------------
          // $( ".draggable" ).draggable({distance: 15});//
@@ -212,7 +213,11 @@ function get_name_for_oll_devaces(){
                 if(result!=404){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
+
+                    asckerStatusOfUser();
                 }
+
+
             }
             });
     }
@@ -282,31 +287,38 @@ function setEventOnElement(userType){
                 //механизмы
                 ////////////////////////////////////////////////////////////////////////
                 for (let i in element_type_number){
-
+                    let tempObjContainer =svgdom.getElementsByClassName(""+i);
+                    console.log(tempObjContainer);
                     if (i!='current'& i!='kylt'& i!='analog_dat'){
+                        for (var t = 0; t < tempObjContainer.length; t++) {
+                            console.log(t);
+                            let tempName=tempObjContainer[t].getAttribute("class").split(' ')[1];
+                            let tempId=parseInt(tempName.match(/-*[0-9]+/));
+                            main_object_with_mechanisms[tempId]=new Mechanism(tempId,tempName,tempObjContainer[t]);
+                        }
                         //Подсветка линий
-                        $(svgdom.getElementsByClassName(""+i)).hover(
-                            function () {
-                            setTimeout($.proxy(function(){
-                                 var element_name = ($(this).attr('class').split(' ')[1]);
-                                 if (parseInt(element_name.match(/-*[0-9]+/)) in menu_header_text){
-                                 let temp_text=menu_header_text[parseInt(element_name.match(/-*[0-9]+/))].longName;
-                                    $(title_dsfvasdc).text(temp_text);
-                                    }
+                        // $(svgdom.getElementsByClassName(""+i)).hover(
+                        //     function () {
+                        //     setTimeout($.proxy(function(){
+                        //          var element_name = ($(this).attr('class').split(' ')[1]);
+                        //          if (parseInt(element_name.match(/-*[0-9]+/)) in menu_header_text){
+                        //          let temp_text=menu_header_text[parseInt(element_name.match(/-*[0-9]+/))].longName;
+                        //             $(title_svg).text(temp_text);
+                        //             }
 
-                                $('.'+element_name+'select',svgdom).css({
-                                    'stroke-width': '100px',
-                                    'stroke':'#f5ed00'
-                                });
-                            }, this), 0)},
-                            function () {
-                                setTimeout($.proxy(function( ){
-                                    var element_name =($(this).attr('class').split(' ')[1]);
-                                    //$('.'+element_name+'select',svgdom).css('stroke-width', '5px');
-                                    $('.'+element_name+'select',svgdom).removeAttr("style");
-                                    $(title_dsfvasdc).text('');
-                                 }, this), 0)}
-                        );
+                        //         $('.'+element_name+'select',svgdom).css({
+                        //             'stroke-width': '100px',
+                        //             'stroke':'#f5ed00'
+                        //         });
+                        //     }, this), 0)},
+                        //     function () {
+                        //         setTimeout($.proxy(function( ){
+                        //             var element_name =($(this).attr('class').split(' ')[1]);
+                                    
+                        //             $('.'+element_name+'select',svgdom).removeAttr("style");
+                        //             $(title_svg).text('');
+                        //          }, this), 0)}
+                        // );
 
                         //Клик на устройствах
                        $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
@@ -368,7 +380,8 @@ function setEventOnElement(userType){
                         }
                     }
                 }
-          }
+                console.log(main_object_with_mechanisms);
+        }
     }
 	
 
