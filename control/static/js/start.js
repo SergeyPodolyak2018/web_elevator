@@ -15,6 +15,10 @@ var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
 var main_object_with_mechanisms={};
+var indexDeviceFooter=document.getElementById('Name_devise');
+var nameDeviceFooter=document.getElementById('footer_help');
+                            
+
 
 
 
@@ -288,13 +292,18 @@ function setEventOnElement(userType){
                 ////////////////////////////////////////////////////////////////////////
                 for (let i in element_type_number){
                     let tempObjContainer =svgdom.getElementsByClassName(""+i);
-                    console.log(tempObjContainer);
+                    
+
+
+
+
+
                     if (i!='current'& i!='kylt'& i!='analog_dat'){
                         for (var t = 0; t < tempObjContainer.length; t++) {
-                            console.log(t);
+                           
                             let tempName=tempObjContainer[t].getAttribute("class").split(' ')[1];
                             let tempId=parseInt(tempName.match(/-*[0-9]+/));
-                            main_object_with_mechanisms[tempId]=new Mechanism(tempId,tempName,tempObjContainer[t]);
+                            main_object_with_mechanisms[tempId]=new Noriya(tempId,tempName,tempObjContainer[t]);
                         }
                         //Подсветка линий
                         // $(svgdom.getElementsByClassName(""+i)).hover(
@@ -321,52 +330,52 @@ function setEventOnElement(userType){
                         // );
 
                         //Клик на устройствах
-                       $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
-                            var element_name =($(this).attr('class').split(' ')[1]);
-                            var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                            $("#Name_devise").text(elementIndex);
-                            $("#footer_help").text(menu_header_text[elementIndex].longName);
-                       });
+                       // $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
+                       //      var element_name =($(this).attr('class').split(' ')[1]);
+                       //      var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                       //      $("#Name_devise").text(elementIndex);
+                       //      $("#footer_help").text(menu_header_text[elementIndex].longName);
+                       // });
                        
 
                         //Диалог запуска устройства
-                        if (userType==1 || userType==2 || userType==3){
-                            //this pease of shet is only fore safary and ipad
-                            console.log(navigator.userAgent);
-                            if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-                                $(svgdom.getElementsByClassName(""+i)).on('touchend', function (e){                                
-                                    clearTimeout(pressTimerForeHoldOnIpadOreIphone);
-                                }).on('touchstart', function (e) {                               
-                                   let pisya=e;                               
-                                   // Set timeout
-                                   pressTimerForeHoldOnIpadOreIphone = window.setTimeout(function() {Pisda(pisya);}, 1000)
-                               });
-                                    function Pisda(pisya){
-                                        console.log(pisya);                                    
-                                            console.log(pisya.currentTarget.className.animVal)
-                                            var element_name =(pisya.currentTarget.className.animVal.split(' ')[1]);
-                                            var temp_string_name=element_name.match(/-*[a-z]+/i);
-                                            var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                                            $("#Name_devise").text(elementIndex);
-                                            $("#footer_help").text(menu_header_text[elementIndex].longName);
-                                            menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,pisya.originalEvent.changedTouches[0].clientX,pisya.originalEvent.changedTouches[0].clientY);
-                                    }
-                            }else{
-                                //This fore normal devices not fore ipad
-                                $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){
-                                    e.stopPropagation();
-                                    console.log(($(this).attr('class').split(' ')))
-                                    var element_name =($(this).attr('class').split(' ')[1]);
-                                    var temp_string_name=element_name.match(/-*[a-z]+/i);
-                                    var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                                    $("#Name_devise").text(elementIndex);
-                                    $("#footer_help").text(menu_header_text[elementIndex].longName);
-                                    menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,e.clientX,e.clientY);
-                                    return false;
-                                });
+                     //    if (userType==1 || userType==2 || userType==3){
+                     //        //this pease of shet is only fore safary and ipad
+                     //        console.log(navigator.userAgent);
+                     //        if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+                     //            $(svgdom.getElementsByClassName(""+i)).on('touchend', function (e){                                
+                     //                clearTimeout(pressTimerForeHoldOnIpadOreIphone);
+                     //            }).on('touchstart', function (e) {                               
+                     //               let pisya=e;                               
+                                   
+                     //               pressTimerForeHoldOnIpadOreIphone = window.setTimeout(function() {Pisda(pisya);}, 1000)
+                     //           });
+                     //                function Pisda(pisya){
+                     //                    console.log(pisya);                                    
+                     //                        console.log(pisya.currentTarget.className.animVal)
+                     //                        var element_name =(pisya.currentTarget.className.animVal.split(' ')[1]);
+                     //                        var temp_string_name=element_name.match(/-*[a-z]+/i);
+                     //                        var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                     //                        $("#Name_devise").text(elementIndex);
+                     //                        $("#footer_help").text(menu_header_text[elementIndex].longName);
+                     //                        menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,pisya.originalEvent.changedTouches[0].clientX,pisya.originalEvent.changedTouches[0].clientY);
+                     //                }
+                     //        }else{
+                     //            //This fore normal devices not fore ipad
+                     //            $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){
+                     //                e.stopPropagation();
+                     //                console.log(($(this).attr('class').split(' ')))
+                     //                var element_name =($(this).attr('class').split(' ')[1]);
+                     //                var temp_string_name=element_name.match(/-*[a-z]+/i);
+                     //                var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                     //                $("#Name_devise").text(elementIndex);
+                     //                $("#footer_help").text(menu_header_text[elementIndex].longName);
+                     //                menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,e.clientX,e.clientY);
+                     //                return false;
+                     //            });
 
-                            }
-                    	}
+                     //        }
+                    	// }
                     }else{
                     	if (userType==1){
 	                         $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){

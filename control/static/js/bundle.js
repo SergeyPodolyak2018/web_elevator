@@ -2665,6 +2665,121 @@ function start_ciclic(){
 function stop_ciclic(){
         	clearInterval(start_ask_сurrent_grafic);
 }
+function prepareForm(form){
+	$(form.getElementsByClassName('checkable_data_form')).bind("change keyup input click blur ", function() {
+
+	    if (this.value.match(/[^0-9]/g)) {
+	        this.value = this.value.replace(/[^0-9]/g, '');
+	    } 
+		if (this.value == '') {
+	        this.value = '0';
+	    }    
+    
+	});
+
+// 	$(form.getElementsByClassName('checkable_data_float')).bind("change keyup", function() {		
+// 	   if (this.value.match(/^[-]{0,1}[0-9]{1,3}([\.]{1}[0-9]{1,2}){0,1}$/)) {        	
+//         	this.style.backgroundColor = 'green';        
+//        }else{
+// 			this.value = this.value.replace(/[^0-9|\.|-]/gi, '');
+// 			this.style.backgroundColor = 'red';
+// 		}
+// 	});
+	
+
+	$(form.getElementsByClassName('adres_getable')).hover(function() {
+		
+	    var abstrackt_value=$(this).val();
+	    if(abstrackt_value>=8){
+	    var a=Math.floor(abstrackt_value/8);
+
+	    var b=abstrackt_value%8;
+
+	    $(this).attr('title',"I"+a+'.'+b);
+	    }else{
+	        $(this).attr('title',"Канал датчика");
+	    }
+	});
+	$(form.getElementsByClassName('adres_getable_Q')).hover(function() {
+	    var abstrackt_value=$(this).val();
+	    if(abstrackt_value>=8){
+	    var a=Math.floor(abstrackt_value/8);
+
+	    var b=abstrackt_value%8;
+
+	    $(this).attr('title',"Q"+a+'.'+b);
+	    }else{
+	        $(this).attr('title',"Канал выхода");
+	    }
+	});
+	
+	
+}
+
+
+function settings_open(response){
+	let prepareDataFromServer=JsonToformSettings(response.data);	
+	document.getElementById('container').appendChild(this.window_settings);	
+	$( this.window_settings).draggable({
+  		appendTo: "body"
+	});
+
+	if(this.window_settings.style.display == 'none'){
+		hidemenu();
+		this.window_settings.style.display = 'block';
+		this.window_settings.getElementsByClassName('fool_name_of_device')[0].innerHTML=this.name;
+		let objectContext=this;
+		//prepareForm(this.window_settings);
+
+		let myForm=this.window_settings.getElementsByTagName('form')[0];
+		console.log(prepareDataFromServer);
+
+		for (let i  in prepareDataFromServer) {
+            try {
+                myForm.elements[i].value =prepareDataFromServer[i];
+            } catch (err) {
+               	console.log(err);                
+           }
+      	}
+
+      	[...this.window_settings.getElementsByClassName('analog_settings_button')].forEach(function(item, i, arr) {			
+			item.onclick=function(e){analog_dat_settings_get.call(objectContext,e);};
+		});
+		[...this.window_settings.getElementsByClassName('btn-close')].forEach(function(item, i, arr) {
+			item.onclick= function(){objectContext.close_settings();};
+		});
+		[...this.window_settings.getElementsByClassName('btn-save')].forEach(function(item, i, arr) {
+			item.onclick= function(){objectContext.save_settings();};
+		});		
+		
+	}
+}
+
+function settings_close(){	
+	if(this.window_settings.style.display == 'block'){
+		this.window_settings.style.display = 'none';		
+		this.window_settings.parentNode.removeChild(this.window_settings);
+	}
+}
+
+
+
+function settings_save(){
+	    let form        = this.window_settings.getElementsByTagName('form')[0];	    
+	    let body        = JSON.stringify(formSettingsToJSON(form.elements));
+	    let url_string  = '/device_save_settings/?name='+this.name;
+	    let context =this;
+	    let callback = function(response){context.close_settings(response)};	    
+ 		post_data_to_server(url_string,body,callback,null);	    
+}
+
+function settings_get(){
+	    
+	    let url_string  = '/device_get_settings/?name='+this._id;
+	    let context =this;
+	    let callback = function(response){context.open_settings(response)};	    
+ 		get_data_to_server(url_string,callback,null);
+}
 /*!
  * jQuery JavaScript Library v1.12.4
  * http://jquery.com/
@@ -13858,17 +13973,16 @@ class Mechanism{
     	this._nodSvg=node;
     	this._name = name;
 		this._id=id;
-    	this._select=node.getElementsByClassName('select')[0];
+    	this._select=node.getElementsByClassName('select');
     	this._setName();
   	}
-	// _setId(){
-		
-	// 	this._setName();
-	// }
+	
 	_setName(){		
 		this._nameShort=menu_header_text[this._id].shortName;
 		this._nameLong=menu_header_text[this._id].longName;
 		this._setHover();
+		this._setClick();
+		this._setClickContext();
 
 	}
 	_setSelect(){
@@ -13878,37 +13992,48 @@ class Mechanism{
 
 	}
 	_setHover(){
-		console.log('расстановка событий');
 		this._nodSvg.addEventListener("mouseover", function( event ) {
-			console.log('мыш внутри');
-			console.log(this);
-	    	this._select.style.cssText='stroke-width: 100px; stroke:#f5ed00';
+			[...this._select].forEach(function(item, i, arr) {
+				item.style.cssText='stroke-width: 100px; stroke:#f5ed00';
+			});
 	    	title_svg.innerHTML=this._nameLong;
-		    // setTimeout(function() {
-		    //   event.target.style.color = "";
-		    // }, 500);
 	  	}.bind(this), false);
 
 		this._nodSvg.addEventListener("mouseout", function( event ) {
-			console.log('мыш вышла');
-			this._select.removeAttribute("style");
+			[...this._select].forEach(function(item, i, arr) {
+				item.removeAttribute("style");
+			});
 			title_svg.innerHTML='';
-			// setTimeout(function() {
-			//   event.target.style.color = "";
-			// }, 500);
 		}.bind(this), false);
-
-
 	}
 	_setClick(){
-
+		this._nodSvg.addEventListener("click", function( event ) {
+	    	nameDeviceFooter.innerText=this._nameLong;
+	    	indexDeviceFooter.innerText=this._id;
+	  	}.bind(this), false);
 	}
 
-		
-
-
-
+	_setClickContext(){
+		this._nodSvg.addEventListener("contextmenu", function( event ) {
+			nameDeviceFooter.innerText=this._nameLong;
+	    	indexDeviceFooter.innerText=this._id;
+	    	menu_kreator(this._id,this._nameShort,event.clientX,event.clientY);
+	  	}.bind(this), false);
+	}
 }
+
+class Noriya extends Mechanism{
+	constructor(id,name,node){
+    	super(id,name,node);
+    	this._setSettingsWindow();
+  	}
+  	_setSettingsWindow(){
+  		this._settingsWindow=document.getElementById('settings_noriya').cloneNode(true);
+  		prepareForm(this._settingsWindow);
+  	}
+}
+
+Noriya.prototype.getsettings = settings_get;
 function open_plc_alarm(){
 	console.log('open_plc_alarm()');
 	document.getElementById('alarm_plc_connection').style.display = 'block';
@@ -15808,6 +15933,10 @@ var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
 var main_object_with_mechanisms={};
+var indexDeviceFooter=document.getElementById('Name_devise');
+var nameDeviceFooter=document.getElementById('footer_help');
+                            
+
 
 
 
@@ -16081,13 +16210,18 @@ function setEventOnElement(userType){
                 ////////////////////////////////////////////////////////////////////////
                 for (let i in element_type_number){
                     let tempObjContainer =svgdom.getElementsByClassName(""+i);
-                    console.log(tempObjContainer);
+                    
+
+
+
+
+
                     if (i!='current'& i!='kylt'& i!='analog_dat'){
                         for (var t = 0; t < tempObjContainer.length; t++) {
-                            console.log(t);
+                           
                             let tempName=tempObjContainer[t].getAttribute("class").split(' ')[1];
                             let tempId=parseInt(tempName.match(/-*[0-9]+/));
-                            main_object_with_mechanisms[tempId]=new Mechanism(tempId,tempName,tempObjContainer[t]);
+                            main_object_with_mechanisms[tempId]=new Noriya(tempId,tempName,tempObjContainer[t]);
                         }
                         //Подсветка линий
                         // $(svgdom.getElementsByClassName(""+i)).hover(
@@ -16114,52 +16248,52 @@ function setEventOnElement(userType){
                         // );
 
                         //Клик на устройствах
-                       $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
-                            var element_name =($(this).attr('class').split(' ')[1]);
-                            var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                            $("#Name_devise").text(elementIndex);
-                            $("#footer_help").text(menu_header_text[elementIndex].longName);
-                       });
+                       // $(svgdom.getElementsByClassName(""+i)).on('click', function(e){
+                       //      var element_name =($(this).attr('class').split(' ')[1]);
+                       //      var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                       //      $("#Name_devise").text(elementIndex);
+                       //      $("#footer_help").text(menu_header_text[elementIndex].longName);
+                       // });
                        
 
                         //Диалог запуска устройства
-                        if (userType==1 || userType==2 || userType==3){
-                            //this pease of shet is only fore safary and ipad
-                            console.log(navigator.userAgent);
-                            if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-                                $(svgdom.getElementsByClassName(""+i)).on('touchend', function (e){                                
-                                    clearTimeout(pressTimerForeHoldOnIpadOreIphone);
-                                }).on('touchstart', function (e) {                               
-                                   let pisya=e;                               
-                                   // Set timeout
-                                   pressTimerForeHoldOnIpadOreIphone = window.setTimeout(function() {Pisda(pisya);}, 1000)
-                               });
-                                    function Pisda(pisya){
-                                        console.log(pisya);                                    
-                                            console.log(pisya.currentTarget.className.animVal)
-                                            var element_name =(pisya.currentTarget.className.animVal.split(' ')[1]);
-                                            var temp_string_name=element_name.match(/-*[a-z]+/i);
-                                            var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                                            $("#Name_devise").text(elementIndex);
-                                            $("#footer_help").text(menu_header_text[elementIndex].longName);
-                                            menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,pisya.originalEvent.changedTouches[0].clientX,pisya.originalEvent.changedTouches[0].clientY);
-                                    }
-                            }else{
-                                //This fore normal devices not fore ipad
-                                $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){
-                                    e.stopPropagation();
-                                    console.log(($(this).attr('class').split(' ')))
-                                    var element_name =($(this).attr('class').split(' ')[1]);
-                                    var temp_string_name=element_name.match(/-*[a-z]+/i);
-                                    var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
-                                    $("#Name_devise").text(elementIndex);
-                                    $("#footer_help").text(menu_header_text[elementIndex].longName);
-                                    menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,e.clientX,e.clientY);
-                                    return false;
-                                });
+                     //    if (userType==1 || userType==2 || userType==3){
+                     //        //this pease of shet is only fore safary and ipad
+                     //        console.log(navigator.userAgent);
+                     //        if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+                     //            $(svgdom.getElementsByClassName(""+i)).on('touchend', function (e){                                
+                     //                clearTimeout(pressTimerForeHoldOnIpadOreIphone);
+                     //            }).on('touchstart', function (e) {                               
+                     //               let pisya=e;                               
+                                   
+                     //               pressTimerForeHoldOnIpadOreIphone = window.setTimeout(function() {Pisda(pisya);}, 1000)
+                     //           });
+                     //                function Pisda(pisya){
+                     //                    console.log(pisya);                                    
+                     //                        console.log(pisya.currentTarget.className.animVal)
+                     //                        var element_name =(pisya.currentTarget.className.animVal.split(' ')[1]);
+                     //                        var temp_string_name=element_name.match(/-*[a-z]+/i);
+                     //                        var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                     //                        $("#Name_devise").text(elementIndex);
+                     //                        $("#footer_help").text(menu_header_text[elementIndex].longName);
+                     //                        menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,pisya.originalEvent.changedTouches[0].clientX,pisya.originalEvent.changedTouches[0].clientY);
+                     //                }
+                     //        }else{
+                     //            //This fore normal devices not fore ipad
+                     //            $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){
+                     //                e.stopPropagation();
+                     //                console.log(($(this).attr('class').split(' ')))
+                     //                var element_name =($(this).attr('class').split(' ')[1]);
+                     //                var temp_string_name=element_name.match(/-*[a-z]+/i);
+                     //                var elementIndex=parseInt(element_name.match(/-*[0-9]+/));
+                     //                $("#Name_devise").text(elementIndex);
+                     //                $("#footer_help").text(menu_header_text[elementIndex].longName);
+                     //                menu_kreator(parseInt(element_name.match(/-*[0-9]+/)),temp_string_name,e.clientX,e.clientY);
+                     //                return false;
+                     //            });
 
-                            }
-                    	}
+                     //        }
+                    	// }
                     }else{
                     	if (userType==1){
 	                         $(svgdom.getElementsByClassName(""+i)).on('contextmenu', function(e){
