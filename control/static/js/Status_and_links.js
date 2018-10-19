@@ -754,100 +754,100 @@ function change(oll_mex_status) {
                   }
                 
                 //console.log('Звонок состояние= '+oll_mex_status.bell);
-                if(oll_mex_status.bell >0){
+                // if(oll_mex_status.bell >0){
 
 
 
-                    if(oll_mex_status.bell ==1){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_blue);
-                        header_menu.hide_button(ring_flash);
-                        header_menu.show_button(ring_green);
-                        stopPlaySound();
+                //     if(oll_mex_status.bell ==1){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_blue);
+                //         header_menu.hide_button(ring_flash);
+                //         header_menu.show_button(ring_green);
+                //         stopPlaySound();
 
-                    }
-                    if(oll_mex_status.bell ==2){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_blue);
-                        header_menu.hide_button(ring_green);
-                        header_menu.show_button(ring_flash);
-                        startPlaySound();
+                //     }
+                //     if(oll_mex_status.bell ==2){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_blue);
+                //         header_menu.hide_button(ring_green);
+                //         header_menu.show_button(ring_flash);
+                //         startPlaySound();
 
-                    }
+                //     }
 
-                    if(oll_mex_status.bell ==4){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_flash);
-                        header_menu.hide_button(ring_green);
-                        header_menu.show_button(ring_blue);
-                        stopPlaySound();
-                    }
+                //     if(oll_mex_status.bell ==4){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_flash);
+                //         header_menu.hide_button(ring_green);
+                //         header_menu.show_button(ring_blue);
+                //         stopPlaySound();
+                //     }
 
 
-                }else{
-                    if(oll_mex_status.bell==0){                            
-                          header_menu.hide_button(ring_blue);
-                          header_menu.hide_button(ring_flash);
-                          header_menu.hide_button(ring_green);
-                          header_menu.show_button(ring_grey);
-                          stopPlaySound();
-                      }
-                }
+                // }else{
+                //     if(oll_mex_status.bell==0){                            
+                //           header_menu.hide_button(ring_blue);
+                //           header_menu.hide_button(ring_flash);
+                //           header_menu.hide_button(ring_green);
+                //           header_menu.show_button(ring_grey);
+                //           stopPlaySound();
+                //       }
+                // }
 
-                $("#Timer").text(oll_mex_status.timer);
-                $("#Date").text(oll_mex_status.date);
-                $("#Time").text(oll_mex_status.time);
-                //$("#footer_help").text(oll_mex_status.help); 
-                $("#footer_message").text(oll_mex_status.message);
-                $("#footer_login").text(oll_mex_status.login);
+                // $("#Timer").text(oll_mex_status.timer);
+                // $("#Date").text(oll_mex_status.date);
+                // $("#Time").text(oll_mex_status.time);
+                
+                // $("#footer_message").text(oll_mex_status.message);
+                // $("#footer_login").text(oll_mex_status.login);
 
-                switch(oll_mex_status.control){
-                    case 1:$("#footer_control").text('Наладка');
-                        break;
-                    case 2 :$("#footer_control").text('Управление');
-                        break;
-                    case 3 :$("#footer_control").text('Просмотр');
-                        break;
-                    default:
-                        //console.log( 'Мы надеемся, что и в вашем браузере все ок!' );
-                        break;
-                }
-                 switch(oll_mex_status.plc){
-                    case 0://$("#footer_plc_status").css('background-color','grey');
-                          document.getElementById('footer_plc_status').removeAttribute("style");
-                        break;
-                    case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
-                        break;
-                    case 2 ://$("#footer_plc_status").css('background-color','yellow');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:yellow; color:black';
-                        break;
-                    case 3 ://$("#footer_plc_status").css('background-color','red');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';                            
-                            open_plc_alarm();
-                        break;
-                    default:
-                        //$("#footer_plc_status").css('background-color','grey');
-                        break;
-                }
+                // switch(oll_mex_status.control){
+                //     case 1:$("#footer_control").text('Наладка');
+                //         break;
+                //     case 2 :$("#footer_control").text('Управление');
+                //         break;
+                //     case 3 :$("#footer_control").text('Просмотр');
+                //         break;
+                //     default:
+                        
+                //         break;
+                // }
+                //  switch(oll_mex_status.plc){
+                //     case 0:
+                //           document.getElementById('footer_plc_status').removeAttribute("style");
+                //         break;
+                //     case 1 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
+                //         break;
+                //     case 2 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:yellow; color:black';
+                //         break;
+                //     case 3 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';                            
+                //             open_plc_alarm();
+                //         break;
+                //     default:
+                        
+                //         break;
+                // }
 
                 //Окно текущих аварий
-                if (oll_mex_status.alarm > 0 && globalObjectSatusOfUser.getUserStatus!=3){
+                // if (oll_mex_status.alarm > 0 && globalObjectSatusOfUser.getUserStatus!=3){
 
-                     let logotip_object = document.getElementById('logotip');
-                     let logotip_object_content = logotip_object.contentDocument;
-                     let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
-                     $(logotip_object_content_line).css('fill', 'red');
-                    alarm();
-                }else{
-                    if (oll_mex_status.alarm == 0){
-                        let logotip_object = document.getElementById('logotip');
-                        let logotip_object_content = logotip_object.contentDocument;
-                        let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
-                        $(logotip_object_content_line).css('fill', '#FFED00');
+                //      let logotip_object = document.getElementById('logotip');
+                //      let logotip_object_content = logotip_object.contentDocument;
+                //      let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+                //      $(logotip_object_content_line).css('fill', 'red');
+                //     alarm();
+                // }else{
+                //     if (oll_mex_status.alarm == 0){
+                //         let logotip_object = document.getElementById('logotip');
+                //         let logotip_object_content = logotip_object.contentDocument;
+                //         let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+                //         $(logotip_object_content_line).css('fill', '#FFED00');
 
-                    }
-                }
+                //     }
+                // }
                 if(oll_mex_status.update > 0){
                   alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
                   location.reload(true);

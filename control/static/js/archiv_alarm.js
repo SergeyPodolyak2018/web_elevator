@@ -389,29 +389,6 @@ function archiv_device_close(){
 
 
 
-//текущие аварии
-
-//Функция которая создаст конструктор со счетчиком
-/*
-function makeFunctionCreator(){
-    var key=0;
-    var functionCreator=function(){
-        var counter=key+1;
-        var functionVithId=function(externalF,param){
-            externalF(param,counter);
-        }
-        functionVithId.getId=function(){return counter;}
-
-        return functionVithId;
-    }
-
-
-    return functionCreator;
-}
-//Создать конструктор
-var functionConstrutorWithInternalId=makeFunctionCreator();
-
-*/
 
 
 function alarm(){
@@ -443,7 +420,7 @@ function alarm(){
 
 
         		//повесить циклический запрос на сравнение колличества аварий                
-               global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);              
+               // global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);              
 
             },
             error: function (jqXHR, exception) {
@@ -456,6 +433,19 @@ function alarm(){
     }
 
 
+}
+
+function alarm_build(response){
+    let  message=response.data;
+    let    temp_string='';
+                for (var i  in message) {
+                    if (i!='quantity'){
+                        temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td style="text-align:center;">'+message[i].ack+'</td><td>'+'<div class="new_but-slim" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')">Квитировать</div>'+'</td></tr>';
+                    }
+                }
+                let div_menu = document.getElementById('table_alarm_message');
+                div_menu.innerHTML = temp_string;
+                $('#alarm_message').show();
 }
 
 //Функция квитирования аварии
@@ -474,7 +464,7 @@ $.ajax({
 
             	//clearInterval(global_alarm_quantity_function);
 
-            	table_alarm_message_rebild();
+            	// table_alarm_message_rebild();
 
             },
             error: function (jqXHR, exception) {
@@ -500,7 +490,8 @@ $.ajax({
 
                 //clearInterval(global_alarm_quantity_function);
 
-                table_alarm_message_rebild();
+                // table_alarm_message_rebild();
+                alarm_message_close();
 
             },
             error: function (jqXHR, exception) {
@@ -601,7 +592,7 @@ function table_alarm_message_rebild(){
 
 function alarm_message_close(){
                   //закончить циклический запрос
-                clearInterval(global_alarm_quantity_function);
+                // clearInterval(global_alarm_quantity_function);
         		$('#alarm_message').hide();
 
 }

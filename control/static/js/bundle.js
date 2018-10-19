@@ -1318,100 +1318,100 @@ function change(oll_mex_status) {
                   }
                 
                 //console.log('Звонок состояние= '+oll_mex_status.bell);
-                if(oll_mex_status.bell >0){
+                // if(oll_mex_status.bell >0){
 
 
 
-                    if(oll_mex_status.bell ==1){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_blue);
-                        header_menu.hide_button(ring_flash);
-                        header_menu.show_button(ring_green);
-                        stopPlaySound();
+                //     if(oll_mex_status.bell ==1){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_blue);
+                //         header_menu.hide_button(ring_flash);
+                //         header_menu.show_button(ring_green);
+                //         stopPlaySound();
 
-                    }
-                    if(oll_mex_status.bell ==2){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_blue);
-                        header_menu.hide_button(ring_green);
-                        header_menu.show_button(ring_flash);
-                        startPlaySound();
+                //     }
+                //     if(oll_mex_status.bell ==2){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_blue);
+                //         header_menu.hide_button(ring_green);
+                //         header_menu.show_button(ring_flash);
+                //         startPlaySound();
 
-                    }
+                //     }
 
-                    if(oll_mex_status.bell ==4){
-                        header_menu.hide_button(ring_grey);
-                        header_menu.hide_button(ring_flash);
-                        header_menu.hide_button(ring_green);
-                        header_menu.show_button(ring_blue);
-                        stopPlaySound();
-                    }
+                //     if(oll_mex_status.bell ==4){
+                //         header_menu.hide_button(ring_grey);
+                //         header_menu.hide_button(ring_flash);
+                //         header_menu.hide_button(ring_green);
+                //         header_menu.show_button(ring_blue);
+                //         stopPlaySound();
+                //     }
 
 
-                }else{
-                    if(oll_mex_status.bell==0){                            
-                          header_menu.hide_button(ring_blue);
-                          header_menu.hide_button(ring_flash);
-                          header_menu.hide_button(ring_green);
-                          header_menu.show_button(ring_grey);
-                          stopPlaySound();
-                      }
-                }
+                // }else{
+                //     if(oll_mex_status.bell==0){                            
+                //           header_menu.hide_button(ring_blue);
+                //           header_menu.hide_button(ring_flash);
+                //           header_menu.hide_button(ring_green);
+                //           header_menu.show_button(ring_grey);
+                //           stopPlaySound();
+                //       }
+                // }
 
-                $("#Timer").text(oll_mex_status.timer);
-                $("#Date").text(oll_mex_status.date);
-                $("#Time").text(oll_mex_status.time);
-                //$("#footer_help").text(oll_mex_status.help); 
-                $("#footer_message").text(oll_mex_status.message);
-                $("#footer_login").text(oll_mex_status.login);
+                // $("#Timer").text(oll_mex_status.timer);
+                // $("#Date").text(oll_mex_status.date);
+                // $("#Time").text(oll_mex_status.time);
+                
+                // $("#footer_message").text(oll_mex_status.message);
+                // $("#footer_login").text(oll_mex_status.login);
 
-                switch(oll_mex_status.control){
-                    case 1:$("#footer_control").text('Наладка');
-                        break;
-                    case 2 :$("#footer_control").text('Управление');
-                        break;
-                    case 3 :$("#footer_control").text('Просмотр');
-                        break;
-                    default:
-                        //console.log( 'Мы надеемся, что и в вашем браузере все ок!' );
-                        break;
-                }
-                 switch(oll_mex_status.plc){
-                    case 0://$("#footer_plc_status").css('background-color','grey');
-                          document.getElementById('footer_plc_status').removeAttribute("style");
-                        break;
-                    case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
-                        break;
-                    case 2 ://$("#footer_plc_status").css('background-color','yellow');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:yellow; color:black';
-                        break;
-                    case 3 ://$("#footer_plc_status").css('background-color','red');
-                            document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';                            
-                            open_plc_alarm();
-                        break;
-                    default:
-                        //$("#footer_plc_status").css('background-color','grey');
-                        break;
-                }
+                // switch(oll_mex_status.control){
+                //     case 1:$("#footer_control").text('Наладка');
+                //         break;
+                //     case 2 :$("#footer_control").text('Управление');
+                //         break;
+                //     case 3 :$("#footer_control").text('Просмотр');
+                //         break;
+                //     default:
+                        
+                //         break;
+                // }
+                //  switch(oll_mex_status.plc){
+                //     case 0:
+                //           document.getElementById('footer_plc_status').removeAttribute("style");
+                //         break;
+                //     case 1 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
+                //         break;
+                //     case 2 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:yellow; color:black';
+                //         break;
+                //     case 3 :
+                //             document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';                            
+                //             open_plc_alarm();
+                //         break;
+                //     default:
+                        
+                //         break;
+                // }
 
                 //Окно текущих аварий
-                if (oll_mex_status.alarm > 0 && globalObjectSatusOfUser.getUserStatus!=3){
+                // if (oll_mex_status.alarm > 0 && globalObjectSatusOfUser.getUserStatus!=3){
 
-                     let logotip_object = document.getElementById('logotip');
-                     let logotip_object_content = logotip_object.contentDocument;
-                     let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
-                     $(logotip_object_content_line).css('fill', 'red');
-                    alarm();
-                }else{
-                    if (oll_mex_status.alarm == 0){
-                        let logotip_object = document.getElementById('logotip');
-                        let logotip_object_content = logotip_object.contentDocument;
-                        let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
-                        $(logotip_object_content_line).css('fill', '#FFED00');
+                //      let logotip_object = document.getElementById('logotip');
+                //      let logotip_object_content = logotip_object.contentDocument;
+                //      let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+                //      $(logotip_object_content_line).css('fill', 'red');
+                //     alarm();
+                // }else{
+                //     if (oll_mex_status.alarm == 0){
+                //         let logotip_object = document.getElementById('logotip');
+                //         let logotip_object_content = logotip_object.contentDocument;
+                //         let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+                //         $(logotip_object_content_line).css('fill', '#FFED00');
 
-                    }
-                }
+                //     }
+                // }
                 if(oll_mex_status.update > 0){
                   alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
                   location.reload(true);
@@ -1977,29 +1977,6 @@ function archiv_device_close(){
 
 
 
-//текущие аварии
-
-//Функция которая создаст конструктор со счетчиком
-/*
-function makeFunctionCreator(){
-    var key=0;
-    var functionCreator=function(){
-        var counter=key+1;
-        var functionVithId=function(externalF,param){
-            externalF(param,counter);
-        }
-        functionVithId.getId=function(){return counter;}
-
-        return functionVithId;
-    }
-
-
-    return functionCreator;
-}
-//Создать конструктор
-var functionConstrutorWithInternalId=makeFunctionCreator();
-
-*/
 
 
 function alarm(){
@@ -2031,7 +2008,7 @@ function alarm(){
 
 
         		//повесить циклический запрос на сравнение колличества аварий                
-               global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);              
+               // global_alarm_quantity_function=setInterval(function() { alarm_quantity() }, 1000);              
 
             },
             error: function (jqXHR, exception) {
@@ -2044,6 +2021,19 @@ function alarm(){
     }
 
 
+}
+
+function alarm_build(response){
+    let  message=response.data;
+    let    temp_string='';
+                for (var i  in message) {
+                    if (i!='quantity'){
+                        temp_string=temp_string+'<tr style="background-color:'+message[i].color+'"><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].device+'</td><td>'+message[i].text+'</td><td style="text-align:center;">'+message[i].ack+'</td><td>'+'<div class="new_but-slim" onclick="alarm_confirmation(this,'+message[i].id+','+message[i].alarm+','+message[i].eqindex+')">Квитировать</div>'+'</td></tr>';
+                    }
+                }
+                let div_menu = document.getElementById('table_alarm_message');
+                div_menu.innerHTML = temp_string;
+                $('#alarm_message').show();
 }
 
 //Функция квитирования аварии
@@ -2062,7 +2052,7 @@ $.ajax({
 
             	//clearInterval(global_alarm_quantity_function);
 
-            	table_alarm_message_rebild();
+            	// table_alarm_message_rebild();
 
             },
             error: function (jqXHR, exception) {
@@ -2088,7 +2078,8 @@ $.ajax({
 
                 //clearInterval(global_alarm_quantity_function);
 
-                table_alarm_message_rebild();
+                // table_alarm_message_rebild();
+                alarm_message_close();
 
             },
             error: function (jqXHR, exception) {
@@ -2189,7 +2180,7 @@ function table_alarm_message_rebild(){
 
 function alarm_message_close(){
                   //закончить циклический запрос
-                clearInterval(global_alarm_quantity_function);
+                // clearInterval(global_alarm_quantity_function);
         		$('#alarm_message').hide();
 
 }
@@ -2664,6 +2655,115 @@ function start_ciclic(){
 //Остановить считывание
 function stop_ciclic(){
         	clearInterval(start_ask_сurrent_grafic);
+}
+
+
+function footerAndAlarmStatus(status){
+	$("#Timer").text(status.timer);
+    $("#Date").text(status.date);
+    $("#Time").text(status.time);
+    $("#footer_help").text(status.help); 
+    $("#footer_message").text(status.message);
+    $("#footer_name").text(status.name);
+    $("#footer_control").text(status.control);
+    
+    
+    switch(status.plc){
+        case 0://$("#footer_plc_status").css('background-color','grey');
+              document.getElementById('footer_plc_status').removeAttribute("style");
+            break;
+        case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
+                document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
+            break;
+        case 2 ://$("#footer_plc_status").css('background-color','yellow');
+                document.getElementById('footer_plc_status').style.cssText='background-color:yellow; color:black';
+            break;
+        case 3 ://$("#footer_plc_status").css('background-color','red');
+                document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';
+            break;
+        default:
+            //$("#footer_plc_status").css('background-color','grey');
+            break;
+    }
+    switch(status.drv){
+        case 0://$("#footer_plc_status").css('background-color','grey');
+              document.getElementById('footer_drv').removeAttribute("style");
+            break;
+        case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
+                document.getElementById('footer_drv').style.cssText='background-color:yellow; color:black';
+            break;
+        case 2 ://$("#footer_plc_status").css('background-color','yellow');
+                document.getElementById('footer_drv').style.cssText='background-color:#00ff00; color:black';
+            break;
+        case 3 ://$("#footer_plc_status").css('background-color','red');
+                document.getElementById('footer_drv').style.cssText='background-color:red; color:black';
+            break;
+        case 4 ://$("#footer_plc_status").css('background-color','red');
+                document.getElementById('footer_drv').style.cssText='background-color:red; color:black';
+            break;
+        case 5 ://$("#footer_plc_status").css('background-color','red');
+                document.getElementById('footer_drv').removeAttribute("style");
+            break;
+        case 6 ://$("#footer_plc_status").css('background-color','red');
+                document.getElementById('footer_drv').style.cssText='background-color:#31d4e0; color:black';
+            break;
+        default:
+            //$("#footer_plc_status").css('background-color','grey');
+            break;
+    }
+    //Окно текущих аварий
+    if (status.alarm > 0){
+    	let logotip_object = document.getElementById('logotip');
+    	let logotip_object_content = logotip_object.contentDocument;
+    	let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+    	$(logotip_object_content_line).css('fill', 'red');
+    	
+    }else{
+    	if (status.alarm == 0){
+    		let logotip_object = document.getElementById('logotip');
+    		let logotip_object_content = logotip_object.contentDocument;
+    		let logotip_object_content_line=logotip_object_content.getElementsByClassName('logotip');
+    		$(logotip_object_content_line).css('fill', '#FFED00');
+    	}
+    }
+
+    if(status.bell >0){
+
+                    if(status.bell ==1){
+                        header_menu.hide_button(ring_grey);
+                        header_menu.hide_button(ring_blue);
+                        header_menu.hide_button(ring_flash);
+                        header_menu.show_button(ring_green);
+                        stopPlaySound();
+
+                    }
+                    if(status.bell ==2){
+                        header_menu.hide_button(ring_grey);
+                        header_menu.hide_button(ring_blue);
+                        header_menu.hide_button(ring_green);
+                        header_menu.show_button(ring_flash);
+                        startPlaySound();
+
+                    }
+
+                    if(status.bell ==4){
+                        header_menu.hide_button(ring_grey);
+                        header_menu.hide_button(ring_flash);
+                        header_menu.hide_button(ring_green);
+                        header_menu.show_button(ring_blue);
+                        stopPlaySound();
+                    }
+
+
+                }else{
+                    if(status.bell==0){                            
+                          header_menu.hide_button(ring_blue);
+                          header_menu.hide_button(ring_flash);
+                          header_menu.hide_button(ring_green);
+                          header_menu.show_button(ring_grey);
+                          stopPlaySound();
+                      }
+                }
 }
 /*!
  * jQuery JavaScript Library v1.12.4
@@ -15769,6 +15869,8 @@ function statusOfuser(user){
             case 3:
             	setEventOnElement(userSatus);//set events
             	header_menu = new Header_menu(userSatus);//create header 
+
+                socketCloseListener();
                 break;
 		}
 	}
@@ -16222,6 +16324,60 @@ function setEventOnElement(userType){
 
 
 
+var socket;
+
+const socketMessageListener = (event) => {
+  console.log(event.data);
+  var newData=JSON.parse(event.data);
+  if(newData.identificator==="status"){	
+  		worker2.postMessage([global_object_status,newData.data]);
+	}
+	if(newData.identificator==="menu"){	  		
+        menu_kreator(newData);
+	}
+  if(newData.identificator==="update"){    
+    location.reload(true);
+  }
+  if(newData.identificator==="alarm"){     
+    alarm_build(newData);    
+  }
+  if(newData.identificator==="status_bar"){     
+    footerAndAlarmStatus(newData.data);    
+  }
+
+};
+
+const socketOpenListener = (event) => {
+  console.log('Connected');
+  //socket.send('hello');
+};
+
+const socketErrorListener = (event) => {
+  console.log('Error: ' + error.message);
+};
+
+const socketCloseListener = (event) => {
+  if (socket) {
+    console.error('Disconnected.');
+  }
+
+  if (window.location.protocol == 'https:')
+    socket = new WebSocket('wss://'+window.location.hostname+':25011');
+  else
+    socket = new WebSocket('ws://'+window.location.hostname+':25011');
+
+  socket.addEventListener('open', socketOpenListener);
+  socket.addEventListener('message', socketMessageListener);
+  socket.addEventListener('error', socketErrorListener);
+  socket.addEventListener('close', socketCloseListener);
+};
+
+//socketCloseListener();
+
+/*// for testing
+setTimeout(()=>{
+  socket.close();
+},5000);*/
 var start_ask_zadvijka=0;
 var temp_full_close=document.getElementById('zadvijka_kontrol_menu_button_full_close');
 temp_full_close.addEventListener('click', send_command_close_fully, false);

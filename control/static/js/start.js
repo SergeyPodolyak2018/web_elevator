@@ -34,6 +34,8 @@ function statusOfuser(user){
             case 3:
             	setEventOnElement(userSatus);//set events
             	header_menu = new Header_menu(userSatus);//create header 
+
+                socketCloseListener();
                 break;
 		}
 	}
