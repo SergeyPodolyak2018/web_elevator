@@ -48,6 +48,11 @@ class Mechanism{
 	  	}.bind(this), false);
 	}
 }
+Mechanism.prototype.getsettings = settings_get;
+Mechanism.prototype.open_settings  = settings_open;
+Mechanism.prototype.close_settings = settings_close;
+Mechanism.prototype.save_settings  = settings_save;
+
 
 class Noriya extends Mechanism{
 	constructor(id,name,node){
@@ -55,12 +60,16 @@ class Noriya extends Mechanism{
     	this._setSettingsWindow();
   	}
   	_setSettingsWindow(){
-  		this._settingsWindow=document.getElementById('settings_noriya').cloneNode(true);
+  		this.settingsWindow=document.getElementById('settings_noriya').cloneNode(true);
   		prepareForm(this._settingsWindow);
   	}
 }
 
-Noriya.prototype.getsettings = settings_get;
-Noriya.prototype.open_settings  = settings_open;
-Noriya.prototype.close_settings = settings_close;
-Noriya.prototype.save_settings  = settings_save;;
+// Noriya.prototype.getsettings = settings_get;
+// Noriya.prototype.open_settings  = settings_open;
+// Noriya.prototype.close_settings = settings_close;
+// Noriya.prototype.save_settings  = settings_save;
+
+
+
+// main_object_with_mechanisms[1]['getsettings']();

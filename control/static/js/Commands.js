@@ -34,7 +34,7 @@ function menu_kreator(device_index,device_string_type,posX,posY){
         if(device_index in menu_header_text){
           //$(".ui-dialog-title").text(menu_header_text[device_index].shortName);
           //new
-          objectMenuManager.setHeader(menu_header_text[device_index].shortName);
+          objectMenuManager.setHeader(device_string_type);
 
             $.ajax({
             url: url_string1,
@@ -52,7 +52,7 @@ function menu_kreator(device_index,device_string_type,posX,posY){
                             temp_string=temp_string+'<div class="button_menu"><div class="modal_box_btn" onclick="'+menu_struktura[i].function_name+'('+menu_struktura[i].command+',0,0,'+device_index+','+element_type_number[device_string_type]+')" style="color:'+menu_struktura[i].color+'!important">'+menu_struktura[i].name+'</div></div>';
                           }
                     }                  
-                    let div_menu = document.getElementById('menu');                    
+                    // let div_menu = document.getElementById('menu');                    
                     objectMenuManager.insertButtons(temp_string);
                     objectMenuManager.show(posX,posY);
                   }

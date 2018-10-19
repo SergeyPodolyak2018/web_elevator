@@ -2742,9 +2742,9 @@ function settings_open(response){
            }
       	}
 
-      	[...this.window_settings.getElementsByClassName('analog_settings_button')].forEach(function(item, i, arr) {			
-			item.onclick=function(e){analog_dat_settings_get.call(objectContext,e);};
-		});
+  //     	[...this.window_settings.getElementsByClassName('analog_settings_button')].forEach(function(item, i, arr) {			
+		// 	item.onclick=function(e){analog_dat_settings_get.call(objectContext,e);};
+		// });
 		[...this.window_settings.getElementsByClassName('btn-close')].forEach(function(item, i, arr) {
 			item.onclick= function(){objectContext.close_settings();};
 		});
@@ -2774,12 +2774,58 @@ function settings_save(){
 }
 
 function settings_get(){
-	    
-	    let url_string  = '/device_get_settings/?name='+this._id;
+	    let url_string  = '/device_get_settings/?index='+this._id;
 	    let context =this;
 	    let callback = function(response){context.open_settings(response)};	    
  		get_data_to_server(url_string,callback,null);
 }
+
+
+//Посылка данных серверу
+function get_data_to_server(qwery,callback,bufer) {    
+    var x = new XMLHttpRequest();
+    x.open("GET", qwery, true);
+    //Обработка статусов
+    x.onload = function (){
+        let responseText = x.responseText;        
+        let responseObject = JSON.parse(responseText);
+        console.log(responseObject);
+        if(responseObject.type==0){
+            if(callback){
+                callback({"data":responseObject.data,"bufer":bufer});
+            }
+        }else{            
+                showMessageFromServer({'type':responseObject.type,'message':responseObject.message,"bufer":bufer});
+            
+        }      
+    }
+    x.timeout = 3000;
+    x.send(null);
+}
+
+//Посылка данных серверу
+  function post_data_to_server(qwery,body,callback,bufer){    
+    console.log(body);
+    var x = new XMLHttpRequest();
+    x.open("POST", qwery, true);
+    x.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    //Обработка статусов
+    x.onload = function (){
+        let responseText = x.responseText;        
+        let responseObject = JSON.parse(responseText);
+        console.log(responseObject);
+        if(responseObject.type==0){
+            if(callback){
+                callback({"data":responseObject.data,"bufer":bufer});
+            }
+        }else{            
+                showMessageFromServer({'type':responseObject.type,'message':responseObject.message,"bufer":bufer});
+            
+        }      
+    }
+        x.timeout = 3000;
+        x.send(body);
+    }
 /*!
  * jQuery JavaScript Library v1.12.4
  * http://jquery.com/
@@ -13985,12 +14031,7 @@ class Mechanism{
 		this._setClickContext();
 
 	}
-	_setSelect(){
-
-	}
-	_setSettings(){
-
-	}
+	
 	_setHover(){
 		this._nodSvg.addEventListener("mouseover", function( event ) {
 			[...this._select].forEach(function(item, i, arr) {
@@ -14021,6 +14062,11 @@ class Mechanism{
 	  	}.bind(this), false);
 	}
 }
+Mechanism.prototype.getsettings = settings_get;
+Mechanism.prototype.open_settings  = settings_open;
+Mechanism.prototype.close_settings = settings_close;
+Mechanism.prototype.save_settings  = settings_save;
+
 
 class Noriya extends Mechanism{
 	constructor(id,name,node){
@@ -14028,12 +14074,15 @@ class Noriya extends Mechanism{
     	this._setSettingsWindow();
   	}
   	_setSettingsWindow(){
-  		this._settingsWindow=document.getElementById('settings_noriya').cloneNode(true);
+  		this.settingsWindow=document.getElementById('settings_noriya').cloneNode(true);
   		prepareForm(this._settingsWindow);
   	}
 }
 
-Noriya.prototype.getsettings = settings_get;
+// Noriya.prototype.getsettings = settings_get;
+// Noriya.prototype.open_settings  = settings_open;
+// Noriya.prototype.close_settings = settings_close;
+// Noriya.prototype.save_settings  = settings_save;
 function open_plc_alarm(){
 	console.log('open_plc_alarm()');
 	document.getElementById('alarm_plc_connection').style.display = 'block';

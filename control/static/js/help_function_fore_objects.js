@@ -52,19 +52,19 @@ function prepareForm(form){
 
 function settings_open(response){
 	let prepareDataFromServer=JsonToformSettings(response.data);	
-	document.getElementById('container').appendChild(this.window_settings);	
-	$( this.window_settings).draggable({
+	document.getElementById('container').appendChild(this.settingsWindow);	
+	$( this.settingsWindow).draggable({
   		appendTo: "body"
 	});
 
-	if(this.window_settings.style.display == 'none'){
+	if(this.settingsWindow.style.display == 'none'){
 		hidemenu();
-		this.window_settings.style.display = 'block';
-		this.window_settings.getElementsByClassName('fool_name_of_device')[0].innerHTML=this.name;
+		this.settingsWindow.style.display = 'block';
+		this.settingsWindow.getElementsByClassName('fool_name_of_device')[0].innerHTML=this.name;
 		let objectContext=this;
 		//prepareForm(this.window_settings);
 
-		let myForm=this.window_settings.getElementsByTagName('form')[0];
+		let myForm=this.settingsWindow.getElementsByTagName('form')[0];
 		console.log(prepareDataFromServer);
 
 		for (let i  in prepareDataFromServer) {
@@ -78,10 +78,10 @@ function settings_open(response){
   //     	[...this.window_settings.getElementsByClassName('analog_settings_button')].forEach(function(item, i, arr) {			
 		// 	item.onclick=function(e){analog_dat_settings_get.call(objectContext,e);};
 		// });
-		[...this.window_settings.getElementsByClassName('btn-close')].forEach(function(item, i, arr) {
+		[...this.settingsWindow.getElementsByClassName('btn-close')].forEach(function(item, i, arr) {
 			item.onclick= function(){objectContext.close_settings();};
 		});
-		[...this.window_settings.getElementsByClassName('btn-save')].forEach(function(item, i, arr) {
+		[...this.settingsWindow.getElementsByClassName('btn-save')].forEach(function(item, i, arr) {
 			item.onclick= function(){objectContext.save_settings();};
 		});		
 		
