@@ -167,7 +167,8 @@ function dat_status(number) {
                       $(indikator_datchiki).css('-webkit-box-shadow','0 0 25px #00FF00');
                     }else{
                       var indikator_datchiki = document.getElementById('dat'+k.substr(1)+'_status');
-                      $(indikator_datchiki).css('background','#E5E5E6');//серый
+                      // $(indikator_datchiki).css('background','#E5E5E6');//серый
+                      $(indikator_datchiki).removeAttr("style");//серый
                     }
 
                     if (dat_cont[k].remont == 1) {
@@ -191,7 +192,8 @@ function dat_status(number) {
                       $(indikator_control).css('background','#00FF00');//зеленый
                     }else{
                       var indikator_control = document.getElementById('control'+k.charAt(1));
-                      $(indikator_control).css('background','#E5E5E6');//серый
+                      // $(indikator_control).css('background','#E5E5E6');//серый
+                      $(indikator_control).removeAttr("style");//серый
                     }
                   }
                 }
@@ -1413,7 +1415,7 @@ function change(oll_mex_status) {
                 //     }
                 // }
                 if(oll_mex_status.update > 0){
-                  alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
+                  // alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
                   location.reload(true);
                 }
 
@@ -2662,10 +2664,10 @@ function footerAndAlarmStatus(status){
 	$("#Timer").text(status.timer);
     $("#Date").text(status.date);
     $("#Time").text(status.time);
-    $("#footer_help").text(status.help); 
     $("#footer_message").text(status.message);
-    $("#footer_name").text(status.name);
+    $("#footer_login").text(status.name);
     $("#footer_control").text(status.control);
+
     
     
     switch(status.plc){
@@ -2680,6 +2682,7 @@ function footerAndAlarmStatus(status){
             break;
         case 3 ://$("#footer_plc_status").css('background-color','red');
                 document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';
+                open_plc_alarm();
             break;
         default:
             //$("#footer_plc_status").css('background-color','grey');
@@ -15870,7 +15873,7 @@ function statusOfuser(user){
             	setEventOnElement(userSatus);//set events
             	header_menu = new Header_menu(userSatus);//create header 
 
-                socketCloseListener();
+                
                 break;
 		}
 	}
@@ -15902,17 +15905,17 @@ $(window).load(function () {
         worker.onmessage = function (event) {
             var temp=event.data;
             for (let i in temp){
-            global_object_status[i]=temp[i];
-        }        
+                global_object_status[i]=temp[i];
+            }        
         change(event.data);
         };
 
         // Создать новый объект worker2
-        var worker2 = new Worker('/static/js/worker2.js');
-        // Получить сообщение от работника
-        worker2.onmessage = function (event){
-            linck(event.data);
-        };
+        // var worker2 = new Worker('/static/js/worker2.js');
+        // // Получить сообщение от работника
+        // worker2.onmessage = function (event){
+        //     linck(event.data);
+        // };
 
    // Создать новый объект worker3
         var worker3 = new Worker('/static/js/worker3.js');
@@ -15981,10 +15984,10 @@ $(window).load(function () {
             )
             ////////////////////////////////////////////////////////////////////////////////////
           
-          setInterval(function() {worker.postMessage(global_object_status)}, 1000);//циклический вызов воркера для запроса состояния всех механизмов          
-          setInterval(function() {worker3.postMessage(global_object_status_analog)}, 1000);//циклический вызов воркера для запроса состояния аналоговых датчиков
-          setInterval(function() {worker4.postMessage(global_object_status_kylt)}, 1000);//циклический вызов воркера для запроса состояния меток культуры
-          setInterval(function() {worker2.postMessage(1)}, 1000); //циклический вызов воркера для запроса состояния линков
+          // setInterval(function() {worker.postMessage(global_object_status)}, 1000);//циклический вызов воркера для запроса состояния всех механизмов          
+          // setInterval(function() {worker3.postMessage(global_object_status_analog)}, 1000);//циклический вызов воркера для запроса состояния аналоговых датчиков
+          // setInterval(function() {worker4.postMessage(global_object_status_kylt)}, 1000);//циклический вызов воркера для запроса состояния меток культуры
+          // setInterval(function() {worker2.postMessage(1)}, 1000); //циклический вызов воркера для запроса состояния линков
           
         //Filling variables------------------------------------------------------------------------------------------
         $("body").on("contextmenu", false);
@@ -16031,6 +16034,9 @@ $(window).load(function () {
 
 		hidePreloader ();
 
+        socketCloseListener();
+
+
 
 
 });
@@ -16046,6 +16052,9 @@ function get_name_for_oll_devaces(){
                 if(result!=404){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
+
+                    //Задать интервал вызова функции опроса сервера на предмет определения состояния маршрутов
+                    setInterval(function() {get_route_statuses();}, 1000);
                 }
             }
             });
@@ -16329,9 +16338,23 @@ var socket;
 const socketMessageListener = (event) => {
   console.log(event.data);
   var newData=JSON.parse(event.data);
+  
   if(newData.identificator==="status"){	
-  		worker2.postMessage([global_object_status,newData.data]);
+  		worker.postMessage([global_object_status,newData.data]);
 	}
+
+  if(newData.identificator==="link"){ 
+      linck(newData.data);
+  }
+
+  if(newData.identificator==="status_analog"){ 
+      worker3.postMessage([global_object_status_analog,newData.data]);
+  }
+
+  if(newData.identificator==="status_kylt"){ 
+      worker4.postMessage([global_object_status_kylt,newData.data]);
+  }
+  
 	if(newData.identificator==="menu"){	  		
         menu_kreator(newData);
 	}

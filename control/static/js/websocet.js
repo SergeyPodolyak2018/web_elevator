@@ -3,9 +3,23 @@ var socket;
 const socketMessageListener = (event) => {
   console.log(event.data);
   var newData=JSON.parse(event.data);
+  
   if(newData.identificator==="status"){	
-  		worker2.postMessage([global_object_status,newData.data]);
+  		worker.postMessage([global_object_status,newData.data]);
 	}
+
+  if(newData.identificator==="link"){ 
+      linck(newData.data);
+  }
+
+  if(newData.identificator==="status_analog"){ 
+      worker3.postMessage([global_object_status_analog,newData.data]);
+  }
+
+  if(newData.identificator==="status_kylt"){ 
+      worker4.postMessage([global_object_status_kylt,newData.data]);
+  }
+  
 	if(newData.identificator==="menu"){	  		
         menu_kreator(newData);
 	}

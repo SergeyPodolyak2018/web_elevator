@@ -849,7 +849,7 @@ function change(oll_mex_status) {
                 //     }
                 // }
                 if(oll_mex_status.update > 0){
-                  alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
+                  // alert("Под вашим логином произведен вход!\n\r Страница будет перезагружена.");
                   location.reload(true);
                 }
 

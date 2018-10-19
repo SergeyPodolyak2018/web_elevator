@@ -35,7 +35,7 @@ function statusOfuser(user){
             	setEventOnElement(userSatus);//set events
             	header_menu = new Header_menu(userSatus);//create header 
 
-                socketCloseListener();
+                
                 break;
 		}
 	}
@@ -67,17 +67,17 @@ $(window).load(function () {
         worker.onmessage = function (event) {
             var temp=event.data;
             for (let i in temp){
-            global_object_status[i]=temp[i];
-        }        
+                global_object_status[i]=temp[i];
+            }        
         change(event.data);
         };
 
         // Создать новый объект worker2
-        var worker2 = new Worker('/static/js/worker2.js');
-        // Получить сообщение от работника
-        worker2.onmessage = function (event){
-            linck(event.data);
-        };
+        // var worker2 = new Worker('/static/js/worker2.js');
+        // // Получить сообщение от работника
+        // worker2.onmessage = function (event){
+        //     linck(event.data);
+        // };
 
    // Создать новый объект worker3
         var worker3 = new Worker('/static/js/worker3.js');
@@ -146,10 +146,10 @@ $(window).load(function () {
             )
             ////////////////////////////////////////////////////////////////////////////////////
           
-          setInterval(function() {worker.postMessage(global_object_status)}, 1000);//циклический вызов воркера для запроса состояния всех механизмов          
-          setInterval(function() {worker3.postMessage(global_object_status_analog)}, 1000);//циклический вызов воркера для запроса состояния аналоговых датчиков
-          setInterval(function() {worker4.postMessage(global_object_status_kylt)}, 1000);//циклический вызов воркера для запроса состояния меток культуры
-          setInterval(function() {worker2.postMessage(1)}, 1000); //циклический вызов воркера для запроса состояния линков
+          // setInterval(function() {worker.postMessage(global_object_status)}, 1000);//циклический вызов воркера для запроса состояния всех механизмов          
+          // setInterval(function() {worker3.postMessage(global_object_status_analog)}, 1000);//циклический вызов воркера для запроса состояния аналоговых датчиков
+          // setInterval(function() {worker4.postMessage(global_object_status_kylt)}, 1000);//циклический вызов воркера для запроса состояния меток культуры
+          // setInterval(function() {worker2.postMessage(1)}, 1000); //циклический вызов воркера для запроса состояния линков
           
         //Filling variables------------------------------------------------------------------------------------------
         $("body").on("contextmenu", false);
@@ -196,6 +196,9 @@ $(window).load(function () {
 
 		hidePreloader ();
 
+        socketCloseListener();
+
+
 
 
 });
@@ -211,6 +214,9 @@ function get_name_for_oll_devaces(){
                 if(result!=404){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
+
+                    //Задать интервал вызова функции опроса сервера на предмет определения состояния маршрутов
+                    setInterval(function() {get_route_statuses();}, 1000);
                 }
             }
             });

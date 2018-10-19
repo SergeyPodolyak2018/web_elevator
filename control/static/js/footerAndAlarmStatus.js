@@ -4,10 +4,10 @@ function footerAndAlarmStatus(status){
 	$("#Timer").text(status.timer);
     $("#Date").text(status.date);
     $("#Time").text(status.time);
-    $("#footer_help").text(status.help); 
     $("#footer_message").text(status.message);
-    $("#footer_name").text(status.name);
+    $("#footer_login").text(status.name);
     $("#footer_control").text(status.control);
+
     
     
     switch(status.plc){
@@ -22,6 +22,7 @@ function footerAndAlarmStatus(status){
             break;
         case 3 ://$("#footer_plc_status").css('background-color','red');
                 document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';
+                open_plc_alarm();
             break;
         default:
             //$("#footer_plc_status").css('background-color','grey');
