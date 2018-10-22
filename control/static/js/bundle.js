@@ -1595,7 +1595,7 @@ var quantityOfAlarm=0;
 //архив аварий-------------------------------------------------------------------------------------
 function archiv_alarm(){
     var number=0;
-	var url_string = '/alarm_arxiv/?index='+0+'&type_m='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/alarm_arxiv/?eqindex='+0+'&type_m='+0+'&date_s='+0+'&date_p='+0;
         $.ajax({
             url: url_string,
             data: {},
@@ -1606,8 +1606,8 @@ function archiv_alarm(){
             success: function( result ) {
 
                 hidemenu();
-                
-            	var  message=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+            	var  message=tempBufer.data
             	
             	var temp_string='';
             	for (var i  in message) {
@@ -1652,7 +1652,7 @@ function archiv_alarm_device(){
 
      var devise_name_complit=$("#Name_devise").text();
      var number = parseInt(devise_name_complit.match(/-*[0-9]+/));
-	var url_string = '/alarm_arxiv/?index='+number+'&type_m='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/alarm_arxiv/?eqindex='+number+'&type_m='+0+'&date_s='+0+'&date_p='+0;
         $.ajax({
             url: url_string,
             data: {},
@@ -1665,7 +1665,8 @@ function archiv_alarm_device(){
                 //$( "#menu").dialog( "close" );
                 objectMenuManager.hide();
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -1715,7 +1716,7 @@ function archiv_alarm_sort(number,type_m,selector_or_button){
     date_p=$('#datepicker_message2').val(); //значение календаря 2
     }
 
-	var url_string = '/alarm_arxiv/?index='+number+'&type_m='+type+'&date_s='+date_s+'&date_p='+date_p;
+	var url_string = '/alarm_arxiv/?eqindex='+number+'&type_m='+type+'&date_s='+date_s+'&date_p='+date_p;
 	
 
 	console.log(url_string);
@@ -1729,7 +1730,8 @@ function archiv_alarm_sort(number,type_m,selector_or_button){
             success: function( result ) {
 
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -1774,7 +1776,8 @@ function archiv_rout(){
 
                 hidemenu();
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -1813,7 +1816,8 @@ function archiv_rout_sort(){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -1847,7 +1851,7 @@ function archiv_rout_close(){
 //архив по всем устройствам
 function archiv_devices(){
 
-	var url_string = '/device_arxiv/?index='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/event_arxiv/?eqindex='+0+'&date_s='+0+'&date_p='+0;
 	console.log(url_string);
         $.ajax({
             url: url_string,
@@ -1860,12 +1864,13 @@ function archiv_devices(){
 
                 hidemenu();
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -1893,7 +1898,7 @@ function archiv_device(){
      objectMenuManager.hide();
      var devise_name_complit=$("#Name_devise").text();
      var number = parseInt(devise_name_complit.match(/-*[0-9]+/));
-	 var url_string = '/device_arxiv/?index='+number+'&date_s='+0+'&date_p='+0;
+	 var url_string = '/event_arxiv/?eqindex='+number+'&date_s='+0+'&date_p='+0;
 
 	console.log(url_string);
         $.ajax({
@@ -1906,12 +1911,13 @@ function archiv_device(){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -1936,7 +1942,7 @@ function archiv_device(){
 function archiv_device_sort(number){
 
 
-	var url_string = '/device_arxiv/?index='+number+'&date_s='+$('#datepicker_device1').val()+'&date_p='+$('#datepicker_device2').val();
+	var url_string = '/event_arxiv/?eqindex='+number+'&date_s='+$('#datepicker_device1').val()+'&date_p='+$('#datepicker_device2').val();
 	console.log(url_string);
         $.ajax({
             url: url_string,
@@ -1948,12 +1954,13 @@ function archiv_device_sort(number){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -1994,7 +2001,8 @@ function alarm(){
             }},
             success: function( result ) {
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {            		
@@ -13920,7 +13928,7 @@ function Header_menu(userSatus){
 		$(button).show();
 	}
     function hide(button){
-		console.log(button);
+		// console.log(button);
 		$(button).hide();
 	}
 
@@ -14749,7 +14757,7 @@ fillRouteObject();
 //--------------------------------------------------------------------
 
 //Задать интервал вызова функции опроса сервера на предмет определения состояния маршрутов
-setInterval(function() {get_route_statuses();}, 1000);
+// setInterval(function() {get_route_statuses();}, 1000);
 
 
 
@@ -15095,7 +15103,9 @@ function settings_equipment_open(p1,p2,p3,index,type){
 
             }},
             success: function( result ) {
-                var  message=JSON.parse(result);
+                
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	console.log(message);
 
             	for (var i  in message) {
@@ -15852,6 +15862,10 @@ var global_kylt_from_server_formated={};      //formated list of kylt to use in 
 var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,'silos':14,'dryer':16,'separator':17,'gate':18,'vent':6,'tube':7,'car':15,'enable':19,'zadvijkaGroup':23,'current':100,'kylt':101, 'analog_dat':102};//существующие типы элементов
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
+var worker=null; //global variable for use
+var worker2=null;//global variable for use
+var worker3=null;//global variable for use
+var worker4=null;//global variable for use
 
 //Function thet hide status of user
 function statusOfuser(user){
@@ -15900,7 +15914,7 @@ function asckerStatusOfUser(){
 $(window).load(function () {
 
     // Создать новый объект worker1
-        var worker = new Worker('/static/js/worker.js');
+        worker = new Worker('/static/js/worker.js');
         // Получить сообщение от работника
         worker.onmessage = function (event) {
             var temp=event.data;
@@ -15918,7 +15932,7 @@ $(window).load(function () {
         // };
 
    // Создать новый объект worker3
-        var worker3 = new Worker('/static/js/worker3.js');
+        worker3 = new Worker('/static/js/worker3.js');
         // Получить сообщение от работника
         worker3.onmessage = function (event) {
         var temp=event.data;
@@ -15929,7 +15943,7 @@ $(window).load(function () {
         };
 
     // Создать новый объект worker4
-        var worker4 = new Worker('/static/js/worker4.js');
+        worker4 = new Worker('/static/js/worker4.js');
         // Получить сообщение от работника
         worker4.onmessage = function (event) {
         var temp=event.data;
@@ -16053,8 +16067,7 @@ function get_name_for_oll_devaces(){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
 
-                    //Задать интервал вызова функции опроса сервера на предмет определения состояния маршрутов
-                    setInterval(function() {get_route_statuses();}, 1000);
+                    
                 }
             }
             });
@@ -16336,7 +16349,7 @@ function setEventOnElement(userType){
 var socket;
 
 const socketMessageListener = (event) => {
-  console.log(event.data);
+  // console.log(event.data);
   var newData=JSON.parse(event.data);
   
   if(newData.identificator==="status"){	
@@ -16354,6 +16367,11 @@ const socketMessageListener = (event) => {
   if(newData.identificator==="status_kylt"){ 
       worker4.postMessage([global_object_status_kylt,newData.data]);
   }
+  if(newData.identificator==="route_list"){ 
+      global_objekt_of_rout.changeStatus(newData.data);   
+  }
+
+
   
 	if(newData.identificator==="menu"){	  		
         menu_kreator(newData);

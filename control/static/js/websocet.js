@@ -1,7 +1,7 @@
 var socket;
 
 const socketMessageListener = (event) => {
-  console.log(event.data);
+  // console.log(event.data);
   var newData=JSON.parse(event.data);
   
   if(newData.identificator==="status"){	
@@ -19,6 +19,11 @@ const socketMessageListener = (event) => {
   if(newData.identificator==="status_kylt"){ 
       worker4.postMessage([global_object_status_kylt,newData.data]);
   }
+  if(newData.identificator==="route_list"){ 
+      global_objekt_of_rout.changeStatus(newData.data);   
+  }
+
+
   
 	if(newData.identificator==="menu"){	  		
         menu_kreator(newData);

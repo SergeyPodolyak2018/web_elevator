@@ -568,7 +568,7 @@ a {
 }
 .modal_table_header_cell {
   border-right: 1px solid #494949;
-  text-align: center;
+  text-align: left;
 }
 .modal_table_wrapper {
   border: 1px solid #494949;
@@ -581,7 +581,7 @@ a {
   border: 1px solid #494949;
 }
 .modal_table_content td {
-  padding: 0 5px;
+  padding: 3px 5px;
 }
 .mono tr:nth-child(odd) {
   color: #000;
@@ -1399,7 +1399,7 @@ a {
   top: 20%;
 }
 .archiv_rout {
-  width: 850px;
+  width: 900px;
   display: none;
   left: 20%;
   top: 20%;

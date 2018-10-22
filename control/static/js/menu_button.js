@@ -122,7 +122,7 @@ function Header_menu(userSatus){
 		$(button).show();
 	}
     function hide(button){
-		console.log(button);
+		// console.log(button);
 		$(button).hide();
 	}
 

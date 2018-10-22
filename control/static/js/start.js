@@ -14,6 +14,10 @@ var global_kylt_from_server_formated={};      //formated list of kylt to use in 
 var element_type_number={'konv':2,'klapan':3,'nor':1,'zadvijka':4,'Pzadvijka':5,'silos':14,'dryer':16,'separator':17,'gate':18,'vent':6,'tube':7,'car':15,'enable':19,'zadvijkaGroup':23,'current':100,'kylt':101, 'analog_dat':102};//существующие типы элементов
 var globalObjectSatusOfUser;
 var pressTimerForeHoldOnIpadOreIphone;
+var worker=null; //global variable for use
+var worker2=null;//global variable for use
+var worker3=null;//global variable for use
+var worker4=null;//global variable for use
 
 //Function thet hide status of user
 function statusOfuser(user){
@@ -62,7 +66,7 @@ function asckerStatusOfUser(){
 $(window).load(function () {
 
     // Создать новый объект worker1
-        var worker = new Worker('/static/js/worker.js');
+        worker = new Worker('/static/js/worker.js');
         // Получить сообщение от работника
         worker.onmessage = function (event) {
             var temp=event.data;
@@ -80,7 +84,7 @@ $(window).load(function () {
         // };
 
    // Создать новый объект worker3
-        var worker3 = new Worker('/static/js/worker3.js');
+        worker3 = new Worker('/static/js/worker3.js');
         // Получить сообщение от работника
         worker3.onmessage = function (event) {
         var temp=event.data;
@@ -91,7 +95,7 @@ $(window).load(function () {
         };
 
     // Создать новый объект worker4
-        var worker4 = new Worker('/static/js/worker4.js');
+        worker4 = new Worker('/static/js/worker4.js');
         // Получить сообщение от работника
         worker4.onmessage = function (event) {
         var temp=event.data;
@@ -215,8 +219,7 @@ function get_name_for_oll_devaces(){
                     menu_header_text=JSON.parse(result);
                     console.log(menu_header_text);
 
-                    //Задать интервал вызова функции опроса сервера на предмет определения состояния маршрутов
-                    setInterval(function() {get_route_statuses();}, 1000);
+                    
                 }
             }
             });

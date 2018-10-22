@@ -5,7 +5,7 @@ var quantityOfAlarm=0;
 //архив аварий-------------------------------------------------------------------------------------
 function archiv_alarm(){
     var number=0;
-	var url_string = '/alarm_arxiv/?index='+0+'&type_m='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/alarm_arxiv/?eqindex='+0+'&type_m='+0+'&date_s='+0+'&date_p='+0;
         $.ajax({
             url: url_string,
             data: {},
@@ -16,8 +16,8 @@ function archiv_alarm(){
             success: function( result ) {
 
                 hidemenu();
-                
-            	var  message=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+            	var  message=tempBufer.data
             	
             	var temp_string='';
             	for (var i  in message) {
@@ -62,7 +62,7 @@ function archiv_alarm_device(){
 
      var devise_name_complit=$("#Name_devise").text();
      var number = parseInt(devise_name_complit.match(/-*[0-9]+/));
-	var url_string = '/alarm_arxiv/?index='+number+'&type_m='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/alarm_arxiv/?eqindex='+number+'&type_m='+0+'&date_s='+0+'&date_p='+0;
         $.ajax({
             url: url_string,
             data: {},
@@ -75,7 +75,8 @@ function archiv_alarm_device(){
                 //$( "#menu").dialog( "close" );
                 objectMenuManager.hide();
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -125,7 +126,7 @@ function archiv_alarm_sort(number,type_m,selector_or_button){
     date_p=$('#datepicker_message2').val(); //значение календаря 2
     }
 
-	var url_string = '/alarm_arxiv/?index='+number+'&type_m='+type+'&date_s='+date_s+'&date_p='+date_p;
+	var url_string = '/alarm_arxiv/?eqindex='+number+'&type_m='+type+'&date_s='+date_s+'&date_p='+date_p;
 	
 
 	console.log(url_string);
@@ -139,7 +140,8 @@ function archiv_alarm_sort(number,type_m,selector_or_button){
             success: function( result ) {
 
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -184,7 +186,8 @@ function archiv_rout(){
 
                 hidemenu();
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -223,7 +226,8 @@ function archiv_rout_sort(){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
@@ -257,7 +261,7 @@ function archiv_rout_close(){
 //архив по всем устройствам
 function archiv_devices(){
 
-	var url_string = '/device_arxiv/?index='+0+'&date_s='+0+'&date_p='+0;
+	var url_string = '/event_arxiv/?eqindex='+0+'&date_s='+0+'&date_p='+0;
 	console.log(url_string);
         $.ajax({
             url: url_string,
@@ -270,12 +274,13 @@ function archiv_devices(){
 
                 hidemenu();
                 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -303,7 +308,7 @@ function archiv_device(){
      objectMenuManager.hide();
      var devise_name_complit=$("#Name_devise").text();
      var number = parseInt(devise_name_complit.match(/-*[0-9]+/));
-	 var url_string = '/device_arxiv/?index='+number+'&date_s='+0+'&date_p='+0;
+	 var url_string = '/event_arxiv/?eqindex='+number+'&date_s='+0+'&date_p='+0;
 
 	console.log(url_string);
         $.ajax({
@@ -316,12 +321,13 @@ function archiv_device(){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -346,7 +352,7 @@ function archiv_device(){
 function archiv_device_sort(number){
 
 
-	var url_string = '/device_arxiv/?index='+number+'&date_s='+$('#datepicker_device1').val()+'&date_p='+$('#datepicker_device2').val();
+	var url_string = '/event_arxiv/?eqindex='+number+'&date_s='+$('#datepicker_device1').val()+'&date_p='+$('#datepicker_device2').val();
 	console.log(url_string);
         $.ajax({
             url: url_string,
@@ -358,12 +364,13 @@ function archiv_device_sort(number){
             success: function( result ) {
 
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {
             		//temp_string=temp_string+'<tr><td>'+message[i].id+'</td><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td>'+message[i].name+'</td><td>'+message[i].status+'</td></tr>';
-            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 60%;">'+message[i].name+'</td><td style="width: 30%;">'+message[i].status+'</td></tr>';
+            	    temp_string=temp_string+'<tr><td>'+message[i].date+'</td><td>'+message[i].time+'</td><td style="width: 40%;">'+message[i].name+'</td><td style="width: 20%;">'+message[i].status+'</td></tr>';
 
             	}
             	var div_menu = document.getElementById('table_rchiv_device');
@@ -404,7 +411,8 @@ function alarm(){
             }},
             success: function( result ) {
 
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	
             	temp_string='';
             	for (var i  in message) {            		

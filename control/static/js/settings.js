@@ -291,7 +291,9 @@ function settings_equipment_open(p1,p2,p3,index,type){
 
             }},
             success: function( result ) {
-                var  message=JSON.parse(result);
+                
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data
             	console.log(message);
 
             	for (var i  in message) {
