@@ -34,8 +34,8 @@ const socketMessageListener = (event) => {
   if(newData.identificator==="alarm"){     
     alarm_build(newData);    
   }
-  if(newData.identificator==="status_bar"){     
-    footerAndAlarmStatus(newData.data);    
+  if(newData.identificator==="status_bar"){
+    worker2.postMessage([global_object_status_footer,newData.data]);   
   }
 
 };

@@ -264,8 +264,9 @@ function bell_command(command){
             url: url_string,
             data: {},
             success: function( result ) {
-                if(result!='ok'){
-                    console.log('проблема со свонком')
+              let message=JSON.parse(result);
+                if(message.type!=0){
+                    console.log(message.message)
                 }
                 console.log(result);
             }
@@ -1570,23 +1571,40 @@ function color_tube_position(index,status){
     }
 }
 
-var global_variable_to_play_alarm_sound=0;
-
+var global_variable_to_play_alarm_sound;
+var global_variable_to_play_alarm_plc_sound;
 
 function playSound(){
-	console.log("playSound start");
 	var audio = new Audio(); // Создаём новый элемент Audio
-  	audio.src = '/static/admin/audio/beep.mp3'; // Указываем путь к звуку "клика"
+  	audio.src = '/static/audio/beep.mp3'; // Указываем путь к звуку "клика"
   	audio.autoplay = true; // Автоматически запускаем
   }
 
   function startPlaySound(){
-  	global_variable_to_play_alarm_sound=setInterval(function() { playSound() }, 1000);
+  	global_variable_to_play_alarm_sound=setInterval(function() {
+      playSound() }, 1000);
   }
   
   function stopPlaySound(){
   	//закончить циклический запрос
     clearInterval(global_variable_to_play_alarm_sound);
+  }
+
+
+  function playSound_plc(){
+  var audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = '/static/audio/beep.mp3'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+  }
+
+  function startPlaySound_plc(){
+    global_variable_to_play_alarm_plc_sound=setInterval(function() {
+      playSound_plc() }, 1000);
+  }
+  
+  function stopPlaySound_plc(){
+    //закончить циклический запрос
+    clearInterval(global_variable_to_play_alarm_plc_sound);
   }
 var global_alarm_quantity_function=0;
 //var global_alarm_quantity_function={};
@@ -2681,6 +2699,9 @@ function footerAndAlarmStatus(status){
     switch(status.plc){
         case 0://$("#footer_plc_status").css('background-color','grey');
               document.getElementById('footer_plc_status').removeAttribute("style");
+              if (status.drv!==2){
+                    open_plc_alarm(status.message);
+                }
             break;
         case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
                 document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
@@ -2690,7 +2711,9 @@ function footerAndAlarmStatus(status){
             break;
         case 3 ://$("#footer_plc_status").css('background-color','red');
                 document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';
-                open_plc_alarm();
+                if (status.drv==2){
+                    open_plc_alarm(status.message);
+                }
             break;
         default:
             //$("#footer_plc_status").css('background-color','grey');
@@ -13962,16 +13985,17 @@ initialization();
 
 
 
-function open_plc_alarm(){
-	console.log('open_plc_alarm()');
-	document.getElementById('alarm_plc_connection').style.display = 'block';
-	startPlaySound();
+function open_plc_alarm(text){
+	stopPlaySound_plc();
+	let divElement=document.getElementById('alarm_plc_connection');
+	divElement.style.display = 'block';
+	divElement.getElementsByClassName('alarm_plc_content-text')[0].innerText=text;
+	startPlaySound_plc();
 }
 
 function close_plc_alarm(){
-	
 	document.getElementById('alarm_plc_connection').style.display = 'none';
-	stopPlaySound();
+	stopPlaySound_plc();
 }
 
 var source_index=0; //индекс источника
@@ -14976,6 +15000,7 @@ function setings_universal_save(type) {
  	  console.log(msg);
 
             $.ajax({
+            method: 'POST',
             url: url_string,
             data: msg,
             timeout:3000,
@@ -15198,7 +15223,9 @@ function linck_open(){
 
             }},
             success: function( result ) {
-                var  link=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                    let link=tempBufer.data;
+                
             	     console.log(link);
             	for (var i  in link){
                      temp_string+='<tr onclick="change_row_link(this)">'+
@@ -15232,7 +15259,9 @@ function linck_add_row(){
 
             }},
             success: function( result ) {
-                var  link=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                    let link=tempBufer.data;
+                
             	     console.log(link);
             	for (var i  in link){
                      temp_string+='<tr onclick="change_row_link(this)">'+
@@ -15330,7 +15359,9 @@ function culture_open(){
                         document.getElementById('culture_settings_content_information').innerHTML ='Ошибка записи в базу';
 
                 }else{
-                var  cylt=JSON.parse(result);
+                    let tempBufer=JSON.parse(result);
+                    let cylt=tempBufer.data;
+                
             	     console.log(cylt);
             	for (var i  in cylt){
                      temp_string+='<tr onclick="change_row_culture(this)">'+
@@ -15369,7 +15400,9 @@ function culture_add_row(){
              if(result=='ERROR'){
                         alert('Ошибка записи в базу культур');
                 }else{
-                    var  cylt=JSON.parse(result);
+                    let tempBufer=JSON.parse(result);
+                    let cylt=tempBufer.data;
+                   
             	    //console.log(cylt);
                     for (var i  in cylt){
                                 temp_string+='<tr onclick="change_row_culture(this)">'+
@@ -15462,7 +15495,9 @@ function device_settings_open(){
 
             }},
             success: function( result ) {
-                var  device_bd=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                let device_bd=tempBufer.data;
+                
                 console.log(device_bd);
             	for (var i  in device_bd){
                      temp_string+='<tr onclick="change_row_device_settings(this)">'+
@@ -15555,7 +15590,8 @@ function setings_bell_open(){
             statusCode:{404:function(){alert('Функция не реализована');
             }},
             success: function( result ) {
-                var  message=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                let message=tempBufer.data
             	console.log(message);
 
             	for (var i  in message) {
@@ -15585,6 +15621,7 @@ function setings_bell_save() {
  	  var url_string='/bell_save_settings/';
  	  console.log(msg);
             $.ajax({
+            method: 'POST',
             url: url_string,
             data: msg,
             timeout:3000,
@@ -15856,6 +15893,7 @@ var link_global_object;                       //object with oll lines
 var global_object_status={};                  //object of staus of all elements
 var global_object_status_analog={};           //status fo anlog sensors
 var global_object_status_kylt={};             //status of kylt on the objects
+var global_object_status_footer={}
 var menu_header_text={};                      //name of all devaces
 var global_object_oll_kylt_from_server='';    //oll kylt from servere in one object
 var global_kylt_from_server_formated={};      //formated list of kylt to use in future in different menu
@@ -15925,11 +15963,17 @@ $(window).load(function () {
         };
 
         // Создать новый объект worker2
-        // var worker2 = new Worker('/static/js/worker2.js');
-        // // Получить сообщение от работника
-        // worker2.onmessage = function (event){
-        //     linck(event.data);
-        // };
+        worker2 = new Worker('/static/js/worker2.js');
+        // Получить сообщение от работника
+        worker2.onmessage = function (event){
+            let temp=event.data;
+            
+            for (let i in temp){
+                global_object_status_footer[i]=temp[i];
+            }
+            footerAndAlarmStatus(event.data);
+            
+        };
 
    // Создать новый объект worker3
         worker3 = new Worker('/static/js/worker3.js');
@@ -16382,8 +16426,8 @@ const socketMessageListener = (event) => {
   if(newData.identificator==="alarm"){     
     alarm_build(newData);    
   }
-  if(newData.identificator==="status_bar"){     
-    footerAndAlarmStatus(newData.data);    
+  if(newData.identificator==="status_bar"){
+    worker2.postMessage([global_object_status_footer,newData.data]);   
   }
 
 };

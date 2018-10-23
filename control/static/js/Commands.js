@@ -264,8 +264,9 @@ function bell_command(command){
             url: url_string,
             data: {},
             success: function( result ) {
-                if(result!='ok'){
-                    console.log('проблема со свонком')
+              let message=JSON.parse(result);
+                if(message.type!=0){
+                    console.log(message.message)
                 }
                 console.log(result);
             }

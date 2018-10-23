@@ -13,6 +13,9 @@ function footerAndAlarmStatus(status){
     switch(status.plc){
         case 0://$("#footer_plc_status").css('background-color','grey');
               document.getElementById('footer_plc_status').removeAttribute("style");
+              if (status.drv!==2){
+                    open_plc_alarm(status.message);
+                }
             break;
         case 1 ://$("#footer_plc_status").css('background-color','#00ff00');
                 document.getElementById('footer_plc_status').style.cssText='background-color:#00ff00; color:black';
@@ -22,7 +25,9 @@ function footerAndAlarmStatus(status){
             break;
         case 3 ://$("#footer_plc_status").css('background-color','red');
                 document.getElementById('footer_plc_status').style.cssText='background-color:red; color:black';
-                open_plc_alarm();
+                if (status.drv==2){
+                    open_plc_alarm(status.message);
+                }
             break;
         default:
             //$("#footer_plc_status").css('background-color','grey');

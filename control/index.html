@@ -225,7 +225,7 @@
                <a href="#" onclick="close_plc_alarm()" class="btn btn-default btn-back"><span><span></a>
             </div>
             <div class="alarm_plc_content">
-                <p>Связь с ПЛК отсутствует</p>
+                <p class="alarm_plc_content-text">Связь с ПЛК отсутствует</p>
             </div>
             <div class="modal_box_footer btn_right">
                 <div class="modal_box_btn" onclick="close_plc_alarm()">Закрыть</div>
@@ -371,7 +371,7 @@
         <!--===START CURRENT ALARM MESSAGE===-->    
         <div id="alarm_message" class="draggable modal_box alarm_message">
             <div id="alarm_message_header" class="modal_box_header">
-                <p class='modal_box_header_text'>Аварийные сообщения</p>
+                <p class='modal_box_header_text'>Текущие сообщения</p>
                 <a href="#" onclick="alarm_message_close()" class="btn btn-default btn-back"><span><span></a>                    
             </div>
 
@@ -744,8 +744,9 @@
                 </div>
             </form>
             <div id="settings_noriya_footer" class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(1)">Закрыть</div>
+                
                 <div class="modal_box_btn" onclick="setings_universal_save(1)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(1)">Закрыть</div>
             </div> 
                
         </div>
@@ -937,8 +938,9 @@
                     </div>
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(2)">Закрыть</div>
+               
                 <div class="modal_box_btn" onclick="setings_universal_save(2)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(2)">Закрыть</div>
             </div>
         </div>
 
@@ -1056,8 +1058,9 @@
                     </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(4)">Закрыть</div>
+                
                 <div class="modal_box_btn" onclick="setings_universal_save(4)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(4)">Закрыть</div>
             </div> 
                
         </div>
@@ -1175,8 +1178,8 @@
                 </div>
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(5)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(5)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(5)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS DOUBLE SHUTTER ___ --> 
@@ -1344,8 +1347,8 @@
               
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(23)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(23)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(23)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS GROUP SHUTTER ___-->  
@@ -1428,8 +1431,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(14)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(14)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(14)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS SILOS ___--> 
@@ -1522,8 +1525,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(16)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(16)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(16)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS DRYER ___-->
@@ -1634,8 +1637,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(3)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(3)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(3)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS VALVE __--> 
@@ -1759,8 +1762,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(6)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(6)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(6)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS VENT ___--> 
@@ -1944,8 +1947,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(18)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(18)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(18)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS GATE ___--> 
@@ -2080,8 +2083,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(7)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(7)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(7)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS TUBE ___--> 
@@ -2152,8 +2155,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(17)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(17)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(17)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS SEPARATOR ___--> 
@@ -2266,8 +2269,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(19)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(19)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(19)">Закрыть</div>
             </div>
         </div>
     <!--___ END SETTINGS ENABLE ___--> 
@@ -2391,8 +2394,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_bell_close()">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_bell_save()">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_bell_close()">Закрыть</div>
             </div>
         </div>
 
@@ -2466,8 +2469,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(100)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(100)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(100)">Закрыть</div>
             </div>
         </div>
          <!--___ END SETTINGS CURRENT ___-->
@@ -2522,8 +2525,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(102)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(102)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(102)">Закрыть</div>
             </div>
         </div>
         <!--___ END SETTINGS ANALOG ___-->
@@ -2552,8 +2555,8 @@
                 </div>              
             </form>
             <div class="modal_box_footer btn_right">
-                <div class="modal_box_btn" onclick="setings_universal_close(101)">Закрыть</div>
                 <div class="modal_box_btn" onclick="setings_universal_save(101)">Сохранить</div>
+                <div class="modal_box_btn" onclick="setings_universal_close(101)">Закрыть</div>
             </div>
         </div>
         <!--___ END SETTINGS KYLT ___-->

@@ -8,6 +8,7 @@ var link_global_object;                       //object with oll lines
 var global_object_status={};                  //object of staus of all elements
 var global_object_status_analog={};           //status fo anlog sensors
 var global_object_status_kylt={};             //status of kylt on the objects
+var global_object_status_footer={}
 var menu_header_text={};                      //name of all devaces
 var global_object_oll_kylt_from_server='';    //oll kylt from servere in one object
 var global_kylt_from_server_formated={};      //formated list of kylt to use in future in different menu
@@ -77,11 +78,17 @@ $(window).load(function () {
         };
 
         // Создать новый объект worker2
-        // var worker2 = new Worker('/static/js/worker2.js');
-        // // Получить сообщение от работника
-        // worker2.onmessage = function (event){
-        //     linck(event.data);
-        // };
+        worker2 = new Worker('/static/js/worker2.js');
+        // Получить сообщение от работника
+        worker2.onmessage = function (event){
+            let temp=event.data;
+            
+            for (let i in temp){
+                global_object_status_footer[i]=temp[i];
+            }
+            footerAndAlarmStatus(event.data);
+            
+        };
 
    // Создать новый объект worker3
         worker3 = new Worker('/static/js/worker3.js');

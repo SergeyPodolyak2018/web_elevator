@@ -164,6 +164,7 @@ function setings_universal_save(type) {
  	  console.log(msg);
 
             $.ajax({
+            method: 'POST',
             url: url_string,
             data: msg,
             timeout:3000,
@@ -386,7 +387,9 @@ function linck_open(){
 
             }},
             success: function( result ) {
-                var  link=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                    let link=tempBufer.data;
+                
             	     console.log(link);
             	for (var i  in link){
                      temp_string+='<tr onclick="change_row_link(this)">'+
@@ -420,7 +423,9 @@ function linck_add_row(){
 
             }},
             success: function( result ) {
-                var  link=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                    let link=tempBufer.data;
+                
             	     console.log(link);
             	for (var i  in link){
                      temp_string+='<tr onclick="change_row_link(this)">'+
@@ -518,7 +523,9 @@ function culture_open(){
                         document.getElementById('culture_settings_content_information').innerHTML ='Ошибка записи в базу';
 
                 }else{
-                var  cylt=JSON.parse(result);
+                    let tempBufer=JSON.parse(result);
+                    let cylt=tempBufer.data;
+                
             	     console.log(cylt);
             	for (var i  in cylt){
                      temp_string+='<tr onclick="change_row_culture(this)">'+
@@ -557,7 +564,9 @@ function culture_add_row(){
              if(result=='ERROR'){
                         alert('Ошибка записи в базу культур');
                 }else{
-                    var  cylt=JSON.parse(result);
+                    let tempBufer=JSON.parse(result);
+                    let cylt=tempBufer.data;
+                   
             	    //console.log(cylt);
                     for (var i  in cylt){
                                 temp_string+='<tr onclick="change_row_culture(this)">'+
@@ -650,7 +659,9 @@ function device_settings_open(){
 
             }},
             success: function( result ) {
-                var  device_bd=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                let device_bd=tempBufer.data;
+                
                 console.log(device_bd);
             	for (var i  in device_bd){
                      temp_string+='<tr onclick="change_row_device_settings(this)">'+
@@ -743,7 +754,8 @@ function setings_bell_open(){
             statusCode:{404:function(){alert('Функция не реализована');
             }},
             success: function( result ) {
-                var  message=JSON.parse(result);
+                let tempBufer=JSON.parse(result);
+                let message=tempBufer.data
             	console.log(message);
 
             	for (var i  in message) {
@@ -773,6 +785,7 @@ function setings_bell_save() {
  	  var url_string='/bell_save_settings/';
  	  console.log(msg);
             $.ajax({
+            method: 'POST',
             url: url_string,
             data: msg,
             timeout:3000,
