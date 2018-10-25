@@ -72,7 +72,7 @@ function archiv_alarm_device(){
             }},
             success: function( result ) {
                 
-                //$( "#menu").dialog( "close" );
+                
                 objectMenuManager.hide();
 
             	let tempBufer=JSON.parse(result);
@@ -469,7 +469,9 @@ $.ajax({
 
             }},
             success: function( result ) {
-
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
+                console.log(message);
             	//clearInterval(global_alarm_quantity_function);
 
             	// table_alarm_message_rebild();
@@ -495,7 +497,9 @@ $.ajax({
 
             }},
             success: function( result ) {
-
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
+                console.log(message);
                 //clearInterval(global_alarm_quantity_function);
 
                 // table_alarm_message_rebild();
@@ -560,7 +564,8 @@ function table_alarm_message_rebild(){
             success: function( result ) {
                 console.log("Результат запроса ребилд");
                 console.log(result);
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
             	
             	temp_string='';
             	if (message.quantity>0){

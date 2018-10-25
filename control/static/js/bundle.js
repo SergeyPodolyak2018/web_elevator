@@ -7,7 +7,11 @@
             url: url_string,
             timeout:3000,
             data: {},
-            success: function( result ) {},
+            success: function( result ) {
+              let tempBufer=JSON.parse(result);
+              let  message=tempBufer.data;
+              console.log(message);
+            },
             error: function (jqXHR, exception) {
               console.log(exception);
               alert('Сервер не отвечает');                    
@@ -40,7 +44,10 @@ function menu_kreator(device_index,device_string_type,posX,posY){
             url: url_string1,
             data: {},
             success: function(result){
-                  var menu_struktura=JSON.parse(result);
+                  let tempBufer=JSON.parse(result);
+                  let  menu_struktura=tempBufer.data;
+                  // console.log(message);
+                  // var menu_struktura=JSON.parse(result);
                   //Check object empty or not
                   if(Object.keys(menu_struktura).length!=0){
                     for (let i in menu_struktura){
@@ -101,7 +108,9 @@ function datchiki(p1,p2,p3,number) {
               var string_temp_d_3='';              
               var string_temp_c='';
               var string_temp_c_1='';
-              var  dat_cont=JSON.parse(result);
+              let tempBufer=JSON.parse(result);
+              let  dat_cont=tempBufer.data;
+              // var  dat_cont=JSON.parse(result);
               console.log(dat_cont);
               for(var k in dat_cont){
               console.log(k);
@@ -156,7 +165,9 @@ function dat_status(number) {
             url: url_string,
             data: {},
             success: function( result ) {
-              var  dat_cont=JSON.parse(result);
+              let tempBufer=JSON.parse(result);
+              let  dat_cont=tempBufer.data;
+              // var  dat_cont=JSON.parse(result);
               for(var k in dat_cont){
                 if (k.charAt(0) =='d') {
                   if (dat_cont[k].alarm == 0){
@@ -208,7 +219,11 @@ function datchik_remont(EquipCommand, EquipIndex, Command_P1) {
         $.ajax({
             url: url_string,
             data: {},
-            success: function( result ) {}
+            success: function( result ) {
+              let tempBufer=JSON.parse(result);
+              let  message=tempBufer.data;
+              console.log(message);
+            }
             });
 }
 
@@ -1680,7 +1695,7 @@ function archiv_alarm_device(){
             }},
             success: function( result ) {
                 
-                //$( "#menu").dialog( "close" );
+                
                 objectMenuManager.hide();
 
             	let tempBufer=JSON.parse(result);
@@ -2077,7 +2092,9 @@ $.ajax({
 
             }},
             success: function( result ) {
-
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
+                console.log(message);
             	//clearInterval(global_alarm_quantity_function);
 
             	// table_alarm_message_rebild();
@@ -2103,7 +2120,9 @@ $.ajax({
 
             }},
             success: function( result ) {
-
+                let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
+                console.log(message);
                 //clearInterval(global_alarm_quantity_function);
 
                 // table_alarm_message_rebild();
@@ -2168,7 +2187,8 @@ function table_alarm_message_rebild(){
             success: function( result ) {
                 console.log("Результат запроса ребилд");
                 console.log(result);
-            	var  message=JSON.parse(result);
+            	let tempBufer=JSON.parse(result);
+                var  message=tempBufer.data;
             	
             	temp_string='';
             	if (message.quantity>0){
@@ -2440,8 +2460,12 @@ function archive_current_open(instant_or_db){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
+                        let tempBufer=JSON.parse(result);
+                        let  devices_names_from_server=tempBufer.data;
+                        // console.log(message);
                         var temp_string='<option selected value="0" >-</option>';
-                         var devices_names_from_server=JSON.parse(result);
+                         // var devices_names_from_server=JSON.parse(result);
+
                          for(var i in  devices_names_from_server){
                          temp_string=temp_string+'<option value="'+devices_names_from_server[i].id+'" >'+devices_names_from_server[i].name+'</option>';
                          }
@@ -2549,7 +2573,9 @@ function add_point_ciclic(index){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-                         var  current_from_server=JSON.parse(result);
+                        let tempBufer=JSON.parse(result);
+                        let  current_from_server=tempBufer.data;
+                         // var  current_from_server=JSON.parse(result);
                          var current_value=current_from_server.point0.value;
                          var current_time=current_from_server.point0.time;
                          сurrent_grafic.add_point(current_value,current_time);
@@ -2577,8 +2603,9 @@ function add_points_from_archiv(index,scale,date,time){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-
-                         var  current_from_server=JSON.parse(result);
+                        let tempBufer=JSON.parse(result);
+                        let  current_from_server=tempBufer.data;
+                         // var  current_from_server=JSON.parse(result);
 
                          for (i in current_from_server){
 
@@ -2630,8 +2657,8 @@ function get_grafick_property(instant_or_db){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-
-                        var  current_from_server=JSON.parse(result);
+                        let temp = JSON.parse(result);
+                        var  current_from_server=temp.data;
                         var max_grafic_current=current_from_server.max_grafic_current;
                         var max_current=current_from_server.max_current;
                         var nom_current=current_from_server.nom_current;

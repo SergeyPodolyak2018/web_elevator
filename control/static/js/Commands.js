@@ -7,7 +7,11 @@
             url: url_string,
             timeout:3000,
             data: {},
-            success: function( result ) {},
+            success: function( result ) {
+              let tempBufer=JSON.parse(result);
+              let  message=tempBufer.data;
+              console.log(message);
+            },
             error: function (jqXHR, exception) {
               console.log(exception);
               alert('Сервер не отвечает');                    
@@ -40,7 +44,10 @@ function menu_kreator(device_index,device_string_type,posX,posY){
             url: url_string1,
             data: {},
             success: function(result){
-                  var menu_struktura=JSON.parse(result);
+                  let tempBufer=JSON.parse(result);
+                  let  menu_struktura=tempBufer.data;
+                  // console.log(message);
+                  // var menu_struktura=JSON.parse(result);
                   //Check object empty or not
                   if(Object.keys(menu_struktura).length!=0){
                     for (let i in menu_struktura){
@@ -101,7 +108,9 @@ function datchiki(p1,p2,p3,number) {
               var string_temp_d_3='';              
               var string_temp_c='';
               var string_temp_c_1='';
-              var  dat_cont=JSON.parse(result);
+              let tempBufer=JSON.parse(result);
+              let  dat_cont=tempBufer.data;
+              // var  dat_cont=JSON.parse(result);
               console.log(dat_cont);
               for(var k in dat_cont){
               console.log(k);
@@ -156,7 +165,9 @@ function dat_status(number) {
             url: url_string,
             data: {},
             success: function( result ) {
-              var  dat_cont=JSON.parse(result);
+              let tempBufer=JSON.parse(result);
+              let  dat_cont=tempBufer.data;
+              // var  dat_cont=JSON.parse(result);
               for(var k in dat_cont){
                 if (k.charAt(0) =='d') {
                   if (dat_cont[k].alarm == 0){
@@ -208,7 +219,11 @@ function datchik_remont(EquipCommand, EquipIndex, Command_P1) {
         $.ajax({
             url: url_string,
             data: {},
-            success: function( result ) {}
+            success: function( result ) {
+              let tempBufer=JSON.parse(result);
+              let  message=tempBufer.data;
+              console.log(message);
+            }
             });
 }
 

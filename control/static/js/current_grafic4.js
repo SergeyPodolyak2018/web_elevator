@@ -187,8 +187,12 @@ function archive_current_open(instant_or_db){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
+                        let tempBufer=JSON.parse(result);
+                        let  devices_names_from_server=tempBufer.data;
+                        // console.log(message);
                         var temp_string='<option selected value="0" >-</option>';
-                         var devices_names_from_server=JSON.parse(result);
+                         // var devices_names_from_server=JSON.parse(result);
+
                          for(var i in  devices_names_from_server){
                          temp_string=temp_string+'<option value="'+devices_names_from_server[i].id+'" >'+devices_names_from_server[i].name+'</option>';
                          }
@@ -296,7 +300,9 @@ function add_point_ciclic(index){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-                         var  current_from_server=JSON.parse(result);
+                        let tempBufer=JSON.parse(result);
+                        let  current_from_server=tempBufer.data;
+                         // var  current_from_server=JSON.parse(result);
                          var current_value=current_from_server.point0.value;
                          var current_time=current_from_server.point0.time;
                          сurrent_grafic.add_point(current_value,current_time);
@@ -324,8 +330,9 @@ function add_points_from_archiv(index,scale,date,time){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-
-                         var  current_from_server=JSON.parse(result);
+                        let tempBufer=JSON.parse(result);
+                        let  current_from_server=tempBufer.data;
+                         // var  current_from_server=JSON.parse(result);
 
                          for (i in current_from_server){
 
@@ -377,8 +384,8 @@ function get_grafick_property(instant_or_db){
                     hide_source_receiver();
                     }},
                     success: function( result ) {
-
-                        var  current_from_server=JSON.parse(result);
+                        let temp = JSON.parse(result);
+                        var  current_from_server=temp.data;
                         var max_grafic_current=current_from_server.max_grafic_current;
                         var max_current=current_from_server.max_current;
                         var nom_current=current_from_server.nom_current;
