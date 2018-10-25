@@ -1,6 +1,6 @@
 //команды для механизмов
     function start_stop_mex(command,p1,p2,EquipIndex) {
-        var url_string ='/io_command/?'+escape('UD_DB.EquipCommand')+'='+command+'&'+escape('UD_DB.EquipIndex')+'='+EquipIndex+'&'+escape('UD_DB.Command_P1')+'='+p1+'&'+escape('UD_DB.Command_P2')+'='+p2;
+        var url_string ='/io_command/?'+escape('command')+'='+command+'&'+escape('index')+'='+EquipIndex+'&'+escape('command_p1')+'='+p1+'&'+escape('command_p2')+'='+p2;
         //$( "#menu").dialog( "close" );
         objectMenuManager.hide();
         $.ajax({
@@ -214,7 +214,7 @@ function dat_status(number) {
 //Установка датчика в ремонт
 function datchik_remont(EquipCommand, EquipIndex, Command_P1) {
         var Command_P2=0;
-        var url_string = '/io_command/?UD_DB.EquipCommand='+EquipCommand+'&UD_DB.EquipIndex='+EquipIndex+'&UD_DB.Command_P1='+Command_P1+'&UD_DB.Command_P2='+Command_P2;
+        var url_string = '/io_command/?command='+EquipCommand+'&index='+EquipIndex+'&command_p1='+Command_P1+'&command_p2='+Command_P2;
         console.log(url_string);
         $.ajax({
             url: url_string,
