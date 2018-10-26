@@ -25,18 +25,20 @@ function staistic_ask(p1,p2,p3,index,type){
 }
 
 function open_statistic_window(index,answer){
-	let fields=["work","switch","period","residue"]
-	let statisticWindow=document.getElementById('statistic_window');
-	statisticWindow.style.cssText='display:block;'
-	for (let i in fields) {
-		statisticWindow.getElementsByClassName('statistic_'+fields[i])[0].innerHTML=answer[fields[i]];
-	}
+    let fields=["work","switch","period","residue"]
+    let statisticWindow=document.getElementById('statistic_window');
+    $('#statistic_window').show();
+    // statisticWindow.style.cssText='display:block;'
+    for (let i in fields) {
+        statisticWindow.getElementsByClassName('statistic_'+fields[i])[0].innerHTML=answer[fields[i]];
+    }
     console.log(statisticWindow.getElementsByClassName('statistic_window_header_name'));
-	statisticWindow.getElementsByClassName('statistic_window_header_name')[0].innerHTML=menu_header_text[index].longName;
+    statisticWindow.getElementsByClassName('statistic_window_header_name')[0].innerHTML=menu_header_text[index].longName;
 }
 
 function statistic_close(){
-	document.getElementById('statistic_window').style.cssText='display:none;';
+    $('#statistic_window').hide();
+    // document.getElementById('statistic_window').style.cssText='display:none;';
 }
 
 function reset_statistic_window(index){
